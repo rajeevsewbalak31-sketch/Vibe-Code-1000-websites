@@ -16,6 +16,19 @@ This project demonstrates rapid web development, creative design iterations, and
 
 ---
 
+## 💰 Support & Donations
+
+If you find value in this project and want to support the work:
+
+[![PayPal](https://img.shields.io/badge/PayPal-Support%20This%20Project-blue?style=for-the-badge&logo=paypal)](https://www.paypal.com/paypalme/RajeevSewbalak)
+
+**Quick Donate Links:**
+- **[$5](https://www.paypal.com/paypalme/RajeevSewbalak/5)** | **[$10](https://www.paypal.com/paypalme/RajeevSewbalak/10)** | **[$25](https://www.paypal.com/paypalme/RajeevSewbalak/25)** | **[$50](https://www.paypal.com/paypalme/RajeevSewbalak/50)** | **[Custom](https://www.paypal.com/paypalme/RajeevSewbalak)**
+
+Every contribution helps fuel the creation of more incredible websites! 🙏
+
+---
+
 ## 📁 Directory Structure
 
 ```
@@ -59,16 +72,6 @@ Vibe-Code-1000-websites/
 
 ---
 
-## 💰 Support & Donations
-
-If you find value in this project and want to support the work:
-
-[![PayPal](https://img.shields.io/badge/PayPal-Support%20This%20Project-blue?style=for-the-badge&logo=paypal)](https://paypal.me/rajeevsewbalak31)
-
-Every contribution helps keep the momentum going and fuels the creation of more incredible websites!
-
----
-
 ## 🚀 Quick Start
 
 ### For Each Website:
@@ -88,10 +91,10 @@ Every contribution helps keep the momentum going and fuels the creation of more 
 
 ## 📚 Documentation
 
-- **[Deployment Guide](./docs/deployment-guide.md)** - Step-by-step instructions for deploying
-- **[Free Hosting Options](./docs/free-hosting-options.md)** - Compare free platforms
-- **[Tech Stack Guide](./docs/tech-stack.md)** - Technology recommendations
-- **[Workflow](./docs/workflow.md)** - Development workflow and best practices
+- **[Deployment Guide](./docs/deployment-guide.md)** - Step-by-step instructions for deploying to 5 free platforms
+- **[Free Hosting Options](./docs/free-hosting-options.md)** - Compare free platforms with cost breakdown
+- **[Tech Stack Guide](./docs/tech-stack.md)** - Technology recommendations with code examples
+- **[Workflow](./docs/workflow.md)** - Development workflow, scripts, and productivity tips
 
 ---
 
@@ -102,6 +105,24 @@ Every contribution helps keep the momentum going and fuels the creation of more 
 | 1 | Coming Soon | TBD | TBD | 🟡 Planning |
 
 *More coming soon!*
+
+---
+
+## 💡 Cost Strategy
+
+**Build 1000 websites for just $40-70/month:**
+
+```
+GitHub Pages:     300 simple sites    → $0/month
+Vercel:           300 React apps      → $0/month
+Netlify:          200 static sites    → $0/month
+Railway:          100 backends        → $20-40/month
+Firebase:         50-100 interactive  → $20-30/month
+────────────────────────────────────────────────────
+TOTAL:           1000 sites          → $40-70/month
+```
+
+See **[Free Hosting Options](./docs/free-hosting-options.md)** for detailed breakdown.
 
 ---
 
@@ -128,6 +149,17 @@ Have questions about deployment or web development? Check the **[docs](./docs/)*
 
 ---
 
+## 🙏 Support This Project
+
+If you find value in this project, please support it:
+
+**[💳 Donate via PayPal](https://www.paypal.com/paypalme/RajeevSewbalak)**
+
+View all support options in **[SUPPORT.md](./SUPPORT.md)**
+
+---
+
 **Let's build. Let's ship. Let's scale to 1000.** 🚀
 
-*Project started: May 17, 2026*
+*Project started: May 17, 2026*  
+*Author: [@rajeevsewbalak31-sketch](https://github.com/rajeevsewbalak31-sketch)*

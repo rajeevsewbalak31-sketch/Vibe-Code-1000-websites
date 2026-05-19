@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="1000 Websites Challenge — 22 free mini-tools by Rajeev Sewbalak. Flip coins, passwords, pomodoros, and more. Tip via PayPal." />
+  <title>1000 Websites Challenge — Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="hub.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>1000</text></svg>" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+  </div>
+
+  <div class="shell">
+    <header class="top-bar">
+      <a class="brand" href="./">
+        <span class="brand-mark">1K</span>
+        <span class="brand-text">1000 Websites</span>
+      </a>
+      <div class="top-actions">
+        <a class="btn btn--github" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.88.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn--paypal" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">Tip on PayPal</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="hero-eyebrow">Vibe Code · Deploy free · Repeat</p>
+      <h1>1000 Websites Challenge</h1>
+      <p class="hero-lead">
+        A growing collection of small, useful web tools — each free to use, each with an optional tip jar.
+        Built in public on GitHub.
+      </p>
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>Progress</span>
+          <span><strong id="progress-count">22</strong> / 1000</span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="1000" aria-label="Sites completed">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn--paypal" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">Support the project</a>
+        <a class="btn btn--github" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <input type="search" class="search" id="search" placeholder="Search tools… (e.g. password, dice, mood)" autocomplete="off" />
+      <span class="count-pill" id="visible-count">22 sites</span>
+    </div>
+
+    <div class="grid" id="site-grid">
+      <a class="card" href="https://001-buy-a-square.vercel.app" target="_blank" rel="noopener" data-name="buy a square grid paypal euro">
+        <div class="card-top"><span class="card-num">#001</span><span class="badge">Live</span></div>
+        <h2>Buy a Square</h2>
+        <p>10×10 grid — pick a square, pay €1 via PayPal.</p>
+        <span class="card-foot">001-buy-a-square.vercel.app →</span>
+      </a>
+
+      <a class="card" href="https://quotely.vercel.app" target="_blank" rel="noopener" data-name="quotely quotes random wisdom">
+        <div class="card-top"><span class="card-num">#002</span><span class="badge">Live</span></div>
+        <h2>Quotely</h2>
+        <p>Random quotes — copy, share, get inspired.</p>
+        <span class="card-foot">quotely.vercel.app →</span>
+      </a>
+
+      <a class="card" href="./003-coin-flip/" data-name="flipcoin coin flip heads tails">
+        <div class="card-top"><span class="card-num">#003</span></div>
+        <h2>FlipCoin</h2>
+        <p>Heads or tails in one tap.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./004-dice-roll/" data-name="rolldice dice roll random">
+        <div class="card-top"><span class="card-num">#004</span></div>
+        <h2>RollDice</h2>
+        <p>Roll one to six dice instantly.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./005-yes-or-no/" data-name="yes no oracle decision">
+        <div class="card-top"><span class="card-num">#005</span></div>
+        <h2>YesNo</h2>
+        <p>When you need a decisive answer.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./006-random-color/" data-name="huedrop color palette hex">
+        <div class="card-top"><span class="card-num">#006</span></div>
+        <h2>HueDrop</h2>
+        <p>Discover and copy random colors.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./007-password-gen/" data-name="keyforge password generator secure">
+        <div class="card-top"><span class="card-num">#007</span></div>
+        <h2>KeyForge</h2>
+        <p>Strong passwords in one click.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./008-countdown/" data-name="tickdown countdown timer">
+        <div class="card-top"><span class="card-num">#008</span></div>
+        <h2>TickDown</h2>
+        <p>Count down to any moment.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./009-pomodoro/" data-name="focustomato pomodoro focus 25">
+        <div class="card-top"><span class="card-num">#009</span></div>
+        <h2>FocusTomato</h2>
+        <p>25-minute focus sessions.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./010-tip-calc/" data-name="tipquick tip calculator bill split">
+        <div class="card-top"><span class="card-num">#010</span></div>
+        <h2>TipQuick</h2>
+        <p>Split the bill and calculate tips.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./011-compliment/" data-name="brighten compliment kindness">
+        <div class="card-top"><span class="card-num">#011</span></div>
+        <h2>Brighten</h2>
+        <p>A compliment when you need one.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./012-magic-8ball/" data-name="oracle8 magic 8 ball">
+        <div class="card-top"><span class="card-num">#012</span></div>
+        <h2>Oracle8</h2>
+        <p>Shake the ball. Know the truth.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./013-rps/" data-name="rps rock paper scissors game">
+        <div class="card-top"><span class="card-num">#013</span></div>
+        <h2>RPS Arena</h2>
+        <p>Rock, paper, scissors vs CPU.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./014-lucky-number/" data-name="luckydraw random number">
+        <div class="card-top"><span class="card-num">#014</span></div>
+        <h2>LuckyDraw</h2>
+        <p>Random number in your range.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./015-word-counter/" data-name="wordscope word counter reading">
+        <div class="card-top"><span class="card-num">#015</span></div>
+        <h2>WordScope</h2>
+        <p>Words, characters, reading time.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./016-stopwatch/" data-name="swiftlap stopwatch lap timer">
+        <div class="card-top"><span class="card-num">#016</span></div>
+        <h2>SwiftLap</h2>
+        <p>Stopwatch with lap times.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./017-breathing/" data-name="breatheflow breathing 478 calm">
+        <div class="card-top"><span class="card-num">#017</span></div>
+        <h2>BreatheFlow</h2>
+        <p>4-7-8 guided calm breathing.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./018-spin-wheel/" data-name="spinpick spin wheel decide">
+        <div class="card-top"><span class="card-num">#018</span></div>
+        <h2>SpinPick</h2>
+        <p>Add options, spin to decide.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./019-unit-convert/" data-name="metricmate km miles convert">
+        <div class="card-top"><span class="card-num">#019</span></div>
+        <h2>MetricMate</h2>
+        <p>Kilometers ↔ miles converter.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./020-mood-picker/" data-name="moodmap mood tracker feelings">
+        <div class="card-top"><span class="card-num">#020</span></div>
+        <h2>MoodMap</h2>
+        <p>Name your mood, log the moment.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./021-name-picker/" data-name="namehat random winner picker">
+        <div class="card-top"><span class="card-num">#021</span></div>
+        <h2>NameHat</h2>
+        <p>Pick a random name from your list.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./022-gratitude/" data-name="thankdrop gratitude journal notes">
+        <div class="card-top"><span class="card-num">#022</span></div>
+        <h2>ThankDrop</h2>
+        <p>Write and save gratitude notes.</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+    </div>
+
+    <section class="support" id="support">
+      <h2>Enjoying these tools?</h2>
+      <p>Tips fund more free sites, docs, and hosting. Every amount helps the challenge reach 1000.</p>
+      <div class="support-actions">
+        <a class="btn btn--paypal" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">paypal.me/RajeevSewbalak</a>
+        <a class="btn btn--github" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        <a href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites">Vibe-Code-1000-websites</a>
+        · Idea → code → deploy → repeat
+        · <a href="./README.md">README</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="hub.js"></script>
+</body>
+</html>

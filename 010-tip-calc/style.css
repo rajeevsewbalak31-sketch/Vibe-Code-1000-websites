@@ -1,0 +1,4 @@
+@import url("../_shared/base.css");
+:root { --accent: #27ae60; --accent-2: #82e0aa; --accent-glow: #27ae6059; }
+.input { width: 100%; padding: 0.5rem; margin-top: 0.25rem; border-radius: 0.5rem; border: 1px solid var(--border); background: rgba(0,0,0,.25); color: var(--text); }
+label { display: block; margin-bottom: 0.75rem; font-size: 0.85rem; color: var(--text-muted); }

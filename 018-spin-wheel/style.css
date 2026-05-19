@@ -1,0 +1,3 @@
+@import url("../_shared/base.css");
+:root { --accent: #e84393; --accent-2: #f8b4d9; --accent-glow: #e8439359; }
+.textarea { width: 100%; min-height: 5rem; padding: 0.75rem; border-radius: 0.75rem; border: 1px solid var(--border); background: rgba(0,0,0,.25); color: var(--text); margin-bottom: 1rem; }

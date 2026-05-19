@@ -1,0 +1,4 @@
+@import url("../_shared/base.css");
+:root { --accent: #2980b9; --accent-2: #7fb3d5; --accent-glow: #2980b959; }
+.btn--ghost { padding: 0.65rem 1rem; margin-left: 0.5rem; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,.08); color: var(--text); cursor: pointer; }
+.laps { list-style: none; margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); max-height: 6rem; overflow-y: auto; }

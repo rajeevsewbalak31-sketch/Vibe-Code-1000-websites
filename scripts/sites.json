@@ -1,0 +1,22 @@
+[
+  { "id": "003", "slug": "coin-flip", "name": "FlipCoin", "tagline": "Heads or tails — fate in one tap", "accent": "#f4d03f", "accent2": "#f9e79f", "logic": "coin-flip" },
+  { "id": "004", "slug": "dice-roll", "name": "RollDice", "tagline": "Roll one or many dice instantly", "accent": "#e74c3c", "accent2": "#f5b7b1", "logic": "dice-roll" },
+  { "id": "005", "slug": "yes-or-no", "name": "YesNo", "tagline": "When you need a decisive answer", "accent": "#9b59b6", "accent2": "#d7bde2", "logic": "yes-or-no" },
+  { "id": "006", "slug": "random-color", "name": "HueDrop", "tagline": "Discover your next palette color", "accent": "#1abc9c", "accent2": "#76d7c4", "logic": "random-color" },
+  { "id": "007", "slug": "password-gen", "name": "KeyForge", "tagline": "Strong passwords in one click", "accent": "#3498db", "accent2": "#85c1e9", "logic": "password-gen" },
+  { "id": "008", "slug": "countdown", "name": "TickDown", "tagline": "Count down to any moment", "accent": "#e67e22", "accent2": "#f5cba7", "logic": "countdown" },
+  { "id": "009", "slug": "pomodoro", "name": "FocusTomato", "tagline": "25 minutes of deep focus", "accent": "#c0392b", "accent2": "#f1948a", "logic": "pomodoro" },
+  { "id": "010", "slug": "tip-calc", "name": "TipQuick", "tagline": "Split the bill like a pro", "accent": "#27ae60", "accent2": "#82e0aa", "logic": "tip-calc" },
+  { "id": "011", "slug": "compliment", "name": "Brighten", "tagline": "A compliment when you need one", "accent": "#fd79a8", "accent2": "#fab1c9", "logic": "compliment" },
+  { "id": "012", "slug": "magic-8ball", "name": "Oracle8", "tagline": "Shake the ball. Know the truth.", "accent": "#2c3e50", "accent2": "#85929e", "logic": "magic-8ball" },
+  { "id": "013", "slug": "rps", "name": "RPS Arena", "tagline": "Rock, paper, scissors — you vs CPU", "accent": "#16a085", "accent2": "#73c6b6", "logic": "rps" },
+  { "id": "014", "slug": "lucky-number", "name": "LuckyDraw", "tagline": "Your random number awaits", "accent": "#f39c12", "accent2": "#f8c471", "logic": "lucky-number" },
+  { "id": "015", "slug": "word-counter", "name": "WordScope", "tagline": "Count words, chars, and reading time", "accent": "#8e44ad", "accent2": "#bb8fce", "logic": "word-counter" },
+  { "id": "016", "slug": "stopwatch", "name": "SwiftLap", "tagline": "Lap times with millisecond flair", "accent": "#2980b9", "accent2": "#7fb3d5", "logic": "stopwatch" },
+  { "id": "017", "slug": "breathing", "name": "BreatheFlow", "tagline": "4-7-8 calm in guided cycles", "accent": "#5dade2", "accent2": "#aed6f1", "logic": "breathing" },
+  { "id": "018", "slug": "spin-wheel", "name": "SpinPick", "tagline": "Add options, spin to decide", "accent": "#e84393", "accent2": "#f8b4d9", "logic": "spin-wheel" },
+  { "id": "019", "slug": "unit-convert", "name": "MetricMate", "tagline": "Kilometers ↔ miles in a snap", "accent": "#48c9b0", "accent2": "#a3e4d7", "logic": "unit-convert" },
+  { "id": "020", "slug": "mood-picker", "name": "MoodMap", "tagline": "Name your mood, save the moment", "accent": "#af7ac5", "accent2": "#d2b4de", "logic": "mood-picker" },
+  { "id": "021", "slug": "name-picker", "name": "NameHat", "tagline": "Pick a random winner from your list", "accent": "#58d68d", "accent2": "#abebc6", "logic": "name-picker" },
+  { "id": "022", "slug": "gratitude", "name": "ThankDrop", "tagline": "Write gratitude, send good vibes", "accent": "#f5b041", "accent2": "#fad7a0", "logic": "gratitude" }
+]

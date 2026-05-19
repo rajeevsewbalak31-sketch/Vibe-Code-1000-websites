@@ -1,0 +1,3 @@
+@import url("../_shared/base.css");
+:root { --accent: #c0392b; --accent-2: #f1948a; --accent-glow: #c0392b59; }
+.btn--ghost { color: var(--text); background: rgba(255,255,255,.08); border: 1px solid var(--border); padding: 0.85rem 1.25rem; border-radius: 999px; cursor: pointer; margin-left: 0.5rem; }

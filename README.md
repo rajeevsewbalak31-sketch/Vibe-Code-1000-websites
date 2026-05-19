@@ -5,7 +5,7 @@
 [![PayPal](https://img.shields.io/badge/PayPal-Tip-blue?style=for-the-badge)](https://paypal.me/RajeevSewbalak)
 [![GitHub](https://img.shields.io/badge/GitHub-Vibe--Code--1000--websites-181717?style=for-the-badge&logo=github)](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
 
-Building **1000** small, useful websites — vibe code → deploy free → repeat.
+**Vision:** Idea → Code → Deploy (free) → Repeat → Collect payments → Showcase
 
 ## Progress
 
@@ -24,7 +24,7 @@ Building **1000** small, useful websites — vibe code → deploy free → repea
 | 002 | Quotely | [quotely.vercel.app](https://quotely.vercel.app) |
 | 003–022 | FlipCoin … ThankDrop | [Browse on hub](https://websites-eosin-delta.vercel.app) |
 
-## All sites (local paths)
+## All sites (folders)
 
 | # | Folder | Name | Stack |
 |---|--------|------|-------|
@@ -51,9 +51,18 @@ Building **1000** small, useful websites — vibe code → deploy free → repea
 | 021 | [021-name-picker](./021-name-picker/) | NameHat | HTML/CSS/JS |
 | 022 | [022-gratitude](./022-gratitude/) | ThankDrop | HTML/CSS/JS |
 
+## Documentation
+
+- [Deployment guide](./docs/deployment-guide.md)
+- [Free hosting options](./docs/free-hosting-options.md)
+- [Tech stack](./docs/tech-stack.md)
+- [Workflow](./docs/workflow.md)
+- [Support / donations](./SUPPORT.md)
+- [GitHub setup notes](./GITHUB.md)
+
 ## Run locally
 
-**Hub:** open [`index.html`](./index.html) or run a static server in this folder.
+**Hub:** open [`index.html`](./index.html)
 
 **Site #001 (Next.js):**
 
@@ -65,25 +74,24 @@ npm run dev
 
 ## Deploy
 
-Already on Vercel. To redeploy:
-
 ```bash
-# Hub + static sites 003–022
 npx vercel deploy --prod
-
-# Buy a Square (from 001-buy-a-square/)
 cd 001-buy-a-square && npx vercel deploy --prod
 ```
 
-Connect this repo in [Vercel](https://vercel.com) → Import Git → root = `.` for auto-deploy on push.
+Connect this repo in [Vercel](https://vercel.com) for auto-deploy on push.
 
 ## Add more sites
 
-1. Add entries to [`scripts/sites.json`](./scripts/sites.json)
-2. Run [`RUN-BUILD.cmd`](./RUN-BUILD.cmd) or `powershell -File scripts/build-all.ps1`
-3. Add a card in [`index.html`](./index.html) (hub)
+1. Edit [`scripts/sites.json`](./scripts/sites.json)
+2. Run [`RUN-BUILD.cmd`](./RUN-BUILD.cmd)
+3. Add a card in [`index.html`](./index.html)
 4. Commit and push
 
 ## Support
 
-Tips help build the next sites: **[paypal.me/RajeevSewbalak](https://paypal.me/RajeevSewbalak)**
+**[paypal.me/RajeevSewbalak](https://paypal.me/RajeevSewbalak)** · See [SUPPORT.md](./SUPPORT.md)
+
+MIT License — see [LICENSE](./LICENSE)
+
+*Project: [rajeevsewbalak31-sketch](https://github.com/rajeevsewbalak31-sketch)*

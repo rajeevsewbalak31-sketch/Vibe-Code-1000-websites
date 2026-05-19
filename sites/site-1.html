@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website #1</title>
+    <meta name="description" content="A beautiful website created with Vibe Code 1000.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .content h2 {
+            color: #667eea;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .content {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/">← Back to Gallery</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Website #1</h1>
+            <p>A beautiful website created with Vibe Code 1000 - Building amazing experiences, one site at a time.</p>
+            <a href="https://paypal.me/RajeevSewbalak" class="cta-button" target="_blank">💳 Support This Project</a>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2>Welcome to Website #1</h2>
+        <p>
+            This is the first website in the Vibe Code 1000 collection. Each website in this series is uniquely designed 
+            and crafted to showcase different concepts, styles, and functionalities.
+        </p>
+
+        <h2>Features</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <h3>🎨 Modern Design</h3>
+                <p>Clean, contemporary aesthetics with smooth transitions and responsive layouts that work on all devices.</p>
+            </div>
+            <div class="feature">
+                <h3>⚡ Fast Performance</h3>
+                <p>Optimized for speed with minimal dependencies and efficient code structure for instant loading.</p>
+            </div>
+            <div class="feature">
+                <h3>💻 Responsive</h3>
+                <p>Perfectly adapted for desktop, tablet, and mobile devices with flexible CSS Grid and Flexbox layouts.</p>
+            </div>
+            <div class="feature">
+                <h3>♿ Accessible</h3>
+                <p>Built with accessibility in mind, following WCAG guidelines for semantic HTML and keyboard navigation.</p>
+            </div>
+            <div class="feature">
+                <h3>🚀 Easy to Deploy</h3>
+                <p>Ready to deploy on any platform: GitHub Pages, Vercel, Netlify, or traditional hosting servers.</p>
+            </div>
+            <div class="feature">
+                <h3>💝 Open Source</h3>
+                <p>Part of the Vibe Code 1000 project. Free to use, modify, and share under the MIT License.</p>
+            </div>
+        </div>
+
+        <h2>About Vibe Code 1000</h2>
+        <p>
+            Vibe Code 1000 is an ambitious project to create 1000 unique, beautiful websites throughout the summer. 
+            Each website is a standalone project that can be deployed independently, showcasing different design patterns, 
+            technologies, and ideas.
+        </p>
+
+        <p>
+            Whether you're learning web development, looking for inspiration, or exploring new design concepts, 
+            the Vibe Code 1000 collection offers something for everyone.
+        </p>
+
+        <h2>Support This Project</h2>
+        <p>
+            If you enjoy this website and appreciate the work that goes into creating these sites, 
+            consider supporting the project with a donation. Your support helps fund hosting, development tools, 
+            and allows us to keep creating amazing websites.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <a href="https://paypal.me/RajeevSewbalak" class="cta-button" target="_blank">💳 Donate on PayPal</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="margin-bottom: 1rem;">Website #1 - Vibe Code 1000</h3>
+        <p>
+            <a href="/">← Back to Gallery</a> | 
+            <a href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites" target="_blank">GitHub</a> | 
+            <a href="https://www.paypal.com/paypalme/RajeevSewbalak" target="_blank">PayPal</a>
+        </p>
+        <p style="margin-top: 2rem; color: #666; font-size: 0.9rem;">
+            © 2026 Vibe Code 1000. Created with 💜. MIT License.
+        </p>
+    </footer>
+</body>
+</html>

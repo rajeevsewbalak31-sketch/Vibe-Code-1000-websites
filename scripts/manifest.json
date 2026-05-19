@@ -1,0 +1,104 @@
+{
+  "goal": 1000,
+  "phase2Target": 100,
+  "hubUrl": "https://websites-eosin-delta.vercel.app",
+  "paypal": "https://paypal.me/RajeevSewbalak",
+  "spotlight": ["001", "002", "007", "009", "013"],
+  "featured": [
+    {
+      "id": "001",
+      "slug": "buy-a-square",
+      "name": "Buy a Square",
+      "tagline": "10×10 grid — pick a square, pay €1 via PayPal.",
+      "href": "https://001-buy-a-square.vercel.app",
+      "live": true,
+      "category": "landing-pages",
+      "search": "buy a square grid paypal euro landing"
+    },
+    {
+      "id": "002",
+      "slug": "random-quote",
+      "name": "Quotely",
+      "tagline": "Random quotes — copy, share, get inspired.",
+      "href": "https://quotely.vercel.app",
+      "live": true,
+      "category": "tools",
+      "search": "quotely quotes random wisdom"
+    }
+  ],
+  "monetization": {
+    "tipPresets": [5, 10, 25, 50],
+    "sponsorInquiry": "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=sponsor",
+    "micrositeInquiry": "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=enhancement",
+    "sponsors": [
+      {
+        "name": "Your brand here",
+        "tagline": "Reach builders browsing 100+ free tools",
+        "href": "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=sponsor&title=Sponsor%20inquiry",
+        "cta": "Advertise from €25/wk",
+        "placeholder": true
+      },
+      {
+        "name": "Sponsor slot #2",
+        "tagline": "Logo + link in this gallery strip",
+        "href": "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=sponsor&title=Sponsor%20slot%202",
+        "cta": "Reserve slot",
+        "placeholder": true
+      },
+      {
+        "name": "Sponsor slot #3",
+        "tagline": "Featured tool of the week (coming soon)",
+        "href": "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=sponsor&title=Sponsor%20slot%203",
+        "cta": "Reserve slot",
+        "placeholder": true
+      }
+    ],
+    "starterPrice": 49,
+    "microsites": [
+      {
+        "id": "starter",
+        "name": "Starter",
+        "price": "€49",
+        "period": "one-time",
+        "badge": "Most chosen",
+        "features": [
+          "Live on Vercel in 24 hours",
+          "Your name, colors & copy",
+          "Listed in the public gallery",
+          "PayPal tips built in"
+        ],
+        "ctaPay": "Pay €49 — start now",
+        "ctaAsk": "Ask a question first",
+        "highlight": true
+      },
+      {
+        "id": "pro",
+        "name": "Pro",
+        "price": "€149",
+        "period": "one-time",
+        "features": [
+          "Custom tool logic or layout",
+          "SEO + conversion-focused copy",
+          "1 revision included"
+        ],
+        "ctaPay": "Pay €149 deposit",
+        "ctaAsk": "Request Pro",
+        "highlight": false
+      },
+      {
+        "id": "flagship",
+        "name": "Flagship",
+        "price": "€499+",
+        "period": "project",
+        "features": [
+          "Next.js app (payments, grids)",
+          "Like Buy a Square",
+          "Priority delivery"
+        ],
+        "ctaPay": "Book flagship",
+        "ctaAsk": "Discuss scope",
+        "highlight": false
+      }
+    ]
+  }
+}

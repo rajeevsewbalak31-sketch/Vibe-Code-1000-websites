@@ -3,13 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="1000 Websites Challenge — 22 free mini-tools by Rajeev Sewbalak. Flip coins, passwords, pomodoros, and more. Tip via PayPal." />
+  <meta name="description" content="100 free mini tools — games, utilities, experiments &amp; more. Built with Vibe Code 1000. Tip via PayPal." />
+  <meta name="keywords" content="free web tools, mini apps, randomizer, pomodoro, password generator, 1000 websites" />
+  <meta name="author" content="Rajeev Sewbalak" />
+  <link rel="canonical" href="https://websites-eosin-delta.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://websites-eosin-delta.vercel.app/" />
+  <meta property="og:title" content="1000 Websites Challenge — Hub" />
+  <meta property="og:description" content="100 free mini tools — games, utilities, experiments &amp; more. Built with Vibe Code 1000. Tip via PayPal." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="1000 Websites Challenge — Hub" />
+  <meta name="twitter:description" content="100 free mini tools — games, utilities, experiments &amp; more. Built with Vibe Code 1000. Tip via PayPal." />
   <title>1000 Websites Challenge — Hub</title>
+  <script type="application/ld+json" id="json-ld">{"@context":"https://schema.org","@type":"WebSite","name":"Vibe Code 1000","alternateName":"1000 Websites Challenge","url":"https://websites-eosin-delta.vercel.app","description":"100 free mini web tools — built by a site generation engine.","author":{"@type":"Person","name":"Rajeev Sewbalak"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="hub.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>1000</text></svg>" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 </head>
 <body>
   <div class="bg" aria-hidden="true">
@@ -24,214 +36,955 @@
         <span class="brand-text">1000 Websites</span>
       </a>
       <div class="top-actions">
-        <a class="btn btn--github" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites" target="_blank" rel="noopener noreferrer">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.88.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-          GitHub
-        </a>
-        <a class="btn btn--paypal" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">Tip on PayPal</a>
+        <a class="btn btn--buy" href="#get-a-site">Get your own website (€49)</a>
+        <a class="btn btn--ghost btn--sm" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">Tip</a>
       </div>
     </header>
 
     <section class="hero">
-      <p class="hero-eyebrow">Vibe Code · Deploy free · Repeat</p>
+      <p class="hero-eyebrow">100 websites built · 24-hour turnaround · From €49</p>
       <h1>1000 Websites Challenge</h1>
       <p class="hero-lead">
-        A growing collection of small, useful web tools — each free to use, each with an optional tip jar.
-        Built in public on GitHub.
+        Browse 100 free tools — or <strong>get your own site built and deployed</strong> with the same engine.
       </p>
+      <ul class="trust-bar trust-bar--hero" aria-label="Trust signals">
+        <li><span class="trust-num">100</span> websites built</li>
+        <li><span class="trust-num">24h</span> turnaround</li>
+        <li>Starting at <span class="trust-num">€49</span></li>
+      </ul>
       <div class="progress-wrap">
         <div class="progress-label">
           <span>Progress</span>
-          <span><strong id="progress-count">22</strong> / 1000</span>
+          <span><strong id="progress-count">100</strong> / 1000</span>
         </div>
-        <div class="progress-bar" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="1000" aria-label="Sites completed">
+        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="1000" aria-label="Sites completed">
           <div class="progress-fill" id="progress-fill"></div>
         </div>
       </div>
       <div class="hero-cta">
-        <a class="btn btn--paypal" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">Support the project</a>
-        <a class="btn btn--github" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <a class="btn btn--buy btn--lg" href="#get-a-site">Get your own website (€49)</a>
+        <a class="btn btn--ghost" href="#site-grid">Browse free tools</a>
       </div>
     </section>
 
-    <div class="toolbar">
-      <input type="search" class="search" id="search" placeholder="Search tools… (e.g. password, dice, mood)" autocomplete="off" />
-      <span class="count-pill" id="visible-count">22 sites</span>
-    </div>
-
-    <div class="grid" id="site-grid">
-      <a class="card" href="https://001-buy-a-square.vercel.app" target="_blank" rel="noopener" data-name="buy a square grid paypal euro">
+    <section class="featured" aria-labelledby="featured-heading">
+      <div class="featured-head">
+        <h2 id="featured-heading" class="section-title">⭐ Featured — start here</h2>
+        <p class="section-lead">Hand-picked favorites — or <a href="#get-a-site" class="inline-cta">get your own from €49</a>.</p>
+      </div>
+      <div class="featured-scroll" id="featured-strip">
+    <!-- FEATURED_STRIP_START -->
+      <a class="card card--compact" href="https://001-buy-a-square.vercel.app" target="_blank" rel="noopener" data-category="landing-pages" data-sort-id="001" data-popular="0" data-featured="true" data-name="buy a square grid paypal euro landing">
         <div class="card-top"><span class="card-num">#001</span><span class="badge">Live</span></div>
         <h2>Buy a Square</h2>
         <p>10×10 grid — pick a square, pay €1 via PayPal.</p>
         <span class="card-foot">001-buy-a-square.vercel.app →</span>
       </a>
 
-      <a class="card" href="https://quotely.vercel.app" target="_blank" rel="noopener" data-name="quotely quotes random wisdom">
+      <a class="card card--compact" href="https://quotely.vercel.app" target="_blank" rel="noopener" data-category="tools" data-sort-id="002" data-popular="1" data-featured="true" data-name="quotely quotes random wisdom">
         <div class="card-top"><span class="card-num">#002</span><span class="badge">Live</span></div>
         <h2>Quotely</h2>
         <p>Random quotes — copy, share, get inspired.</p>
         <span class="card-foot">quotely.vercel.app →</span>
       </a>
 
-      <a class="card" href="./003-coin-flip/" data-name="flipcoin coin flip heads tails">
-        <div class="card-top"><span class="card-num">#003</span></div>
-        <h2>FlipCoin</h2>
-        <p>Heads or tails in one tap.</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card" href="./004-dice-roll/" data-name="rolldice dice roll random">
-        <div class="card-top"><span class="card-num">#004</span></div>
-        <h2>RollDice</h2>
-        <p>Roll one to six dice instantly.</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card" href="./005-yes-or-no/" data-name="yes no oracle decision">
-        <div class="card-top"><span class="card-num">#005</span></div>
-        <h2>YesNo</h2>
-        <p>When you need a decisive answer.</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card" href="./006-random-color/" data-name="huedrop color palette hex">
-        <div class="card-top"><span class="card-num">#006</span></div>
-        <h2>HueDrop</h2>
-        <p>Discover and copy random colors.</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card" href="./007-password-gen/" data-name="keyforge password generator secure">
+      <a class="card card--compact" href="./007-password-gen/" data-category="utilities" data-sort-id="007" data-popular="2" data-featured="true" data-name="password-gen keyforge password-gen">
         <div class="card-top"><span class="card-num">#007</span></div>
         <h2>KeyForge</h2>
-        <p>Strong passwords in one click.</p>
+        <p>Strong passwords in one click</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./008-countdown/" data-name="tickdown countdown timer">
-        <div class="card-top"><span class="card-num">#008</span></div>
-        <h2>TickDown</h2>
-        <p>Count down to any moment.</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card" href="./009-pomodoro/" data-name="focustomato pomodoro focus 25">
+      <a class="card card--compact" href="./009-pomodoro/" data-category="utilities" data-sort-id="009" data-popular="3" data-featured="true" data-name="pomodoro focustomato pomodoro">
         <div class="card-top"><span class="card-num">#009</span></div>
         <h2>FocusTomato</h2>
-        <p>25-minute focus sessions.</p>
+        <p>25 minutes of deep focus</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./010-tip-calc/" data-name="tipquick tip calculator bill split">
+      <a class="card card--compact" href="./013-rps/" data-category="games" data-sort-id="013" data-popular="4" data-featured="true" data-name="rps rps arena rps">
+        <div class="card-top"><span class="card-num">#013</span></div>
+        <h2>RPS Arena</h2>
+        <p>Rock, paper, scissors — you vs CPU</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+    <!-- FEATURED_STRIP_END -->
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <input type="search" class="search" id="search" placeholder="Search tools… (e.g. password, dice, mood)" autocomplete="off" aria-label="Search tools" />
+      <div class="filters" id="category-filters" role="group" aria-label="Filter by category">
+    <!-- CATEGORY_FILTERS_START -->
+        <button type="button" class="filter is-active" data-category="all">All</button>
+        <button type="button" class="filter" data-category="featured">Featured</button>
+        <button type="button" class="filter" data-category="tools">Tools</button>
+        <button type="button" class="filter" data-category="games">Games</button>
+        <button type="button" class="filter" data-category="utilities">Utilities</button>
+        <button type="button" class="filter" data-category="landing-pages">Landing Pages</button>
+        <button type="button" class="filter" data-category="experiments">Experiments</button>
+    <!-- CATEGORY_FILTERS_END -->
+      </div>
+      <label class="sort-wrap">
+        <span class="sort-label">Sort</span>
+        <select id="sort" class="sort-select" aria-label="Sort sites">
+          <option value="default">Default (#001→)</option>
+          <option value="newest">Newest first</option>
+          <option value="popular">Popular</option>
+        </select>
+      </label>
+      <span class="count-pill" id="visible-count">100 sites</span>
+    </div>
+
+    <div class="grid" id="site-grid">
+    <!-- SITE_GRID_START -->
+      <a class="card" href="https://001-buy-a-square.vercel.app" target="_blank" rel="noopener" data-category="landing-pages" data-sort-id="001" data-popular="0" data-featured="true" data-name="buy a square grid paypal euro landing">
+        <div class="card-top"><span class="card-num">#001</span><span class="badge">Live</span></div>
+        <h2>Buy a Square</h2>
+        <p>10×10 grid — pick a square, pay €1 via PayPal.</p>
+        <span class="card-foot">001-buy-a-square.vercel.app →</span>
+      </a>
+
+      <a class="card" href="https://quotely.vercel.app" target="_blank" rel="noopener" data-category="tools" data-sort-id="002" data-popular="1" data-featured="true" data-name="quotely quotes random wisdom">
+        <div class="card-top"><span class="card-num">#002</span><span class="badge">Live</span></div>
+        <h2>Quotely</h2>
+        <p>Random quotes — copy, share, get inspired.</p>
+        <span class="card-foot">quotely.vercel.app →</span>
+      </a>
+
+      <a class="card" href="./003-coin-flip/" data-category="games" data-sort-id="003" data-popular="999" data-name="coin-flip flipcoin coin-flip">
+        <div class="card-top"><span class="card-num">#003</span></div>
+        <h2>FlipCoin</h2>
+        <p>Heads or tails — fate in one tap</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./004-dice-roll/" data-category="games" data-sort-id="004" data-popular="999" data-name="dice-roll rolldice dice-roll">
+        <div class="card-top"><span class="card-num">#004</span></div>
+        <h2>RollDice</h2>
+        <p>Roll one or many dice instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./005-yes-or-no/" data-category="games" data-sort-id="005" data-popular="999" data-name="yes-or-no yesno yes-or-no">
+        <div class="card-top"><span class="card-num">#005</span></div>
+        <h2>YesNo</h2>
+        <p>When you need a decisive answer</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./006-random-color/" data-category="tools" data-sort-id="006" data-popular="999" data-name="random-color huedrop random-color">
+        <div class="card-top"><span class="card-num">#006</span></div>
+        <h2>HueDrop</h2>
+        <p>Discover your next palette color</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./007-password-gen/" data-category="utilities" data-sort-id="007" data-popular="2" data-featured="true" data-name="password-gen keyforge password-gen">
+        <div class="card-top"><span class="card-num">#007</span></div>
+        <h2>KeyForge</h2>
+        <p>Strong passwords in one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./008-countdown/" data-category="utilities" data-sort-id="008" data-popular="999" data-name="countdown tickdown countdown">
+        <div class="card-top"><span class="card-num">#008</span></div>
+        <h2>TickDown</h2>
+        <p>Count down to any moment</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./009-pomodoro/" data-category="utilities" data-sort-id="009" data-popular="3" data-featured="true" data-name="pomodoro focustomato pomodoro">
+        <div class="card-top"><span class="card-num">#009</span></div>
+        <h2>FocusTomato</h2>
+        <p>25 minutes of deep focus</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./010-tip-calc/" data-category="utilities" data-sort-id="010" data-popular="999" data-name="tip-calc tipquick tip-calc">
         <div class="card-top"><span class="card-num">#010</span></div>
         <h2>TipQuick</h2>
-        <p>Split the bill and calculate tips.</p>
+        <p>Split the bill like a pro</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./011-compliment/" data-name="brighten compliment kindness">
+      <a class="card" href="./011-compliment/" data-category="tools" data-sort-id="011" data-popular="999" data-name="compliment brighten compliment">
         <div class="card-top"><span class="card-num">#011</span></div>
         <h2>Brighten</h2>
-        <p>A compliment when you need one.</p>
+        <p>A compliment when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./012-magic-8ball/" data-name="oracle8 magic 8 ball">
+      <a class="card" href="./012-magic-8ball/" data-category="games" data-sort-id="012" data-popular="999" data-name="magic-8ball oracle8 magic-8ball">
         <div class="card-top"><span class="card-num">#012</span></div>
         <h2>Oracle8</h2>
         <p>Shake the ball. Know the truth.</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./013-rps/" data-name="rps rock paper scissors game">
+      <a class="card" href="./013-rps/" data-category="games" data-sort-id="013" data-popular="4" data-featured="true" data-name="rps rps arena rps">
         <div class="card-top"><span class="card-num">#013</span></div>
         <h2>RPS Arena</h2>
-        <p>Rock, paper, scissors vs CPU.</p>
+        <p>Rock, paper, scissors — you vs CPU</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./014-lucky-number/" data-name="luckydraw random number">
+      <a class="card" href="./014-lucky-number/" data-category="games" data-sort-id="014" data-popular="999" data-name="lucky-number luckydraw lucky-number">
         <div class="card-top"><span class="card-num">#014</span></div>
         <h2>LuckyDraw</h2>
-        <p>Random number in your range.</p>
+        <p>Your random number awaits</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./015-word-counter/" data-name="wordscope word counter reading">
+      <a class="card" href="./015-word-counter/" data-category="utilities" data-sort-id="015" data-popular="999" data-name="word-counter wordscope word-counter">
         <div class="card-top"><span class="card-num">#015</span></div>
         <h2>WordScope</h2>
-        <p>Words, characters, reading time.</p>
+        <p>Count words, chars, and reading time</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./016-stopwatch/" data-name="swiftlap stopwatch lap timer">
+      <a class="card" href="./016-stopwatch/" data-category="utilities" data-sort-id="016" data-popular="999" data-name="stopwatch swiftlap stopwatch">
         <div class="card-top"><span class="card-num">#016</span></div>
         <h2>SwiftLap</h2>
-        <p>Stopwatch with lap times.</p>
+        <p>Lap times with millisecond flair</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./017-breathing/" data-name="breatheflow breathing 478 calm">
+      <a class="card" href="./017-breathing/" data-category="utilities" data-sort-id="017" data-popular="999" data-name="breathing breatheflow breathing">
         <div class="card-top"><span class="card-num">#017</span></div>
         <h2>BreatheFlow</h2>
-        <p>4-7-8 guided calm breathing.</p>
+        <p>4-7-8 calm in guided cycles</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./018-spin-wheel/" data-name="spinpick spin wheel decide">
+      <a class="card" href="./018-spin-wheel/" data-category="games" data-sort-id="018" data-popular="999" data-name="spin-wheel spinpick spin-wheel">
         <div class="card-top"><span class="card-num">#018</span></div>
         <h2>SpinPick</h2>
-        <p>Add options, spin to decide.</p>
+        <p>Add options, spin to decide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./019-unit-convert/" data-name="metricmate km miles convert">
+      <a class="card" href="./019-unit-convert/" data-category="utilities" data-sort-id="019" data-popular="999" data-name="unit-convert metricmate unit-convert">
         <div class="card-top"><span class="card-num">#019</span></div>
         <h2>MetricMate</h2>
-        <p>Kilometers ↔ miles converter.</p>
+        <p>Kilometers ↔ miles in a snap</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./020-mood-picker/" data-name="moodmap mood tracker feelings">
+      <a class="card" href="./020-mood-picker/" data-category="tools" data-sort-id="020" data-popular="999" data-name="mood-picker moodmap mood-picker">
         <div class="card-top"><span class="card-num">#020</span></div>
         <h2>MoodMap</h2>
-        <p>Name your mood, log the moment.</p>
+        <p>Name your mood, save the moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./021-name-picker/" data-name="namehat random winner picker">
+      <a class="card" href="./021-name-picker/" data-category="tools" data-sort-id="021" data-popular="999" data-name="name-picker namehat name-picker">
         <div class="card-top"><span class="card-num">#021</span></div>
         <h2>NameHat</h2>
-        <p>Pick a random name from your list.</p>
+        <p>Pick a random winner from your list</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./022-gratitude/" data-name="thankdrop gratitude journal notes">
+      <a class="card" href="./022-gratitude/" data-category="tools" data-sort-id="022" data-popular="999" data-name="gratitude thankdrop gratitude">
         <div class="card-top"><span class="card-num">#022</span></div>
         <h2>ThankDrop</h2>
-        <p>Write and save gratitude notes.</p>
+        <p>Write gratitude, send good vibes</p>
         <span class="card-foot">Open site →</span>
       </a>
+
+      <a class="card" href="./023-swiftlab/" data-category="experiments" data-sort-id="023" data-popular="999" data-name="swiftlab swiftlab coin-flip">
+        <div class="card-top"><span class="card-num">#023</span></div>
+        <h2>SwiftLab</h2>
+        <p>Heads or tails — fate in one tap</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./024-novalab/" data-category="experiments" data-sort-id="024" data-popular="999" data-name="novalab novalab dice-roll">
+        <div class="card-top"><span class="card-num">#024</span></div>
+        <h2>NovaLab</h2>
+        <p>Roll dice instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./025-echolab/" data-category="experiments" data-sort-id="025" data-popular="999" data-name="echolab echolab yes-or-no">
+        <div class="card-top"><span class="card-num">#025</span></div>
+        <h2>EchoLab</h2>
+        <p>A decisive answer when you need one</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./026-pixellab/" data-category="experiments" data-sort-id="026" data-popular="999" data-name="pixellab pixellab random-color">
+        <div class="card-top"><span class="card-num">#026</span></div>
+        <h2>PixelLab</h2>
+        <p>Discover your next palette color</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./027-zenlab/" data-category="experiments" data-sort-id="027" data-popular="999" data-name="zenlab zenlab password-gen">
+        <div class="card-top"><span class="card-num">#027</span></div>
+        <h2>ZenLab</h2>
+        <p>Strong passwords in one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./028-flashlab/" data-category="experiments" data-sort-id="028" data-popular="999" data-name="flashlab flashlab countdown">
+        <div class="card-top"><span class="card-num">#028</span></div>
+        <h2>FlashLab</h2>
+        <p>Count down to any moment</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./029-orbitlab/" data-category="experiments" data-sort-id="029" data-popular="999" data-name="orbitlab orbitlab pomodoro">
+        <div class="card-top"><span class="card-num">#029</span></div>
+        <h2>OrbitLab</h2>
+        <p>Focused work in timed bursts</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./030-pulselab/" data-category="experiments" data-sort-id="030" data-popular="999" data-name="pulselab pulselab tip-calc">
+        <div class="card-top"><span class="card-num">#030</span></div>
+        <h2>PulseLab</h2>
+        <p>Split the bill like a pro</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./031-sparklab/" data-category="experiments" data-sort-id="031" data-popular="999" data-name="sparklab sparklab compliment">
+        <div class="card-top"><span class="card-num">#031</span></div>
+        <h2>SparkLab</h2>
+        <p>A kind line when you need one</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./032-driftlab/" data-category="experiments" data-sort-id="032" data-popular="999" data-name="driftlab driftlab magic-8ball">
+        <div class="card-top"><span class="card-num">#032</span></div>
+        <h2>DriftLab</h2>
+        <p>Ask the oracle — get an answer</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./033-glidelab/" data-category="experiments" data-sort-id="033" data-popular="999" data-name="glidelab glidelab rps">
+        <div class="card-top"><span class="card-num">#033</span></div>
+        <h2>GlideLab</h2>
+        <p>Rock, paper, scissors vs CPU</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./034-prismlab/" data-category="experiments" data-sort-id="034" data-popular="999" data-name="prismlab prismlab lucky-number">
+        <div class="card-top"><span class="card-num">#034</span></div>
+        <h2>PrismLab</h2>
+        <p>Your random number awaits</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./035-fluxlab/" data-category="experiments" data-sort-id="035" data-popular="999" data-name="fluxlab fluxlab word-counter">
+        <div class="card-top"><span class="card-num">#035</span></div>
+        <h2>FluxLab</h2>
+        <p>Words, chars, and reading time</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./036-apexlab/" data-category="experiments" data-sort-id="036" data-popular="999" data-name="apexlab apexlab stopwatch">
+        <div class="card-top"><span class="card-num">#036</span></div>
+        <h2>ApexLab</h2>
+        <p>Lap times with millisecond flair</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./037-lumenlab/" data-category="experiments" data-sort-id="037" data-popular="999" data-name="lumenlab lumenlab breathing">
+        <div class="card-top"><span class="card-num">#037</span></div>
+        <h2>LumenLab</h2>
+        <p>Guided calm breathing cycles</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./038-cipherlab/" data-category="experiments" data-sort-id="038" data-popular="999" data-name="cipherlab cipherlab spin-wheel">
+        <div class="card-top"><span class="card-num">#038</span></div>
+        <h2>CipherLab</h2>
+        <p>Add options, spin to decide</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./039-runelab/" data-category="experiments" data-sort-id="039" data-popular="999" data-name="runelab runelab unit-convert">
+        <div class="card-top"><span class="card-num">#039</span></div>
+        <h2>RuneLab</h2>
+        <p>Quick unit conversion</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./040-boltlab/" data-category="experiments" data-sort-id="040" data-popular="999" data-name="boltlab boltlab mood-picker">
+        <div class="card-top"><span class="card-num">#040</span></div>
+        <h2>BoltLab</h2>
+        <p>Name your mood, save the moment</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./041-crestlab/" data-category="experiments" data-sort-id="041" data-popular="999" data-name="crestlab crestlab name-picker">
+        <div class="card-top"><span class="card-num">#041</span></div>
+        <h2>CrestLab</h2>
+        <p>Pick a random winner from your list</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./042-vividlab/" data-category="experiments" data-sort-id="042" data-popular="999" data-name="vividlab vividlab gratitude">
+        <div class="card-top"><span class="card-num">#042</span></div>
+        <h2>VividLab</h2>
+        <p>Write gratitude, send good vibes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./043-swiftbox/" data-category="experiments" data-sort-id="043" data-popular="999" data-name="swiftbox swiftbox coin-flip">
+        <div class="card-top"><span class="card-num">#043</span></div>
+        <h2>SwiftBox</h2>
+        <p>Heads or tails — fate in one tap</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./044-novabox/" data-category="experiments" data-sort-id="044" data-popular="999" data-name="novabox novabox dice-roll">
+        <div class="card-top"><span class="card-num">#044</span></div>
+        <h2>NovaBox</h2>
+        <p>Roll dice instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./045-echobox/" data-category="experiments" data-sort-id="045" data-popular="999" data-name="echobox echobox yes-or-no">
+        <div class="card-top"><span class="card-num">#045</span></div>
+        <h2>EchoBox</h2>
+        <p>A decisive answer when you need one</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./046-pixelbox/" data-category="experiments" data-sort-id="046" data-popular="999" data-name="pixelbox pixelbox random-color">
+        <div class="card-top"><span class="card-num">#046</span></div>
+        <h2>PixelBox</h2>
+        <p>Discover your next palette color</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./047-zenbox/" data-category="experiments" data-sort-id="047" data-popular="999" data-name="zenbox zenbox password-gen">
+        <div class="card-top"><span class="card-num">#047</span></div>
+        <h2>ZenBox</h2>
+        <p>Strong passwords in one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./048-flashbox/" data-category="experiments" data-sort-id="048" data-popular="999" data-name="flashbox flashbox countdown">
+        <div class="card-top"><span class="card-num">#048</span></div>
+        <h2>FlashBox</h2>
+        <p>Count down to any moment</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./049-orbitbox/" data-category="experiments" data-sort-id="049" data-popular="999" data-name="orbitbox orbitbox pomodoro">
+        <div class="card-top"><span class="card-num">#049</span></div>
+        <h2>OrbitBox</h2>
+        <p>Focused work in timed bursts</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./050-pulsebox/" data-category="experiments" data-sort-id="050" data-popular="999" data-name="pulsebox pulsebox tip-calc">
+        <div class="card-top"><span class="card-num">#050</span></div>
+        <h2>PulseBox</h2>
+        <p>Split the bill like a pro</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./051-sparkbox/" data-category="experiments" data-sort-id="051" data-popular="999" data-name="sparkbox sparkbox compliment">
+        <div class="card-top"><span class="card-num">#051</span></div>
+        <h2>SparkBox</h2>
+        <p>A kind line when you need one</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./052-driftbox/" data-category="experiments" data-sort-id="052" data-popular="999" data-name="driftbox driftbox magic-8ball">
+        <div class="card-top"><span class="card-num">#052</span></div>
+        <h2>DriftBox</h2>
+        <p>Ask the oracle — get an answer</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./053-glidebox/" data-category="experiments" data-sort-id="053" data-popular="999" data-name="glidebox glidebox rps">
+        <div class="card-top"><span class="card-num">#053</span></div>
+        <h2>GlideBox</h2>
+        <p>Rock, paper, scissors vs CPU</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./054-prismbox/" data-category="experiments" data-sort-id="054" data-popular="999" data-name="prismbox prismbox lucky-number">
+        <div class="card-top"><span class="card-num">#054</span></div>
+        <h2>PrismBox</h2>
+        <p>Your random number awaits</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./055-fluxbox/" data-category="experiments" data-sort-id="055" data-popular="999" data-name="fluxbox fluxbox word-counter">
+        <div class="card-top"><span class="card-num">#055</span></div>
+        <h2>FluxBox</h2>
+        <p>Words, chars, and reading time</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./056-apexbox/" data-category="experiments" data-sort-id="056" data-popular="999" data-name="apexbox apexbox stopwatch">
+        <div class="card-top"><span class="card-num">#056</span></div>
+        <h2>ApexBox</h2>
+        <p>Lap times with millisecond flair</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./057-lumenbox/" data-category="experiments" data-sort-id="057" data-popular="999" data-name="lumenbox lumenbox breathing">
+        <div class="card-top"><span class="card-num">#057</span></div>
+        <h2>LumenBox</h2>
+        <p>Guided calm breathing cycles</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./058-cipherbox/" data-category="experiments" data-sort-id="058" data-popular="999" data-name="cipherbox cipherbox spin-wheel">
+        <div class="card-top"><span class="card-num">#058</span></div>
+        <h2>CipherBox</h2>
+        <p>Add options, spin to decide</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./059-runebox/" data-category="experiments" data-sort-id="059" data-popular="999" data-name="runebox runebox unit-convert">
+        <div class="card-top"><span class="card-num">#059</span></div>
+        <h2>RuneBox</h2>
+        <p>Quick unit conversion</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./060-boltbox/" data-category="experiments" data-sort-id="060" data-popular="999" data-name="boltbox boltbox mood-picker">
+        <div class="card-top"><span class="card-num">#060</span></div>
+        <h2>BoltBox</h2>
+        <p>Name your mood, save the moment</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./061-crestbox/" data-category="experiments" data-sort-id="061" data-popular="999" data-name="crestbox crestbox name-picker">
+        <div class="card-top"><span class="card-num">#061</span></div>
+        <h2>CrestBox</h2>
+        <p>Pick a random winner from your list</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./062-vividbox/" data-category="experiments" data-sort-id="062" data-popular="999" data-name="vividbox vividbox gratitude">
+        <div class="card-top"><span class="card-num">#062</span></div>
+        <h2>VividBox</h2>
+        <p>Write gratitude, send good vibes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./063-swiftkit/" data-category="experiments" data-sort-id="063" data-popular="999" data-name="swiftkit swiftkit coin-flip">
+        <div class="card-top"><span class="card-num">#063</span></div>
+        <h2>SwiftKit</h2>
+        <p>Heads or tails — fate in one tap</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./064-novakit/" data-category="experiments" data-sort-id="064" data-popular="999" data-name="novakit novakit dice-roll">
+        <div class="card-top"><span class="card-num">#064</span></div>
+        <h2>NovaKit</h2>
+        <p>Roll dice instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./065-echokit/" data-category="experiments" data-sort-id="065" data-popular="999" data-name="echokit echokit yes-or-no">
+        <div class="card-top"><span class="card-num">#065</span></div>
+        <h2>EchoKit</h2>
+        <p>A decisive answer when you need one</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./066-pixelkit/" data-category="experiments" data-sort-id="066" data-popular="999" data-name="pixelkit pixelkit random-color">
+        <div class="card-top"><span class="card-num">#066</span></div>
+        <h2>PixelKit</h2>
+        <p>Discover your next palette color</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./067-zenkit/" data-category="experiments" data-sort-id="067" data-popular="999" data-name="zenkit zenkit password-gen">
+        <div class="card-top"><span class="card-num">#067</span></div>
+        <h2>ZenKit</h2>
+        <p>Strong passwords in one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./068-flashkit/" data-category="experiments" data-sort-id="068" data-popular="999" data-name="flashkit flashkit countdown">
+        <div class="card-top"><span class="card-num">#068</span></div>
+        <h2>FlashKit</h2>
+        <p>Count down to any moment</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./069-orbitkit/" data-category="experiments" data-sort-id="069" data-popular="999" data-name="orbitkit orbitkit pomodoro">
+        <div class="card-top"><span class="card-num">#069</span></div>
+        <h2>OrbitKit</h2>
+        <p>Focused work in timed bursts</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./070-pulsekit/" data-category="experiments" data-sort-id="070" data-popular="999" data-name="pulsekit pulsekit tip-calc">
+        <div class="card-top"><span class="card-num">#070</span></div>
+        <h2>PulseKit</h2>
+        <p>Split the bill like a pro</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./071-sparkkit/" data-category="experiments" data-sort-id="071" data-popular="999" data-name="sparkkit sparkkit compliment">
+        <div class="card-top"><span class="card-num">#071</span></div>
+        <h2>SparkKit</h2>
+        <p>A kind line when you need one</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./072-driftkit/" data-category="experiments" data-sort-id="072" data-popular="999" data-name="driftkit driftkit magic-8ball">
+        <div class="card-top"><span class="card-num">#072</span></div>
+        <h2>DriftKit</h2>
+        <p>Ask the oracle — get an answer</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./073-glidekit/" data-category="experiments" data-sort-id="073" data-popular="999" data-name="glidekit glidekit rps">
+        <div class="card-top"><span class="card-num">#073</span></div>
+        <h2>GlideKit</h2>
+        <p>Rock, paper, scissors vs CPU</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./074-prismkit/" data-category="experiments" data-sort-id="074" data-popular="999" data-name="prismkit prismkit lucky-number">
+        <div class="card-top"><span class="card-num">#074</span></div>
+        <h2>PrismKit</h2>
+        <p>Your random number awaits</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./075-fluxkit/" data-category="experiments" data-sort-id="075" data-popular="999" data-name="fluxkit fluxkit word-counter">
+        <div class="card-top"><span class="card-num">#075</span></div>
+        <h2>FluxKit</h2>
+        <p>Words, chars, and reading time</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./076-apexkit/" data-category="experiments" data-sort-id="076" data-popular="999" data-name="apexkit apexkit stopwatch">
+        <div class="card-top"><span class="card-num">#076</span></div>
+        <h2>ApexKit</h2>
+        <p>Lap times with millisecond flair</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./077-lumenkit/" data-category="experiments" data-sort-id="077" data-popular="999" data-name="lumenkit lumenkit breathing">
+        <div class="card-top"><span class="card-num">#077</span></div>
+        <h2>LumenKit</h2>
+        <p>Guided calm breathing cycles</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./078-cipherkit/" data-category="experiments" data-sort-id="078" data-popular="999" data-name="cipherkit cipherkit spin-wheel">
+        <div class="card-top"><span class="card-num">#078</span></div>
+        <h2>CipherKit</h2>
+        <p>Add options, spin to decide</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./079-runekit/" data-category="experiments" data-sort-id="079" data-popular="999" data-name="runekit runekit unit-convert">
+        <div class="card-top"><span class="card-num">#079</span></div>
+        <h2>RuneKit</h2>
+        <p>Quick unit conversion</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./080-boltkit/" data-category="experiments" data-sort-id="080" data-popular="999" data-name="boltkit boltkit mood-picker">
+        <div class="card-top"><span class="card-num">#080</span></div>
+        <h2>BoltKit</h2>
+        <p>Name your mood, save the moment</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./081-crestkit/" data-category="experiments" data-sort-id="081" data-popular="999" data-name="crestkit crestkit name-picker">
+        <div class="card-top"><span class="card-num">#081</span></div>
+        <h2>CrestKit</h2>
+        <p>Pick a random winner from your list</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./082-vividkit/" data-category="experiments" data-sort-id="082" data-popular="999" data-name="vividkit vividkit gratitude">
+        <div class="card-top"><span class="card-num">#082</span></div>
+        <h2>VividKit</h2>
+        <p>Write gratitude, send good vibes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./083-swifthub/" data-category="experiments" data-sort-id="083" data-popular="999" data-name="swifthub swifthub coin-flip">
+        <div class="card-top"><span class="card-num">#083</span></div>
+        <h2>SwiftHub</h2>
+        <p>Heads or tails — fate in one tap</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./084-novahub/" data-category="experiments" data-sort-id="084" data-popular="999" data-name="novahub novahub dice-roll">
+        <div class="card-top"><span class="card-num">#084</span></div>
+        <h2>NovaHub</h2>
+        <p>Roll dice instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./085-echohub/" data-category="experiments" data-sort-id="085" data-popular="999" data-name="echohub echohub yes-or-no">
+        <div class="card-top"><span class="card-num">#085</span></div>
+        <h2>EchoHub</h2>
+        <p>A decisive answer when you need one</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./086-pixelhub/" data-category="experiments" data-sort-id="086" data-popular="999" data-name="pixelhub pixelhub random-color">
+        <div class="card-top"><span class="card-num">#086</span></div>
+        <h2>PixelHub</h2>
+        <p>Discover your next palette color</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./087-zenhub/" data-category="experiments" data-sort-id="087" data-popular="999" data-name="zenhub zenhub password-gen">
+        <div class="card-top"><span class="card-num">#087</span></div>
+        <h2>ZenHub</h2>
+        <p>Strong passwords in one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./088-flashhub/" data-category="experiments" data-sort-id="088" data-popular="999" data-name="flashhub flashhub countdown">
+        <div class="card-top"><span class="card-num">#088</span></div>
+        <h2>FlashHub</h2>
+        <p>Count down to any moment</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./089-orbithub/" data-category="experiments" data-sort-id="089" data-popular="999" data-name="orbithub orbithub pomodoro">
+        <div class="card-top"><span class="card-num">#089</span></div>
+        <h2>OrbitHub</h2>
+        <p>Focused work in timed bursts</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./090-pulsehub/" data-category="experiments" data-sort-id="090" data-popular="999" data-name="pulsehub pulsehub tip-calc">
+        <div class="card-top"><span class="card-num">#090</span></div>
+        <h2>PulseHub</h2>
+        <p>Split the bill like a pro</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./091-sparkhub/" data-category="experiments" data-sort-id="091" data-popular="999" data-name="sparkhub sparkhub compliment">
+        <div class="card-top"><span class="card-num">#091</span></div>
+        <h2>SparkHub</h2>
+        <p>A kind line when you need one</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./092-drifthub/" data-category="experiments" data-sort-id="092" data-popular="999" data-name="drifthub drifthub magic-8ball">
+        <div class="card-top"><span class="card-num">#092</span></div>
+        <h2>DriftHub</h2>
+        <p>Ask the oracle — get an answer</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./093-glidehub/" data-category="experiments" data-sort-id="093" data-popular="999" data-name="glidehub glidehub rps">
+        <div class="card-top"><span class="card-num">#093</span></div>
+        <h2>GlideHub</h2>
+        <p>Rock, paper, scissors vs CPU</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./094-prismhub/" data-category="experiments" data-sort-id="094" data-popular="999" data-name="prismhub prismhub lucky-number">
+        <div class="card-top"><span class="card-num">#094</span></div>
+        <h2>PrismHub</h2>
+        <p>Your random number awaits</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./095-fluxhub/" data-category="experiments" data-sort-id="095" data-popular="999" data-name="fluxhub fluxhub word-counter">
+        <div class="card-top"><span class="card-num">#095</span></div>
+        <h2>FluxHub</h2>
+        <p>Words, chars, and reading time</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./096-apexhub/" data-category="experiments" data-sort-id="096" data-popular="999" data-name="apexhub apexhub stopwatch">
+        <div class="card-top"><span class="card-num">#096</span></div>
+        <h2>ApexHub</h2>
+        <p>Lap times with millisecond flair</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./097-lumenhub/" data-category="experiments" data-sort-id="097" data-popular="999" data-name="lumenhub lumenhub breathing">
+        <div class="card-top"><span class="card-num">#097</span></div>
+        <h2>LumenHub</h2>
+        <p>Guided calm breathing cycles</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./098-cipherhub/" data-category="experiments" data-sort-id="098" data-popular="999" data-name="cipherhub cipherhub spin-wheel">
+        <div class="card-top"><span class="card-num">#098</span></div>
+        <h2>CipherHub</h2>
+        <p>Add options, spin to decide</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./099-runehub/" data-category="experiments" data-sort-id="099" data-popular="999" data-name="runehub runehub unit-convert">
+        <div class="card-top"><span class="card-num">#099</span></div>
+        <h2>RuneHub</h2>
+        <p>Quick unit conversion</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./100-bolthub/" data-category="experiments" data-sort-id="100" data-popular="999" data-name="bolthub bolthub mood-picker">
+        <div class="card-top"><span class="card-num">#100</span></div>
+        <h2>BoltHub</h2>
+        <p>Name your mood, save the moment</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+    <!-- SITE_GRID_END -->
     </div>
 
-    <section class="support" id="support">
-      <h2>Enjoying these tools?</h2>
-      <p>Tips fund more free sites, docs, and hosting. Every amount helps the challenge reach 1000.</p>
-      <div class="support-actions">
-        <a class="btn btn--paypal" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">paypal.me/RajeevSewbalak</a>
-        <a class="btn btn--github" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
+    <!-- MONETIZE_START -->
+    <section class="pricing pricing--primary" id="get-a-site" aria-labelledby="pricing-heading">
+      <div class="pricing-hero">
+        <p class="pricing-eyebrow">Done-for-you · Live in 24 hours</p>
+        <h2 id="pricing-heading" class="section-title">Get your own website</h2>
+        <p class="section-lead pricing-lead">I build and deploy a branded mini-site for you — same system behind 100 live tools. <strong>Starting at €49.</strong> No code required on your side.</p>
+        <ul class="trust-bar" aria-label="Why order">
+          <li><span class="trust-num">100</span> websites built</li>
+          <li><span class="trust-num">24h</span> turnaround</li>
+          <li><span class="trust-num">€49</span> to start</li>
+        </ul>
+        <a class="btn btn--buy btn--lg pricing-jump-cta" href="https://paypal.me/RajeevSewbalak/49" target="_blank" rel="noopener noreferrer">Pay €49 on PayPal — fastest start</a>
+      </div>
+      <div class="pricing-grid">
+      <article class="price-card price-card--highlight">
+        <span class="price-badge">Most chosen</span>
+        <h3>Starter</h3>
+        <p class="price"><span class="price-amount">€49</span> <span class="price-period">one-time</span></p>
+        <ul class="price-features">
+          <li>Live on Vercel in 24 hours</li>
+          <li>Your name, colors &amp; copy</li>
+          <li>Listed in the public gallery</li>
+          <li>PayPal tips built in</li>
+        </ul>
+        <div class="price-actions">
+          <a class="btn btn--buy price-cta" href="https://paypal.me/RajeevSewbalak/49" target="_blank" rel="noopener noreferrer">Pay €49 — start now</a>
+          <a class="btn btn--ghost price-cta-secondary" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=enhancement&amp;title=Question%3A%20Starter%20package&amp;body=Name%3A%0AEmail%3A%0AWhat%20I%20need%3A%0A" target="_blank" rel="noopener noreferrer">Ask a question first</a>
+        </div>
+      </article>
+
+      <article class="price-card">
+        
+        <h3>Pro</h3>
+        <p class="price"><span class="price-amount">€149</span> <span class="price-period">one-time</span></p>
+        <ul class="price-features">
+          <li>Custom tool logic or layout</li>
+          <li>SEO + conversion-focused copy</li>
+          <li>1 revision included</li>
+        </ul>
+        <div class="price-actions">
+          <a class="btn btn--buy price-cta" href="https://paypal.me/RajeevSewbalak/149" target="_blank" rel="noopener noreferrer">Pay €149 deposit</a>
+          <a class="btn btn--ghost price-cta-secondary" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=enhancement&amp;title=Question%3A%20Pro%20package&amp;body=Name%3A%0AEmail%3A%0AWhat%20I%20need%3A%0A" target="_blank" rel="noopener noreferrer">Request Pro</a>
+        </div>
+      </article>
+
+      <article class="price-card">
+        
+        <h3>Flagship</h3>
+        <p class="price"><span class="price-amount">€499+</span> <span class="price-period">project</span></p>
+        <ul class="price-features">
+          <li>Next.js app (payments, grids)</li>
+          <li>Like Buy a Square</li>
+          <li>Priority delivery</li>
+        </ul>
+        <div class="price-actions">
+          <a class="btn btn--paypal price-cta" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=enhancement&amp;title=Micro-site%3A%20Flagship" target="_blank" rel="noopener noreferrer">Book flagship</a>
+          <a class="btn btn--ghost price-cta-secondary" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=enhancement&amp;title=Question%3A%20Flagship%20package&amp;body=Name%3A%0AEmail%3A%0AWhat%20I%20need%3A%0A" target="_blank" rel="noopener noreferrer">Discuss scope</a>
+        </div>
+      </article>
+      </div>
+      <div class="lead-capture" id="contact">
+        <h3 class="lead-title">Not ready to pay yet? Tell me what you need.</h3>
+        <p class="lead-sub">I reply within 24 hours. Or pay €49 above to skip the queue.</p>
+        <form class="lead-form" id="lead-form" action="#" method="get">
+          <div class="lead-row">
+            <label class="lead-label">Name <input class="lead-input" name="name" type="text" required autocomplete="name" placeholder="Your name" /></label>
+            <label class="lead-label">Email <input class="lead-input" name="email" type="email" required autocomplete="email" placeholder="you@email.com" /></label>
+          </div>
+          <label class="lead-label">Package
+            <select class="lead-input" name="package" required>
+              <option value="Starter (€49)">Starter — €49 (24h delivery)</option>
+              <option value="Pro (€149)">Pro — €149</option>
+              <option value="Flagship (€499+)">Flagship — €499+</option>
+              <option value="Sponsor">Sponsor slot</option>
+            </select>
+          </label>
+          <label class="lead-label">What should the site do?
+            <textarea class="lead-input lead-textarea" name="message" required rows="3" placeholder="e.g. booking tool for my barbershop, brand colors #112233…"></textarea>
+          </label>
+          <div class="lead-actions">
+            <button type="submit" class="btn btn--buy">Send my request</button>
+            <a class="btn btn--paypal" href="https://paypal.me/RajeevSewbalak/49" target="_blank" rel="noopener noreferrer">Pay €49 now instead</a>
+          </div>
+        </form>
+        <p class="lead-fine">PayPal: <a href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">paypal.me/RajeevSewbalak</a> · Tips welcome on free tools</p>
+      </div>
+      <p class="pricing-proof">Proof it works: <a href="https://001-buy-a-square.vercel.app" target="_blank" rel="noopener">Buy a Square</a> earns per click — your site can too.</p>
+    </section>
+
+    <section class="sponsors" id="sponsors" aria-labelledby="sponsors-heading">
+      <div class="section-head">
+        <h2 id="sponsors-heading" class="section-title">Sponsor the gallery</h2>
+        <p class="section-lead">Put your brand in front of everyone browsing 100 tools.</p>
+      </div>
+      <div class="sponsor-grid">
+      <a class="sponsor-card sponsor-card--open" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=sponsor&amp;title=Sponsor%20inquiry" target="_blank" rel="noopener noreferrer sponsored">
+        <span class="sponsor-label">Open slot</span>
+        <h3>Your brand here</h3>
+        <p>Reach builders browsing 100+ free tools</p>
+        <span class="sponsor-cta">Advertise from €25/wk →</span>
+      </a>
+
+      <a class="sponsor-card sponsor-card--open" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=sponsor&amp;title=Sponsor%20slot%202" target="_blank" rel="noopener noreferrer sponsored">
+        <span class="sponsor-label">Open slot</span>
+        <h3>Sponsor slot #2</h3>
+        <p>Logo + link in this gallery strip</p>
+        <span class="sponsor-cta">Reserve slot →</span>
+      </a>
+
+      <a class="sponsor-card sponsor-card--open" href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=sponsor&amp;title=Sponsor%20slot%203" target="_blank" rel="noopener noreferrer sponsored">
+        <span class="sponsor-label">Open slot</span>
+        <h3>Sponsor slot #3</h3>
+        <p>Featured tool of the week (coming soon)</p>
+        <span class="sponsor-cta">Reserve slot →</span>
+      </a>
       </div>
     </section>
 
+    <section class="support support--compact" id="support" aria-labelledby="support-heading">
+      <h2 id="support-heading" class="section-title">Support free tools</h2>
+      <p class="section-lead">Tips keep the gallery free. Want your own site? <a href="#get-a-site">Order from €49 ↑</a></p>
+      <div class="tip-tiers" role="group" aria-label="PayPal tip amounts">
+        <a class="tip-tier" href="https://paypal.me/RajeevSewbalak/5" target="_blank" rel="noopener noreferrer">Tip €5</a>
+        <a class="tip-tier" href="https://paypal.me/RajeevSewbalak/10" target="_blank" rel="noopener noreferrer">Tip €10</a>
+        <a class="tip-tier" href="https://paypal.me/RajeevSewbalak/25" target="_blank" rel="noopener noreferrer">Tip €25</a>
+        <a class="tip-tier" href="https://paypal.me/RajeevSewbalak/50" target="_blank" rel="noopener noreferrer">Tip €50</a>
+        <a class="tip-tier tip-tier--custom" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">Custom tip</a>
+      </div>
+    </section>
+    <!-- MONETIZE_END -->
+
     <footer class="footer">
-      <p>
-        <a href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites">Vibe-Code-1000-websites</a>
-        · Idea → code → deploy → repeat
-        · <a href="./README.md">README</a>
+      <div class="footer-cta">
+        <a class="btn btn--buy" href="#get-a-site">Get your own website (€49)</a>
+        <a class="btn btn--ghost" href="#contact">Free quote</a>
+      </div>
+      <p class="footer-trust">100 websites built · 24-hour turnaround · Starting at €49</p>
+      <p class="footer-meta">
+        <a href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites">GitHub</a>
+        · <a href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>
       </p>
     </footer>
   </div>
+
+  <a class="sticky-cta" href="#get-a-site">Get your website — €49</a>
 
   <script src="hub.js"></script>
 </body>

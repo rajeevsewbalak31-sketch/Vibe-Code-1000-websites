@@ -1,10 +1,14 @@
 import { readFileSync, mkdirSync, writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { HUB_URL, siteHeadMeta, siteTitle } from "./lib/seo.mjs";
+import { siteMonetizationFooter } from "./lib/monetization.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const PAYPAL = "https://paypal.me/RajeevSewbalak";
+const manifest = JSON.parse(readFileSync(join(__dirname, "manifest.json"), "utf8"));
+const PAYPAL = manifest.paypal || "https://paypal.me/RajeevSewbalak";
+const FORCE = process.argv.includes("--force");
 const sites = JSON.parse(readFileSync(join(__dirname, "sites.json"), "utf8"));
 
 const LOGIC = {
@@ -482,8 +486,19 @@ body{min-height:100dvh;font-family:var(--font-ui);color:var(--text);background:v
 #ring{width:7rem;height:7rem;margin:0 auto 1rem;border-radius:50%;border:3px solid var(--accent);transition:transform 1s ease;background:rgba(255,255,255,.04)}
 .tip-jar{margin-top:2rem;text-align:center;padding-top:1.5rem;border-top:1px solid var(--border);width:100%}
 .tip-jar p{font-size:.85rem;color:var(--text-muted);margin-bottom:.5rem}
+.tip-chips{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-bottom:.75rem}
+.tip-chip{padding:.35rem .75rem;font-size:.78rem;font-weight:600;color:var(--text);background:rgba(255,255,255,.08);border:1px solid var(--border);border-radius:999px;text-decoration:none}
+.tip-chip:hover{border-color:var(--accent);color:var(--accent)}
+.tip-chip--main{color:var(--bg-deep);background:linear-gradient(135deg,#0070ba,#003087);border-color:transparent}
 .tip-link{display:inline-flex;align-items:center;gap:.35rem;padding:.55rem 1.1rem;font-size:.85rem;font-weight:600;color:var(--bg-deep);background:linear-gradient(135deg,#0070ba,#003087);border-radius:999px;text-decoration:none}
 .tip-link:hover{opacity:.92}
+.tip-upsell{margin-bottom:.75rem;font-size:.88rem}
+.tip-upsell-link{color:var(--text);text-decoration:none}
+.tip-upsell-link:hover{color:var(--accent)}
+.tip-chip--buy{color:var(--bg-deep);background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;font-weight:600}
+.hub-wrap{margin-top:1rem;text-align:center;font-size:.78rem}
+.hub-link{color:var(--accent-2);text-decoration:none;font-weight:500}
+.hub-link:hover{text-decoration:underline}
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(1rem);padding:.65rem 1.25rem;font-size:.875rem;font-weight:500;color:var(--bg-deep);background:var(--accent-2);border-radius:999px;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:10}
 .toast.is-visible{opacity:1;transform:translateX(-50%) translateY(0)}
 @media(prefers-reduced-motion:reduce){.orb,#ring{animation:none}}`;
@@ -505,8 +520,7 @@ function html(site) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="${site.tagline}" />
-  <title>${site.name} — Website #${site.id}</title>
+  <title>${siteTitle(site.name)}</title>${siteHeadMeta(site)}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -533,10 +547,7 @@ function html(site) {
         ${extraBtns}
       </div>
     </article>
-    <footer class="tip-jar">
-      <p>Enjoying this tool? Support the 1000 Websites Challenge</p>
-      <a class="tip-link" href="${PAYPAL}" target="_blank" rel="noopener noreferrer">Tip via PayPal</a>
-    </footer>
+${siteMonetizationFooter(PAYPAL, HUB_URL)}
   </main>
   <p id="toast" class="toast" role="status"></p>
   <script src="script.js"></script>
@@ -592,17 +603,24 @@ function cleanHtml(raw) {
 }
 
 let created = 0;
+let updated = 0;
 for (const site of sites) {
   const dir = join(ROOT, `${site.id}-${site.slug}`);
-  if (existsSync(dir)) {
+  const exists = existsSync(dir);
+  if (exists && !FORCE) {
     console.log("Skip (exists):", dir);
     continue;
   }
-  mkdirSync(dir, { recursive: true });
+  if (!exists) mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, "index.html"), html(site), "utf8");
   writeFileSync(join(dir, "style.css"), css(site), "utf8");
   writeFileSync(join(dir, "script.js"), script(site), "utf8");
-  created++;
-  console.log("Created:", site.id, site.slug);
+  if (exists) {
+    updated++;
+    console.log("Updated:", site.id, site.slug);
+  } else {
+    created++;
+    console.log("Created:", site.id, site.slug);
+  }
 }
-console.log("Done. Created", created, "sites.");
+console.log(`Done. Created ${created}, updated ${updated}${FORCE ? " (force)" : ""}.`);

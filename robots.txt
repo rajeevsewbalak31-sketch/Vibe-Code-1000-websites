@@ -1,0 +1,5 @@
+# https://websites-eosin-delta.vercel.app
+User-agent: *
+Allow: /
+
+Sitemap: https://websites-eosin-delta.vercel.app/sitemap.xml

@@ -1,0 +1,20 @@
+{
+  "name": "vibe-code-1000-websites",
+  "private": true,
+  "description": "Site generation engine + gallery for the 1000 Websites Challenge",
+  "type": "module",
+  "scripts": {
+    "engine": "node scripts/engine.mjs",
+    "engine:status": "node scripts/engine.mjs status",
+    "engine:expand": "node scripts/expand-catalog.mjs --from=23 --to=100",
+    "engine:build": "node scripts/engine.mjs build --from=23 --to=100",
+    "engine:hub": "node scripts/sync-hub.mjs",
+    "engine:all": "node scripts/engine.mjs all --from=23 --to=100",
+    "engine:seo": "node scripts/generate-sites.mjs --force && node scripts/sync-hub.mjs && node scripts/generate-sitemap.mjs",
+    "engine:phase3": "npm run engine:seo",
+    "engine:monetize": "node scripts/sync-hub.mjs && node scripts/generate-sites.mjs --force",
+    "validate": "node scripts/validate.mjs",
+    "verify:routes": "node scripts/verify-routes.mjs",
+    "generate": "node scripts/generate-sites.mjs"
+  }
+}

@@ -1,97 +1,109 @@
-# 1000 Websites Challenge
+# Vibe Code 1000
 
-**Live hub:** **[websites-eosin-delta.vercel.app](https://websites-eosin-delta.vercel.app)** — browse all 22 tools, search, and tip via PayPal.
+**I stopped trying to hand-build 1000 websites. I built a machine that generates them.**
 
-[![PayPal](https://img.shields.io/badge/PayPal-Tip-blue?style=for-the-badge)](https://paypal.me/RajeevSewbalak)
-[![GitHub](https://img.shields.io/badge/GitHub-Vibe--Code--1000--websites-181717?style=for-the-badge&logo=github)](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
+[![Live hub](https://img.shields.io/badge/Live-hub-5eead4?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
+[![Progress](https://img.shields.io/badge/Progress-100%2F1000-e8a87c?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
+[![PayPal](https://img.shields.io/badge/PayPal-Tip-0070ba?style=for-the-badge)](https://paypal.me/RajeevSewbalak)
+[![GitHub](https://img.shields.io/badge/GitHub-repo-181717?style=for-the-badge&logo=github)](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
 
-**Vision:** Idea → Code → Deploy (free) → Repeat → Collect payments → Showcase
+## What it is
 
-## Progress
+**Vibe Code 1000** is an open-source **site generation engine** plus a public **gallery** of free mini web tools. Each site is generated from a catalog (name, colors, logic template), deployed on Vercel, and linked from one hub with search, categories, and PayPal tips.
 
-| Metric | Status |
-|--------|--------|
-| Sites in repo | **22 / 1000** |
-| Hub | [Live](https://websites-eosin-delta.vercel.app) |
-| PayPal tips | On every site |
+| | |
+|---|---|
+| **Live gallery** | [websites-eosin-delta.vercel.app](https://websites-eosin-delta.vercel.app) |
+| **Repo** | [Vibe-Code-1000-websites](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites) |
+| **Progress** | **100 / 1000** sites |
+| **Stack** | HTML/CSS/JS generator · Next.js flagships · Vercel |
 
-## Live sites
+## Gallery preview
 
-| # | Name | URL |
-|---|------|-----|
-| Hub | 1000 Websites | [websites-eosin-delta.vercel.app](https://websites-eosin-delta.vercel.app) |
-| 001 | Buy a Square | [001-buy-a-square.vercel.app](https://001-buy-a-square.vercel.app) |
-| 002 | Quotely | [quotely.vercel.app](https://quotely.vercel.app) |
-| 003–022 | FlipCoin … ThankDrop | [Browse on hub](https://websites-eosin-delta.vercel.app) |
+![Vibe Code 1000 hub — category filters, featured strip, 100 tools](docs/hub-preview.svg)
 
-## All sites (folders)
+Open the **[live hub](https://websites-eosin-delta.vercel.app)** to search, filter by category (Tools · Games · Utilities · Landing Pages · Experiments), and sort by newest or popular.
 
-| # | Folder | Name | Stack |
-|---|--------|------|-------|
-| 001 | [001-buy-a-square](./001-buy-a-square/) | Buy a Square | Next.js |
-| 002 | [002-random-quote](./002-random-quote/) | Quotely | HTML/CSS/JS |
-| 003 | [003-coin-flip](./003-coin-flip/) | FlipCoin | HTML/CSS/JS |
-| 004 | [004-dice-roll](./004-dice-roll/) | RollDice | HTML/CSS/JS |
-| 005 | [005-yes-or-no](./005-yes-or-no/) | YesNo | HTML/CSS/JS |
-| 006 | [006-random-color](./006-random-color/) | HueDrop | HTML/CSS/JS |
-| 007 | [007-password-gen](./007-password-gen/) | KeyForge | HTML/CSS/JS |
-| 008 | [008-countdown](./008-countdown/) | TickDown | HTML/CSS/JS |
-| 009 | [009-pomodoro](./009-pomodoro/) | FocusTomato | HTML/CSS/JS |
-| 010 | [010-tip-calc](./010-tip-calc/) | TipQuick | HTML/CSS/JS |
-| 011 | [011-compliment](./011-compliment/) | Brighten | HTML/CSS/JS |
-| 012 | [012-magic-8ball](./012-magic-8ball/) | Oracle8 | HTML/CSS/JS |
-| 013 | [013-rps](./013-rps/) | RPS Arena | HTML/CSS/JS |
-| 014 | [014-lucky-number](./014-lucky-number/) | LuckyDraw | HTML/CSS/JS |
-| 015 | [015-word-counter](./015-word-counter/) | WordScope | HTML/CSS/JS |
-| 016 | [016-stopwatch](./016-stopwatch/) | SwiftLap | HTML/CSS/JS |
-| 017 | [017-breathing](./017-breathing/) | BreatheFlow | HTML/CSS/JS |
-| 018 | [018-spin-wheel](./018-spin-wheel/) | SpinPick | HTML/CSS/JS |
-| 019 | [019-unit-convert](./019-unit-convert/) | MetricMate | HTML/CSS/JS |
-| 020 | [020-mood-picker](./020-mood-picker/) | MoodMap | HTML/CSS/JS |
-| 021 | [021-name-picker](./021-name-picker/) | NameHat | HTML/CSS/JS |
-| 022 | [022-gratitude](./022-gratitude/) | ThankDrop | HTML/CSS/JS |
+### ⭐ Featured (start here)
 
-## Documentation
+| Site | URL |
+|------|-----|
+| Buy a Square | [001-buy-a-square.vercel.app](https://001-buy-a-square.vercel.app) |
+| Quotely | [quotely.vercel.app](https://quotely.vercel.app) |
+| KeyForge, FocusTomato, RPS Arena | [Browse featured on hub](https://websites-eosin-delta.vercel.app) |
 
-- [Deployment guide](./docs/deployment-guide.md)
-- [Free hosting options](./docs/free-hosting-options.md)
-- [Tech stack](./docs/tech-stack.md)
-- [Workflow](./docs/workflow.md)
-- [Support / donations](./SUPPORT.md)
-- [GitHub setup notes](./GITHUB.md)
+## Roadmap
+
+| Phase | Status | Goal |
+|-------|--------|------|
+| 1 | ✅ | Prove concept (~22 hand-built tools) |
+| 2 | ✅ | Engine → **100 sites** |
+| 3 | ✅ | Hub UX, SEO, GitHub polish |
+| 4 | ✅ | Monetize (tips, sponsors, micro-site packages) |
+| 5 | Optional | Scale to 1000 when the machine earns it |
+
+Details: **[docs/roadmap.md](./docs/roadmap.md)**
+
+## Site engine
+
+```bash
+npm run engine:status
+npm run engine:phase3   # SEO + hub sync + sitemap
+npm run validate
+```
+
+| Command | Action |
+|---------|--------|
+| `engine:all` | Expand catalog → generate folders → sync hub |
+| `engine:hub` | Rebuild gallery cards + filters |
+| `engine:seo` | Regenerate all sites with OG/canonical + sitemap |
+
+Registry: [`scripts/sites.json`](./scripts/sites.json) · Spotlight: [`scripts/manifest.json`](./scripts/manifest.json)
+
+## SEO
+
+- Per-site: `Title | Vibe Code 1000`, Open Graph, canonical URLs, hub back-link
+- Hub: JSON-LD, meta tags
+- Root: [`sitemap.xml`](./sitemap.xml) · [`robots.txt`](./robots.txt)
 
 ## Run locally
 
-**Hub:** open [`index.html`](./index.html)
-
-**Site #001 (Next.js):**
-
 ```bash
-cd 001-buy-a-square
-npm install
-npm run dev
+# Hub
+start index.html   # or open in browser
+
+# Flagship Next.js app
+cd 001-buy-a-square && npm install && npm run dev
 ```
 
 ## Deploy
 
+Push to `main` → Vercel auto-deploys the hub and projects. Manual:
+
 ```bash
 npx vercel deploy --prod
-cd 001-buy-a-square && npx vercel deploy --prod
 ```
 
-Connect this repo in [Vercel](https://vercel.com) for auto-deploy on push.
+## Docs
 
-## Add more sites
+- [Roadmap](./docs/roadmap.md) · [Contributing](./CONTRIBUTING.md) · [Workflow](./docs/workflow.md)
+- [Deployment](./docs/deployment-guide.md) · [GitHub setup](./GITHUB.md)
 
-1. Edit [`scripts/sites.json`](./scripts/sites.json)
-2. Run [`RUN-BUILD.cmd`](./RUN-BUILD.cmd)
-3. Add a card in [`index.html`](./index.html)
-4. Commit and push
+## Monetization (Phase 4)
+
+| Offer | Link |
+|-------|------|
+| Tip the project | [PayPal](https://paypal.me/RajeevSewbalak) · hub [#support](https://websites-eosin-delta.vercel.app/#support) |
+| Sponsor the gallery | [#sponsors](https://websites-eosin-delta.vercel.app/#sponsors) |
+| Buy a custom micro-site | [#get-a-site](https://websites-eosin-delta.vercel.app/#get-a-site) (from €49) |
+| Pay-per-square grid | [Buy a Square](https://001-buy-a-square.vercel.app) |
+
+Playbook: **[docs/monetization.md](./docs/monetization.md)**
 
 ## Support
 
-**[paypal.me/RajeevSewbalak](https://paypal.me/RajeevSewbalak)** · See [SUPPORT.md](./SUPPORT.md)
+**[paypal.me/RajeevSewbalak](https://paypal.me/RajeevSewbalak)** — tips fund hosting and more tools. See [SUPPORT.md](./SUPPORT.md).
 
-MIT License — see [LICENSE](./LICENSE)
+MIT License — [LICENSE](./LICENSE)
 
-*Project: [rajeevsewbalak31-sketch](https://github.com/rajeevsewbalak31-sketch)*
+*Built in public by [@rajeevsewbalak31-sketch](https://github.com/rajeevsewbalak31-sketch)*

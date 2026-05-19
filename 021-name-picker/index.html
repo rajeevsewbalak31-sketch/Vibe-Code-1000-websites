@@ -1,9 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>NameHat — #021</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet"/><link rel="stylesheet" href="style.css"/></head>
-<body><div class="bg"><span class="orb orb--1"></span><span class="orb orb--2"></span></div>
-<main class="page"><header class="header"><p class="eyebrow">Website #021</p><h1 class="logo">NameHat</h1><p class="tagline">Pick a random winner</p></header>
-<article class="card"><textarea id="names" class="textarea" placeholder="Alice, Bob, Charlie"></textarea><p id="display" class="display">—</p><div class="actions"><button id="btn-action" class="btn btn--primary">Pick</button></div></article>
-<footer class="tip-jar"><p>Enjoying this tool? Support the 1000 Websites Challenge</p><a class="tip-link" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener">Tip via PayPal</a></footer></main>
-<script src="script.js"></script></body></html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NameHat | Vibe Code 1000</title>
+  <meta name="description" content="Free NameHat tool — Pick a random winner from your list Built with Vibe Code 1000." />
+  <meta name="keywords" content="NameHat, name-picker, Vibe Code 1000, free web tool" />
+  <meta name="author" content="Rajeev Sewbalak" />
+  <link rel="canonical" href="https://websites-eosin-delta.vercel.app/021-name-picker/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NameHat | Vibe Code 1000" />
+  <meta property="og:description" content="Free NameHat tool — Pick a random winner from your list Built with Vibe Code 1000." />
+  <meta property="og:url" content="https://websites-eosin-delta.vercel.app/021-name-picker/" />
+  <meta property="og:site_name" content="Vibe Code 1000" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="NameHat | Vibe Code 1000" />
+  <meta name="twitter:description" content="Free NameHat tool — Pick a random winner from your list Built with Vibe Code 1000." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="grain"></span>
+  </div>
+  <main class="page">
+    <header class="header">
+      <p class="eyebrow">Website #021</p>
+      <h1 class="logo">NameHat</h1>
+      <p class="tagline">Pick a random winner from your list</p>
+    </header>
+    <article class="card">
+      
+      <textarea id="names" class="textarea" placeholder="Alice, Bob, Charlie"></textarea>
+      <p id="display" class="display">—</p>
+      <div class="actions">
+        <button type="button" id="btn-action" class="btn btn--primary">Pick winner</button>
+        
+      </div>
+    </article>
+    <footer class="tip-jar">
+      <p class="tip-upsell"><a class="tip-upsell-link" href="https://websites-eosin-delta.vercel.app#get-a-site"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
+      <div class="tip-chips">
+        <a class="tip-chip tip-chip--buy" href="https://paypal.me/RajeevSewbalak/49" target="_blank" rel="noopener noreferrer">Order €49</a>
+        <a class="tip-chip" href="https://paypal.me/RajeevSewbalak/5" target="_blank" rel="noopener noreferrer">Tip €5</a>
+        <a class="tip-chip tip-chip--main" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>
+      </div>
+      <p class="hub-wrap"><a class="hub-link" href="https://websites-eosin-delta.vercel.app#contact">Free quote</a> · <a class="hub-link" href="https://websites-eosin-delta.vercel.app">All tools</a></p>
+    </footer>
+  </main>
+  <p id="toast" class="toast" role="status"></p>
+  <script src="script.js"></script>
+</body>
+</html>

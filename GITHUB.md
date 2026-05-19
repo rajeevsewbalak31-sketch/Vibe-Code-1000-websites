@@ -28,18 +28,32 @@ git push -u origin main
 
 Use **GitHub Desktop** or **Cursor Source Control** if you prefer a GUI.
 
-## 3. Connect Vercel to GitHub
+## 3. Vercel ↔ GitHub (connected)
 
-1. [vercel.com](https://vercel.com) → **websites** project → **Settings** → **Git**
-2. Connect `rajeevsewbalak31-sketch/Vibe-Code-1000-websites`
-3. Root Directory: `.` (this repo root)
-4. Production branch: `main`
+Both projects are linked to `rajeevsewbalak31-sketch/Vibe-Code-1000-websites` on branch `main`:
 
-Repeat for project **001-buy-a-square** with root `001-buy-a-square` if you use a monorepo, or keep it as a separate Vercel project.
+| Vercel project | Root directory | Production URL |
+|----------------|----------------|----------------|
+| **websites** | `.` (repo root) | [websites-eosin-delta.vercel.app](https://websites-eosin-delta.vercel.app) |
+| **001-buy-a-square** | `001-buy-a-square` | [001-buy-a-square.vercel.app](https://001-buy-a-square.vercel.app) |
+
+Every `git push` to `main` triggers a new deployment automatically.
 
 ## 4. Pin the hub on GitHub
 
 Edit the repo **About** box (right sidebar):
 
 - Website: `https://websites-eosin-delta.vercel.app`
-- Topics: `1000-websites`, `side-project`, `paypal`, `vercel`
+- Topics: `1000-websites`, `side-project`, `paypal`, `vercel`, `site-generator`, `portfolio`
+
+## 5. Site generation engine
+
+Phase 2 target: **100 sites** from one pipeline (not 100 hand-builds).
+
+```bash
+npm run engine:status
+npm run engine:all      # catalog 023–100 → folders → hub sync
+npm run validate
+```
+
+Roadmap: [docs/roadmap.md](./docs/roadmap.md)

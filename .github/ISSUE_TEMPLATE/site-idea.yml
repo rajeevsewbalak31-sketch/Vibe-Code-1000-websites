@@ -1,0 +1,37 @@
+name: Site idea
+description: Suggest a new mini-tool for the generation engine
+title: "[Site idea] "
+labels: ["enhancement"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Tool name
+      placeholder: e.g. QuickPoll
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What should it do?
+      description: One sentence + example user action
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Decide (random / pick)
+        - Focus (timers / calm)
+        - Create (write / mood / color)
+        - Utility (calc / convert / password)
+    validations:
+      required: true
+  - type: checkboxes
+    id: similar
+    attributes:
+      label: Similar to existing logic?
+      options:
+        - label: Can reuse an existing template (coin flip, spinner, etc.)
+        - label: Needs a brand-new logic type

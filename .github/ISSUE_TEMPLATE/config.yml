@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: PayPal tip
+    url: https://paypal.me/RajeevSewbalak
+    about: Support hosting and new tools
+  - name: Live hub
+    url: https://websites-eosin-delta.vercel.app
+    about: Browse all tools
+  - name: Sponsor a slot
+    url: https://websites-eosin-delta.vercel.app/#sponsors
+    about: Gallery sponsorship

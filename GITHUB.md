@@ -1,59 +1,49 @@
-# GitHub setup (one-time)
+# GitHub setup
 
-This folder is the git repo for the challenge. Follow these steps if push did not complete automatically.
+Repo: [Vibe-Code-1000-websites](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
 
-## 1. Create the repo on GitHub (if needed)
+## Pin the repo About (do this once)
 
-1. Open [github.com/new](https://github.com/new)
-2. Name: `Vibe-Code-1000-websites` (or `websites`)
-3. **Do not** add README, .gitignore, or license (this folder already has them)
-4. Create repository
+On GitHub → repo home → **⚙️ About** (top right):
 
-## 2. Push from your PC
+| Field | Value |
+|-------|--------|
+| **Description** | Site generation engine + 100 free mini-tools. Custom sites from €49. |
+| **Website** | `https://websites-eosin-delta.vercel.app` |
+| **Topics** | `1000-websites`, `web-tools`, `side-project`, `vercel`, `portfolio`, `site-generator`, `paypal` |
 
-```powershell
-cd C:\Users\srsew\websites
+## Live URLs
 
-git remote add origin https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites.git
-git branch -M main
-git push -u origin main
+| What | URL |
+|------|-----|
+| Hub (100 tools) | https://websites-eosin-delta.vercel.app |
+| Order / pricing | https://websites-eosin-delta.vercel.app/#get-a-site |
+| Pay €49 (PayPal) | https://paypal.me/RajeevSewbalak/49 |
+| Buy a Square (#001) | https://001-buy-a-square.vercel.app |
+| Quotely (#002) | https://quotely.vercel.app |
+
+## Vercel ↔ GitHub
+
+| Vercel project | Root | URL |
+|----------------|------|-----|
+| **websites** | `.` | websites-eosin-delta.vercel.app |
+| **001-buy-a-square** | `001-buy-a-square` | 001-buy-a-square.vercel.app |
+
+Push to `main` → auto-deploy.
+
+## Verify before / after deploy
+
+```bash
+npm run verify:routes   # local folders + hub links
+npm run validate
+npm run verify:live     # production HTTP checks (all 100 paths)
 ```
 
-If `origin` already exists:
-
-```powershell
-git remote set-url origin https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites.git
-git push -u origin main
-```
-
-Use **GitHub Desktop** or **Cursor Source Control** if you prefer a GUI.
-
-## 3. Vercel ↔ GitHub (connected)
-
-Both projects are linked to `rajeevsewbalak31-sketch/Vibe-Code-1000-websites` on branch `main`:
-
-| Vercel project | Root directory | Production URL |
-|----------------|----------------|----------------|
-| **websites** | `.` (repo root) | [websites-eosin-delta.vercel.app](https://websites-eosin-delta.vercel.app) |
-| **001-buy-a-square** | `001-buy-a-square` | [001-buy-a-square.vercel.app](https://001-buy-a-square.vercel.app) |
-
-Every `git push` to `main` triggers a new deployment automatically.
-
-## 4. Pin the hub on GitHub
-
-Edit the repo **About** box (right sidebar):
-
-- Website: `https://websites-eosin-delta.vercel.app`
-- Topics: `1000-websites`, `side-project`, `paypal`, `vercel`, `site-generator`, `portfolio`
-
-## 5. Site generation engine
-
-Phase 2 target: **100 sites** from one pipeline (not 100 hand-builds).
+## Engine (optional)
 
 ```bash
 npm run engine:status
-npm run engine:all      # catalog 023–100 → folders → hub sync
-npm run validate
+npm run engine:hub
 ```
 
-Roadmap: [docs/roadmap.md](./docs/roadmap.md)
+Roadmap: [docs/roadmap.md](./docs/roadmap.md) · Launch copy: [docs/announce.md](./docs/announce.md)

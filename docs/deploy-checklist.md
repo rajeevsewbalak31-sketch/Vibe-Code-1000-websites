@@ -5,8 +5,7 @@ Vercel deploys **only what is committed and pushed** to `main`. Generated folder
 ## Before every production deploy
 
 ```bash
-npm run verify:routes
-npm run validate
+npm run verify:all
 git status
 ```
 

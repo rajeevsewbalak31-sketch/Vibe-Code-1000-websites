@@ -19,6 +19,11 @@ const folders = readdirSync(ROOT, { withFileTypes: true })
 let errors = 0;
 const missing = [];
 
+if (!existsSync(join(ROOT, "_shared", "tool.css"))) {
+  errors++;
+  missing.push("_shared/tool.css");
+}
+
 const SKIP_INDEX = new Set(["001-buy-a-square"]); // Next.js — separate Vercel project
 
 for (const folder of folders) {

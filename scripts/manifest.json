@@ -20,7 +20,7 @@
       "slug": "random-quote",
       "name": "Quotely",
       "tagline": "Random quotes — copy, share, get inspired.",
-      "href": "https://quotely.vercel.app",
+      "href": "./002-random-quote/",
       "live": true,
       "category": "tools",
       "search": "quotely quotes random wisdom"

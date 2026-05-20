@@ -7,19 +7,29 @@
   <title>Quotely — Random Quote Generator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/_shared/tool.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="bg" aria-hidden="true">
     <span class="orb orb--1"></span>
     <span class="orb orb--2"></span>
-    <span class="orb orb--3"></span>
     <span class="grain"></span>
   </div>
 
-  <main class="page">
-    <header class="header">
+  <main class="shell">
+    <nav class="site-bar" aria-label="Site navigation">
+      <a class="brand" href="https://websites-eosin-delta.vercel.app/">
+        <span class="brand-mark" aria-hidden="true">QU</span>
+        <span class="brand-text">Quotely</span>
+      </a>
+      <div class="site-bar-actions">
+        <a class="btn btn--ghost btn--sm" href="https://websites-eosin-delta.vercel.app/">← All tools</a>
+      </div>
+    </nav>
+
+    <header class="tool-header">
       <p class="eyebrow">Website #002</p>
       <h1 class="logo">Quotely</h1>
       <p class="tagline">Wisdom, randomly served</p>
@@ -34,29 +44,32 @@
         </footer>
       </blockquote>
       <p id="quote-category" class="category"></p>
+      <div class="actions">
+        <button type="button" id="btn-new" class="btn btn--primary">
+          <span class="btn-icon" aria-hidden="true">↻</span>
+          New quote
+        </button>
+        <button type="button" id="btn-copy" class="btn btn--ghost" title="Copy quote">
+          <span class="btn-icon" aria-hidden="true">⎘</span>
+          Copy
+        </button>
+      </div>
     </article>
-
-    <div class="actions">
-      <button type="button" id="btn-new" class="btn btn--primary">
-        <span class="btn-icon" aria-hidden="true">↻</span>
-        New quote
-      </button>
-      <button type="button" id="btn-copy" class="btn btn--ghost" title="Copy quote">
-        <span class="btn-icon" aria-hidden="true">⎘</span>
-        Copy
-      </button>
-    </div>
 
     <p class="hint">Press <kbd>Space</kbd> for a new quote</p>
 
-    <p id="toast" class="toast" role="status" aria-live="polite"></p>
-
-    <footer class="tip-jar" style="margin-top:2rem;text-align:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);width:100%">
-      <p style="font-size:.85rem;color:rgba(244,240,234,.55);margin-bottom:.5rem">Enjoying Quotely? Support the 1000 Websites Challenge</p>
-      <a href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:.55rem 1.1rem;font-weight:600;color:#fff;background:linear-gradient(135deg,#0070ba,#003087);border-radius:999px;text-decoration:none">Tip via PayPal</a>
+    <footer class="tip-jar">
+      <p class="tip-upsell"><a class="tip-upsell-link" href="https://websites-eosin-delta.vercel.app/#get-a-site"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
+      <div class="tip-chips">
+        <a class="tip-chip tip-chip--buy" href="https://paypal.me/RajeevSewbalak/49" target="_blank" rel="noopener noreferrer">Order €49</a>
+        <a class="tip-chip" href="https://paypal.me/RajeevSewbalak/5" target="_blank" rel="noopener noreferrer">Tip €5</a>
+        <a class="tip-chip tip-chip--main" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>
+      </div>
+      <p class="hub-wrap"><a class="hub-link" href="https://websites-eosin-delta.vercel.app/#contact">Free quote</a> · <a class="hub-link" href="https://websites-eosin-delta.vercel.app/">All tools</a></p>
     </footer>
   </main>
 
+  <p id="toast" class="toast" role="status" aria-live="polite"></p>
   <script src="script.js"></script>
 </body>
 </html>

@@ -17,7 +17,6 @@ const folders = readdirSync(ROOT, { withFileTypes: true })
 
 const EXTERNAL = {
   "001-buy-a-square": "https://001-buy-a-square.vercel.app",
-  "002-random-quote": "https://quotely.vercel.app",
 };
 
 async function check(url, opts = {}) {
@@ -96,8 +95,14 @@ for (const url of [
   else fail(`PayPal ${url} → ${r.status}`);
 }
 
+{
+  const r = await check(`${HUB}/_shared/tool.css`);
+  if (r.ok) pass(`${r.status} /_shared/tool.css`);
+  else fail(`/_shared/tool.css → ${r.status}`);
+}
+
 // Sample site assets
-const sample = ["003-coin-flip", "050-pulsebox", "100-bolthub"];
+const sample = ["002-random-quote", "003-coin-flip", "050-pulsebox", "100-bolthub"];
 for (const f of sample) {
   for (const file of ["style.css", "script.js"]) {
     const r = await check(`${HUB}/${f}/${file}`);

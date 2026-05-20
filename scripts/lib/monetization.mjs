@@ -1,5 +1,6 @@
 /** Hub + site monetization blocks — optimized for first sales. */
 import { escapeAttr } from "./seo.mjs";
+import { hubLink } from "./hub-links.mjs";
 
 const GITHUB_NEW_ISSUE =
   "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new";
@@ -221,16 +222,18 @@ ${tipTierHtml(m.paypal, m.tipPresets || [5, 10, 25])}
 }
 
 /** Site footer — lead with micro-site sale, then tips. */
-export function siteMonetizationFooter(paypal, hubUrl) {
+export function siteMonetizationFooter(paypal) {
   const starterPay = paypalAmountUrl(paypal, 49);
-  const contact = `${hubUrl}#contact`;
+  const getSite = hubLink("#get-a-site");
+  const contact = hubLink("#contact");
+  const allTools = hubLink();
   return `    <footer class="tip-jar">
-      <p class="tip-upsell"><a class="tip-upsell-link" href="${escapeAttr(hubUrl)}#get-a-site"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
+      <p class="tip-upsell"><a class="tip-upsell-link" href="${escapeAttr(getSite)}"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
       <div class="tip-chips">
         <a class="tip-chip tip-chip--buy" href="${escapeAttr(starterPay)}" target="_blank" rel="noopener noreferrer">Order €49</a>
         <a class="tip-chip" href="${escapeAttr(paypalAmountUrl(paypal, 5))}" target="_blank" rel="noopener noreferrer">Tip €5</a>
         <a class="tip-chip tip-chip--main" href="${escapeAttr(paypal)}" target="_blank" rel="noopener noreferrer">PayPal</a>
       </div>
-      <p class="hub-wrap"><a class="hub-link" href="${escapeAttr(contact)}">Free quote</a> · <a class="hub-link" href="${escapeAttr(hubUrl)}">All tools</a></p>
+      <p class="hub-wrap"><a class="hub-link" href="${escapeAttr(contact)}">Free quote</a> · <a class="hub-link" href="${escapeAttr(allTools)}">All tools</a></p>
     </footer>`;
 }

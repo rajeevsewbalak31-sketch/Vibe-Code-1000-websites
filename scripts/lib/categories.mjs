@@ -56,7 +56,8 @@ export function getCategory(site) {
 
   if (id === "001") return "landing-pages";
   if (id === "002") return "tools";
-  if (parseInt(id, 10) >= 101) return "games";
+  if (parseInt(id, 10) >= 201) return "experiments";
+  if (parseInt(id, 10) >= 101 && parseInt(id, 10) <= 200) return "games";
   if (parseInt(id, 10) >= 23 && parseInt(id, 10) <= 100) return "experiments";
   if (GAME_LOGICS.has(logic)) return "games";
   if (UTILITY_LOGICS.has(logic)) return "utilities";

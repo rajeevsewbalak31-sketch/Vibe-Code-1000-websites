@@ -3,7 +3,7 @@
 **I stopped trying to hand-build 1000 websites. I built a machine that generates them.**
 
 [![Live hub](https://img.shields.io/badge/Live-hub-5eead4?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
-[![Progress](https://img.shields.io/badge/Progress-200%2F1000-e8a87c?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
+[![Progress](https://img.shields.io/badge/Progress-300%2F1000-e8a87c?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
 [![PayPal](https://img.shields.io/badge/PayPal-Tip-0070ba?style=for-the-badge)](https://paypal.me/RajeevSewbalak)
 [![GitHub](https://img.shields.io/badge/GitHub-repo-181717?style=for-the-badge&logo=github)](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
 
@@ -15,7 +15,7 @@
 |---|---|
 | **Live gallery** | [websites-eosin-delta.vercel.app](https://websites-eosin-delta.vercel.app) |
 | **Repo** | [Vibe-Code-1000-websites](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites) |
-| **Progress** | **200 / 1000** sites (100 games) |
+| **Progress** | **300 / 1000** sites (100 games + 100 apps) |
 | **Stack** | HTML/CSS/JS generator · Next.js flagships · Vercel |
 
 ## Gallery preview
@@ -40,7 +40,8 @@ Open the **[live hub](https://websites-eosin-delta.vercel.app)** to search, filt
 | 1 | ✅ | Prove concept (~22 hand-built tools) |
 | 2 | ✅ | Engine → **100 tools** |
 | 2b | ✅ | **100 vibe-coded games** (#101–200), EggBalance |
-| 3 | ✅ | Hub UX, SEO, social card, games banner |
+| 3 | ✅ | **100 interactive apps** (#201–300) |
+| 3b | ✅ | Hub UX, SEO, Plausible, launch banners |
 | 4 | ✅ | Monetize (tips, sponsors, micro-site packages) |
 | 5 | Next | Scale **#201–1000** when revenue proves it |
 
@@ -50,8 +51,8 @@ Details: **[docs/roadmap.md](./docs/roadmap.md)**
 
 ```bash
 npm run engine:status
-npm run engine:games:all   # Games #101–200 + hub + sitemap
-npm run engine:launch      # Full games deploy check (validate + routes)
+npm run engine:scale:300     # Games + apps + hub + validate
+npm run engine:apps:all      # Apps #201–300 only
 npm run validate
 ```
 

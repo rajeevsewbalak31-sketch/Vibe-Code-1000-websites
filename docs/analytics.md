@@ -12,7 +12,9 @@
 }
 ```
 
-3. Re-run `npm run engine:hub` (script injection can be added when domain is set)
+3. Re-run `npm run engine:hub` — script is injected via `<!-- PLAUSIBLE_START -->` markers
+
+**Already configured** in `scripts/manifest.json` as `websites-eosin-delta.vercel.app`. After deploy, check Plausible dashboard for traffic.
 
 Track hub visits, `#get-a-site` clicks, and top game paths (`/101-egg-balance/`, etc.).
 

@@ -67,17 +67,24 @@ switch (cmd) {
     const sites = JSON.parse(readFileSync(join(__dirname, "sites.json"), "utf8"));
     const manifest = JSON.parse(readFileSync(join(__dirname, "manifest.json"), "utf8"));
     const { folders } = countSites();
-    const games = sites.filter((s) => parseInt(s.id, 10) >= 101).length;
+    const games = sites.filter((s) => {
+      const n = parseInt(s.id, 10);
+      return n >= 101 && n <= 200;
+    }).length;
+    const apps = sites.filter((s) => parseInt(s.id, 10) >= 201).length;
     console.log("── Site engine status ──");
     console.log(`Goal:        ${manifest.goal}`);
     console.log(`Phase 2:     ${manifest.phase2Target} sites`);
     console.log(`In sites.json: ${sites.length} registry entries`);
     console.log(`On disk:     ${folders} numbered folders`);
-    console.log(`Games batch: ${games} (#101+)`);
+    console.log(`Games batch: ${games} (#101–200)`);
+    console.log(`Apps batch:  ${apps} (#201–300)`);
     console.log(`Featured:    ${manifest.featured?.length ?? 0} in manifest`);
     console.log("");
     console.log("Tools:  npm run engine:all");
     console.log("Games:  npm run engine:games:all");
+    console.log("Apps:   npm run engine:apps:all");
+    console.log("All:    npm run engine:scale:300");
     break;
   }
   default:

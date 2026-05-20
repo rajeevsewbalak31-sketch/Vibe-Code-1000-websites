@@ -62,10 +62,17 @@ The goal is not to hand-build 1000 pages. The goal is to build a **machine** tha
 - [x] [docs/monetization.md](./monetization.md)
 - [ ] Stripe deposits · affiliate tools
 
+### Phase 3 — Interactive apps (#201–300) ✅
+
+- 10 app templates × 10 variants: gradients, shadows, BMI, JSON, Markdown, Morse, etc.
+- `npm run engine:apps:all`
+- Hub **Experiments** filter + apps launch banner
+- Plausible analytics wired ([docs/analytics.md](./analytics.md))
+
 ### Phase 5 — Scale to 1000 (optional) ← **next**
 
 - Only when Phases 2–4 earn revenue
-- Batch **#201–300**: interactive apps (calculators, visualizers, sandboxes)
+- Batch **#301–500**: new logic types + flagship builds
 - Batch **#301–500**: engine expansion with quality review
 - Retire weak templates; add more flagship games like EggBalance
 

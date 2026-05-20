@@ -122,6 +122,15 @@ body {
   gap: 0.5rem;
 }
 
+.games-banner--apps {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 10%, transparent),
+    color-mix(in srgb, #6c5ce7 12%, transparent)
+  );
+}
+
 /* Header */
 .top-bar {
   display: flex;

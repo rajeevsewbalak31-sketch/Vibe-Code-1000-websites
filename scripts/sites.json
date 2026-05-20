@@ -1780,5 +1780,905 @@
     "accent": "#fab1a0",
     "accent2": "#e17055",
     "logic": "merge-numbers"
+  },
+  {
+    "id": "201",
+    "slug": "pixelpad",
+    "name": "PixelPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "202",
+    "slug": "codehub",
+    "name": "CodeHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "203",
+    "slug": "datadesk",
+    "name": "DataDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "204",
+    "slug": "logicstudio",
+    "name": "LogicStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "205",
+    "slug": "cloudforge",
+    "name": "CloudForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "206",
+    "slug": "bytemint",
+    "name": "ByteMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "207",
+    "slug": "nodeworks",
+    "name": "NodeWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "208",
+    "slug": "gridlab",
+    "name": "GridLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "209",
+    "slug": "formkit",
+    "name": "FormKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "210",
+    "slug": "calcbox",
+    "name": "CalcBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
+  },
+  {
+    "id": "211",
+    "slug": "metapad",
+    "name": "MetaPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "212",
+    "slug": "protohub",
+    "name": "ProtoHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "213",
+    "slug": "alphadesk",
+    "name": "AlphaDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "214",
+    "slug": "betastudio",
+    "name": "BetaStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "215",
+    "slug": "coreforge",
+    "name": "CoreForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "216",
+    "slug": "syncmint",
+    "name": "SyncMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "217",
+    "slug": "flowworks",
+    "name": "FlowWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "218",
+    "slug": "wavelab",
+    "name": "WaveLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "219",
+    "slug": "sparkkit",
+    "name": "SparkKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "220",
+    "slug": "mintbox",
+    "name": "MintBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
+  },
+  {
+    "id": "221",
+    "slug": "craftpad",
+    "name": "CraftPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "222",
+    "slug": "buildhub",
+    "name": "BuildHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "223",
+    "slug": "makedesk",
+    "name": "MakeDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "224",
+    "slug": "editstudio",
+    "name": "EditStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "225",
+    "slug": "viewforge",
+    "name": "ViewForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "226",
+    "slug": "castmint",
+    "name": "CastMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "227",
+    "slug": "plotworks",
+    "name": "PlotWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "228",
+    "slug": "chartlab",
+    "name": "ChartLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "229",
+    "slug": "lenskit",
+    "name": "LensKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "230",
+    "slug": "scopebox",
+    "name": "ScopeBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
+  },
+  {
+    "id": "231",
+    "slug": "quickpad",
+    "name": "QuickPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "232",
+    "slug": "smarthub",
+    "name": "SmartHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "233",
+    "slug": "cleardesk",
+    "name": "ClearDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "234",
+    "slug": "purestudio",
+    "name": "PureStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "235",
+    "slug": "trueforge",
+    "name": "TrueForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "236",
+    "slug": "openmint",
+    "name": "OpenMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "237",
+    "slug": "freeworks",
+    "name": "FreeWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "238",
+    "slug": "easylab",
+    "name": "EasyLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "239",
+    "slug": "fastkit",
+    "name": "FastKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "240",
+    "slug": "litebox",
+    "name": "LiteBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
+  },
+  {
+    "id": "241",
+    "slug": "studiopad",
+    "name": "StudioPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "242",
+    "slug": "deskhub",
+    "name": "DeskHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "243",
+    "slug": "paddesk",
+    "name": "PadDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "244",
+    "slug": "kitstudio",
+    "name": "KitStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "245",
+    "slug": "boxforge",
+    "name": "BoxForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "246",
+    "slug": "hubmint",
+    "name": "HubMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "247",
+    "slug": "labworks",
+    "name": "LabWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "248",
+    "slug": "baylab",
+    "name": "BayLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "249",
+    "slug": "denkit",
+    "name": "DenKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "250",
+    "slug": "portbox",
+    "name": "PortBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
+  },
+  {
+    "id": "251",
+    "slug": "pixelpad",
+    "name": "PixelPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "252",
+    "slug": "codehub",
+    "name": "CodeHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "253",
+    "slug": "datadesk",
+    "name": "DataDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "254",
+    "slug": "logicstudio",
+    "name": "LogicStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "255",
+    "slug": "cloudforge",
+    "name": "CloudForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "256",
+    "slug": "bytemint",
+    "name": "ByteMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "257",
+    "slug": "nodeworks",
+    "name": "NodeWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "258",
+    "slug": "gridlab",
+    "name": "GridLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "259",
+    "slug": "formkit",
+    "name": "FormKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "260",
+    "slug": "calcbox",
+    "name": "CalcBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
+  },
+  {
+    "id": "261",
+    "slug": "metapad",
+    "name": "MetaPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "262",
+    "slug": "protohub",
+    "name": "ProtoHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "263",
+    "slug": "alphadesk",
+    "name": "AlphaDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "264",
+    "slug": "betastudio",
+    "name": "BetaStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "265",
+    "slug": "coreforge",
+    "name": "CoreForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "266",
+    "slug": "syncmint",
+    "name": "SyncMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "267",
+    "slug": "flowworks",
+    "name": "FlowWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "268",
+    "slug": "wavelab",
+    "name": "WaveLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "269",
+    "slug": "sparkkit",
+    "name": "SparkKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "270",
+    "slug": "mintbox",
+    "name": "MintBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
+  },
+  {
+    "id": "271",
+    "slug": "craftpad",
+    "name": "CraftPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "272",
+    "slug": "buildhub",
+    "name": "BuildHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "273",
+    "slug": "makedesk",
+    "name": "MakeDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "274",
+    "slug": "editstudio",
+    "name": "EditStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "275",
+    "slug": "viewforge",
+    "name": "ViewForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "276",
+    "slug": "castmint",
+    "name": "CastMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "277",
+    "slug": "plotworks",
+    "name": "PlotWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "278",
+    "slug": "chartlab",
+    "name": "ChartLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "279",
+    "slug": "lenskit",
+    "name": "LensKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "280",
+    "slug": "scopebox",
+    "name": "ScopeBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
+  },
+  {
+    "id": "281",
+    "slug": "quickpad",
+    "name": "QuickPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "282",
+    "slug": "smarthub",
+    "name": "SmartHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "283",
+    "slug": "cleardesk",
+    "name": "ClearDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "284",
+    "slug": "purestudio",
+    "name": "PureStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "285",
+    "slug": "trueforge",
+    "name": "TrueForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "286",
+    "slug": "openmint",
+    "name": "OpenMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "287",
+    "slug": "freeworks",
+    "name": "FreeWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "288",
+    "slug": "easylab",
+    "name": "EasyLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "289",
+    "slug": "fastkit",
+    "name": "FastKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "290",
+    "slug": "litebox",
+    "name": "LiteBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
+  },
+  {
+    "id": "291",
+    "slug": "studiopad",
+    "name": "StudioPad",
+    "tagline": "Build CSS gradients — copy ready-made code",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "gradient-gen"
+  },
+  {
+    "id": "292",
+    "slug": "deskhub",
+    "name": "DeskHub",
+    "tagline": "Design box-shadows with a live preview",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "shadow-gen"
+  },
+  {
+    "id": "293",
+    "slug": "paddesk",
+    "name": "PadDesk",
+    "tagline": "Body mass index with healthy range hints",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "bmi-calc"
+  },
+  {
+    "id": "294",
+    "slug": "kitstudio",
+    "name": "KitStudio",
+    "tagline": "Percent of, increase, decrease — instant math",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "percent-calc"
+  },
+  {
+    "id": "295",
+    "slug": "boxforge",
+    "name": "BoxForge",
+    "tagline": "Convert Arabic ↔ Roman numerals",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "roman-num"
+  },
+  {
+    "id": "296",
+    "slug": "hubmint",
+    "name": "HubMint",
+    "tagline": "Decimal, binary, and hex side by side",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "binary-convert"
+  },
+  {
+    "id": "297",
+    "slug": "labworks",
+    "name": "LabWorks",
+    "tagline": "Text to Morse — sound and copy",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "morse-code"
+  },
+  {
+    "id": "298",
+    "slug": "baylab",
+    "name": "BayLab",
+    "tagline": "Exact age in years, months, and days",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "age-calc"
+  },
+  {
+    "id": "299",
+    "slug": "denkit",
+    "name": "DenKit",
+    "tagline": "Format, validate, and minify JSON",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "json-pretty"
+  },
+  {
+    "id": "300",
+    "slug": "portbox",
+    "name": "PortBox",
+    "tagline": "Write Markdown — see live HTML preview",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "markdown-preview"
   }
 ]

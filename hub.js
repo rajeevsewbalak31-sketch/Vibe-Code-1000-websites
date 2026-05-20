@@ -1,5 +1,5 @@
 const TOTAL = 1000;
-const COMPLETED = 200;
+const COMPLETED = 300;
 const POPULAR_IDS = ["001","002","101","007","013"];
 
 const fill = document.getElementById("progress-fill");
@@ -87,11 +87,24 @@ function activateGamesFilter() {
   document.getElementById("site-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+function activateCategoryFilter(cat) {
+  const btn = filterBar?.querySelector(`[data-category="${cat}"]`);
+  if (btn) btn.click();
+  document.getElementById("site-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 document.querySelectorAll("[data-filter-games]").forEach((el) => {
   el.addEventListener("click", (e) => {
     if (el.tagName === "A" && el.getAttribute("href")?.includes("egg-balance")) return;
     e.preventDefault();
     activateGamesFilter();
+  });
+});
+
+document.querySelectorAll("[data-filter-experiments]").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    activateCategoryFilter("experiments");
   });
 });
 

@@ -85,8 +85,12 @@ for (const s of sites) {
 
 allEntries.sort((a, b) => a.id.localeCompare(b.id));
 const count = allEntries.length;
-const gameCount = allEntries.filter((e) => e.category === "games").length;
+const gameCount = allEntries.filter(
+  (e) => e.category === "games" && parseInt(e.id, 10) >= 101 && parseInt(e.id, 10) <= 200
+).length;
+const appCount = allEntries.filter((e) => parseInt(e.id, 10) >= 201).length;
 const ogUrl = `${HUB_URL}${OG_IMAGE.startsWith("/") ? OG_IMAGE : `/${OG_IMAGE}`}`;
+const plausibleDomain = manifest.hub?.plausibleDomain || "";
 
 const spotlightEntries = (manifest.spotlight || [])
   .map((id) => {
@@ -118,15 +122,15 @@ const filterButtons = [
 
 function heroHtml() {
   return `    <section class="hero">
-      <p class="hero-eyebrow">${count} websites live · ${gameCount} games · From €49</p>
+      <p class="hero-eyebrow">${count} sites live · ${gameCount} games · ${appCount} interactive apps · From €49</p>
       <h1>1000 Websites Challenge</h1>
       <p class="hero-lead">
-        Browse <strong>${count} free mini-apps</strong> — tools, utilities, and vibe-coded games — or <strong>get your own site built in 24h</strong>.
+        Browse <strong>${count} free mini-apps</strong> — tools, games, calculators, and experiments — or <strong>get your own site built in 24h</strong>.
       </p>
       <ul class="trust-bar trust-bar--hero" aria-label="Trust signals">
-        <li><span class="trust-num">${count}</span> sites live</li>
+        <li><span class="trust-num">${count}</span> sites</li>
         <li><span class="trust-num">${gameCount}</span> games</li>
-        <li>From <span class="trust-num">€49</span></li>
+        <li><span class="trust-num">${appCount}</span> apps</li>
       </ul>
       <div class="progress-wrap">
         <div class="progress-label">
@@ -164,6 +168,27 @@ function gamesBannerHtml() {
     </section>`;
 }
 
+function appsBannerHtml() {
+  if (appCount === 0) return "";
+  return `    <section class="games-banner games-banner--apps" id="apps-launch" aria-labelledby="apps-banner-heading">
+      <div class="games-banner-inner">
+        <span class="games-banner-badge">Batch #3</span>
+        <div class="games-banner-copy">
+          <h2 id="apps-banner-heading">${appCount} interactive apps (#201–300)</h2>
+          <p>Gradient & shadow CSS builders, BMI & percent calculators, JSON formatter, Markdown preview, Morse code, and more.</p>
+        </div>
+        <div class="games-banner-actions">
+          <a class="btn btn--primary" href="#site-grid" data-filter-experiments>Explore apps</a>
+        </div>
+      </div>
+    </section>`;
+}
+
+function plausibleHead() {
+  if (!plausibleDomain) return "";
+  return `  <script defer data-domain="${escapeAttr(plausibleDomain)}" src="https://plausible.io/js/script.js"></script>`;
+}
+
 let index = readFileSync(INDEX_PATH, "utf8");
 
 function replaceBlock(start, end, content) {
@@ -175,12 +200,15 @@ function replaceBlock(start, end, content) {
 
 replaceBlock("<!-- HERO_START -->", "<!-- HERO_END -->", heroHtml());
 replaceBlock("<!-- GAMES_BANNER_START -->", "<!-- GAMES_BANNER_END -->", gamesBannerHtml());
+replaceBlock("<!-- APPS_BANNER_START -->", "<!-- APPS_BANNER_END -->", appsBannerHtml());
 replaceBlock("<!-- FEATURED_STRIP_START -->", "<!-- FEATURED_STRIP_END -->", featuredCards);
 replaceBlock("<!-- SITE_GRID_START -->", "<!-- SITE_GRID_END -->", gridCards);
 replaceBlock("<!-- CATEGORY_FILTERS_START -->", "<!-- CATEGORY_FILTERS_END -->", filterButtons);
 replaceBlock("<!-- MONETIZE_START -->", "<!-- MONETIZE_END -->", hubMonetizationHtml(manifest));
 
-const desc = `${count} free mini-apps — ${gameCount} games, tools, utilities & experiments. Built with ${BRAND}. Tip via PayPal.`;
+replaceBlock("<!-- PLAUSIBLE_START -->", "<!-- PLAUSIBLE_END -->", plausibleHead());
+
+const desc = `${count} free mini-apps — ${gameCount} games, ${appCount} interactive apps, tools & utilities. Built with ${BRAND}. Tip via PayPal.`;
 index = index.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${escapeAttr(desc)}"`);
 index = index.replace(
   /<meta property="og:description" content="[^"]*"/,
@@ -218,4 +246,6 @@ hubJs = hubJs.replace(/const COMPLETED = \d+;/, `const COMPLETED = ${count};`);
 hubJs = hubJs.replace(/const POPULAR_IDS = \[.*?\];/, `const POPULAR_IDS = ${JSON.stringify([...spotlightIds])};`);
 writeFileSync(HUB_JS_PATH, hubJs, "utf8");
 
-console.log(`Hub synced: ${count} sites (${gameCount} games), ${spotlightEntries.length} featured (${HUB_URL})`);
+console.log(
+  `Hub synced: ${count} sites (${gameCount} games, ${appCount} apps), ${spotlightEntries.length} featured (${HUB_URL})`
+);

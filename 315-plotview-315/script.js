@@ -5,7 +5,63 @@ function showToast(msg) {
   t.classList.add("is-visible");
   setTimeout(() => t.classList.remove("is-visible"), 2200);
 }
-const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js";s.onload=()=>{};
-document.head.appendChild(s);
-document.getElementById("btn").onclick=()=>{const v=document.getElementById("in").value;if(typeof QRCode==="undefined"){showToast("Loading library…");return;}
-QRCode.toCanvas(document.getElementById("qr"),v,{width:200,margin:1},e=>{if(e)showToast("Error");else showToast("QR ready");});};
+
+const canvas = document.getElementById("qr");
+const btn = document.getElementById("btn");
+const dl = document.getElementById("dl");
+const status = document.getElementById("status");
+const input = document.getElementById("in");
+const sizeEl = document.getElementById("size");
+
+function ready() {
+  return typeof QRCode !== "undefined";
+}
+
+function generate() {
+  const v = input.value.trim();
+  if (!v) {
+    showToast("Enter text or URL");
+    return;
+  }
+  if (!ready()) {
+    status.textContent = "Loading library…";
+    return;
+  }
+  const px = parseInt(sizeEl.value, 10) || 240;
+  canvas.width = canvas.height = px;
+  QRCode.toCanvas(
+    canvas,
+    v,
+    { width: px, margin: 2, errorCorrectionLevel: "M" },
+    (err) => {
+      if (err) {
+        status.textContent = "Could not generate";
+        dl.disabled = true;
+        showToast("Error generating QR");
+      } else {
+        status.textContent = "QR ready — download or share";
+        dl.disabled = false;
+      }
+    }
+  );
+}
+
+btn.addEventListener("click", generate);
+input.addEventListener("input", () => {
+  clearTimeout(input._t);
+  input._t = setTimeout(generate, 400);
+});
+sizeEl.addEventListener("input", generate);
+
+dl.addEventListener("click", () => {
+  const a = document.createElement("a");
+  a.download = "plotview-qr.png";
+  a.href = canvas.toDataURL("image/png");
+  a.click();
+  showToast("Download started");
+});
+
+window.addEventListener("load", () => {
+  if (ready()) generate();
+  else status.textContent = "Loading…";
+});

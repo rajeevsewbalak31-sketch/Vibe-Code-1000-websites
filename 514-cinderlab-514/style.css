@@ -1,1 +1,27 @@
-:root{--accent:#0984e3;--accent-2:#74b9ff}
+:root { --accent: #0984e3; --accent-2: #74b9ff; }
+.habit-panel { max-width: 24rem; margin: 0 auto; }
+.habit-stats { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; text-align: center; }
+.habit-add { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+.habit-list { list-style: none; }
+.habit-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 0.4rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.habit-item.is-done { border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); }
+.habit-item label { display: flex; gap: 0.5rem; align-items: center; flex: 1; cursor: pointer; }
+.habit-del {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.habit-del:hover { color: #e74c3c; }

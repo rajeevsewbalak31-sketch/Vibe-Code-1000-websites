@@ -1,1 +1,10 @@
-:root{--accent:#6c5ce7;--accent-2:#a29bfe}
+:root { --accent: #6c5ce7; --accent-2: #a29bfe; }
+.preset-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.preset-swatch {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--border);
+  cursor: pointer;
+}
+.grad-preview { min-height: 7rem; border-radius: var(--radius); border: 1px solid var(--border); margin: 1rem 0; }

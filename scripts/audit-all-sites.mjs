@@ -310,6 +310,7 @@ const scores = results.map((r) => r.score);
 const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
 const broken = results.filter((r) => r.flags.includes("broken"));
 const placeholder = results.filter((r) => r.flags.includes("placeholder"));
+const thinTemplate = results.filter((r) => r.flags.includes("thin-template"));
 const lowIx = results.filter((r) => r.flags.includes("low-interactivity"));
 const noMobile = results.filter((r) => !r.responsive);
 const noJs = results.filter((r) => !r.interactive);
@@ -336,7 +337,8 @@ Audited folders: **${results.length}** (excludes \`001-buy-a-square\` Next.js pr
 | Grade C (55–69) | ${results.filter((r) => r.score >= 55 && r.score < 70).length} |
 | Grade D/F (&lt;55) | ${results.filter((r) => r.score < 55).length} |
 | Flagged broken | ${broken.length} |
-| Flagged placeholder / thin | ${placeholder.length} |
+| Flagged placeholder | ${placeholder.length} |
+| Thin / single-control template | ${thinTemplate.length} |
 | Low interactivity | ${lowIx.length} |
 | Weak mobile signals | ${noMobile.length} |
 | No detected JS UX | ${noJs.length} |
@@ -349,14 +351,15 @@ Audited folders: **${results.length}** (excludes \`001-buy-a-square\` Next.js pr
 4. **JavaScript** — \`script.js\` present, event handlers or form controls, not toast-only stub  
 5. **Placeholders** — “coming soon”, static \`—\` display, minimal script body  
 
-> **Note:** This audit does not open a browser for visual QA. Hand-crafted sites (#002, #003, #101) typically score higher. Template-generated batch sites share patterns; lowest scores are often structurally fine but **generic**.
+> **Note:** Scores measure structure, interactivity depth, and template richness — not visual design. Almost all sites pass technical checks; the bottom 50 are **relatively** more generic (often one-button batch templates). Hand-crafted #002, #003, #101 score 100. Production hub may still show an old build (~100 cards) while individual site URLs can return 200 OK.
 
 ## Issue breakdown
 
 | Issue type | Count |
 |------------|------:|
 | Broken / missing files or links | ${broken.length} |
-| Placeholder or thin template | ${placeholder.length} |
+| Placeholder copy | ${placeholder.length} |
+| Thin / single-control template | ${thinTemplate.length} |
 | Low interactivity | ${lowIx.length} |
 | Weak mobile responsiveness | ${noMobile.length} |
 

@@ -17,7 +17,8 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 | Grade C (55–69) | 0 |
 | Grade D/F (&lt;55) | 0 |
 | Flagged broken | 0 |
-| Flagged placeholder / thin | 0 |
+| Flagged placeholder | 0 |
+| Thin / single-control template | 90 |
 | Low interactivity | 0 |
 | Weak mobile signals | 0 |
 | No detected JS UX | 0 |
@@ -30,14 +31,15 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 4. **JavaScript** — `script.js` present, event handlers or form controls, not toast-only stub  
 5. **Placeholders** — “coming soon”, static `—` display, minimal script body  
 
-> **Note:** This audit does not open a browser for visual QA. Hand-crafted sites (#002, #003, #101) typically score higher. Template-generated batch sites share patterns; lowest scores are often structurally fine but **generic**.
+> **Note:** Scores measure structure, interactivity depth, and template richness — not visual design. Almost all sites pass technical checks; the bottom 50 are **relatively** more generic (often one-button batch templates). Hand-crafted #002, #003, #101 score 100. Production hub may still show an old build (~100 cards) while individual site URLs can return 200 OK.
 
 ## Issue breakdown
 
 | Issue type | Count |
 |------------|------:|
 | Broken / missing files or links | 0 |
-| Placeholder or thin template | 0 |
+| Placeholder copy | 0 |
+| Thin / single-control template | 90 |
 | Low interactivity | 0 |
 | Weak mobile responsiveness | 0 |
 

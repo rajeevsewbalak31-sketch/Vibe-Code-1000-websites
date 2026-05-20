@@ -29,6 +29,8 @@
     "verify:routes": "node scripts/verify-routes.mjs",
     "verify:live": "node scripts/verify-live.mjs",
     "verify:all": "node scripts/validate.mjs && node scripts/verify-routes.mjs && node scripts/verify-live.mjs",
-    "generate": "node scripts/generate-sites.mjs"
+    "generate": "node scripts/generate-sites.mjs",
+    "engine:sequential": "node scripts/run-sequential-auto.mjs",
+    "engine:sequential:status": "node scripts/run-sequential-auto.mjs --status"
   }
 }

@@ -574,32 +574,50 @@ function cleanHtml(raw) {
     .replace(/<\/motion-div>\s*${extra}/g, "");
 }
 
-let created = 0;
-let updated = 0;
-for (const site of sites) {
-  if (
-    GAME_LOGIC_SET.has(site.logic) ||
-    APP_LOGIC_SET.has(site.logic) ||
-    BATCH2_LOGIC_SET.has(site.logic) ||
-    BATCH3_LOGIC_SET.has(site.logic)
-  )
-    continue;
-  const dir = join(ROOT, `${site.id}-${site.slug}`);
-  const exists = existsSync(dir);
-  if (exists && !FORCE) {
-    console.log("Skip (exists):", dir);
-    continue;
-  }
-  if (!exists) mkdirSync(dir, { recursive: true });
+/** Write one tool-site folder; returns false if folder already exists (no overwrite). */
+export function writeToolSite(site, root = ROOT) {
+  const dir = join(root, `${site.id}-${site.slug}`);
+  if (existsSync(dir)) return false;
+  mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, "index.html"), html(site), "utf8");
   writeFileSync(join(dir, "style.css"), css(site), "utf8");
   writeFileSync(join(dir, "script.js"), script(site), "utf8");
-  if (exists) {
-    updated++;
-    console.log("Updated:", site.id, site.slug);
-  } else {
-    created++;
-    console.log("Created:", site.id, site.slug);
-  }
+  return true;
 }
-console.log(`Done. Created ${created}, updated ${updated}${FORCE ? " (force)" : ""}.`);
+
+const isMain =
+  process.argv[1] &&
+  fileURLToPath(import.meta.url).toLowerCase() ===
+    join(process.argv[1]).toLowerCase();
+
+if (isMain) {
+  let created = 0;
+  let updated = 0;
+  for (const site of sites) {
+    if (
+      GAME_LOGIC_SET.has(site.logic) ||
+      APP_LOGIC_SET.has(site.logic) ||
+      BATCH2_LOGIC_SET.has(site.logic) ||
+      BATCH3_LOGIC_SET.has(site.logic)
+    )
+      continue;
+    const dir = join(ROOT, `${site.id}-${site.slug}`);
+    const exists = existsSync(dir);
+    if (exists && !FORCE) {
+      console.log("Skip (exists):", dir);
+      continue;
+    }
+    if (!exists) mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "index.html"), html(site), "utf8");
+    writeFileSync(join(dir, "style.css"), css(site), "utf8");
+    writeFileSync(join(dir, "script.js"), script(site), "utf8");
+    if (exists) {
+      updated++;
+      console.log("Updated:", site.id, site.slug);
+    } else {
+      created++;
+      console.log("Created:", site.id, site.slug);
+    }
+  }
+  console.log(`Done. Created ${created}, updated ${updated}${FORCE ? " (force)" : ""}.`);
+}

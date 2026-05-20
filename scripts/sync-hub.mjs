@@ -6,6 +6,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { getCategory, isFeaturedId } from "./lib/categories.mjs";
 import { HUB_URL, BRAND, HUB_TITLE, HUB_DESCRIPTION, hubJsonLd, escapeAttr } from "./lib/seo.mjs";
+import { vercelAnalyticsScripts } from "./lib/analytics.mjs";
 import { hubMonetizationHtml } from "./lib/monetization.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -99,6 +100,7 @@ const creativeCount = allEntries.filter((e) => {
 const labsCount = allEntries.filter((e) => parseInt(e.id, 10) >= 501).length;
 const ogUrl = `${HUB_URL}${OG_IMAGE.startsWith("/") ? OG_IMAGE : `/${OG_IMAGE}`}`;
 const plausibleDomain = manifest.hub?.plausibleDomain || "";
+const vercelAnalyticsEnabled = manifest.hub?.vercelAnalytics !== false;
 
 const spotlightEntries = (manifest.spotlight || [])
   .map((id) => {
@@ -199,6 +201,11 @@ function plausibleHead() {
   return `  <script defer data-domain="${escapeAttr(plausibleDomain)}" src="https://plausible.io/js/script.js"></script>`;
 }
 
+function vercelAnalyticsBlock() {
+  if (!vercelAnalyticsEnabled) return "";
+  return vercelAnalyticsScripts();
+}
+
 function creativeBannerHtml() {
   if (creativeCount === 0) return "";
   return `    <section class="games-banner games-banner--apps" id="creative-launch" aria-labelledby="creative-banner-heading">
@@ -264,6 +271,7 @@ replaceBlock("<!-- CATEGORY_FILTERS_START -->", "<!-- CATEGORY_FILTERS_END -->",
 replaceBlock("<!-- MONETIZE_START -->", "<!-- MONETIZE_END -->", hubMonetizationHtml(manifest));
 
 replaceBlock("<!-- PLAUSIBLE_START -->", "<!-- PLAUSIBLE_END -->", plausibleHead());
+replaceBlock("<!-- VERCEL_ANALYTICS_START -->", "<!-- VERCEL_ANALYTICS_END -->", vercelAnalyticsBlock());
 
 const desc = HUB_DESCRIPTION;
 index = index.replace(/<title>[^<]*<\/title>/, `<title>${escapeAttr(HUB_TITLE)}</title>`);

@@ -3,7 +3,8 @@
   "phase2Target": 1000,
   "hub": {
     "ogImage": "/og.svg",
-    "plausibleDomain": "websites-eosin-delta.vercel.app"
+    "plausibleDomain": "websites-eosin-delta.vercel.app",
+    "vercelAnalytics": true
   },
   "hubUrl": "https://websites-eosin-delta.vercel.app",
   "paypal": "https://paypal.me/RajeevSewbalak",

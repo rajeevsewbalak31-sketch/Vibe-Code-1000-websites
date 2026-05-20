@@ -1,4 +1,5 @@
 import { siteHeadMeta, siteTitle } from "./seo.mjs";
+import { vercelAnalyticsHead } from "./analytics.mjs";
 import { siteMonetizationFooter } from "./monetization.mjs";
 import { hubLink } from "./hub-links.mjs";
 
@@ -29,6 +30,7 @@ export function appHtml(site, bodyHtml) {
   <link rel="stylesheet" href="/_shared/tool.css" />
   <link rel="stylesheet" href="/_shared/app.css" />
   <link rel="stylesheet" href="style.css" />
+${vercelAnalyticsHead()}
 </head>
 <body>
   <div class="bg" aria-hidden="true">

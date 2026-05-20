@@ -1,4 +1,5 @@
 import { siteHeadMeta, siteTitle } from "./seo.mjs";
+import { vercelAnalyticsHead } from "./analytics.mjs";
 import { siteMonetizationFooter } from "./monetization.mjs";
 import { hubLink } from "./hub-links.mjs";
 
@@ -30,6 +31,7 @@ export function gameHtml(site, bodyHtml, extraHead = "") {
   <link rel="stylesheet" href="/_shared/game.css" />
   <link rel="stylesheet" href="style.css" />
   ${extraHead}
+${vercelAnalyticsHead()}
 </head>
 <body>
   <div class="bg" aria-hidden="true">

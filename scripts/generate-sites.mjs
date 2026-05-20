@@ -2,6 +2,7 @@ import { readFileSync, mkdirSync, writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { siteHeadMeta, siteTitle } from "./lib/seo.mjs";
+import { vercelAnalyticsHead } from "./lib/analytics.mjs";
 import { siteMonetizationFooter } from "./lib/monetization.mjs";
 import { hubLink } from "./lib/hub-links.mjs";
 import { GAME_LOGIC_SET } from "./lib/games-catalog.mjs";
@@ -490,6 +491,7 @@ function html(site) {
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/_shared/tool.css" />
   <link rel="stylesheet" href="style.css" />
+${vercelAnalyticsHead()}
 </head>
 <body>
   <div class="bg" aria-hidden="true">

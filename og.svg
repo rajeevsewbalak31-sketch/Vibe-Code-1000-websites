@@ -13,7 +13,7 @@
   <circle cx="200" cy="120" r="180" fill="#3d2a4f" opacity="0.5"/>
   <circle cx="1000" cy="520" r="200" fill="#1a4a42" opacity="0.45"/>
   <text x="80" y="200" font-family="Georgia, serif" font-size="88" font-weight="600" fill="#f2efe8">Vibe Code 1000</text>
-  <text x="80" y="280" font-family="system-ui, sans-serif" font-size="36" fill="url(#accent)">300 sites · games · interactive apps</text>
+  <text x="80" y="280" font-family="system-ui, sans-serif" font-size="36" fill="url(#accent)">500 sites · games · apps · creative tools</text>
   <text x="80" y="340" font-family="system-ui, sans-serif" font-size="28" fill="rgba(242,239,232,0.65)">Free tools + EggBalance physics game</text>
   <rect x="80" y="400" width="320" height="56" rx="28" fill="url(#accent)"/>
   <text x="240" y="438" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="600" fill="#0a0d12">websites-eosin-delta.vercel.app</text>

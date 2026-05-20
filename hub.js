@@ -1,5 +1,5 @@
 const TOTAL = 1000;
-const COMPLETED = 300;
+const COMPLETED = 500;
 const POPULAR_IDS = ["001","002","101","007","013"];
 
 const fill = document.getElementById("progress-fill");
@@ -105,6 +105,13 @@ document.querySelectorAll("[data-filter-experiments]").forEach((el) => {
   el.addEventListener("click", (e) => {
     e.preventDefault();
     activateCategoryFilter("experiments");
+  });
+});
+
+document.querySelectorAll("[data-filter-creative]").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    activateCategoryFilter("creative");
   });
 });
 

@@ -88,7 +88,11 @@ const count = allEntries.length;
 const gameCount = allEntries.filter(
   (e) => e.category === "games" && parseInt(e.id, 10) >= 101 && parseInt(e.id, 10) <= 200
 ).length;
-const appCount = allEntries.filter((e) => parseInt(e.id, 10) >= 201).length;
+const appCount = allEntries.filter((e) => {
+  const n = parseInt(e.id, 10);
+  return n >= 201 && n <= 300;
+}).length;
+const creativeCount = allEntries.filter((e) => parseInt(e.id, 10) >= 301).length;
 const ogUrl = `${HUB_URL}${OG_IMAGE.startsWith("/") ? OG_IMAGE : `/${OG_IMAGE}`}`;
 const plausibleDomain = manifest.hub?.plausibleDomain || "";
 
@@ -113,6 +117,7 @@ const filterButtons = [
   { id: "utilities", label: "Utilities" },
   { id: "landing-pages", label: "Landing Pages" },
   { id: "experiments", label: "Experiments" },
+  { id: "creative", label: "Creative" },
 ]
   .map(
     (c) =>
@@ -122,7 +127,7 @@ const filterButtons = [
 
 function heroHtml() {
   return `    <section class="hero">
-      <p class="hero-eyebrow">${count} sites live · ${gameCount} games · ${appCount} interactive apps · From €49</p>
+      <p class="hero-eyebrow">${count} sites live · ${gameCount} games · ${appCount} apps · ${creativeCount} creative · From €49</p>
       <h1>1000 Websites Challenge</h1>
       <p class="hero-lead">
         Browse <strong>${count} free mini-apps</strong> — tools, games, calculators, and experiments — or <strong>get your own site built in 24h</strong>.
@@ -131,6 +136,7 @@ function heroHtml() {
         <li><span class="trust-num">${count}</span> sites</li>
         <li><span class="trust-num">${gameCount}</span> games</li>
         <li><span class="trust-num">${appCount}</span> apps</li>
+        <li><span class="trust-num">${creativeCount}</span> creative</li>
       </ul>
       <div class="progress-wrap">
         <div class="progress-label">
@@ -189,6 +195,22 @@ function plausibleHead() {
   return `  <script defer data-domain="${escapeAttr(plausibleDomain)}" src="https://plausible.io/js/script.js"></script>`;
 }
 
+function creativeBannerHtml() {
+  if (creativeCount === 0) return "";
+  return `    <section class="games-banner games-banner--apps" id="creative-launch" aria-labelledby="creative-banner-heading">
+      <div class="games-banner-inner">
+        <span class="games-banner-badge">Batch #4</span>
+        <div class="games-banner-copy">
+          <h2 id="creative-banner-heading">${creativeCount} creative tools (#301–500)</h2>
+          <p>QR codes, UUIDs, contrast checker, typing test, pixel doodle, tone generator, lorem ipsum, and more.</p>
+        </div>
+        <div class="games-banner-actions">
+          <a class="btn btn--primary" href="#site-grid" data-filter-creative>Explore creative</a>
+        </div>
+      </div>
+    </section>`;
+}
+
 let index = readFileSync(INDEX_PATH, "utf8");
 
 function replaceBlock(start, end, content) {
@@ -201,6 +223,7 @@ function replaceBlock(start, end, content) {
 replaceBlock("<!-- HERO_START -->", "<!-- HERO_END -->", heroHtml());
 replaceBlock("<!-- GAMES_BANNER_START -->", "<!-- GAMES_BANNER_END -->", gamesBannerHtml());
 replaceBlock("<!-- APPS_BANNER_START -->", "<!-- APPS_BANNER_END -->", appsBannerHtml());
+replaceBlock("<!-- CREATIVE_BANNER_START -->", "<!-- CREATIVE_BANNER_END -->", creativeBannerHtml());
 replaceBlock("<!-- FEATURED_STRIP_START -->", "<!-- FEATURED_STRIP_END -->", featuredCards);
 replaceBlock("<!-- SITE_GRID_START -->", "<!-- SITE_GRID_END -->", gridCards);
 replaceBlock("<!-- CATEGORY_FILTERS_START -->", "<!-- CATEGORY_FILTERS_END -->", filterButtons);
@@ -208,7 +231,7 @@ replaceBlock("<!-- MONETIZE_START -->", "<!-- MONETIZE_END -->", hubMonetization
 
 replaceBlock("<!-- PLAUSIBLE_START -->", "<!-- PLAUSIBLE_END -->", plausibleHead());
 
-const desc = `${count} free mini-apps — ${gameCount} games, ${appCount} interactive apps, tools & utilities. Built with ${BRAND}. Tip via PayPal.`;
+const desc = `${count} free mini-apps — ${gameCount} games, ${appCount} apps, ${creativeCount} creative tools. Built with ${BRAND}. Tip via PayPal.`;
 index = index.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${escapeAttr(desc)}"`);
 index = index.replace(
   /<meta property="og:description" content="[^"]*"/,
@@ -247,5 +270,5 @@ hubJs = hubJs.replace(/const POPULAR_IDS = \[.*?\];/, `const POPULAR_IDS = ${JSO
 writeFileSync(HUB_JS_PATH, hubJs, "utf8");
 
 console.log(
-  `Hub synced: ${count} sites (${gameCount} games, ${appCount} apps), ${spotlightEntries.length} featured (${HUB_URL})`
+  `Hub synced: ${count} sites (${gameCount} games, ${appCount} apps, ${creativeCount} creative), ${spotlightEntries.length} featured (${HUB_URL})`
 );

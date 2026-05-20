@@ -1,6 +1,6 @@
 {
   "goal": 1000,
-  "phase2Target": 300,
+  "phase2Target": 500,
   "hub": {
     "ogImage": "/og.svg",
     "plausibleDomain": "websites-eosin-delta.vercel.app"

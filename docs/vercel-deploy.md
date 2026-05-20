@@ -1,4 +1,4 @@
-# Vercel deploy — 300 static sites
+# Vercel deploy — 500 static sites
 
 If the live hub still shows ~100 cards after pushing to GitHub, the Vercel project may not be linked to auto-deploy.
 
@@ -14,13 +14,19 @@ If the live hub still shows ~100 cards after pushing to GitHub, the Vercel proje
 
 | URL | Expected |
 |-----|----------|
-| `/` | ~300 gallery cards |
+| `/` | ~500 gallery cards |
 | `/101-egg-balance/` | EggBalance game |
 | `/_shared/tool.css` | 200 |
 | `/_shared/game.css` | 200 |
 | `/_shared/app.css` | 200 |
 | `/og.svg` | 200 |
-| `/201-*` sample | 200 |
+| `/301-*` sample | 200 |
+
+## GitHub Actions auto-deploy (optional)
+
+1. Get IDs from Vercel → Project → Settings.
+2. Add secrets: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`.
+3. Push to `main` — workflow `.github/workflows/vercel-deploy.yml` deploys automatically.
 
 ## Repo layout
 

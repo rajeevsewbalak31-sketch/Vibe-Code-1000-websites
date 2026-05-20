@@ -1,0 +1,4 @@
+:root{--accent:#ff7675;--accent-2:#d63031}
+.pixel-grid{display:grid;grid-template-columns:repeat(16,1fr);gap:2px;max-width:16rem;margin:0 auto}
+.pixel-grid button{aspect-ratio:1;border:none;border-radius:2px;background:rgba(255,255,255,.08);cursor:pointer;padding:0}
+.pixel-grid button.on{background:var(--accent)}

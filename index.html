@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="300 free mini-apps — 100 games, 100 interactive apps, tools &amp; utilities. Built with Vibe Code 1000. Tip via PayPal." />
+  <meta name="description" content="500 free mini-apps — 100 games, 100 apps, 200 creative tools. Built with Vibe Code 1000. Tip via PayPal." />
   <meta name="keywords" content="free web tools, mini apps, randomizer, pomodoro, password generator, 1000 websites" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://websites-eosin-delta.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://websites-eosin-delta.vercel.app/" />
   <meta property="og:title" content="1000 Websites Challenge — Hub" />
-  <meta property="og:description" content="300 free mini-apps — 100 games, 100 interactive apps, tools &amp; utilities. Built with Vibe Code 1000. Tip via PayPal." />
+  <meta property="og:description" content="500 free mini-apps — 100 games, 100 apps, 200 creative tools. Built with Vibe Code 1000. Tip via PayPal." />
   <meta property="og:image" content="https://websites-eosin-delta.vercel.app/og.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://websites-eosin-delta.vercel.app/og.svg" />
   <meta name="twitter:title" content="1000 Websites Challenge — Hub" />
-  <meta name="twitter:description" content="300 free mini-apps — 100 games, 100 interactive apps, tools &amp; utilities. Built with Vibe Code 1000. Tip via PayPal." />
+  <meta name="twitter:description" content="500 free mini-apps — 100 games, 100 apps, 200 creative tools. Built with Vibe Code 1000. Tip via PayPal." />
   <title>1000 Websites Challenge — Hub</title>
-  <script type="application/ld+json" id="json-ld">{"@context":"https://schema.org","@type":"WebSite","name":"Vibe Code 1000","alternateName":"1000 Websites Challenge","url":"https://websites-eosin-delta.vercel.app","description":"300 free mini web apps, including 100 vibe-coded games — built by a site generation engine.","author":{"@type":"Person","name":"Rajeev Sewbalak"}}</script>
+  <script type="application/ld+json" id="json-ld">{"@context":"https://schema.org","@type":"WebSite","name":"Vibe Code 1000","alternateName":"1000 Websites Challenge","url":"https://websites-eosin-delta.vercel.app","description":"500 free mini web apps, including 100 vibe-coded games — built by a site generation engine.","author":{"@type":"Person","name":"Rajeev Sewbalak"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -50,22 +50,23 @@
 
     <!-- HERO_START -->
     <section class="hero">
-      <p class="hero-eyebrow">300 sites live · 100 games · 100 interactive apps · From €49</p>
+      <p class="hero-eyebrow">500 sites live · 100 games · 100 apps · 200 creative · From €49</p>
       <h1>1000 Websites Challenge</h1>
       <p class="hero-lead">
-        Browse <strong>300 free mini-apps</strong> — tools, games, calculators, and experiments — or <strong>get your own site built in 24h</strong>.
+        Browse <strong>500 free mini-apps</strong> — tools, games, calculators, and experiments — or <strong>get your own site built in 24h</strong>.
       </p>
       <ul class="trust-bar trust-bar--hero" aria-label="Trust signals">
-        <li><span class="trust-num">300</span> sites</li>
+        <li><span class="trust-num">500</span> sites</li>
         <li><span class="trust-num">100</span> games</li>
         <li><span class="trust-num">100</span> apps</li>
+        <li><span class="trust-num">200</span> creative</li>
       </ul>
       <div class="progress-wrap">
         <div class="progress-label">
           <span>Progress</span>
-          <span><strong id="progress-count">300</strong> / 1000</span>
+          <span><strong id="progress-count">500</strong> / 1000</span>
         </div>
-        <div class="progress-bar" role="progressbar" aria-valuenow="300" aria-valuemin="0" aria-valuemax="1000" aria-label="Sites completed">
+        <div class="progress-bar" role="progressbar" aria-valuenow="500" aria-valuemin="0" aria-valuemax="1000" aria-label="Sites completed">
           <div class="progress-fill" id="progress-fill"></div>
         </div>
       </div>
@@ -107,6 +108,21 @@
       </div>
     </section>
     <!-- APPS_BANNER_END -->
+
+    <!-- CREATIVE_BANNER_START -->
+    <section class="games-banner games-banner--apps" id="creative-launch" aria-labelledby="creative-banner-heading">
+      <div class="games-banner-inner">
+        <span class="games-banner-badge">Batch #4</span>
+        <div class="games-banner-copy">
+          <h2 id="creative-banner-heading">200 creative tools (#301–500)</h2>
+          <p>QR codes, UUIDs, contrast checker, typing test, pixel doodle, tone generator, lorem ipsum, and more.</p>
+        </div>
+        <div class="games-banner-actions">
+          <a class="btn btn--primary" href="#site-grid" data-filter-creative>Explore creative</a>
+        </div>
+      </div>
+    </section>
+    <!-- CREATIVE_BANNER_END -->
 
     <section class="featured" aria-labelledby="featured-heading">
       <div class="featured-head">
@@ -164,6 +180,7 @@
         <button type="button" class="filter" data-category="utilities">Utilities</button>
         <button type="button" class="filter" data-category="landing-pages">Landing Pages</button>
         <button type="button" class="filter" data-category="experiments">Experiments</button>
+        <button type="button" class="filter" data-category="creative">Creative</button>
     <!-- CATEGORY_FILTERS_END -->
       </div>
       <label class="sort-wrap">
@@ -174,7 +191,7 @@
           <option value="popular">Popular</option>
         </select>
       </label>
-      <span class="count-pill" id="visible-count">300 sites</span>
+      <span class="count-pill" id="visible-count">500 sites</span>
     </div>
 
     <div class="grid" id="site-grid">
@@ -2276,6 +2293,1406 @@
         <div class="card-top"><span class="card-num">#300</span><span class="badge">Live</span></div>
         <h2>PortBox</h2>
         <p>Write Markdown — see live HTML preview</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./301-vibepad-301/" data-category="creative" data-sort-id="301" data-popular="999" data-name="vibepad-301 vibepad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#301</span><span class="badge">Live</span></div>
+        <h2>VibePad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./302-sparkbox-302/" data-category="creative" data-sort-id="302" data-popular="999" data-name="sparkbox-302 sparkbox uuid-gen">
+        <div class="card-top"><span class="card-num">#302</span><span class="badge">Live</span></div>
+        <h2>SparkBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./303-fluxport-303/" data-category="creative" data-sort-id="303" data-popular="999" data-name="fluxport-303 fluxport base64-codec">
+        <div class="card-top"><span class="card-num">#303</span><span class="badge">Live</span></div>
+        <h2>FluxPort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./304-novabay-304/" data-category="creative" data-sort-id="304" data-popular="999" data-name="novabay-304 novabay slug-maker">
+        <div class="card-top"><span class="card-num">#304</span><span class="badge">Live</span></div>
+        <h2>NovaBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./305-driftden-305/" data-category="creative" data-sort-id="305" data-popular="999" data-name="driftden-305 driftden color-contrast">
+        <div class="card-top"><span class="card-num">#305</span><span class="badge">Live</span></div>
+        <h2>DriftDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./306-prismkit-306/" data-category="creative" data-sort-id="306" data-popular="999" data-name="prismkit-306 prismkit hsl-picker">
+        <div class="card-top"><span class="card-num">#306</span><span class="badge">Live</span></div>
+        <h2>PrismKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./307-echolab-307/" data-category="creative" data-sort-id="307" data-popular="999" data-name="echolab-307 echolab date-diff">
+        <div class="card-top"><span class="card-num">#307</span><span class="badge">Live</span></div>
+        <h2>EchoLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./308-minthub-308/" data-category="creative" data-sort-id="308" data-popular="999" data-name="minthub-308 minthub fuel-calc">
+        <div class="card-top"><span class="card-num">#308</span><span class="badge">Live</span></div>
+        <h2>MintHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./309-craftgo-309/" data-category="creative" data-sort-id="309" data-popular="999" data-name="craftgo-309 craftgo aspect-ratio">
+        <div class="card-top"><span class="card-num">#309</span><span class="badge">Live</span></div>
+        <h2>CraftGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./310-boltpop-310/" data-category="creative" data-sort-id="310" data-popular="999" data-name="boltpop-310 boltpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#310</span><span class="badge">Live</span></div>
+        <h2>BoltPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./311-wavetap-311/" data-category="creative" data-sort-id="311" data-popular="999" data-name="wavetap-311 wavetap word-frequency">
+        <div class="card-top"><span class="card-num">#311</span><span class="badge">Live</span></div>
+        <h2>WaveTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./312-glowrun-312/" data-category="creative" data-sort-id="312" data-popular="999" data-name="glowrun-312 glowrun typing-test">
+        <div class="card-top"><span class="card-num">#312</span><span class="badge">Live</span></div>
+        <h2>GlowRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./313-runeflow-313/" data-category="creative" data-sort-id="313" data-popular="999" data-name="runeflow-313 runeflow password-meter">
+        <div class="card-top"><span class="card-num">#313</span><span class="badge">Live</span></div>
+        <h2>RuneFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./314-lenscast-314/" data-category="creative" data-sort-id="314" data-popular="999" data-name="lenscast-314 lenscast url-encode">
+        <div class="card-top"><span class="card-num">#314</span><span class="badge">Live</span></div>
+        <h2>LensCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./315-plotview-315/" data-category="creative" data-sort-id="315" data-popular="999" data-name="plotview-315 plotview qr-maker">
+        <div class="card-top"><span class="card-num">#315</span><span class="badge">Live</span></div>
+        <h2>PlotView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./316-syncforge-316/" data-category="creative" data-sort-id="316" data-popular="999" data-name="syncforge-316 syncforge flex-playground">
+        <div class="card-top"><span class="card-num">#316</span><span class="badge">Live</span></div>
+        <h2>SyncForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./317-dashmint-317/" data-category="creative" data-sort-id="317" data-popular="999" data-name="dashmint-317 dashmint tone-gen">
+        <div class="card-top"><span class="card-num">#317</span><span class="badge">Live</span></div>
+        <h2>DashMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./318-hubworks-318/" data-category="creative" data-sort-id="318" data-popular="999" data-name="hubworks-318 hubworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#318</span><span class="badge">Live</span></div>
+        <h2>HubWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./319-kitstudio-319/" data-category="creative" data-sort-id="319" data-popular="999" data-name="kitstudio-319 kitstudio tip-splitter">
+        <div class="card-top"><span class="card-num">#319</span><span class="badge">Live</span></div>
+        <h2>KitStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./320-labdesk-320/" data-category="creative" data-sort-id="320" data-popular="999" data-name="labdesk-320 labdesk coin-stats">
+        <div class="card-top"><span class="card-num">#320</span><span class="badge">Live</span></div>
+        <h2>LabDesk</h2>
+        <p>Flip coins — watch stats converge</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./321-arcpad-321/" data-category="creative" data-sort-id="321" data-popular="999" data-name="arcpad-321 arcpad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#321</span><span class="badge">Live</span></div>
+        <h2>ArcPad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./322-beambox-322/" data-category="creative" data-sort-id="322" data-popular="999" data-name="beambox-322 beambox uuid-gen">
+        <div class="card-top"><span class="card-num">#322</span><span class="badge">Live</span></div>
+        <h2>BeamBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./323-coreport-323/" data-category="creative" data-sort-id="323" data-popular="999" data-name="coreport-323 coreport base64-codec">
+        <div class="card-top"><span class="card-num">#323</span><span class="badge">Live</span></div>
+        <h2>CorePort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./324-edgebay-324/" data-category="creative" data-sort-id="324" data-popular="999" data-name="edgebay-324 edgebay slug-maker">
+        <div class="card-top"><span class="card-num">#324</span><span class="badge">Live</span></div>
+        <h2>EdgeBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./325-fuseden-325/" data-category="creative" data-sort-id="325" data-popular="999" data-name="fuseden-325 fuseden color-contrast">
+        <div class="card-top"><span class="card-num">#325</span><span class="badge">Live</span></div>
+        <h2>FuseDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./326-gridkit-326/" data-category="creative" data-sort-id="326" data-popular="999" data-name="gridkit-326 gridkit hsl-picker">
+        <div class="card-top"><span class="card-num">#326</span><span class="badge">Live</span></div>
+        <h2>GridKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./327-hivelab-327/" data-category="creative" data-sort-id="327" data-popular="999" data-name="hivelab-327 hivelab date-diff">
+        <div class="card-top"><span class="card-num">#327</span><span class="badge">Live</span></div>
+        <h2>HiveLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./328-ionhub-328/" data-category="creative" data-sort-id="328" data-popular="999" data-name="ionhub-328 ionhub fuel-calc">
+        <div class="card-top"><span class="card-num">#328</span><span class="badge">Live</span></div>
+        <h2>IonHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./329-jadego-329/" data-category="creative" data-sort-id="329" data-popular="999" data-name="jadego-329 jadego aspect-ratio">
+        <div class="card-top"><span class="card-num">#329</span><span class="badge">Live</span></div>
+        <h2>JadeGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./330-keenpop-330/" data-category="creative" data-sort-id="330" data-popular="999" data-name="keenpop-330 keenpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#330</span><span class="badge">Live</span></div>
+        <h2>KeenPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./331-looptap-331/" data-category="creative" data-sort-id="331" data-popular="999" data-name="looptap-331 looptap word-frequency">
+        <div class="card-top"><span class="card-num">#331</span><span class="badge">Live</span></div>
+        <h2>LoopTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./332-meshrun-332/" data-category="creative" data-sort-id="332" data-popular="999" data-name="meshrun-332 meshrun typing-test">
+        <div class="card-top"><span class="card-num">#332</span><span class="badge">Live</span></div>
+        <h2>MeshRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./333-nestflow-333/" data-category="creative" data-sort-id="333" data-popular="999" data-name="nestflow-333 nestflow password-meter">
+        <div class="card-top"><span class="card-num">#333</span><span class="badge">Live</span></div>
+        <h2>NestFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./334-orbcast-334/" data-category="creative" data-sort-id="334" data-popular="999" data-name="orbcast-334 orbcast url-encode">
+        <div class="card-top"><span class="card-num">#334</span><span class="badge">Live</span></div>
+        <h2>OrbCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./335-pulseview-335/" data-category="creative" data-sort-id="335" data-popular="999" data-name="pulseview-335 pulseview qr-maker">
+        <div class="card-top"><span class="card-num">#335</span><span class="badge">Live</span></div>
+        <h2>PulseView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./336-questforge-336/" data-category="creative" data-sort-id="336" data-popular="999" data-name="questforge-336 questforge flex-playground">
+        <div class="card-top"><span class="card-num">#336</span><span class="badge">Live</span></div>
+        <h2>QuestForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./337-risemint-337/" data-category="creative" data-sort-id="337" data-popular="999" data-name="risemint-337 risemint tone-gen">
+        <div class="card-top"><span class="card-num">#337</span><span class="badge">Live</span></div>
+        <h2>RiseMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./338-sageworks-338/" data-category="creative" data-sort-id="338" data-popular="999" data-name="sageworks-338 sageworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#338</span><span class="badge">Live</span></div>
+        <h2>SageWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./339-tidestudio-339/" data-category="creative" data-sort-id="339" data-popular="999" data-name="tidestudio-339 tidestudio tip-splitter">
+        <div class="card-top"><span class="card-num">#339</span><span class="badge">Live</span></div>
+        <h2>TideStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./340-unitdesk-340/" data-category="creative" data-sort-id="340" data-popular="999" data-name="unitdesk-340 unitdesk coin-stats">
+        <div class="card-top"><span class="card-num">#340</span><span class="badge">Live</span></div>
+        <h2>UnitDesk</h2>
+        <p>Flip coins — watch stats converge</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./341-ventpad-341/" data-category="creative" data-sort-id="341" data-popular="999" data-name="ventpad-341 ventpad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#341</span><span class="badge">Live</span></div>
+        <h2>VentPad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./342-wirebox-342/" data-category="creative" data-sort-id="342" data-popular="999" data-name="wirebox-342 wirebox uuid-gen">
+        <div class="card-top"><span class="card-num">#342</span><span class="badge">Live</span></div>
+        <h2>WireBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./343-xenport-343/" data-category="creative" data-sort-id="343" data-popular="999" data-name="xenport-343 xenport base64-codec">
+        <div class="card-top"><span class="card-num">#343</span><span class="badge">Live</span></div>
+        <h2>XenPort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./344-yarnbay-344/" data-category="creative" data-sort-id="344" data-popular="999" data-name="yarnbay-344 yarnbay slug-maker">
+        <div class="card-top"><span class="card-num">#344</span><span class="badge">Live</span></div>
+        <h2>YarnBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./345-zestden-345/" data-category="creative" data-sort-id="345" data-popular="999" data-name="zestden-345 zestden color-contrast">
+        <div class="card-top"><span class="card-num">#345</span><span class="badge">Live</span></div>
+        <h2>ZestDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./346-apexkit-346/" data-category="creative" data-sort-id="346" data-popular="999" data-name="apexkit-346 apexkit hsl-picker">
+        <div class="card-top"><span class="card-num">#346</span><span class="badge">Live</span></div>
+        <h2>ApexKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./347-boldlab-347/" data-category="creative" data-sort-id="347" data-popular="999" data-name="boldlab-347 boldlab date-diff">
+        <div class="card-top"><span class="card-num">#347</span><span class="badge">Live</span></div>
+        <h2>BoldLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./348-calmhub-348/" data-category="creative" data-sort-id="348" data-popular="999" data-name="calmhub-348 calmhub fuel-calc">
+        <div class="card-top"><span class="card-num">#348</span><span class="badge">Live</span></div>
+        <h2>CalmHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./349-dawngo-349/" data-category="creative" data-sort-id="349" data-popular="999" data-name="dawngo-349 dawngo aspect-ratio">
+        <div class="card-top"><span class="card-num">#349</span><span class="badge">Live</span></div>
+        <h2>DawnGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./350-emberpop-350/" data-category="creative" data-sort-id="350" data-popular="999" data-name="emberpop-350 emberpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#350</span><span class="badge">Live</span></div>
+        <h2>EmberPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./351-vibetap-351/" data-category="creative" data-sort-id="351" data-popular="999" data-name="vibetap-351 vibetap word-frequency">
+        <div class="card-top"><span class="card-num">#351</span><span class="badge">Live</span></div>
+        <h2>VibeTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./352-sparkrun-352/" data-category="creative" data-sort-id="352" data-popular="999" data-name="sparkrun-352 sparkrun typing-test">
+        <div class="card-top"><span class="card-num">#352</span><span class="badge">Live</span></div>
+        <h2>SparkRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./353-fluxflow-353/" data-category="creative" data-sort-id="353" data-popular="999" data-name="fluxflow-353 fluxflow password-meter">
+        <div class="card-top"><span class="card-num">#353</span><span class="badge">Live</span></div>
+        <h2>FluxFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./354-novacast-354/" data-category="creative" data-sort-id="354" data-popular="999" data-name="novacast-354 novacast url-encode">
+        <div class="card-top"><span class="card-num">#354</span><span class="badge">Live</span></div>
+        <h2>NovaCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./355-driftview-355/" data-category="creative" data-sort-id="355" data-popular="999" data-name="driftview-355 driftview qr-maker">
+        <div class="card-top"><span class="card-num">#355</span><span class="badge">Live</span></div>
+        <h2>DriftView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./356-prismforge-356/" data-category="creative" data-sort-id="356" data-popular="999" data-name="prismforge-356 prismforge flex-playground">
+        <div class="card-top"><span class="card-num">#356</span><span class="badge">Live</span></div>
+        <h2>PrismForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./357-echomint-357/" data-category="creative" data-sort-id="357" data-popular="999" data-name="echomint-357 echomint tone-gen">
+        <div class="card-top"><span class="card-num">#357</span><span class="badge">Live</span></div>
+        <h2>EchoMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./358-mintworks-358/" data-category="creative" data-sort-id="358" data-popular="999" data-name="mintworks-358 mintworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#358</span><span class="badge">Live</span></div>
+        <h2>MintWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./359-craftstudio-359/" data-category="creative" data-sort-id="359" data-popular="999" data-name="craftstudio-359 craftstudio tip-splitter">
+        <div class="card-top"><span class="card-num">#359</span><span class="badge">Live</span></div>
+        <h2>CraftStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./360-boltdesk-360/" data-category="creative" data-sort-id="360" data-popular="999" data-name="boltdesk-360 boltdesk coin-stats">
+        <div class="card-top"><span class="card-num">#360</span><span class="badge">Live</span></div>
+        <h2>BoltDesk</h2>
+        <p>Flip coins — watch stats converge</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./361-wavepad-361/" data-category="creative" data-sort-id="361" data-popular="999" data-name="wavepad-361 wavepad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#361</span><span class="badge">Live</span></div>
+        <h2>WavePad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./362-glowbox-362/" data-category="creative" data-sort-id="362" data-popular="999" data-name="glowbox-362 glowbox uuid-gen">
+        <div class="card-top"><span class="card-num">#362</span><span class="badge">Live</span></div>
+        <h2>GlowBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./363-runeport-363/" data-category="creative" data-sort-id="363" data-popular="999" data-name="runeport-363 runeport base64-codec">
+        <div class="card-top"><span class="card-num">#363</span><span class="badge">Live</span></div>
+        <h2>RunePort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./364-lensbay-364/" data-category="creative" data-sort-id="364" data-popular="999" data-name="lensbay-364 lensbay slug-maker">
+        <div class="card-top"><span class="card-num">#364</span><span class="badge">Live</span></div>
+        <h2>LensBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./365-plotden-365/" data-category="creative" data-sort-id="365" data-popular="999" data-name="plotden-365 plotden color-contrast">
+        <div class="card-top"><span class="card-num">#365</span><span class="badge">Live</span></div>
+        <h2>PlotDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./366-synckit-366/" data-category="creative" data-sort-id="366" data-popular="999" data-name="synckit-366 synckit hsl-picker">
+        <div class="card-top"><span class="card-num">#366</span><span class="badge">Live</span></div>
+        <h2>SyncKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./367-dashlab-367/" data-category="creative" data-sort-id="367" data-popular="999" data-name="dashlab-367 dashlab date-diff">
+        <div class="card-top"><span class="card-num">#367</span><span class="badge">Live</span></div>
+        <h2>DashLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./368-hubhub-368/" data-category="creative" data-sort-id="368" data-popular="999" data-name="hubhub-368 hubhub fuel-calc">
+        <div class="card-top"><span class="card-num">#368</span><span class="badge">Live</span></div>
+        <h2>HubHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./369-kitgo-369/" data-category="creative" data-sort-id="369" data-popular="999" data-name="kitgo-369 kitgo aspect-ratio">
+        <div class="card-top"><span class="card-num">#369</span><span class="badge">Live</span></div>
+        <h2>KitGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./370-labpop-370/" data-category="creative" data-sort-id="370" data-popular="999" data-name="labpop-370 labpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#370</span><span class="badge">Live</span></div>
+        <h2>LabPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./371-arctap-371/" data-category="creative" data-sort-id="371" data-popular="999" data-name="arctap-371 arctap word-frequency">
+        <div class="card-top"><span class="card-num">#371</span><span class="badge">Live</span></div>
+        <h2>ArcTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./372-beamrun-372/" data-category="creative" data-sort-id="372" data-popular="999" data-name="beamrun-372 beamrun typing-test">
+        <div class="card-top"><span class="card-num">#372</span><span class="badge">Live</span></div>
+        <h2>BeamRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./373-coreflow-373/" data-category="creative" data-sort-id="373" data-popular="999" data-name="coreflow-373 coreflow password-meter">
+        <div class="card-top"><span class="card-num">#373</span><span class="badge">Live</span></div>
+        <h2>CoreFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./374-edgecast-374/" data-category="creative" data-sort-id="374" data-popular="999" data-name="edgecast-374 edgecast url-encode">
+        <div class="card-top"><span class="card-num">#374</span><span class="badge">Live</span></div>
+        <h2>EdgeCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./375-fuseview-375/" data-category="creative" data-sort-id="375" data-popular="999" data-name="fuseview-375 fuseview qr-maker">
+        <div class="card-top"><span class="card-num">#375</span><span class="badge">Live</span></div>
+        <h2>FuseView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./376-gridforge-376/" data-category="creative" data-sort-id="376" data-popular="999" data-name="gridforge-376 gridforge flex-playground">
+        <div class="card-top"><span class="card-num">#376</span><span class="badge">Live</span></div>
+        <h2>GridForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./377-hivemint-377/" data-category="creative" data-sort-id="377" data-popular="999" data-name="hivemint-377 hivemint tone-gen">
+        <div class="card-top"><span class="card-num">#377</span><span class="badge">Live</span></div>
+        <h2>HiveMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./378-ionworks-378/" data-category="creative" data-sort-id="378" data-popular="999" data-name="ionworks-378 ionworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#378</span><span class="badge">Live</span></div>
+        <h2>IonWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./379-jadestudio-379/" data-category="creative" data-sort-id="379" data-popular="999" data-name="jadestudio-379 jadestudio tip-splitter">
+        <div class="card-top"><span class="card-num">#379</span><span class="badge">Live</span></div>
+        <h2>JadeStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./380-keendesk-380/" data-category="creative" data-sort-id="380" data-popular="999" data-name="keendesk-380 keendesk coin-stats">
+        <div class="card-top"><span class="card-num">#380</span><span class="badge">Live</span></div>
+        <h2>KeenDesk</h2>
+        <p>Flip coins — watch stats converge</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./381-looppad-381/" data-category="creative" data-sort-id="381" data-popular="999" data-name="looppad-381 looppad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#381</span><span class="badge">Live</span></div>
+        <h2>LoopPad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./382-meshbox-382/" data-category="creative" data-sort-id="382" data-popular="999" data-name="meshbox-382 meshbox uuid-gen">
+        <div class="card-top"><span class="card-num">#382</span><span class="badge">Live</span></div>
+        <h2>MeshBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./383-nestport-383/" data-category="creative" data-sort-id="383" data-popular="999" data-name="nestport-383 nestport base64-codec">
+        <div class="card-top"><span class="card-num">#383</span><span class="badge">Live</span></div>
+        <h2>NestPort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./384-orbbay-384/" data-category="creative" data-sort-id="384" data-popular="999" data-name="orbbay-384 orbbay slug-maker">
+        <div class="card-top"><span class="card-num">#384</span><span class="badge">Live</span></div>
+        <h2>OrbBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./385-pulseden-385/" data-category="creative" data-sort-id="385" data-popular="999" data-name="pulseden-385 pulseden color-contrast">
+        <div class="card-top"><span class="card-num">#385</span><span class="badge">Live</span></div>
+        <h2>PulseDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./386-questkit-386/" data-category="creative" data-sort-id="386" data-popular="999" data-name="questkit-386 questkit hsl-picker">
+        <div class="card-top"><span class="card-num">#386</span><span class="badge">Live</span></div>
+        <h2>QuestKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./387-riselab-387/" data-category="creative" data-sort-id="387" data-popular="999" data-name="riselab-387 riselab date-diff">
+        <div class="card-top"><span class="card-num">#387</span><span class="badge">Live</span></div>
+        <h2>RiseLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./388-sagehub-388/" data-category="creative" data-sort-id="388" data-popular="999" data-name="sagehub-388 sagehub fuel-calc">
+        <div class="card-top"><span class="card-num">#388</span><span class="badge">Live</span></div>
+        <h2>SageHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./389-tidego-389/" data-category="creative" data-sort-id="389" data-popular="999" data-name="tidego-389 tidego aspect-ratio">
+        <div class="card-top"><span class="card-num">#389</span><span class="badge">Live</span></div>
+        <h2>TideGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./390-unitpop-390/" data-category="creative" data-sort-id="390" data-popular="999" data-name="unitpop-390 unitpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#390</span><span class="badge">Live</span></div>
+        <h2>UnitPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./391-venttap-391/" data-category="creative" data-sort-id="391" data-popular="999" data-name="venttap-391 venttap word-frequency">
+        <div class="card-top"><span class="card-num">#391</span><span class="badge">Live</span></div>
+        <h2>VentTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./392-wirerun-392/" data-category="creative" data-sort-id="392" data-popular="999" data-name="wirerun-392 wirerun typing-test">
+        <div class="card-top"><span class="card-num">#392</span><span class="badge">Live</span></div>
+        <h2>WireRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./393-xenflow-393/" data-category="creative" data-sort-id="393" data-popular="999" data-name="xenflow-393 xenflow password-meter">
+        <div class="card-top"><span class="card-num">#393</span><span class="badge">Live</span></div>
+        <h2>XenFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./394-yarncast-394/" data-category="creative" data-sort-id="394" data-popular="999" data-name="yarncast-394 yarncast url-encode">
+        <div class="card-top"><span class="card-num">#394</span><span class="badge">Live</span></div>
+        <h2>YarnCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./395-zestview-395/" data-category="creative" data-sort-id="395" data-popular="999" data-name="zestview-395 zestview qr-maker">
+        <div class="card-top"><span class="card-num">#395</span><span class="badge">Live</span></div>
+        <h2>ZestView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./396-apexforge-396/" data-category="creative" data-sort-id="396" data-popular="999" data-name="apexforge-396 apexforge flex-playground">
+        <div class="card-top"><span class="card-num">#396</span><span class="badge">Live</span></div>
+        <h2>ApexForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./397-boldmint-397/" data-category="creative" data-sort-id="397" data-popular="999" data-name="boldmint-397 boldmint tone-gen">
+        <div class="card-top"><span class="card-num">#397</span><span class="badge">Live</span></div>
+        <h2>BoldMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./398-calmworks-398/" data-category="creative" data-sort-id="398" data-popular="999" data-name="calmworks-398 calmworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#398</span><span class="badge">Live</span></div>
+        <h2>CalmWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./399-dawnstudio-399/" data-category="creative" data-sort-id="399" data-popular="999" data-name="dawnstudio-399 dawnstudio tip-splitter">
+        <div class="card-top"><span class="card-num">#399</span><span class="badge">Live</span></div>
+        <h2>DawnStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./400-emberdesk-400/" data-category="creative" data-sort-id="400" data-popular="999" data-name="emberdesk-400 emberdesk coin-stats">
+        <div class="card-top"><span class="card-num">#400</span><span class="badge">Live</span></div>
+        <h2>EmberDesk</h2>
+        <p>Flip coins — watch stats converge</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./401-vibepad-401/" data-category="creative" data-sort-id="401" data-popular="999" data-name="vibepad-401 vibepad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#401</span><span class="badge">Live</span></div>
+        <h2>VibePad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./402-sparkbox-402/" data-category="creative" data-sort-id="402" data-popular="999" data-name="sparkbox-402 sparkbox uuid-gen">
+        <div class="card-top"><span class="card-num">#402</span><span class="badge">Live</span></div>
+        <h2>SparkBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./403-fluxport-403/" data-category="creative" data-sort-id="403" data-popular="999" data-name="fluxport-403 fluxport base64-codec">
+        <div class="card-top"><span class="card-num">#403</span><span class="badge">Live</span></div>
+        <h2>FluxPort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./404-novabay-404/" data-category="creative" data-sort-id="404" data-popular="999" data-name="novabay-404 novabay slug-maker">
+        <div class="card-top"><span class="card-num">#404</span><span class="badge">Live</span></div>
+        <h2>NovaBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./405-driftden-405/" data-category="creative" data-sort-id="405" data-popular="999" data-name="driftden-405 driftden color-contrast">
+        <div class="card-top"><span class="card-num">#405</span><span class="badge">Live</span></div>
+        <h2>DriftDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./406-prismkit-406/" data-category="creative" data-sort-id="406" data-popular="999" data-name="prismkit-406 prismkit hsl-picker">
+        <div class="card-top"><span class="card-num">#406</span><span class="badge">Live</span></div>
+        <h2>PrismKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./407-echolab-407/" data-category="creative" data-sort-id="407" data-popular="999" data-name="echolab-407 echolab date-diff">
+        <div class="card-top"><span class="card-num">#407</span><span class="badge">Live</span></div>
+        <h2>EchoLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./408-minthub-408/" data-category="creative" data-sort-id="408" data-popular="999" data-name="minthub-408 minthub fuel-calc">
+        <div class="card-top"><span class="card-num">#408</span><span class="badge">Live</span></div>
+        <h2>MintHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./409-craftgo-409/" data-category="creative" data-sort-id="409" data-popular="999" data-name="craftgo-409 craftgo aspect-ratio">
+        <div class="card-top"><span class="card-num">#409</span><span class="badge">Live</span></div>
+        <h2>CraftGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./410-boltpop-410/" data-category="creative" data-sort-id="410" data-popular="999" data-name="boltpop-410 boltpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#410</span><span class="badge">Live</span></div>
+        <h2>BoltPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./411-wavetap-411/" data-category="creative" data-sort-id="411" data-popular="999" data-name="wavetap-411 wavetap word-frequency">
+        <div class="card-top"><span class="card-num">#411</span><span class="badge">Live</span></div>
+        <h2>WaveTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./412-glowrun-412/" data-category="creative" data-sort-id="412" data-popular="999" data-name="glowrun-412 glowrun typing-test">
+        <div class="card-top"><span class="card-num">#412</span><span class="badge">Live</span></div>
+        <h2>GlowRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./413-runeflow-413/" data-category="creative" data-sort-id="413" data-popular="999" data-name="runeflow-413 runeflow password-meter">
+        <div class="card-top"><span class="card-num">#413</span><span class="badge">Live</span></div>
+        <h2>RuneFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./414-lenscast-414/" data-category="creative" data-sort-id="414" data-popular="999" data-name="lenscast-414 lenscast url-encode">
+        <div class="card-top"><span class="card-num">#414</span><span class="badge">Live</span></div>
+        <h2>LensCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./415-plotview-415/" data-category="creative" data-sort-id="415" data-popular="999" data-name="plotview-415 plotview qr-maker">
+        <div class="card-top"><span class="card-num">#415</span><span class="badge">Live</span></div>
+        <h2>PlotView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./416-syncforge-416/" data-category="creative" data-sort-id="416" data-popular="999" data-name="syncforge-416 syncforge flex-playground">
+        <div class="card-top"><span class="card-num">#416</span><span class="badge">Live</span></div>
+        <h2>SyncForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./417-dashmint-417/" data-category="creative" data-sort-id="417" data-popular="999" data-name="dashmint-417 dashmint tone-gen">
+        <div class="card-top"><span class="card-num">#417</span><span class="badge">Live</span></div>
+        <h2>DashMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./418-hubworks-418/" data-category="creative" data-sort-id="418" data-popular="999" data-name="hubworks-418 hubworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#418</span><span class="badge">Live</span></div>
+        <h2>HubWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./419-kitstudio-419/" data-category="creative" data-sort-id="419" data-popular="999" data-name="kitstudio-419 kitstudio tip-splitter">
+        <div class="card-top"><span class="card-num">#419</span><span class="badge">Live</span></div>
+        <h2>KitStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./420-labdesk-420/" data-category="creative" data-sort-id="420" data-popular="999" data-name="labdesk-420 labdesk coin-stats">
+        <div class="card-top"><span class="card-num">#420</span><span class="badge">Live</span></div>
+        <h2>LabDesk</h2>
+        <p>Flip coins — watch stats converge</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./421-arcpad-421/" data-category="creative" data-sort-id="421" data-popular="999" data-name="arcpad-421 arcpad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#421</span><span class="badge">Live</span></div>
+        <h2>ArcPad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./422-beambox-422/" data-category="creative" data-sort-id="422" data-popular="999" data-name="beambox-422 beambox uuid-gen">
+        <div class="card-top"><span class="card-num">#422</span><span class="badge">Live</span></div>
+        <h2>BeamBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./423-coreport-423/" data-category="creative" data-sort-id="423" data-popular="999" data-name="coreport-423 coreport base64-codec">
+        <div class="card-top"><span class="card-num">#423</span><span class="badge">Live</span></div>
+        <h2>CorePort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./424-edgebay-424/" data-category="creative" data-sort-id="424" data-popular="999" data-name="edgebay-424 edgebay slug-maker">
+        <div class="card-top"><span class="card-num">#424</span><span class="badge">Live</span></div>
+        <h2>EdgeBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./425-fuseden-425/" data-category="creative" data-sort-id="425" data-popular="999" data-name="fuseden-425 fuseden color-contrast">
+        <div class="card-top"><span class="card-num">#425</span><span class="badge">Live</span></div>
+        <h2>FuseDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./426-gridkit-426/" data-category="creative" data-sort-id="426" data-popular="999" data-name="gridkit-426 gridkit hsl-picker">
+        <div class="card-top"><span class="card-num">#426</span><span class="badge">Live</span></div>
+        <h2>GridKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./427-hivelab-427/" data-category="creative" data-sort-id="427" data-popular="999" data-name="hivelab-427 hivelab date-diff">
+        <div class="card-top"><span class="card-num">#427</span><span class="badge">Live</span></div>
+        <h2>HiveLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./428-ionhub-428/" data-category="creative" data-sort-id="428" data-popular="999" data-name="ionhub-428 ionhub fuel-calc">
+        <div class="card-top"><span class="card-num">#428</span><span class="badge">Live</span></div>
+        <h2>IonHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./429-jadego-429/" data-category="creative" data-sort-id="429" data-popular="999" data-name="jadego-429 jadego aspect-ratio">
+        <div class="card-top"><span class="card-num">#429</span><span class="badge">Live</span></div>
+        <h2>JadeGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./430-keenpop-430/" data-category="creative" data-sort-id="430" data-popular="999" data-name="keenpop-430 keenpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#430</span><span class="badge">Live</span></div>
+        <h2>KeenPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./431-looptap-431/" data-category="creative" data-sort-id="431" data-popular="999" data-name="looptap-431 looptap word-frequency">
+        <div class="card-top"><span class="card-num">#431</span><span class="badge">Live</span></div>
+        <h2>LoopTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./432-meshrun-432/" data-category="creative" data-sort-id="432" data-popular="999" data-name="meshrun-432 meshrun typing-test">
+        <div class="card-top"><span class="card-num">#432</span><span class="badge">Live</span></div>
+        <h2>MeshRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./433-nestflow-433/" data-category="creative" data-sort-id="433" data-popular="999" data-name="nestflow-433 nestflow password-meter">
+        <div class="card-top"><span class="card-num">#433</span><span class="badge">Live</span></div>
+        <h2>NestFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./434-orbcast-434/" data-category="creative" data-sort-id="434" data-popular="999" data-name="orbcast-434 orbcast url-encode">
+        <div class="card-top"><span class="card-num">#434</span><span class="badge">Live</span></div>
+        <h2>OrbCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./435-pulseview-435/" data-category="creative" data-sort-id="435" data-popular="999" data-name="pulseview-435 pulseview qr-maker">
+        <div class="card-top"><span class="card-num">#435</span><span class="badge">Live</span></div>
+        <h2>PulseView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./436-questforge-436/" data-category="creative" data-sort-id="436" data-popular="999" data-name="questforge-436 questforge flex-playground">
+        <div class="card-top"><span class="card-num">#436</span><span class="badge">Live</span></div>
+        <h2>QuestForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./437-risemint-437/" data-category="creative" data-sort-id="437" data-popular="999" data-name="risemint-437 risemint tone-gen">
+        <div class="card-top"><span class="card-num">#437</span><span class="badge">Live</span></div>
+        <h2>RiseMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./438-sageworks-438/" data-category="creative" data-sort-id="438" data-popular="999" data-name="sageworks-438 sageworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#438</span><span class="badge">Live</span></div>
+        <h2>SageWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./439-tidestudio-439/" data-category="creative" data-sort-id="439" data-popular="999" data-name="tidestudio-439 tidestudio tip-splitter">
+        <div class="card-top"><span class="card-num">#439</span><span class="badge">Live</span></div>
+        <h2>TideStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./440-unitdesk-440/" data-category="creative" data-sort-id="440" data-popular="999" data-name="unitdesk-440 unitdesk coin-stats">
+        <div class="card-top"><span class="card-num">#440</span><span class="badge">Live</span></div>
+        <h2>UnitDesk</h2>
+        <p>Flip coins — watch stats converge</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./441-ventpad-441/" data-category="creative" data-sort-id="441" data-popular="999" data-name="ventpad-441 ventpad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#441</span><span class="badge">Live</span></div>
+        <h2>VentPad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./442-wirebox-442/" data-category="creative" data-sort-id="442" data-popular="999" data-name="wirebox-442 wirebox uuid-gen">
+        <div class="card-top"><span class="card-num">#442</span><span class="badge">Live</span></div>
+        <h2>WireBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./443-xenport-443/" data-category="creative" data-sort-id="443" data-popular="999" data-name="xenport-443 xenport base64-codec">
+        <div class="card-top"><span class="card-num">#443</span><span class="badge">Live</span></div>
+        <h2>XenPort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./444-yarnbay-444/" data-category="creative" data-sort-id="444" data-popular="999" data-name="yarnbay-444 yarnbay slug-maker">
+        <div class="card-top"><span class="card-num">#444</span><span class="badge">Live</span></div>
+        <h2>YarnBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./445-zestden-445/" data-category="creative" data-sort-id="445" data-popular="999" data-name="zestden-445 zestden color-contrast">
+        <div class="card-top"><span class="card-num">#445</span><span class="badge">Live</span></div>
+        <h2>ZestDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./446-apexkit-446/" data-category="creative" data-sort-id="446" data-popular="999" data-name="apexkit-446 apexkit hsl-picker">
+        <div class="card-top"><span class="card-num">#446</span><span class="badge">Live</span></div>
+        <h2>ApexKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./447-boldlab-447/" data-category="creative" data-sort-id="447" data-popular="999" data-name="boldlab-447 boldlab date-diff">
+        <div class="card-top"><span class="card-num">#447</span><span class="badge">Live</span></div>
+        <h2>BoldLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./448-calmhub-448/" data-category="creative" data-sort-id="448" data-popular="999" data-name="calmhub-448 calmhub fuel-calc">
+        <div class="card-top"><span class="card-num">#448</span><span class="badge">Live</span></div>
+        <h2>CalmHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./449-dawngo-449/" data-category="creative" data-sort-id="449" data-popular="999" data-name="dawngo-449 dawngo aspect-ratio">
+        <div class="card-top"><span class="card-num">#449</span><span class="badge">Live</span></div>
+        <h2>DawnGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./450-emberpop-450/" data-category="creative" data-sort-id="450" data-popular="999" data-name="emberpop-450 emberpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#450</span><span class="badge">Live</span></div>
+        <h2>EmberPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./451-vibetap-451/" data-category="creative" data-sort-id="451" data-popular="999" data-name="vibetap-451 vibetap word-frequency">
+        <div class="card-top"><span class="card-num">#451</span><span class="badge">Live</span></div>
+        <h2>VibeTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./452-sparkrun-452/" data-category="creative" data-sort-id="452" data-popular="999" data-name="sparkrun-452 sparkrun typing-test">
+        <div class="card-top"><span class="card-num">#452</span><span class="badge">Live</span></div>
+        <h2>SparkRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./453-fluxflow-453/" data-category="creative" data-sort-id="453" data-popular="999" data-name="fluxflow-453 fluxflow password-meter">
+        <div class="card-top"><span class="card-num">#453</span><span class="badge">Live</span></div>
+        <h2>FluxFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./454-novacast-454/" data-category="creative" data-sort-id="454" data-popular="999" data-name="novacast-454 novacast url-encode">
+        <div class="card-top"><span class="card-num">#454</span><span class="badge">Live</span></div>
+        <h2>NovaCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./455-driftview-455/" data-category="creative" data-sort-id="455" data-popular="999" data-name="driftview-455 driftview qr-maker">
+        <div class="card-top"><span class="card-num">#455</span><span class="badge">Live</span></div>
+        <h2>DriftView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./456-prismforge-456/" data-category="creative" data-sort-id="456" data-popular="999" data-name="prismforge-456 prismforge flex-playground">
+        <div class="card-top"><span class="card-num">#456</span><span class="badge">Live</span></div>
+        <h2>PrismForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./457-echomint-457/" data-category="creative" data-sort-id="457" data-popular="999" data-name="echomint-457 echomint tone-gen">
+        <div class="card-top"><span class="card-num">#457</span><span class="badge">Live</span></div>
+        <h2>EchoMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./458-mintworks-458/" data-category="creative" data-sort-id="458" data-popular="999" data-name="mintworks-458 mintworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#458</span><span class="badge">Live</span></div>
+        <h2>MintWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./459-craftstudio-459/" data-category="creative" data-sort-id="459" data-popular="999" data-name="craftstudio-459 craftstudio tip-splitter">
+        <div class="card-top"><span class="card-num">#459</span><span class="badge">Live</span></div>
+        <h2>CraftStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./460-boltdesk-460/" data-category="creative" data-sort-id="460" data-popular="999" data-name="boltdesk-460 boltdesk coin-stats">
+        <div class="card-top"><span class="card-num">#460</span><span class="badge">Live</span></div>
+        <h2>BoltDesk</h2>
+        <p>Flip coins — watch stats converge</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./461-wavepad-461/" data-category="creative" data-sort-id="461" data-popular="999" data-name="wavepad-461 wavepad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#461</span><span class="badge">Live</span></div>
+        <h2>WavePad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./462-glowbox-462/" data-category="creative" data-sort-id="462" data-popular="999" data-name="glowbox-462 glowbox uuid-gen">
+        <div class="card-top"><span class="card-num">#462</span><span class="badge">Live</span></div>
+        <h2>GlowBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./463-runeport-463/" data-category="creative" data-sort-id="463" data-popular="999" data-name="runeport-463 runeport base64-codec">
+        <div class="card-top"><span class="card-num">#463</span><span class="badge">Live</span></div>
+        <h2>RunePort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./464-lensbay-464/" data-category="creative" data-sort-id="464" data-popular="999" data-name="lensbay-464 lensbay slug-maker">
+        <div class="card-top"><span class="card-num">#464</span><span class="badge">Live</span></div>
+        <h2>LensBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./465-plotden-465/" data-category="creative" data-sort-id="465" data-popular="999" data-name="plotden-465 plotden color-contrast">
+        <div class="card-top"><span class="card-num">#465</span><span class="badge">Live</span></div>
+        <h2>PlotDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./466-synckit-466/" data-category="creative" data-sort-id="466" data-popular="999" data-name="synckit-466 synckit hsl-picker">
+        <div class="card-top"><span class="card-num">#466</span><span class="badge">Live</span></div>
+        <h2>SyncKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./467-dashlab-467/" data-category="creative" data-sort-id="467" data-popular="999" data-name="dashlab-467 dashlab date-diff">
+        <div class="card-top"><span class="card-num">#467</span><span class="badge">Live</span></div>
+        <h2>DashLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./468-hubhub-468/" data-category="creative" data-sort-id="468" data-popular="999" data-name="hubhub-468 hubhub fuel-calc">
+        <div class="card-top"><span class="card-num">#468</span><span class="badge">Live</span></div>
+        <h2>HubHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./469-kitgo-469/" data-category="creative" data-sort-id="469" data-popular="999" data-name="kitgo-469 kitgo aspect-ratio">
+        <div class="card-top"><span class="card-num">#469</span><span class="badge">Live</span></div>
+        <h2>KitGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./470-labpop-470/" data-category="creative" data-sort-id="470" data-popular="999" data-name="labpop-470 labpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#470</span><span class="badge">Live</span></div>
+        <h2>LabPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./471-arctap-471/" data-category="creative" data-sort-id="471" data-popular="999" data-name="arctap-471 arctap word-frequency">
+        <div class="card-top"><span class="card-num">#471</span><span class="badge">Live</span></div>
+        <h2>ArcTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./472-beamrun-472/" data-category="creative" data-sort-id="472" data-popular="999" data-name="beamrun-472 beamrun typing-test">
+        <div class="card-top"><span class="card-num">#472</span><span class="badge">Live</span></div>
+        <h2>BeamRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./473-coreflow-473/" data-category="creative" data-sort-id="473" data-popular="999" data-name="coreflow-473 coreflow password-meter">
+        <div class="card-top"><span class="card-num">#473</span><span class="badge">Live</span></div>
+        <h2>CoreFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./474-edgecast-474/" data-category="creative" data-sort-id="474" data-popular="999" data-name="edgecast-474 edgecast url-encode">
+        <div class="card-top"><span class="card-num">#474</span><span class="badge">Live</span></div>
+        <h2>EdgeCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./475-fuseview-475/" data-category="creative" data-sort-id="475" data-popular="999" data-name="fuseview-475 fuseview qr-maker">
+        <div class="card-top"><span class="card-num">#475</span><span class="badge">Live</span></div>
+        <h2>FuseView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./476-gridforge-476/" data-category="creative" data-sort-id="476" data-popular="999" data-name="gridforge-476 gridforge flex-playground">
+        <div class="card-top"><span class="card-num">#476</span><span class="badge">Live</span></div>
+        <h2>GridForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./477-hivemint-477/" data-category="creative" data-sort-id="477" data-popular="999" data-name="hivemint-477 hivemint tone-gen">
+        <div class="card-top"><span class="card-num">#477</span><span class="badge">Live</span></div>
+        <h2>HiveMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./478-ionworks-478/" data-category="creative" data-sort-id="478" data-popular="999" data-name="ionworks-478 ionworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#478</span><span class="badge">Live</span></div>
+        <h2>IonWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./479-jadestudio-479/" data-category="creative" data-sort-id="479" data-popular="999" data-name="jadestudio-479 jadestudio tip-splitter">
+        <div class="card-top"><span class="card-num">#479</span><span class="badge">Live</span></div>
+        <h2>JadeStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./480-keendesk-480/" data-category="creative" data-sort-id="480" data-popular="999" data-name="keendesk-480 keendesk coin-stats">
+        <div class="card-top"><span class="card-num">#480</span><span class="badge">Live</span></div>
+        <h2>KeenDesk</h2>
+        <p>Flip coins — watch stats converge</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./481-looppad-481/" data-category="creative" data-sort-id="481" data-popular="999" data-name="looppad-481 looppad lorem-ipsum">
+        <div class="card-top"><span class="card-num">#481</span><span class="badge">Live</span></div>
+        <h2>LoopPad</h2>
+        <p>Generate placeholder paragraphs instantly</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./482-meshbox-482/" data-category="creative" data-sort-id="482" data-popular="999" data-name="meshbox-482 meshbox uuid-gen">
+        <div class="card-top"><span class="card-num">#482</span><span class="badge">Live</span></div>
+        <h2>MeshBox</h2>
+        <p>Fresh UUID v4 identifiers — one click</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./483-nestport-483/" data-category="creative" data-sort-id="483" data-popular="999" data-name="nestport-483 nestport base64-codec">
+        <div class="card-top"><span class="card-num">#483</span><span class="badge">Live</span></div>
+        <h2>NestPort</h2>
+        <p>Encode and decode Base64 text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./484-orbbay-484/" data-category="creative" data-sort-id="484" data-popular="999" data-name="orbbay-484 orbbay slug-maker">
+        <div class="card-top"><span class="card-num">#484</span><span class="badge">Live</span></div>
+        <h2>OrbBay</h2>
+        <p>Turn titles into URL-safe slugs</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./485-pulseden-485/" data-category="creative" data-sort-id="485" data-popular="999" data-name="pulseden-485 pulseden color-contrast">
+        <div class="card-top"><span class="card-num">#485</span><span class="badge">Live</span></div>
+        <h2>PulseDen</h2>
+        <p>Check WCAG contrast between two colors</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./486-questkit-486/" data-category="creative" data-sort-id="486" data-popular="999" data-name="questkit-486 questkit hsl-picker">
+        <div class="card-top"><span class="card-num">#486</span><span class="badge">Live</span></div>
+        <h2>QuestKit</h2>
+        <p>Pick a hue — get HSL and hex codes</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./487-riselab-487/" data-category="creative" data-sort-id="487" data-popular="999" data-name="riselab-487 riselab date-diff">
+        <div class="card-top"><span class="card-num">#487</span><span class="badge">Live</span></div>
+        <h2>RiseLab</h2>
+        <p>Days between two dates</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./488-sagehub-488/" data-category="creative" data-sort-id="488" data-popular="999" data-name="sagehub-488 sagehub fuel-calc">
+        <div class="card-top"><span class="card-num">#488</span><span class="badge">Live</span></div>
+        <h2>SageHub</h2>
+        <p>Trip fuel cost from distance & consumption</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./489-tidego-489/" data-category="creative" data-sort-id="489" data-popular="999" data-name="tidego-489 tidego aspect-ratio">
+        <div class="card-top"><span class="card-num">#489</span><span class="badge">Live</span></div>
+        <h2>TideGo</h2>
+        <p>Resize dimensions with locked ratio</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./490-unitpop-490/" data-category="creative" data-sort-id="490" data-popular="999" data-name="unitpop-490 unitpop timezone-clocks">
+        <div class="card-top"><span class="card-num">#490</span><span class="badge">Live</span></div>
+        <h2>UnitPop</h2>
+        <p>Live time across world zones</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./491-venttap-491/" data-category="creative" data-sort-id="491" data-popular="999" data-name="venttap-491 venttap word-frequency">
+        <div class="card-top"><span class="card-num">#491</span><span class="badge">Live</span></div>
+        <h2>VentTap</h2>
+        <p>Count word frequency in any text</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./492-wirerun-492/" data-category="creative" data-sort-id="492" data-popular="999" data-name="wirerun-492 wirerun typing-test">
+        <div class="card-top"><span class="card-num">#492</span><span class="badge">Live</span></div>
+        <h2>WireRun</h2>
+        <p>30-second typing speed test</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./493-xenflow-493/" data-category="creative" data-sort-id="493" data-popular="999" data-name="xenflow-493 xenflow password-meter">
+        <div class="card-top"><span class="card-num">#493</span><span class="badge">Live</span></div>
+        <h2>XenFlow</h2>
+        <p>Visual password strength meter</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./494-yarncast-494/" data-category="creative" data-sort-id="494" data-popular="999" data-name="yarncast-494 yarncast url-encode">
+        <div class="card-top"><span class="card-num">#494</span><span class="badge">Live</span></div>
+        <h2>YarnCast</h2>
+        <p>Encode or decode URL components</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./495-zestview-495/" data-category="creative" data-sort-id="495" data-popular="999" data-name="zestview-495 zestview qr-maker">
+        <div class="card-top"><span class="card-num">#495</span><span class="badge">Live</span></div>
+        <h2>ZestView</h2>
+        <p>Text to QR code — download PNG</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./496-apexforge-496/" data-category="creative" data-sort-id="496" data-popular="999" data-name="apexforge-496 apexforge flex-playground">
+        <div class="card-top"><span class="card-num">#496</span><span class="badge">Live</span></div>
+        <h2>ApexForge</h2>
+        <p>Toggle flexbox — see layout shift</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./497-boldmint-497/" data-category="creative" data-sort-id="497" data-popular="999" data-name="boldmint-497 boldmint tone-gen">
+        <div class="card-top"><span class="card-num">#497</span><span class="badge">Live</span></div>
+        <h2>BoldMint</h2>
+        <p>Play pure tones — set frequency</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./498-calmworks-498/" data-category="creative" data-sort-id="498" data-popular="999" data-name="calmworks-498 calmworks pixel-doodle">
+        <div class="card-top"><span class="card-num">#498</span><span class="badge">Live</span></div>
+        <h2>CalmWorks</h2>
+        <p>Paint on a 16×16 pixel grid</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./499-dawnstudio-499/" data-category="creative" data-sort-id="499" data-popular="999" data-name="dawnstudio-499 dawnstudio tip-splitter">
+        <div class="card-top"><span class="card-num">#499</span><span class="badge">Live</span></div>
+        <h2>DawnStudio</h2>
+        <p>Split bills with tax and tip</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card" href="./500-emberdesk-500/" data-category="creative" data-sort-id="500" data-popular="999" data-name="emberdesk-500 emberdesk coin-stats">
+        <div class="card-top"><span class="card-num">#500</span><span class="badge">Live</span></div>
+        <h2>EmberDesk</h2>
+        <p>Flip coins — watch stats converge</p>
         <span class="card-foot">Open site →</span>
       </a>
     <!-- SITE_GRID_END -->

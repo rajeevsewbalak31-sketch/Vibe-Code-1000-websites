@@ -18,6 +18,8 @@
     "engine:apps:build": "node scripts/expand-apps-catalog.mjs --from=201 --to=300 && node scripts/generate-apps.mjs --force",
     "engine:apps:all": "node scripts/expand-apps-catalog.mjs --from=201 --to=300 && node scripts/generate-apps.mjs --force && node scripts/sync-hub.mjs && node scripts/generate-sitemap.mjs",
     "engine:scale:300": "npm run engine:games:all && npm run engine:apps:all && npm run validate && npm run verify:routes",
+    "engine:batch2:all": "node scripts/expand-batch2-catalog.mjs --from=301 --to=500 && node scripts/generate-batch2.mjs --force && node scripts/sync-hub.mjs && node scripts/generate-sitemap.mjs",
+    "engine:scale:500": "npm run engine:batch2:all && npm run validate && npm run verify:routes",
     "engine:seo": "node scripts/generate-sites.mjs --force && node scripts/sync-hub.mjs && node scripts/generate-sitemap.mjs",
     "engine:phase3": "npm run engine:seo",
     "engine:monetize": "node scripts/sync-hub.mjs && node scripts/generate-sites.mjs --force",

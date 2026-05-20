@@ -2680,5 +2680,1805 @@
     "accent": "#e8a87c",
     "accent2": "#5eead4",
     "logic": "markdown-preview"
+  },
+  {
+    "id": "301",
+    "slug": "vibepad-301",
+    "name": "VibePad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "302",
+    "slug": "sparkbox-302",
+    "name": "SparkBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "303",
+    "slug": "fluxport-303",
+    "name": "FluxPort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "304",
+    "slug": "novabay-304",
+    "name": "NovaBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "305",
+    "slug": "driftden-305",
+    "name": "DriftDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "306",
+    "slug": "prismkit-306",
+    "name": "PrismKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "307",
+    "slug": "echolab-307",
+    "name": "EchoLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "308",
+    "slug": "minthub-308",
+    "name": "MintHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "309",
+    "slug": "craftgo-309",
+    "name": "CraftGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "310",
+    "slug": "boltpop-310",
+    "name": "BoltPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "311",
+    "slug": "wavetap-311",
+    "name": "WaveTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "312",
+    "slug": "glowrun-312",
+    "name": "GlowRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "313",
+    "slug": "runeflow-313",
+    "name": "RuneFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "314",
+    "slug": "lenscast-314",
+    "name": "LensCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "315",
+    "slug": "plotview-315",
+    "name": "PlotView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "316",
+    "slug": "syncforge-316",
+    "name": "SyncForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "317",
+    "slug": "dashmint-317",
+    "name": "DashMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "318",
+    "slug": "hubworks-318",
+    "name": "HubWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "319",
+    "slug": "kitstudio-319",
+    "name": "KitStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "320",
+    "slug": "labdesk-320",
+    "name": "LabDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
+  },
+  {
+    "id": "321",
+    "slug": "arcpad-321",
+    "name": "ArcPad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "322",
+    "slug": "beambox-322",
+    "name": "BeamBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "323",
+    "slug": "coreport-323",
+    "name": "CorePort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "324",
+    "slug": "edgebay-324",
+    "name": "EdgeBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "325",
+    "slug": "fuseden-325",
+    "name": "FuseDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "326",
+    "slug": "gridkit-326",
+    "name": "GridKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "327",
+    "slug": "hivelab-327",
+    "name": "HiveLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "328",
+    "slug": "ionhub-328",
+    "name": "IonHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "329",
+    "slug": "jadego-329",
+    "name": "JadeGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "330",
+    "slug": "keenpop-330",
+    "name": "KeenPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "331",
+    "slug": "looptap-331",
+    "name": "LoopTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "332",
+    "slug": "meshrun-332",
+    "name": "MeshRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "333",
+    "slug": "nestflow-333",
+    "name": "NestFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "334",
+    "slug": "orbcast-334",
+    "name": "OrbCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "335",
+    "slug": "pulseview-335",
+    "name": "PulseView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "336",
+    "slug": "questforge-336",
+    "name": "QuestForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "337",
+    "slug": "risemint-337",
+    "name": "RiseMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "338",
+    "slug": "sageworks-338",
+    "name": "SageWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "339",
+    "slug": "tidestudio-339",
+    "name": "TideStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "340",
+    "slug": "unitdesk-340",
+    "name": "UnitDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
+  },
+  {
+    "id": "341",
+    "slug": "ventpad-341",
+    "name": "VentPad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "342",
+    "slug": "wirebox-342",
+    "name": "WireBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "343",
+    "slug": "xenport-343",
+    "name": "XenPort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "344",
+    "slug": "yarnbay-344",
+    "name": "YarnBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "345",
+    "slug": "zestden-345",
+    "name": "ZestDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "346",
+    "slug": "apexkit-346",
+    "name": "ApexKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "347",
+    "slug": "boldlab-347",
+    "name": "BoldLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "348",
+    "slug": "calmhub-348",
+    "name": "CalmHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "349",
+    "slug": "dawngo-349",
+    "name": "DawnGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "350",
+    "slug": "emberpop-350",
+    "name": "EmberPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "351",
+    "slug": "vibetap-351",
+    "name": "VibeTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "352",
+    "slug": "sparkrun-352",
+    "name": "SparkRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "353",
+    "slug": "fluxflow-353",
+    "name": "FluxFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "354",
+    "slug": "novacast-354",
+    "name": "NovaCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "355",
+    "slug": "driftview-355",
+    "name": "DriftView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "356",
+    "slug": "prismforge-356",
+    "name": "PrismForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "357",
+    "slug": "echomint-357",
+    "name": "EchoMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "358",
+    "slug": "mintworks-358",
+    "name": "MintWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "359",
+    "slug": "craftstudio-359",
+    "name": "CraftStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "360",
+    "slug": "boltdesk-360",
+    "name": "BoltDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
+  },
+  {
+    "id": "361",
+    "slug": "wavepad-361",
+    "name": "WavePad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "362",
+    "slug": "glowbox-362",
+    "name": "GlowBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "363",
+    "slug": "runeport-363",
+    "name": "RunePort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "364",
+    "slug": "lensbay-364",
+    "name": "LensBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "365",
+    "slug": "plotden-365",
+    "name": "PlotDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "366",
+    "slug": "synckit-366",
+    "name": "SyncKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "367",
+    "slug": "dashlab-367",
+    "name": "DashLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "368",
+    "slug": "hubhub-368",
+    "name": "HubHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "369",
+    "slug": "kitgo-369",
+    "name": "KitGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "370",
+    "slug": "labpop-370",
+    "name": "LabPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "371",
+    "slug": "arctap-371",
+    "name": "ArcTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "372",
+    "slug": "beamrun-372",
+    "name": "BeamRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "373",
+    "slug": "coreflow-373",
+    "name": "CoreFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "374",
+    "slug": "edgecast-374",
+    "name": "EdgeCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "375",
+    "slug": "fuseview-375",
+    "name": "FuseView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "376",
+    "slug": "gridforge-376",
+    "name": "GridForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "377",
+    "slug": "hivemint-377",
+    "name": "HiveMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "378",
+    "slug": "ionworks-378",
+    "name": "IonWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "379",
+    "slug": "jadestudio-379",
+    "name": "JadeStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "380",
+    "slug": "keendesk-380",
+    "name": "KeenDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
+  },
+  {
+    "id": "381",
+    "slug": "looppad-381",
+    "name": "LoopPad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "382",
+    "slug": "meshbox-382",
+    "name": "MeshBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "383",
+    "slug": "nestport-383",
+    "name": "NestPort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "384",
+    "slug": "orbbay-384",
+    "name": "OrbBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "385",
+    "slug": "pulseden-385",
+    "name": "PulseDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "386",
+    "slug": "questkit-386",
+    "name": "QuestKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "387",
+    "slug": "riselab-387",
+    "name": "RiseLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "388",
+    "slug": "sagehub-388",
+    "name": "SageHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "389",
+    "slug": "tidego-389",
+    "name": "TideGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "390",
+    "slug": "unitpop-390",
+    "name": "UnitPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "391",
+    "slug": "venttap-391",
+    "name": "VentTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "392",
+    "slug": "wirerun-392",
+    "name": "WireRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "393",
+    "slug": "xenflow-393",
+    "name": "XenFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "394",
+    "slug": "yarncast-394",
+    "name": "YarnCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "395",
+    "slug": "zestview-395",
+    "name": "ZestView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "396",
+    "slug": "apexforge-396",
+    "name": "ApexForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "397",
+    "slug": "boldmint-397",
+    "name": "BoldMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "398",
+    "slug": "calmworks-398",
+    "name": "CalmWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "399",
+    "slug": "dawnstudio-399",
+    "name": "DawnStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "400",
+    "slug": "emberdesk-400",
+    "name": "EmberDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
+  },
+  {
+    "id": "401",
+    "slug": "vibepad-401",
+    "name": "VibePad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "402",
+    "slug": "sparkbox-402",
+    "name": "SparkBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "403",
+    "slug": "fluxport-403",
+    "name": "FluxPort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "404",
+    "slug": "novabay-404",
+    "name": "NovaBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "405",
+    "slug": "driftden-405",
+    "name": "DriftDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "406",
+    "slug": "prismkit-406",
+    "name": "PrismKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "407",
+    "slug": "echolab-407",
+    "name": "EchoLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "408",
+    "slug": "minthub-408",
+    "name": "MintHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "409",
+    "slug": "craftgo-409",
+    "name": "CraftGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "410",
+    "slug": "boltpop-410",
+    "name": "BoltPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "411",
+    "slug": "wavetap-411",
+    "name": "WaveTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "412",
+    "slug": "glowrun-412",
+    "name": "GlowRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "413",
+    "slug": "runeflow-413",
+    "name": "RuneFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "414",
+    "slug": "lenscast-414",
+    "name": "LensCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "415",
+    "slug": "plotview-415",
+    "name": "PlotView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "416",
+    "slug": "syncforge-416",
+    "name": "SyncForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "417",
+    "slug": "dashmint-417",
+    "name": "DashMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "418",
+    "slug": "hubworks-418",
+    "name": "HubWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "419",
+    "slug": "kitstudio-419",
+    "name": "KitStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "420",
+    "slug": "labdesk-420",
+    "name": "LabDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
+  },
+  {
+    "id": "421",
+    "slug": "arcpad-421",
+    "name": "ArcPad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "422",
+    "slug": "beambox-422",
+    "name": "BeamBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "423",
+    "slug": "coreport-423",
+    "name": "CorePort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "424",
+    "slug": "edgebay-424",
+    "name": "EdgeBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "425",
+    "slug": "fuseden-425",
+    "name": "FuseDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "426",
+    "slug": "gridkit-426",
+    "name": "GridKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "427",
+    "slug": "hivelab-427",
+    "name": "HiveLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "428",
+    "slug": "ionhub-428",
+    "name": "IonHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "429",
+    "slug": "jadego-429",
+    "name": "JadeGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "430",
+    "slug": "keenpop-430",
+    "name": "KeenPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "431",
+    "slug": "looptap-431",
+    "name": "LoopTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "432",
+    "slug": "meshrun-432",
+    "name": "MeshRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "433",
+    "slug": "nestflow-433",
+    "name": "NestFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "434",
+    "slug": "orbcast-434",
+    "name": "OrbCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "435",
+    "slug": "pulseview-435",
+    "name": "PulseView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "436",
+    "slug": "questforge-436",
+    "name": "QuestForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "437",
+    "slug": "risemint-437",
+    "name": "RiseMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "438",
+    "slug": "sageworks-438",
+    "name": "SageWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "439",
+    "slug": "tidestudio-439",
+    "name": "TideStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "440",
+    "slug": "unitdesk-440",
+    "name": "UnitDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
+  },
+  {
+    "id": "441",
+    "slug": "ventpad-441",
+    "name": "VentPad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "442",
+    "slug": "wirebox-442",
+    "name": "WireBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "443",
+    "slug": "xenport-443",
+    "name": "XenPort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "444",
+    "slug": "yarnbay-444",
+    "name": "YarnBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "445",
+    "slug": "zestden-445",
+    "name": "ZestDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "446",
+    "slug": "apexkit-446",
+    "name": "ApexKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "447",
+    "slug": "boldlab-447",
+    "name": "BoldLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "448",
+    "slug": "calmhub-448",
+    "name": "CalmHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "449",
+    "slug": "dawngo-449",
+    "name": "DawnGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "450",
+    "slug": "emberpop-450",
+    "name": "EmberPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "451",
+    "slug": "vibetap-451",
+    "name": "VibeTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "452",
+    "slug": "sparkrun-452",
+    "name": "SparkRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "453",
+    "slug": "fluxflow-453",
+    "name": "FluxFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "454",
+    "slug": "novacast-454",
+    "name": "NovaCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "455",
+    "slug": "driftview-455",
+    "name": "DriftView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "456",
+    "slug": "prismforge-456",
+    "name": "PrismForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "457",
+    "slug": "echomint-457",
+    "name": "EchoMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "458",
+    "slug": "mintworks-458",
+    "name": "MintWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "459",
+    "slug": "craftstudio-459",
+    "name": "CraftStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "460",
+    "slug": "boltdesk-460",
+    "name": "BoltDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
+  },
+  {
+    "id": "461",
+    "slug": "wavepad-461",
+    "name": "WavePad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "462",
+    "slug": "glowbox-462",
+    "name": "GlowBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "463",
+    "slug": "runeport-463",
+    "name": "RunePort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "464",
+    "slug": "lensbay-464",
+    "name": "LensBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "465",
+    "slug": "plotden-465",
+    "name": "PlotDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "466",
+    "slug": "synckit-466",
+    "name": "SyncKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "467",
+    "slug": "dashlab-467",
+    "name": "DashLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "468",
+    "slug": "hubhub-468",
+    "name": "HubHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "469",
+    "slug": "kitgo-469",
+    "name": "KitGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "470",
+    "slug": "labpop-470",
+    "name": "LabPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "471",
+    "slug": "arctap-471",
+    "name": "ArcTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "472",
+    "slug": "beamrun-472",
+    "name": "BeamRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "473",
+    "slug": "coreflow-473",
+    "name": "CoreFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "474",
+    "slug": "edgecast-474",
+    "name": "EdgeCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "475",
+    "slug": "fuseview-475",
+    "name": "FuseView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "476",
+    "slug": "gridforge-476",
+    "name": "GridForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "477",
+    "slug": "hivemint-477",
+    "name": "HiveMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "478",
+    "slug": "ionworks-478",
+    "name": "IonWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "479",
+    "slug": "jadestudio-479",
+    "name": "JadeStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "480",
+    "slug": "keendesk-480",
+    "name": "KeenDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
+  },
+  {
+    "id": "481",
+    "slug": "looppad-481",
+    "name": "LoopPad",
+    "tagline": "Generate placeholder paragraphs instantly",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "lorem-ipsum"
+  },
+  {
+    "id": "482",
+    "slug": "meshbox-482",
+    "name": "MeshBox",
+    "tagline": "Fresh UUID v4 identifiers — one click",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "uuid-gen"
+  },
+  {
+    "id": "483",
+    "slug": "nestport-483",
+    "name": "NestPort",
+    "tagline": "Encode and decode Base64 text",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "base64-codec"
+  },
+  {
+    "id": "484",
+    "slug": "orbbay-484",
+    "name": "OrbBay",
+    "tagline": "Turn titles into URL-safe slugs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "slug-maker"
+  },
+  {
+    "id": "485",
+    "slug": "pulseden-485",
+    "name": "PulseDen",
+    "tagline": "Check WCAG contrast between two colors",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "color-contrast"
+  },
+  {
+    "id": "486",
+    "slug": "questkit-486",
+    "name": "QuestKit",
+    "tagline": "Pick a hue — get HSL and hex codes",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "hsl-picker"
+  },
+  {
+    "id": "487",
+    "slug": "riselab-487",
+    "name": "RiseLab",
+    "tagline": "Days between two dates",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "date-diff"
+  },
+  {
+    "id": "488",
+    "slug": "sagehub-488",
+    "name": "SageHub",
+    "tagline": "Trip fuel cost from distance & consumption",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "fuel-calc"
+  },
+  {
+    "id": "489",
+    "slug": "tidego-489",
+    "name": "TideGo",
+    "tagline": "Resize dimensions with locked ratio",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "aspect-ratio"
+  },
+  {
+    "id": "490",
+    "slug": "unitpop-490",
+    "name": "UnitPop",
+    "tagline": "Live time across world zones",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "timezone-clocks"
+  },
+  {
+    "id": "491",
+    "slug": "venttap-491",
+    "name": "VentTap",
+    "tagline": "Count word frequency in any text",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "word-frequency"
+  },
+  {
+    "id": "492",
+    "slug": "wirerun-492",
+    "name": "WireRun",
+    "tagline": "30-second typing speed test",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "typing-test"
+  },
+  {
+    "id": "493",
+    "slug": "xenflow-493",
+    "name": "XenFlow",
+    "tagline": "Visual password strength meter",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "password-meter"
+  },
+  {
+    "id": "494",
+    "slug": "yarncast-494",
+    "name": "YarnCast",
+    "tagline": "Encode or decode URL components",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "url-encode"
+  },
+  {
+    "id": "495",
+    "slug": "zestview-495",
+    "name": "ZestView",
+    "tagline": "Text to QR code — download PNG",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "qr-maker"
+  },
+  {
+    "id": "496",
+    "slug": "apexforge-496",
+    "name": "ApexForge",
+    "tagline": "Toggle flexbox — see layout shift",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "flex-playground"
+  },
+  {
+    "id": "497",
+    "slug": "boldmint-497",
+    "name": "BoldMint",
+    "tagline": "Play pure tones — set frequency",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tone-gen"
+  },
+  {
+    "id": "498",
+    "slug": "calmworks-498",
+    "name": "CalmWorks",
+    "tagline": "Paint on a 16×16 pixel grid",
+    "accent": "#ff7675",
+    "accent2": "#d63031",
+    "logic": "pixel-doodle"
+  },
+  {
+    "id": "499",
+    "slug": "dawnstudio-499",
+    "name": "DawnStudio",
+    "tagline": "Split bills with tax and tip",
+    "accent": "#b2bec3",
+    "accent2": "#636e72",
+    "logic": "tip-splitter"
+  },
+  {
+    "id": "500",
+    "slug": "emberdesk-500",
+    "name": "EmberDesk",
+    "tagline": "Flip coins — watch stats converge",
+    "accent": "#dfe6e9",
+    "accent2": "#b2bec3",
+    "logic": "coin-stats"
   }
 ]

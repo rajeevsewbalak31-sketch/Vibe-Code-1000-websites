@@ -80,8 +80,33 @@ sortSelect?.addEventListener("change", () => {
 });
 
 search?.addEventListener("input", updateFilter);
+
+function activateGamesFilter() {
+  const btn = filterBar?.querySelector('[data-category="games"]');
+  if (btn) btn.click();
+  document.getElementById("site-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+document.querySelectorAll("[data-filter-games]").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    if (el.tagName === "A" && el.getAttribute("href")?.includes("egg-balance")) return;
+    e.preventDefault();
+    activateGamesFilter();
+  });
+});
+
+if (location.hash === "#games") {
+  activeCategory = "games";
+  filterBar?.querySelectorAll(".filter").forEach((b) => {
+    b.classList.toggle("is-active", b.dataset.category === "games");
+  });
+}
+
 applySort();
 updateFilter();
+if (location.hash === "#games") {
+  requestAnimationFrame(() => document.getElementById("site-grid")?.scrollIntoView({ behavior: "smooth" }));
+}
 
 const LEAD_ISSUE =
   "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=enhancement";

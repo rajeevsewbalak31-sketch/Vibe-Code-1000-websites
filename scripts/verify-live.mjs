@@ -96,7 +96,7 @@ for (const url of [
 }
 
 {
-  for (const asset of ["/_shared/tool.css", "/_shared/game.css"]) {
+  for (const asset of ["/_shared/tool.css", "/_shared/game.css", "/og.svg"]) {
     const r = await check(`${HUB}${asset}`);
     if (r.ok) pass(`${r.status} ${asset}`);
     else fail(`${asset} → ${r.status}`);

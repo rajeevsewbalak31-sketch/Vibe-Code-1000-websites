@@ -19,8 +19,9 @@ const manifest = JSON.parse(readFileSync(MANIFEST_PATH, "utf8"));
 const sites = JSON.parse(readFileSync(SITES_PATH, "utf8"));
 const sitesById = Object.fromEntries(sites.map((s) => [s.id, s]));
 const GOAL = manifest.goal ?? 1000;
-const spotlightIds = new Set(manifest.spotlight || ["001", "002"]);
+const spotlightIds = new Set(manifest.spotlight || ["001", "002", "101"]);
 const popularRank = Object.fromEntries([...spotlightIds].map((id, i) => [id, i]));
+const OG_IMAGE = manifest.hub?.ogImage || "/og.svg";
 
 function folderExists(id, slug) {
   return existsSync(join(ROOT, `${id}-${slug}`));
@@ -63,7 +64,7 @@ function buildEntryFromSite(s) {
     name: s.name,
     tagline: s.tagline,
     href: `./${s.id}-${s.slug}/`,
-    live: false,
+    live: folderExists(s.id, s.slug),
     search: `${s.slug} ${s.name} ${s.logic}`,
     category: getCategory(s),
     featured: isFeaturedId(s.id, spotlightIds),
@@ -84,6 +85,8 @@ for (const s of sites) {
 
 allEntries.sort((a, b) => a.id.localeCompare(b.id));
 const count = allEntries.length;
+const gameCount = allEntries.filter((e) => e.category === "games").length;
+const ogUrl = `${HUB_URL}${OG_IMAGE.startsWith("/") ? OG_IMAGE : `/${OG_IMAGE}`}`;
 
 const spotlightEntries = (manifest.spotlight || [])
   .map((id) => {
@@ -113,6 +116,54 @@ const filterButtons = [
   )
   .join("\n");
 
+function heroHtml() {
+  return `    <section class="hero">
+      <p class="hero-eyebrow">${count} websites live · ${gameCount} games · From €49</p>
+      <h1>1000 Websites Challenge</h1>
+      <p class="hero-lead">
+        Browse <strong>${count} free mini-apps</strong> — tools, utilities, and vibe-coded games — or <strong>get your own site built in 24h</strong>.
+      </p>
+      <ul class="trust-bar trust-bar--hero" aria-label="Trust signals">
+        <li><span class="trust-num">${count}</span> sites live</li>
+        <li><span class="trust-num">${gameCount}</span> games</li>
+        <li>From <span class="trust-num">€49</span></li>
+      </ul>
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>Progress</span>
+          <span><strong id="progress-count">${count}</strong> / ${GOAL}</span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="${count}" aria-valuemin="0" aria-valuemax="${GOAL}" aria-label="Sites completed">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn--buy btn--lg" href="#get-a-site">Get your own website (€49)</a>
+        <a class="btn btn--ghost" href="./101-egg-balance/">Play EggBalance</a>
+        <a class="btn btn--ghost" href="#site-grid" data-filter-games>Browse games</a>
+      </div>
+    </section>`;
+}
+
+function gamesBannerHtml() {
+  const batchSize = allEntries.filter(
+    (e) => e.category === "games" && parseInt(e.id, 10) >= 101
+  ).length;
+  return `    <section class="games-banner" id="games-launch" aria-labelledby="games-banner-heading">
+      <div class="games-banner-inner">
+        <span class="games-banner-badge">New batch</span>
+        <div class="games-banner-copy">
+          <h2 id="games-banner-heading">${batchSize} vibe-coded games (#101–200)</h2>
+          <p>Start with <strong>EggBalance</strong> — place eggs in the carton, feel the tilt, don’t let it tip. Plus snake, stack, breakout, memory & more.</p>
+        </div>
+        <div class="games-banner-actions">
+          <a class="btn btn--primary" href="./101-egg-balance/">Play EggBalance</a>
+          <button type="button" class="btn btn--ghost" data-filter-games>Filter: Games</button>
+        </div>
+      </div>
+    </section>`;
+}
+
 let index = readFileSync(INDEX_PATH, "utf8");
 
 function replaceBlock(start, end, content) {
@@ -122,14 +173,14 @@ function replaceBlock(start, end, content) {
   index = index.replace(new RegExp(`${start}[\\s\\S]*?${end}`), `${start}\n${content}\n    ${end}`);
 }
 
+replaceBlock("<!-- HERO_START -->", "<!-- HERO_END -->", heroHtml());
+replaceBlock("<!-- GAMES_BANNER_START -->", "<!-- GAMES_BANNER_END -->", gamesBannerHtml());
 replaceBlock("<!-- FEATURED_STRIP_START -->", "<!-- FEATURED_STRIP_END -->", featuredCards);
 replaceBlock("<!-- SITE_GRID_START -->", "<!-- SITE_GRID_END -->", gridCards);
 replaceBlock("<!-- CATEGORY_FILTERS_START -->", "<!-- CATEGORY_FILTERS_END -->", filterButtons);
 replaceBlock("<!-- MONETIZE_START -->", "<!-- MONETIZE_END -->", hubMonetizationHtml(manifest));
 
-const desc = `${count} free mini tools — games, utilities, experiments & more. Built with ${BRAND}. Tip via PayPal.`;
-index = index.replace(/<strong id="progress-count">\d+<\/strong>/, `<strong id="progress-count">${count}</strong>`);
-index = index.replace(/aria-valuenow="\d+"/, `aria-valuenow="${count}"`);
+const desc = `${count} free mini-apps — ${gameCount} games, tools, utilities & experiments. Built with ${BRAND}. Tip via PayPal.`;
 index = index.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${escapeAttr(desc)}"`);
 index = index.replace(
   /<meta property="og:description" content="[^"]*"/,
@@ -139,15 +190,24 @@ index = index.replace(
   /<meta name="twitter:description" content="[^"]*"/,
   `<meta name="twitter:description" content="${escapeAttr(desc)}"`
 );
+if (!index.includes("og:image")) {
+  index = index.replace(
+    /<meta property="og:url"/,
+    `<meta property="og:image" content="${escapeAttr(ogUrl)}" />\n  <meta property="og:image:width" content="1200" />\n  <meta property="og:image:height" content="630" />\n  <meta name="twitter:image" content="${escapeAttr(ogUrl)}" />\n  <meta property="og:url"`
+  );
+} else {
+  index = index.replace(/<meta property="og:image" content="[^"]*"/, `<meta property="og:image" content="${escapeAttr(ogUrl)}"`);
+  index = index.replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${escapeAttr(ogUrl)}"`);
+}
 index = index.replace(
-  /<span class="count-pill" id="visible-count">\d+ sites<\/span>/,
+  /<span class="count-pill" id="visible-count">[^<]*<\/span>/,
   `<span class="count-pill" id="visible-count">${count} sites</span>`
 );
 
 if (index.includes('id="json-ld"')) {
   index = index.replace(
     /<script type="application\/ld\+json" id="json-ld">[\s\S]*?<\/script>/,
-    `<script type="application/ld+json" id="json-ld">${hubJsonLd(count)}</script>`
+    `<script type="application/ld+json" id="json-ld">${hubJsonLd(count, gameCount)}</script>`
   );
 }
 
@@ -158,4 +218,4 @@ hubJs = hubJs.replace(/const COMPLETED = \d+;/, `const COMPLETED = ${count};`);
 hubJs = hubJs.replace(/const POPULAR_IDS = \[.*?\];/, `const POPULAR_IDS = ${JSON.stringify([...spotlightIds])};`);
 writeFileSync(HUB_JS_PATH, hubJs, "utf8");
 
-console.log(`Hub synced: ${count} sites, ${spotlightEntries.length} featured (${HUB_URL})`);
+console.log(`Hub synced: ${count} sites (${gameCount} games), ${spotlightEntries.length} featured (${HUB_URL})`);

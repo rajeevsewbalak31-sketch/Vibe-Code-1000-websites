@@ -1,6 +1,9 @@
 {
   "goal": 1000,
   "phase2Target": 200,
+  "hub": {
+    "ogImage": "/og.svg"
+  },
   "hubUrl": "https://websites-eosin-delta.vercel.app",
   "paypal": "https://paypal.me/RajeevSewbalak",
   "spotlight": ["001", "002", "101", "007", "013"],
@@ -24,6 +27,16 @@
       "live": true,
       "category": "tools",
       "search": "quotely quotes random wisdom"
+    },
+    {
+      "id": "101",
+      "slug": "egg-balance",
+      "name": "EggBalance",
+      "tagline": "Balance eggs in the carton — physics decides if it tips",
+      "href": "./101-egg-balance/",
+      "live": true,
+      "category": "games",
+      "search": "egg balance physics carton game eggbalance"
     }
   ],
   "monetization": {

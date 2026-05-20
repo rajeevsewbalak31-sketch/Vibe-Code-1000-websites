@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="200 free mini tools — games, utilities, experiments &amp; more. Built with Vibe Code 1000. Tip via PayPal." />
+  <meta name="description" content="200 free mini-apps — 107 games, tools, utilities &amp; experiments. Built with Vibe Code 1000. Tip via PayPal." />
   <meta name="keywords" content="free web tools, mini apps, randomizer, pomodoro, password generator, 1000 websites" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://websites-eosin-delta.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://websites-eosin-delta.vercel.app/" />
   <meta property="og:title" content="1000 Websites Challenge — Hub" />
-  <meta property="og:description" content="200 free mini tools — games, utilities, experiments &amp; more. Built with Vibe Code 1000. Tip via PayPal." />
+  <meta property="og:description" content="200 free mini-apps — 107 games, tools, utilities &amp; experiments. Built with Vibe Code 1000. Tip via PayPal." />
+  <meta property="og:image" content="https://websites-eosin-delta.vercel.app/og.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://websites-eosin-delta.vercel.app/og.svg" />
   <meta name="twitter:title" content="1000 Websites Challenge — Hub" />
-  <meta name="twitter:description" content="200 free mini tools — games, utilities, experiments &amp; more. Built with Vibe Code 1000. Tip via PayPal." />
+  <meta name="twitter:description" content="200 free mini-apps — 107 games, tools, utilities &amp; experiments. Built with Vibe Code 1000. Tip via PayPal." />
   <title>1000 Websites Challenge — Hub</title>
-  <script type="application/ld+json" id="json-ld">{"@context":"https://schema.org","@type":"WebSite","name":"Vibe Code 1000","alternateName":"1000 Websites Challenge","url":"https://websites-eosin-delta.vercel.app","description":"200 free mini web tools — built by a site generation engine.","author":{"@type":"Person","name":"Rajeev Sewbalak"}}</script>
+  <script type="application/ld+json" id="json-ld">{"@context":"https://schema.org","@type":"WebSite","name":"Vibe Code 1000","alternateName":"1000 Websites Challenge","url":"https://websites-eosin-delta.vercel.app","description":"200 free mini web apps, including 107 vibe-coded games — built by a site generation engine.","author":{"@type":"Person","name":"Rajeev Sewbalak"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -41,16 +45,17 @@
       </div>
     </header>
 
+    <!-- HERO_START -->
     <section class="hero">
-      <p class="hero-eyebrow">100 websites built · 24-hour turnaround · From €49</p>
+      <p class="hero-eyebrow">200 websites live · 107 games · From €49</p>
       <h1>1000 Websites Challenge</h1>
       <p class="hero-lead">
-        Browse 100 free tools — or <strong>get your own site built and deployed</strong> with the same engine.
+        Browse <strong>200 free mini-apps</strong> — tools, utilities, and vibe-coded games — or <strong>get your own site built in 24h</strong>.
       </p>
       <ul class="trust-bar trust-bar--hero" aria-label="Trust signals">
-        <li><span class="trust-num">100</span> websites built</li>
-        <li><span class="trust-num">24h</span> turnaround</li>
-        <li>Starting at <span class="trust-num">€49</span></li>
+        <li><span class="trust-num">200</span> sites live</li>
+        <li><span class="trust-num">107</span> games</li>
+        <li>From <span class="trust-num">€49</span></li>
       </ul>
       <div class="progress-wrap">
         <div class="progress-label">
@@ -63,9 +68,27 @@
       </div>
       <div class="hero-cta">
         <a class="btn btn--buy btn--lg" href="#get-a-site">Get your own website (€49)</a>
-        <a class="btn btn--ghost" href="#site-grid">Browse free tools</a>
+        <a class="btn btn--ghost" href="./101-egg-balance/">Play EggBalance</a>
+        <a class="btn btn--ghost" href="#site-grid" data-filter-games>Browse games</a>
       </div>
     </section>
+    <!-- HERO_END -->
+
+    <!-- GAMES_BANNER_START -->
+    <section class="games-banner" id="games-launch" aria-labelledby="games-banner-heading">
+      <div class="games-banner-inner">
+        <span class="games-banner-badge">New batch</span>
+        <div class="games-banner-copy">
+          <h2 id="games-banner-heading">100 vibe-coded games (#101–200)</h2>
+          <p>Start with <strong>EggBalance</strong> — place eggs in the carton, feel the tilt, don’t let it tip. Plus snake, stack, breakout, memory & more.</p>
+        </div>
+        <div class="games-banner-actions">
+          <a class="btn btn--primary" href="./101-egg-balance/">Play EggBalance</a>
+          <button type="button" class="btn btn--ghost" data-filter-games>Filter: Games</button>
+        </div>
+      </div>
+    </section>
+    <!-- GAMES_BANNER_END -->
 
     <section class="featured" aria-labelledby="featured-heading">
       <div class="featured-head">
@@ -88,22 +111,22 @@
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card card--compact" href="./101-egg-balance/" data-category="games" data-sort-id="101" data-popular="2" data-featured="true" data-name="egg-balance eggbalance egg-balance">
-        <div class="card-top"><span class="card-num">#101</span></div>
+      <a class="card card--compact" href="./101-egg-balance/" data-category="games" data-sort-id="101" data-popular="2" data-featured="true" data-name="egg balance physics carton game eggbalance">
+        <div class="card-top"><span class="card-num">#101</span><span class="badge">Live</span></div>
         <h2>EggBalance</h2>
         <p>Balance eggs in the carton — physics decides if it tips</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card card--compact" href="./007-password-gen/" data-category="utilities" data-sort-id="007" data-popular="3" data-featured="true" data-name="password-gen keyforge password-gen">
-        <div class="card-top"><span class="card-num">#007</span></div>
+        <div class="card-top"><span class="card-num">#007</span><span class="badge">Live</span></div>
         <h2>KeyForge</h2>
         <p>Strong passwords in one click</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card card--compact" href="./013-rps/" data-category="games" data-sort-id="013" data-popular="4" data-featured="true" data-name="rps rps arena rps">
-        <div class="card-top"><span class="card-num">#013</span></div>
+        <div class="card-top"><span class="card-num">#013</span><span class="badge">Live</span></div>
         <h2>RPS Arena</h2>
         <p>Rock, paper, scissors — you vs CPU</p>
         <span class="card-foot">Open site →</span>
@@ -113,7 +136,7 @@
     </section>
 
     <div class="toolbar">
-      <input type="search" class="search" id="search" placeholder="Search tools… (e.g. password, dice, mood)" autocomplete="off" aria-label="Search tools" />
+      <input type="search" class="search" id="search" placeholder="Search tools &amp; games… (egg, snake, password)" autocomplete="off" aria-label="Search tools and games" />
       <div class="filters" id="category-filters" role="group" aria-label="Filter by category">
     <!-- CATEGORY_FILTERS_START -->
         <button type="button" class="filter is-active" data-category="all">All</button>
@@ -153,1386 +176,1386 @@
       </a>
 
       <a class="card" href="./003-coin-flip/" data-category="games" data-sort-id="003" data-popular="999" data-name="coin-flip flipcoin coin-flip">
-        <div class="card-top"><span class="card-num">#003</span></div>
+        <div class="card-top"><span class="card-num">#003</span><span class="badge">Live</span></div>
         <h2>FlipCoin</h2>
         <p>Heads or tails — fate in one tap</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./004-dice-roll/" data-category="games" data-sort-id="004" data-popular="999" data-name="dice-roll rolldice dice-roll">
-        <div class="card-top"><span class="card-num">#004</span></div>
+        <div class="card-top"><span class="card-num">#004</span><span class="badge">Live</span></div>
         <h2>RollDice</h2>
         <p>Roll one or many dice instantly</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./005-yes-or-no/" data-category="games" data-sort-id="005" data-popular="999" data-name="yes-or-no yesno yes-or-no">
-        <div class="card-top"><span class="card-num">#005</span></div>
+        <div class="card-top"><span class="card-num">#005</span><span class="badge">Live</span></div>
         <h2>YesNo</h2>
         <p>When you need a decisive answer</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./006-random-color/" data-category="tools" data-sort-id="006" data-popular="999" data-name="random-color huedrop random-color">
-        <div class="card-top"><span class="card-num">#006</span></div>
+        <div class="card-top"><span class="card-num">#006</span><span class="badge">Live</span></div>
         <h2>HueDrop</h2>
         <p>Discover your next palette color</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./007-password-gen/" data-category="utilities" data-sort-id="007" data-popular="3" data-featured="true" data-name="password-gen keyforge password-gen">
-        <div class="card-top"><span class="card-num">#007</span></div>
+        <div class="card-top"><span class="card-num">#007</span><span class="badge">Live</span></div>
         <h2>KeyForge</h2>
         <p>Strong passwords in one click</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./008-countdown/" data-category="utilities" data-sort-id="008" data-popular="999" data-name="countdown tickdown countdown">
-        <div class="card-top"><span class="card-num">#008</span></div>
+        <div class="card-top"><span class="card-num">#008</span><span class="badge">Live</span></div>
         <h2>TickDown</h2>
         <p>Count down to any moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./009-pomodoro/" data-category="utilities" data-sort-id="009" data-popular="999" data-name="pomodoro focustomato pomodoro">
-        <div class="card-top"><span class="card-num">#009</span></div>
+        <div class="card-top"><span class="card-num">#009</span><span class="badge">Live</span></div>
         <h2>FocusTomato</h2>
         <p>25 minutes of deep focus</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./010-tip-calc/" data-category="utilities" data-sort-id="010" data-popular="999" data-name="tip-calc tipquick tip-calc">
-        <div class="card-top"><span class="card-num">#010</span></div>
+        <div class="card-top"><span class="card-num">#010</span><span class="badge">Live</span></div>
         <h2>TipQuick</h2>
         <p>Split the bill like a pro</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./011-compliment/" data-category="tools" data-sort-id="011" data-popular="999" data-name="compliment brighten compliment">
-        <div class="card-top"><span class="card-num">#011</span></div>
+        <div class="card-top"><span class="card-num">#011</span><span class="badge">Live</span></div>
         <h2>Brighten</h2>
         <p>A compliment when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./012-magic-8ball/" data-category="games" data-sort-id="012" data-popular="999" data-name="magic-8ball oracle8 magic-8ball">
-        <div class="card-top"><span class="card-num">#012</span></div>
+        <div class="card-top"><span class="card-num">#012</span><span class="badge">Live</span></div>
         <h2>Oracle8</h2>
         <p>Shake the ball. Know the truth.</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./013-rps/" data-category="games" data-sort-id="013" data-popular="4" data-featured="true" data-name="rps rps arena rps">
-        <div class="card-top"><span class="card-num">#013</span></div>
+        <div class="card-top"><span class="card-num">#013</span><span class="badge">Live</span></div>
         <h2>RPS Arena</h2>
         <p>Rock, paper, scissors — you vs CPU</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./014-lucky-number/" data-category="games" data-sort-id="014" data-popular="999" data-name="lucky-number luckydraw lucky-number">
-        <div class="card-top"><span class="card-num">#014</span></div>
+        <div class="card-top"><span class="card-num">#014</span><span class="badge">Live</span></div>
         <h2>LuckyDraw</h2>
         <p>Your random number awaits</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./015-word-counter/" data-category="utilities" data-sort-id="015" data-popular="999" data-name="word-counter wordscope word-counter">
-        <div class="card-top"><span class="card-num">#015</span></div>
+        <div class="card-top"><span class="card-num">#015</span><span class="badge">Live</span></div>
         <h2>WordScope</h2>
         <p>Count words, chars, and reading time</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./016-stopwatch/" data-category="utilities" data-sort-id="016" data-popular="999" data-name="stopwatch swiftlap stopwatch">
-        <div class="card-top"><span class="card-num">#016</span></div>
+        <div class="card-top"><span class="card-num">#016</span><span class="badge">Live</span></div>
         <h2>SwiftLap</h2>
         <p>Lap times with millisecond flair</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./017-breathing/" data-category="utilities" data-sort-id="017" data-popular="999" data-name="breathing breatheflow breathing">
-        <div class="card-top"><span class="card-num">#017</span></div>
+        <div class="card-top"><span class="card-num">#017</span><span class="badge">Live</span></div>
         <h2>BreatheFlow</h2>
         <p>4-7-8 calm in guided cycles</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./018-spin-wheel/" data-category="games" data-sort-id="018" data-popular="999" data-name="spin-wheel spinpick spin-wheel">
-        <div class="card-top"><span class="card-num">#018</span></div>
+        <div class="card-top"><span class="card-num">#018</span><span class="badge">Live</span></div>
         <h2>SpinPick</h2>
         <p>Add options, spin to decide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./019-unit-convert/" data-category="utilities" data-sort-id="019" data-popular="999" data-name="unit-convert metricmate unit-convert">
-        <div class="card-top"><span class="card-num">#019</span></div>
+        <div class="card-top"><span class="card-num">#019</span><span class="badge">Live</span></div>
         <h2>MetricMate</h2>
         <p>Kilometers ↔ miles in a snap</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./020-mood-picker/" data-category="tools" data-sort-id="020" data-popular="999" data-name="mood-picker moodmap mood-picker">
-        <div class="card-top"><span class="card-num">#020</span></div>
+        <div class="card-top"><span class="card-num">#020</span><span class="badge">Live</span></div>
         <h2>MoodMap</h2>
         <p>Name your mood, save the moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./021-name-picker/" data-category="tools" data-sort-id="021" data-popular="999" data-name="name-picker namehat name-picker">
-        <div class="card-top"><span class="card-num">#021</span></div>
+        <div class="card-top"><span class="card-num">#021</span><span class="badge">Live</span></div>
         <h2>NameHat</h2>
         <p>Pick a random winner from your list</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./022-gratitude/" data-category="tools" data-sort-id="022" data-popular="999" data-name="gratitude thankdrop gratitude">
-        <div class="card-top"><span class="card-num">#022</span></div>
+        <div class="card-top"><span class="card-num">#022</span><span class="badge">Live</span></div>
         <h2>ThankDrop</h2>
         <p>Write gratitude, send good vibes</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./023-swiftlab/" data-category="experiments" data-sort-id="023" data-popular="999" data-name="swiftlab swiftlab coin-flip">
-        <div class="card-top"><span class="card-num">#023</span></div>
+        <div class="card-top"><span class="card-num">#023</span><span class="badge">Live</span></div>
         <h2>SwiftLab</h2>
         <p>Heads or tails — fate in one tap</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./024-novalab/" data-category="experiments" data-sort-id="024" data-popular="999" data-name="novalab novalab dice-roll">
-        <div class="card-top"><span class="card-num">#024</span></div>
+        <div class="card-top"><span class="card-num">#024</span><span class="badge">Live</span></div>
         <h2>NovaLab</h2>
         <p>Roll dice instantly</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./025-echolab/" data-category="experiments" data-sort-id="025" data-popular="999" data-name="echolab echolab yes-or-no">
-        <div class="card-top"><span class="card-num">#025</span></div>
+        <div class="card-top"><span class="card-num">#025</span><span class="badge">Live</span></div>
         <h2>EchoLab</h2>
         <p>A decisive answer when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./026-pixellab/" data-category="experiments" data-sort-id="026" data-popular="999" data-name="pixellab pixellab random-color">
-        <div class="card-top"><span class="card-num">#026</span></div>
+        <div class="card-top"><span class="card-num">#026</span><span class="badge">Live</span></div>
         <h2>PixelLab</h2>
         <p>Discover your next palette color</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./027-zenlab/" data-category="experiments" data-sort-id="027" data-popular="999" data-name="zenlab zenlab password-gen">
-        <div class="card-top"><span class="card-num">#027</span></div>
+        <div class="card-top"><span class="card-num">#027</span><span class="badge">Live</span></div>
         <h2>ZenLab</h2>
         <p>Strong passwords in one click</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./028-flashlab/" data-category="experiments" data-sort-id="028" data-popular="999" data-name="flashlab flashlab countdown">
-        <div class="card-top"><span class="card-num">#028</span></div>
+        <div class="card-top"><span class="card-num">#028</span><span class="badge">Live</span></div>
         <h2>FlashLab</h2>
         <p>Count down to any moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./029-orbitlab/" data-category="experiments" data-sort-id="029" data-popular="999" data-name="orbitlab orbitlab pomodoro">
-        <div class="card-top"><span class="card-num">#029</span></div>
+        <div class="card-top"><span class="card-num">#029</span><span class="badge">Live</span></div>
         <h2>OrbitLab</h2>
         <p>Focused work in timed bursts</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./030-pulselab/" data-category="experiments" data-sort-id="030" data-popular="999" data-name="pulselab pulselab tip-calc">
-        <div class="card-top"><span class="card-num">#030</span></div>
+        <div class="card-top"><span class="card-num">#030</span><span class="badge">Live</span></div>
         <h2>PulseLab</h2>
         <p>Split the bill like a pro</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./031-sparklab/" data-category="experiments" data-sort-id="031" data-popular="999" data-name="sparklab sparklab compliment">
-        <div class="card-top"><span class="card-num">#031</span></div>
+        <div class="card-top"><span class="card-num">#031</span><span class="badge">Live</span></div>
         <h2>SparkLab</h2>
         <p>A kind line when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./032-driftlab/" data-category="experiments" data-sort-id="032" data-popular="999" data-name="driftlab driftlab magic-8ball">
-        <div class="card-top"><span class="card-num">#032</span></div>
+        <div class="card-top"><span class="card-num">#032</span><span class="badge">Live</span></div>
         <h2>DriftLab</h2>
         <p>Ask the oracle — get an answer</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./033-glidelab/" data-category="experiments" data-sort-id="033" data-popular="999" data-name="glidelab glidelab rps">
-        <div class="card-top"><span class="card-num">#033</span></div>
+        <div class="card-top"><span class="card-num">#033</span><span class="badge">Live</span></div>
         <h2>GlideLab</h2>
         <p>Rock, paper, scissors vs CPU</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./034-prismlab/" data-category="experiments" data-sort-id="034" data-popular="999" data-name="prismlab prismlab lucky-number">
-        <div class="card-top"><span class="card-num">#034</span></div>
+        <div class="card-top"><span class="card-num">#034</span><span class="badge">Live</span></div>
         <h2>PrismLab</h2>
         <p>Your random number awaits</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./035-fluxlab/" data-category="experiments" data-sort-id="035" data-popular="999" data-name="fluxlab fluxlab word-counter">
-        <div class="card-top"><span class="card-num">#035</span></div>
+        <div class="card-top"><span class="card-num">#035</span><span class="badge">Live</span></div>
         <h2>FluxLab</h2>
         <p>Words, chars, and reading time</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./036-apexlab/" data-category="experiments" data-sort-id="036" data-popular="999" data-name="apexlab apexlab stopwatch">
-        <div class="card-top"><span class="card-num">#036</span></div>
+        <div class="card-top"><span class="card-num">#036</span><span class="badge">Live</span></div>
         <h2>ApexLab</h2>
         <p>Lap times with millisecond flair</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./037-lumenlab/" data-category="experiments" data-sort-id="037" data-popular="999" data-name="lumenlab lumenlab breathing">
-        <div class="card-top"><span class="card-num">#037</span></div>
+        <div class="card-top"><span class="card-num">#037</span><span class="badge">Live</span></div>
         <h2>LumenLab</h2>
         <p>Guided calm breathing cycles</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./038-cipherlab/" data-category="experiments" data-sort-id="038" data-popular="999" data-name="cipherlab cipherlab spin-wheel">
-        <div class="card-top"><span class="card-num">#038</span></div>
+        <div class="card-top"><span class="card-num">#038</span><span class="badge">Live</span></div>
         <h2>CipherLab</h2>
         <p>Add options, spin to decide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./039-runelab/" data-category="experiments" data-sort-id="039" data-popular="999" data-name="runelab runelab unit-convert">
-        <div class="card-top"><span class="card-num">#039</span></div>
+        <div class="card-top"><span class="card-num">#039</span><span class="badge">Live</span></div>
         <h2>RuneLab</h2>
         <p>Quick unit conversion</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./040-boltlab/" data-category="experiments" data-sort-id="040" data-popular="999" data-name="boltlab boltlab mood-picker">
-        <div class="card-top"><span class="card-num">#040</span></div>
+        <div class="card-top"><span class="card-num">#040</span><span class="badge">Live</span></div>
         <h2>BoltLab</h2>
         <p>Name your mood, save the moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./041-crestlab/" data-category="experiments" data-sort-id="041" data-popular="999" data-name="crestlab crestlab name-picker">
-        <div class="card-top"><span class="card-num">#041</span></div>
+        <div class="card-top"><span class="card-num">#041</span><span class="badge">Live</span></div>
         <h2>CrestLab</h2>
         <p>Pick a random winner from your list</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./042-vividlab/" data-category="experiments" data-sort-id="042" data-popular="999" data-name="vividlab vividlab gratitude">
-        <div class="card-top"><span class="card-num">#042</span></div>
+        <div class="card-top"><span class="card-num">#042</span><span class="badge">Live</span></div>
         <h2>VividLab</h2>
         <p>Write gratitude, send good vibes</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./043-swiftbox/" data-category="experiments" data-sort-id="043" data-popular="999" data-name="swiftbox swiftbox coin-flip">
-        <div class="card-top"><span class="card-num">#043</span></div>
+        <div class="card-top"><span class="card-num">#043</span><span class="badge">Live</span></div>
         <h2>SwiftBox</h2>
         <p>Heads or tails — fate in one tap</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./044-novabox/" data-category="experiments" data-sort-id="044" data-popular="999" data-name="novabox novabox dice-roll">
-        <div class="card-top"><span class="card-num">#044</span></div>
+        <div class="card-top"><span class="card-num">#044</span><span class="badge">Live</span></div>
         <h2>NovaBox</h2>
         <p>Roll dice instantly</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./045-echobox/" data-category="experiments" data-sort-id="045" data-popular="999" data-name="echobox echobox yes-or-no">
-        <div class="card-top"><span class="card-num">#045</span></div>
+        <div class="card-top"><span class="card-num">#045</span><span class="badge">Live</span></div>
         <h2>EchoBox</h2>
         <p>A decisive answer when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./046-pixelbox/" data-category="experiments" data-sort-id="046" data-popular="999" data-name="pixelbox pixelbox random-color">
-        <div class="card-top"><span class="card-num">#046</span></div>
+        <div class="card-top"><span class="card-num">#046</span><span class="badge">Live</span></div>
         <h2>PixelBox</h2>
         <p>Discover your next palette color</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./047-zenbox/" data-category="experiments" data-sort-id="047" data-popular="999" data-name="zenbox zenbox password-gen">
-        <div class="card-top"><span class="card-num">#047</span></div>
+        <div class="card-top"><span class="card-num">#047</span><span class="badge">Live</span></div>
         <h2>ZenBox</h2>
         <p>Strong passwords in one click</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./048-flashbox/" data-category="experiments" data-sort-id="048" data-popular="999" data-name="flashbox flashbox countdown">
-        <div class="card-top"><span class="card-num">#048</span></div>
+        <div class="card-top"><span class="card-num">#048</span><span class="badge">Live</span></div>
         <h2>FlashBox</h2>
         <p>Count down to any moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./049-orbitbox/" data-category="experiments" data-sort-id="049" data-popular="999" data-name="orbitbox orbitbox pomodoro">
-        <div class="card-top"><span class="card-num">#049</span></div>
+        <div class="card-top"><span class="card-num">#049</span><span class="badge">Live</span></div>
         <h2>OrbitBox</h2>
         <p>Focused work in timed bursts</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./050-pulsebox/" data-category="experiments" data-sort-id="050" data-popular="999" data-name="pulsebox pulsebox tip-calc">
-        <div class="card-top"><span class="card-num">#050</span></div>
+        <div class="card-top"><span class="card-num">#050</span><span class="badge">Live</span></div>
         <h2>PulseBox</h2>
         <p>Split the bill like a pro</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./051-sparkbox/" data-category="experiments" data-sort-id="051" data-popular="999" data-name="sparkbox sparkbox compliment">
-        <div class="card-top"><span class="card-num">#051</span></div>
+        <div class="card-top"><span class="card-num">#051</span><span class="badge">Live</span></div>
         <h2>SparkBox</h2>
         <p>A kind line when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./052-driftbox/" data-category="experiments" data-sort-id="052" data-popular="999" data-name="driftbox driftbox magic-8ball">
-        <div class="card-top"><span class="card-num">#052</span></div>
+        <div class="card-top"><span class="card-num">#052</span><span class="badge">Live</span></div>
         <h2>DriftBox</h2>
         <p>Ask the oracle — get an answer</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./053-glidebox/" data-category="experiments" data-sort-id="053" data-popular="999" data-name="glidebox glidebox rps">
-        <div class="card-top"><span class="card-num">#053</span></div>
+        <div class="card-top"><span class="card-num">#053</span><span class="badge">Live</span></div>
         <h2>GlideBox</h2>
         <p>Rock, paper, scissors vs CPU</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./054-prismbox/" data-category="experiments" data-sort-id="054" data-popular="999" data-name="prismbox prismbox lucky-number">
-        <div class="card-top"><span class="card-num">#054</span></div>
+        <div class="card-top"><span class="card-num">#054</span><span class="badge">Live</span></div>
         <h2>PrismBox</h2>
         <p>Your random number awaits</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./055-fluxbox/" data-category="experiments" data-sort-id="055" data-popular="999" data-name="fluxbox fluxbox word-counter">
-        <div class="card-top"><span class="card-num">#055</span></div>
+        <div class="card-top"><span class="card-num">#055</span><span class="badge">Live</span></div>
         <h2>FluxBox</h2>
         <p>Words, chars, and reading time</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./056-apexbox/" data-category="experiments" data-sort-id="056" data-popular="999" data-name="apexbox apexbox stopwatch">
-        <div class="card-top"><span class="card-num">#056</span></div>
+        <div class="card-top"><span class="card-num">#056</span><span class="badge">Live</span></div>
         <h2>ApexBox</h2>
         <p>Lap times with millisecond flair</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./057-lumenbox/" data-category="experiments" data-sort-id="057" data-popular="999" data-name="lumenbox lumenbox breathing">
-        <div class="card-top"><span class="card-num">#057</span></div>
+        <div class="card-top"><span class="card-num">#057</span><span class="badge">Live</span></div>
         <h2>LumenBox</h2>
         <p>Guided calm breathing cycles</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./058-cipherbox/" data-category="experiments" data-sort-id="058" data-popular="999" data-name="cipherbox cipherbox spin-wheel">
-        <div class="card-top"><span class="card-num">#058</span></div>
+        <div class="card-top"><span class="card-num">#058</span><span class="badge">Live</span></div>
         <h2>CipherBox</h2>
         <p>Add options, spin to decide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./059-runebox/" data-category="experiments" data-sort-id="059" data-popular="999" data-name="runebox runebox unit-convert">
-        <div class="card-top"><span class="card-num">#059</span></div>
+        <div class="card-top"><span class="card-num">#059</span><span class="badge">Live</span></div>
         <h2>RuneBox</h2>
         <p>Quick unit conversion</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./060-boltbox/" data-category="experiments" data-sort-id="060" data-popular="999" data-name="boltbox boltbox mood-picker">
-        <div class="card-top"><span class="card-num">#060</span></div>
+        <div class="card-top"><span class="card-num">#060</span><span class="badge">Live</span></div>
         <h2>BoltBox</h2>
         <p>Name your mood, save the moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./061-crestbox/" data-category="experiments" data-sort-id="061" data-popular="999" data-name="crestbox crestbox name-picker">
-        <div class="card-top"><span class="card-num">#061</span></div>
+        <div class="card-top"><span class="card-num">#061</span><span class="badge">Live</span></div>
         <h2>CrestBox</h2>
         <p>Pick a random winner from your list</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./062-vividbox/" data-category="experiments" data-sort-id="062" data-popular="999" data-name="vividbox vividbox gratitude">
-        <div class="card-top"><span class="card-num">#062</span></div>
+        <div class="card-top"><span class="card-num">#062</span><span class="badge">Live</span></div>
         <h2>VividBox</h2>
         <p>Write gratitude, send good vibes</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./063-swiftkit/" data-category="experiments" data-sort-id="063" data-popular="999" data-name="swiftkit swiftkit coin-flip">
-        <div class="card-top"><span class="card-num">#063</span></div>
+        <div class="card-top"><span class="card-num">#063</span><span class="badge">Live</span></div>
         <h2>SwiftKit</h2>
         <p>Heads or tails — fate in one tap</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./064-novakit/" data-category="experiments" data-sort-id="064" data-popular="999" data-name="novakit novakit dice-roll">
-        <div class="card-top"><span class="card-num">#064</span></div>
+        <div class="card-top"><span class="card-num">#064</span><span class="badge">Live</span></div>
         <h2>NovaKit</h2>
         <p>Roll dice instantly</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./065-echokit/" data-category="experiments" data-sort-id="065" data-popular="999" data-name="echokit echokit yes-or-no">
-        <div class="card-top"><span class="card-num">#065</span></div>
+        <div class="card-top"><span class="card-num">#065</span><span class="badge">Live</span></div>
         <h2>EchoKit</h2>
         <p>A decisive answer when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./066-pixelkit/" data-category="experiments" data-sort-id="066" data-popular="999" data-name="pixelkit pixelkit random-color">
-        <div class="card-top"><span class="card-num">#066</span></div>
+        <div class="card-top"><span class="card-num">#066</span><span class="badge">Live</span></div>
         <h2>PixelKit</h2>
         <p>Discover your next palette color</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./067-zenkit/" data-category="experiments" data-sort-id="067" data-popular="999" data-name="zenkit zenkit password-gen">
-        <div class="card-top"><span class="card-num">#067</span></div>
+        <div class="card-top"><span class="card-num">#067</span><span class="badge">Live</span></div>
         <h2>ZenKit</h2>
         <p>Strong passwords in one click</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./068-flashkit/" data-category="experiments" data-sort-id="068" data-popular="999" data-name="flashkit flashkit countdown">
-        <div class="card-top"><span class="card-num">#068</span></div>
+        <div class="card-top"><span class="card-num">#068</span><span class="badge">Live</span></div>
         <h2>FlashKit</h2>
         <p>Count down to any moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./069-orbitkit/" data-category="experiments" data-sort-id="069" data-popular="999" data-name="orbitkit orbitkit pomodoro">
-        <div class="card-top"><span class="card-num">#069</span></div>
+        <div class="card-top"><span class="card-num">#069</span><span class="badge">Live</span></div>
         <h2>OrbitKit</h2>
         <p>Focused work in timed bursts</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./070-pulsekit/" data-category="experiments" data-sort-id="070" data-popular="999" data-name="pulsekit pulsekit tip-calc">
-        <div class="card-top"><span class="card-num">#070</span></div>
+        <div class="card-top"><span class="card-num">#070</span><span class="badge">Live</span></div>
         <h2>PulseKit</h2>
         <p>Split the bill like a pro</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./071-sparkkit/" data-category="experiments" data-sort-id="071" data-popular="999" data-name="sparkkit sparkkit compliment">
-        <div class="card-top"><span class="card-num">#071</span></div>
+        <div class="card-top"><span class="card-num">#071</span><span class="badge">Live</span></div>
         <h2>SparkKit</h2>
         <p>A kind line when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./072-driftkit/" data-category="experiments" data-sort-id="072" data-popular="999" data-name="driftkit driftkit magic-8ball">
-        <div class="card-top"><span class="card-num">#072</span></div>
+        <div class="card-top"><span class="card-num">#072</span><span class="badge">Live</span></div>
         <h2>DriftKit</h2>
         <p>Ask the oracle — get an answer</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./073-glidekit/" data-category="experiments" data-sort-id="073" data-popular="999" data-name="glidekit glidekit rps">
-        <div class="card-top"><span class="card-num">#073</span></div>
+        <div class="card-top"><span class="card-num">#073</span><span class="badge">Live</span></div>
         <h2>GlideKit</h2>
         <p>Rock, paper, scissors vs CPU</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./074-prismkit/" data-category="experiments" data-sort-id="074" data-popular="999" data-name="prismkit prismkit lucky-number">
-        <div class="card-top"><span class="card-num">#074</span></div>
+        <div class="card-top"><span class="card-num">#074</span><span class="badge">Live</span></div>
         <h2>PrismKit</h2>
         <p>Your random number awaits</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./075-fluxkit/" data-category="experiments" data-sort-id="075" data-popular="999" data-name="fluxkit fluxkit word-counter">
-        <div class="card-top"><span class="card-num">#075</span></div>
+        <div class="card-top"><span class="card-num">#075</span><span class="badge">Live</span></div>
         <h2>FluxKit</h2>
         <p>Words, chars, and reading time</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./076-apexkit/" data-category="experiments" data-sort-id="076" data-popular="999" data-name="apexkit apexkit stopwatch">
-        <div class="card-top"><span class="card-num">#076</span></div>
+        <div class="card-top"><span class="card-num">#076</span><span class="badge">Live</span></div>
         <h2>ApexKit</h2>
         <p>Lap times with millisecond flair</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./077-lumenkit/" data-category="experiments" data-sort-id="077" data-popular="999" data-name="lumenkit lumenkit breathing">
-        <div class="card-top"><span class="card-num">#077</span></div>
+        <div class="card-top"><span class="card-num">#077</span><span class="badge">Live</span></div>
         <h2>LumenKit</h2>
         <p>Guided calm breathing cycles</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./078-cipherkit/" data-category="experiments" data-sort-id="078" data-popular="999" data-name="cipherkit cipherkit spin-wheel">
-        <div class="card-top"><span class="card-num">#078</span></div>
+        <div class="card-top"><span class="card-num">#078</span><span class="badge">Live</span></div>
         <h2>CipherKit</h2>
         <p>Add options, spin to decide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./079-runekit/" data-category="experiments" data-sort-id="079" data-popular="999" data-name="runekit runekit unit-convert">
-        <div class="card-top"><span class="card-num">#079</span></div>
+        <div class="card-top"><span class="card-num">#079</span><span class="badge">Live</span></div>
         <h2>RuneKit</h2>
         <p>Quick unit conversion</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./080-boltkit/" data-category="experiments" data-sort-id="080" data-popular="999" data-name="boltkit boltkit mood-picker">
-        <div class="card-top"><span class="card-num">#080</span></div>
+        <div class="card-top"><span class="card-num">#080</span><span class="badge">Live</span></div>
         <h2>BoltKit</h2>
         <p>Name your mood, save the moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./081-crestkit/" data-category="experiments" data-sort-id="081" data-popular="999" data-name="crestkit crestkit name-picker">
-        <div class="card-top"><span class="card-num">#081</span></div>
+        <div class="card-top"><span class="card-num">#081</span><span class="badge">Live</span></div>
         <h2>CrestKit</h2>
         <p>Pick a random winner from your list</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./082-vividkit/" data-category="experiments" data-sort-id="082" data-popular="999" data-name="vividkit vividkit gratitude">
-        <div class="card-top"><span class="card-num">#082</span></div>
+        <div class="card-top"><span class="card-num">#082</span><span class="badge">Live</span></div>
         <h2>VividKit</h2>
         <p>Write gratitude, send good vibes</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./083-swifthub/" data-category="experiments" data-sort-id="083" data-popular="999" data-name="swifthub swifthub coin-flip">
-        <div class="card-top"><span class="card-num">#083</span></div>
+        <div class="card-top"><span class="card-num">#083</span><span class="badge">Live</span></div>
         <h2>SwiftHub</h2>
         <p>Heads or tails — fate in one tap</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./084-novahub/" data-category="experiments" data-sort-id="084" data-popular="999" data-name="novahub novahub dice-roll">
-        <div class="card-top"><span class="card-num">#084</span></div>
+        <div class="card-top"><span class="card-num">#084</span><span class="badge">Live</span></div>
         <h2>NovaHub</h2>
         <p>Roll dice instantly</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./085-echohub/" data-category="experiments" data-sort-id="085" data-popular="999" data-name="echohub echohub yes-or-no">
-        <div class="card-top"><span class="card-num">#085</span></div>
+        <div class="card-top"><span class="card-num">#085</span><span class="badge">Live</span></div>
         <h2>EchoHub</h2>
         <p>A decisive answer when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./086-pixelhub/" data-category="experiments" data-sort-id="086" data-popular="999" data-name="pixelhub pixelhub random-color">
-        <div class="card-top"><span class="card-num">#086</span></div>
+        <div class="card-top"><span class="card-num">#086</span><span class="badge">Live</span></div>
         <h2>PixelHub</h2>
         <p>Discover your next palette color</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./087-zenhub/" data-category="experiments" data-sort-id="087" data-popular="999" data-name="zenhub zenhub password-gen">
-        <div class="card-top"><span class="card-num">#087</span></div>
+        <div class="card-top"><span class="card-num">#087</span><span class="badge">Live</span></div>
         <h2>ZenHub</h2>
         <p>Strong passwords in one click</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./088-flashhub/" data-category="experiments" data-sort-id="088" data-popular="999" data-name="flashhub flashhub countdown">
-        <div class="card-top"><span class="card-num">#088</span></div>
+        <div class="card-top"><span class="card-num">#088</span><span class="badge">Live</span></div>
         <h2>FlashHub</h2>
         <p>Count down to any moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./089-orbithub/" data-category="experiments" data-sort-id="089" data-popular="999" data-name="orbithub orbithub pomodoro">
-        <div class="card-top"><span class="card-num">#089</span></div>
+        <div class="card-top"><span class="card-num">#089</span><span class="badge">Live</span></div>
         <h2>OrbitHub</h2>
         <p>Focused work in timed bursts</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./090-pulsehub/" data-category="experiments" data-sort-id="090" data-popular="999" data-name="pulsehub pulsehub tip-calc">
-        <div class="card-top"><span class="card-num">#090</span></div>
+        <div class="card-top"><span class="card-num">#090</span><span class="badge">Live</span></div>
         <h2>PulseHub</h2>
         <p>Split the bill like a pro</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./091-sparkhub/" data-category="experiments" data-sort-id="091" data-popular="999" data-name="sparkhub sparkhub compliment">
-        <div class="card-top"><span class="card-num">#091</span></div>
+        <div class="card-top"><span class="card-num">#091</span><span class="badge">Live</span></div>
         <h2>SparkHub</h2>
         <p>A kind line when you need one</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./092-drifthub/" data-category="experiments" data-sort-id="092" data-popular="999" data-name="drifthub drifthub magic-8ball">
-        <div class="card-top"><span class="card-num">#092</span></div>
+        <div class="card-top"><span class="card-num">#092</span><span class="badge">Live</span></div>
         <h2>DriftHub</h2>
         <p>Ask the oracle — get an answer</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./093-glidehub/" data-category="experiments" data-sort-id="093" data-popular="999" data-name="glidehub glidehub rps">
-        <div class="card-top"><span class="card-num">#093</span></div>
+        <div class="card-top"><span class="card-num">#093</span><span class="badge">Live</span></div>
         <h2>GlideHub</h2>
         <p>Rock, paper, scissors vs CPU</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./094-prismhub/" data-category="experiments" data-sort-id="094" data-popular="999" data-name="prismhub prismhub lucky-number">
-        <div class="card-top"><span class="card-num">#094</span></div>
+        <div class="card-top"><span class="card-num">#094</span><span class="badge">Live</span></div>
         <h2>PrismHub</h2>
         <p>Your random number awaits</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./095-fluxhub/" data-category="experiments" data-sort-id="095" data-popular="999" data-name="fluxhub fluxhub word-counter">
-        <div class="card-top"><span class="card-num">#095</span></div>
+        <div class="card-top"><span class="card-num">#095</span><span class="badge">Live</span></div>
         <h2>FluxHub</h2>
         <p>Words, chars, and reading time</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./096-apexhub/" data-category="experiments" data-sort-id="096" data-popular="999" data-name="apexhub apexhub stopwatch">
-        <div class="card-top"><span class="card-num">#096</span></div>
+        <div class="card-top"><span class="card-num">#096</span><span class="badge">Live</span></div>
         <h2>ApexHub</h2>
         <p>Lap times with millisecond flair</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./097-lumenhub/" data-category="experiments" data-sort-id="097" data-popular="999" data-name="lumenhub lumenhub breathing">
-        <div class="card-top"><span class="card-num">#097</span></div>
+        <div class="card-top"><span class="card-num">#097</span><span class="badge">Live</span></div>
         <h2>LumenHub</h2>
         <p>Guided calm breathing cycles</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./098-cipherhub/" data-category="experiments" data-sort-id="098" data-popular="999" data-name="cipherhub cipherhub spin-wheel">
-        <div class="card-top"><span class="card-num">#098</span></div>
+        <div class="card-top"><span class="card-num">#098</span><span class="badge">Live</span></div>
         <h2>CipherHub</h2>
         <p>Add options, spin to decide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./099-runehub/" data-category="experiments" data-sort-id="099" data-popular="999" data-name="runehub runehub unit-convert">
-        <div class="card-top"><span class="card-num">#099</span></div>
+        <div class="card-top"><span class="card-num">#099</span><span class="badge">Live</span></div>
         <h2>RuneHub</h2>
         <p>Quick unit conversion</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./100-bolthub/" data-category="experiments" data-sort-id="100" data-popular="999" data-name="bolthub bolthub mood-picker">
-        <div class="card-top"><span class="card-num">#100</span></div>
+        <div class="card-top"><span class="card-num">#100</span><span class="badge">Live</span></div>
         <h2>BoltHub</h2>
         <p>Name your mood, save the moment</p>
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./101-egg-balance/" data-category="games" data-sort-id="101" data-popular="2" data-featured="true" data-name="egg-balance eggbalance egg-balance">
-        <div class="card-top"><span class="card-num">#101</span></div>
+      <a class="card" href="./101-egg-balance/" data-category="games" data-sort-id="101" data-popular="2" data-featured="true" data-name="egg balance physics carton game eggbalance">
+        <div class="card-top"><span class="card-num">#101</span><span class="badge">Live</span></div>
         <h2>EggBalance</h2>
         <p>Balance eggs in the carton — physics decides if it tips</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./102-eggstack/" data-category="games" data-sort-id="102" data-popular="999" data-name="eggstack eggstack stack-tower">
-        <div class="card-top"><span class="card-num">#102</span></div>
+        <div class="card-top"><span class="card-num">#102</span><span class="badge">Live</span></div>
         <h2>EggStack</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./103-yolkcatch/" data-category="games" data-sort-id="103" data-popular="999" data-name="yolkcatch yolkcatch catch-fall">
-        <div class="card-top"><span class="card-num">#103</span></div>
+        <div class="card-top"><span class="card-num">#103</span><span class="badge">Live</span></div>
         <h2>YolkCatch</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./104-nestrun/" data-category="games" data-sort-id="104" data-popular="999" data-name="nestrun nestrun snake-mini">
-        <div class="card-top"><span class="card-num">#104</span></div>
+        <div class="card-top"><span class="card-num">#104</span><span class="badge">Live</span></div>
         <h2>NestRun</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./105-hatchbreak/" data-category="games" data-sort-id="105" data-popular="999" data-name="hatchbreak hatchbreak paddle-break">
-        <div class="card-top"><span class="card-num">#105</span></div>
+        <div class="card-top"><span class="card-num">#105</span><span class="badge">Live</span></div>
         <h2>HatchBreak</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./106-shellflip/" data-category="games" data-sort-id="106" data-popular="999" data-name="shellflip shellflip memory-flip">
-        <div class="card-top"><span class="card-num">#106</span></div>
+        <div class="card-top"><span class="card-num">#106</span><span class="badge">Live</span></div>
         <h2>ShellFlip</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./107-cluckrush/" data-category="games" data-sort-id="107" data-popular="999" data-name="cluckrush cluckrush reaction-tap">
-        <div class="card-top"><span class="card-num">#107</span></div>
+        <div class="card-top"><span class="card-num">#107</span><span class="badge">Live</span></div>
         <h2>CluckRush</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./108-farmpop/" data-category="games" data-sort-id="108" data-popular="999" data-name="farmpop farmpop tap-fly">
-        <div class="card-top"><span class="card-num">#108</span></div>
+        <div class="card-top"><span class="card-num">#108</span><span class="badge">Live</span></div>
         <h2>FarmPop</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./109-coopmerge/" data-category="games" data-sort-id="109" data-popular="999" data-name="coopmerge coopmerge whack-pop">
-        <div class="card-top"><span class="card-num">#109</span></div>
+        <div class="card-top"><span class="card-num">#109</span><span class="badge">Live</span></div>
         <h2>CoopMerge</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./110-broodquest/" data-category="games" data-sort-id="110" data-popular="999" data-name="broodquest broodquest merge-numbers">
-        <div class="card-top"><span class="card-num">#110</span></div>
+        <div class="card-top"><span class="card-num">#110</span><span class="badge">Live</span></div>
         <h2>BroodQuest</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./111-peckbalance/" data-category="games" data-sort-id="111" data-popular="999" data-name="peckbalance peckbalance stack-tower">
-        <div class="card-top"><span class="card-num">#111</span></div>
+        <div class="card-top"><span class="card-num">#111</span><span class="badge">Live</span></div>
         <h2>PeckBalance</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./112-arcadestack/" data-category="games" data-sort-id="112" data-popular="999" data-name="arcadestack arcadestack catch-fall">
-        <div class="card-top"><span class="card-num">#112</span></div>
+        <div class="card-top"><span class="card-num">#112</span><span class="badge">Live</span></div>
         <h2>ArcadeStack</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./113-pixelcatch/" data-category="games" data-sort-id="113" data-popular="999" data-name="pixelcatch pixelcatch snake-mini">
-        <div class="card-top"><span class="card-num">#113</span></div>
+        <div class="card-top"><span class="card-num">#113</span><span class="badge">Live</span></div>
         <h2>PixelCatch</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./114-neonrun/" data-category="games" data-sort-id="114" data-popular="999" data-name="neonrun neonrun paddle-break">
-        <div class="card-top"><span class="card-num">#114</span></div>
+        <div class="card-top"><span class="card-num">#114</span><span class="badge">Live</span></div>
         <h2>NeonRun</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./115-retrobreak/" data-category="games" data-sort-id="115" data-popular="999" data-name="retrobreak retrobreak memory-flip">
-        <div class="card-top"><span class="card-num">#115</span></div>
+        <div class="card-top"><span class="card-num">#115</span><span class="badge">Live</span></div>
         <h2>RetroBreak</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./116-turboflip/" data-category="games" data-sort-id="116" data-popular="999" data-name="turboflip turboflip reaction-tap">
-        <div class="card-top"><span class="card-num">#116</span></div>
+        <div class="card-top"><span class="card-num">#116</span><span class="badge">Live</span></div>
         <h2>TurboFlip</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./117-blitzrush/" data-category="games" data-sort-id="117" data-popular="999" data-name="blitzrush blitzrush tap-fly">
-        <div class="card-top"><span class="card-num">#117</span></div>
+        <div class="card-top"><span class="card-num">#117</span><span class="badge">Live</span></div>
         <h2>BlitzRush</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./118-rushpop/" data-category="games" data-sort-id="118" data-popular="999" data-name="rushpop rushpop whack-pop">
-        <div class="card-top"><span class="card-num">#118</span></div>
+        <div class="card-top"><span class="card-num">#118</span><span class="badge">Live</span></div>
         <h2>RushPop</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./119-dashmerge/" data-category="games" data-sort-id="119" data-popular="999" data-name="dashmerge dashmerge merge-numbers">
-        <div class="card-top"><span class="card-num">#119</span></div>
+        <div class="card-top"><span class="card-num">#119</span><span class="badge">Live</span></div>
         <h2>DashMerge</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./120-boltquest/" data-category="games" data-sort-id="120" data-popular="999" data-name="boltquest boltquest stack-tower">
-        <div class="card-top"><span class="card-num">#120</span></div>
+        <div class="card-top"><span class="card-num">#120</span><span class="badge">Live</span></div>
         <h2>BoltQuest</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./121-zapbalance/" data-category="games" data-sort-id="121" data-popular="999" data-name="zapbalance zapbalance catch-fall">
-        <div class="card-top"><span class="card-num">#121</span></div>
+        <div class="card-top"><span class="card-num">#121</span><span class="badge">Live</span></div>
         <h2>ZapBalance</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./122-orbitstack/" data-category="games" data-sort-id="122" data-popular="999" data-name="orbitstack orbitstack snake-mini">
-        <div class="card-top"><span class="card-num">#122</span></div>
+        <div class="card-top"><span class="card-num">#122</span><span class="badge">Live</span></div>
         <h2>OrbitStack</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./123-novacatch/" data-category="games" data-sort-id="123" data-popular="999" data-name="novacatch novacatch paddle-break">
-        <div class="card-top"><span class="card-num">#123</span></div>
+        <div class="card-top"><span class="card-num">#123</span><span class="badge">Live</span></div>
         <h2>NovaCatch</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./124-cometrun/" data-category="games" data-sort-id="124" data-popular="999" data-name="cometrun cometrun memory-flip">
-        <div class="card-top"><span class="card-num">#124</span></div>
+        <div class="card-top"><span class="card-num">#124</span><span class="badge">Live</span></div>
         <h2>CometRun</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./125-lunarbreak/" data-category="games" data-sort-id="125" data-popular="999" data-name="lunarbreak lunarbreak reaction-tap">
-        <div class="card-top"><span class="card-num">#125</span></div>
+        <div class="card-top"><span class="card-num">#125</span><span class="badge">Live</span></div>
         <h2>LunarBreak</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./126-solarflip/" data-category="games" data-sort-id="126" data-popular="999" data-name="solarflip solarflip tap-fly">
-        <div class="card-top"><span class="card-num">#126</span></div>
+        <div class="card-top"><span class="card-num">#126</span><span class="badge">Live</span></div>
         <h2>SolarFlip</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./127-starrush/" data-category="games" data-sort-id="127" data-popular="999" data-name="starrush starrush whack-pop">
-        <div class="card-top"><span class="card-num">#127</span></div>
+        <div class="card-top"><span class="card-num">#127</span><span class="badge">Live</span></div>
         <h2>StarRush</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./128-cosmopop/" data-category="games" data-sort-id="128" data-popular="999" data-name="cosmopop cosmopop merge-numbers">
-        <div class="card-top"><span class="card-num">#128</span></div>
+        <div class="card-top"><span class="card-num">#128</span><span class="badge">Live</span></div>
         <h2>CosmoPop</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./129-astromerge/" data-category="games" data-sort-id="129" data-popular="999" data-name="astromerge astromerge stack-tower">
-        <div class="card-top"><span class="card-num">#129</span></div>
+        <div class="card-top"><span class="card-num">#129</span><span class="badge">Live</span></div>
         <h2>AstroMerge</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./130-pulsequest/" data-category="games" data-sort-id="130" data-popular="999" data-name="pulsequest pulsequest catch-fall">
-        <div class="card-top"><span class="card-num">#130</span></div>
+        <div class="card-top"><span class="card-num">#130</span><span class="badge">Live</span></div>
         <h2>PulseQuest</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./131-driftbalance/" data-category="games" data-sort-id="131" data-popular="999" data-name="driftbalance driftbalance snake-mini">
-        <div class="card-top"><span class="card-num">#131</span></div>
+        <div class="card-top"><span class="card-num">#131</span><span class="badge">Live</span></div>
         <h2>DriftBalance</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./132-prismstack/" data-category="games" data-sort-id="132" data-popular="999" data-name="prismstack prismstack paddle-break">
-        <div class="card-top"><span class="card-num">#132</span></div>
+        <div class="card-top"><span class="card-num">#132</span><span class="badge">Live</span></div>
         <h2>PrismStack</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./133-fluxcatch/" data-category="games" data-sort-id="133" data-popular="999" data-name="fluxcatch fluxcatch memory-flip">
-        <div class="card-top"><span class="card-num">#133</span></div>
+        <div class="card-top"><span class="card-num">#133</span><span class="badge">Live</span></div>
         <h2>FluxCatch</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./134-sparkrun/" data-category="games" data-sort-id="134" data-popular="999" data-name="sparkrun sparkrun reaction-tap">
-        <div class="card-top"><span class="card-num">#134</span></div>
+        <div class="card-top"><span class="card-num">#134</span><span class="badge">Live</span></div>
         <h2>SparkRun</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./135-glidebreak/" data-category="games" data-sort-id="135" data-popular="999" data-name="glidebreak glidebreak tap-fly">
-        <div class="card-top"><span class="card-num">#135</span></div>
+        <div class="card-top"><span class="card-num">#135</span><span class="badge">Live</span></div>
         <h2>GlideBreak</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./136-crestflip/" data-category="games" data-sort-id="136" data-popular="999" data-name="crestflip crestflip whack-pop">
-        <div class="card-top"><span class="card-num">#136</span></div>
+        <div class="card-top"><span class="card-num">#136</span><span class="badge">Live</span></div>
         <h2>CrestFlip</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./137-runerush/" data-category="games" data-sort-id="137" data-popular="999" data-name="runerush runerush merge-numbers">
-        <div class="card-top"><span class="card-num">#137</span></div>
+        <div class="card-top"><span class="card-num">#137</span><span class="badge">Live</span></div>
         <h2>RuneRush</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./138-cipherpop/" data-category="games" data-sort-id="138" data-popular="999" data-name="cipherpop cipherpop stack-tower">
-        <div class="card-top"><span class="card-num">#138</span></div>
+        <div class="card-top"><span class="card-num">#138</span><span class="badge">Live</span></div>
         <h2>CipherPop</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./139-lumenmerge/" data-category="games" data-sort-id="139" data-popular="999" data-name="lumenmerge lumenmerge catch-fall">
-        <div class="card-top"><span class="card-num">#139</span></div>
+        <div class="card-top"><span class="card-num">#139</span><span class="badge">Live</span></div>
         <h2>LumenMerge</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./140-vividquest/" data-category="games" data-sort-id="140" data-popular="999" data-name="vividquest vividquest snake-mini">
-        <div class="card-top"><span class="card-num">#140</span></div>
+        <div class="card-top"><span class="card-num">#140</span><span class="badge">Live</span></div>
         <h2>VividQuest</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./141-apexbalance/" data-category="games" data-sort-id="141" data-popular="999" data-name="apexbalance apexbalance paddle-break">
-        <div class="card-top"><span class="card-num">#141</span></div>
+        <div class="card-top"><span class="card-num">#141</span><span class="badge">Live</span></div>
         <h2>ApexBalance</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./142-zenstack/" data-category="games" data-sort-id="142" data-popular="999" data-name="zenstack zenstack memory-flip">
-        <div class="card-top"><span class="card-num">#142</span></div>
+        <div class="card-top"><span class="card-num">#142</span><span class="badge">Live</span></div>
         <h2>ZenStack</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./143-echocatch/" data-category="games" data-sort-id="143" data-popular="999" data-name="echocatch echocatch reaction-tap">
-        <div class="card-top"><span class="card-num">#143</span></div>
+        <div class="card-top"><span class="card-num">#143</span><span class="badge">Live</span></div>
         <h2>EchoCatch</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./144-swiftrun/" data-category="games" data-sort-id="144" data-popular="999" data-name="swiftrun swiftrun tap-fly">
-        <div class="card-top"><span class="card-num">#144</span></div>
+        <div class="card-top"><span class="card-num">#144</span><span class="badge">Live</span></div>
         <h2>SwiftRun</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./145-flashbreak/" data-category="games" data-sort-id="145" data-popular="999" data-name="flashbreak flashbreak whack-pop">
-        <div class="card-top"><span class="card-num">#145</span></div>
+        <div class="card-top"><span class="card-num">#145</span><span class="badge">Live</span></div>
         <h2>FlashBreak</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./146-mythflip/" data-category="games" data-sort-id="146" data-popular="999" data-name="mythflip mythflip merge-numbers">
-        <div class="card-top"><span class="card-num">#146</span></div>
+        <div class="card-top"><span class="card-num">#146</span><span class="badge">Live</span></div>
         <h2>MythFlip</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./147-questrush/" data-category="games" data-sort-id="147" data-popular="999" data-name="questrush questrush stack-tower">
-        <div class="card-top"><span class="card-num">#147</span></div>
+        <div class="card-top"><span class="card-num">#147</span><span class="badge">Live</span></div>
         <h2>QuestRush</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./148-lootpop/" data-category="games" data-sort-id="148" data-popular="999" data-name="lootpop lootpop catch-fall">
-        <div class="card-top"><span class="card-num">#148</span></div>
+        <div class="card-top"><span class="card-num">#148</span><span class="badge">Live</span></div>
         <h2>LootPop</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./149-bossmerge/" data-category="games" data-sort-id="149" data-popular="999" data-name="bossmerge bossmerge snake-mini">
-        <div class="card-top"><span class="card-num">#149</span></div>
+        <div class="card-top"><span class="card-num">#149</span><span class="badge">Live</span></div>
         <h2>BossMerge</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./150-levelquest/" data-category="games" data-sort-id="150" data-popular="999" data-name="levelquest levelquest paddle-break">
-        <div class="card-top"><span class="card-num">#150</span></div>
+        <div class="card-top"><span class="card-num">#150</span><span class="badge">Live</span></div>
         <h2>LevelQuest</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./151-coinbalance/" data-category="games" data-sort-id="151" data-popular="999" data-name="coinbalance coinbalance memory-flip">
-        <div class="card-top"><span class="card-num">#151</span></div>
+        <div class="card-top"><span class="card-num">#151</span><span class="badge">Live</span></div>
         <h2>CoinBalance</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./152-dodgestack/" data-category="games" data-sort-id="152" data-popular="999" data-name="dodgestack dodgestack reaction-tap">
-        <div class="card-top"><span class="card-num">#152</span></div>
+        <div class="card-top"><span class="card-num">#152</span><span class="badge">Live</span></div>
         <h2>DodgeStack</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./153-jumpcatch/" data-category="games" data-sort-id="153" data-popular="999" data-name="jumpcatch jumpcatch tap-fly">
-        <div class="card-top"><span class="card-num">#153</span></div>
+        <div class="card-top"><span class="card-num">#153</span><span class="badge">Live</span></div>
         <h2>JumpCatch</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./154-spinrun/" data-category="games" data-sort-id="154" data-popular="999" data-name="spinrun spinrun whack-pop">
-        <div class="card-top"><span class="card-num">#154</span></div>
+        <div class="card-top"><span class="card-num">#154</span><span class="badge">Live</span></div>
         <h2>SpinRun</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./155-rollbreak/" data-category="games" data-sort-id="155" data-popular="999" data-name="rollbreak rollbreak merge-numbers">
-        <div class="card-top"><span class="card-num">#155</span></div>
+        <div class="card-top"><span class="card-num">#155</span><span class="badge">Live</span></div>
         <h2>RollBreak</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./156-flipflip/" data-category="games" data-sort-id="156" data-popular="999" data-name="flipflip flipflip stack-tower">
-        <div class="card-top"><span class="card-num">#156</span></div>
+        <div class="card-top"><span class="card-num">#156</span><span class="badge">Live</span></div>
         <h2>FlipFlip</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./157-poprush/" data-category="games" data-sort-id="157" data-popular="999" data-name="poprush poprush catch-fall">
-        <div class="card-top"><span class="card-num">#157</span></div>
+        <div class="card-top"><span class="card-num">#157</span><span class="badge">Live</span></div>
         <h2>PopRush</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./158-tappop/" data-category="games" data-sort-id="158" data-popular="999" data-name="tappop tappop snake-mini">
-        <div class="card-top"><span class="card-num">#158</span></div>
+        <div class="card-top"><span class="card-num">#158</span><span class="badge">Live</span></div>
         <h2>TapPop</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./159-snapmerge/" data-category="games" data-sort-id="159" data-popular="999" data-name="snapmerge snapmerge paddle-break">
-        <div class="card-top"><span class="card-num">#159</span></div>
+        <div class="card-top"><span class="card-num">#159</span><span class="badge">Live</span></div>
         <h2>SnapMerge</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./160-bouncequest/" data-category="games" data-sort-id="160" data-popular="999" data-name="bouncequest bouncequest memory-flip">
-        <div class="card-top"><span class="card-num">#160</span></div>
+        <div class="card-top"><span class="card-num">#160</span><span class="badge">Live</span></div>
         <h2>BounceQuest</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./161-swingbalance/" data-category="games" data-sort-id="161" data-popular="999" data-name="swingbalance swingbalance reaction-tap">
-        <div class="card-top"><span class="card-num">#161</span></div>
+        <div class="card-top"><span class="card-num">#161</span><span class="badge">Live</span></div>
         <h2>SwingBalance</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./162-stackstack/" data-category="games" data-sort-id="162" data-popular="999" data-name="stackstack stackstack tap-fly">
-        <div class="card-top"><span class="card-num">#162</span></div>
+        <div class="card-top"><span class="card-num">#162</span><span class="badge">Live</span></div>
         <h2>StackStack</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./163-catchcatch/" data-category="games" data-sort-id="163" data-popular="999" data-name="catchcatch catchcatch whack-pop">
-        <div class="card-top"><span class="card-num">#163</span></div>
+        <div class="card-top"><span class="card-num">#163</span><span class="badge">Live</span></div>
         <h2>CatchCatch</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./164-balancerun/" data-category="games" data-sort-id="164" data-popular="999" data-name="balancerun balancerun merge-numbers">
-        <div class="card-top"><span class="card-num">#164</span></div>
+        <div class="card-top"><span class="card-num">#164</span><span class="badge">Live</span></div>
         <h2>BalanceRun</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./165-mergebreak/" data-category="games" data-sort-id="165" data-popular="999" data-name="mergebreak mergebreak stack-tower">
-        <div class="card-top"><span class="card-num">#165</span></div>
+        <div class="card-top"><span class="card-num">#165</span><span class="badge">Live</span></div>
         <h2>MergeBreak</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./166-matchflip/" data-category="games" data-sort-id="166" data-popular="999" data-name="matchflip matchflip catch-fall">
-        <div class="card-top"><span class="card-num">#166</span></div>
+        <div class="card-top"><span class="card-num">#166</span><span class="badge">Live</span></div>
         <h2>MatchFlip</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./167-breakrush/" data-category="games" data-sort-id="167" data-popular="999" data-name="breakrush breakrush snake-mini">
-        <div class="card-top"><span class="card-num">#167</span></div>
+        <div class="card-top"><span class="card-num">#167</span><span class="badge">Live</span></div>
         <h2>BreakRush</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./168-snakepop/" data-category="games" data-sort-id="168" data-popular="999" data-name="snakepop snakepop paddle-break">
-        <div class="card-top"><span class="card-num">#168</span></div>
+        <div class="card-top"><span class="card-num">#168</span><span class="badge">Live</span></div>
         <h2>SnakePop</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./169-paddlemerge/" data-category="games" data-sort-id="169" data-popular="999" data-name="paddlemerge paddlemerge memory-flip">
-        <div class="card-top"><span class="card-num">#169</span></div>
+        <div class="card-top"><span class="card-num">#169</span><span class="badge">Live</span></div>
         <h2>PaddleMerge</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./170-flyquest/" data-category="games" data-sort-id="170" data-popular="999" data-name="flyquest flyquest reaction-tap">
-        <div class="card-top"><span class="card-num">#170</span></div>
+        <div class="card-top"><span class="card-num">#170</span><span class="badge">Live</span></div>
         <h2>FlyQuest</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./171-whackbalance/" data-category="games" data-sort-id="171" data-popular="999" data-name="whackbalance whackbalance tap-fly">
-        <div class="card-top"><span class="card-num">#171</span></div>
+        <div class="card-top"><span class="card-num">#171</span><span class="badge">Live</span></div>
         <h2>WhackBalance</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./172-goldenstack/" data-category="games" data-sort-id="172" data-popular="999" data-name="goldenstack goldenstack whack-pop">
-        <div class="card-top"><span class="card-num">#172</span></div>
+        <div class="card-top"><span class="card-num">#172</span><span class="badge">Live</span></div>
         <h2>GoldenStack</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./173-silvercatch/" data-category="games" data-sort-id="173" data-popular="999" data-name="silvercatch silvercatch merge-numbers">
-        <div class="card-top"><span class="card-num">#173</span></div>
+        <div class="card-top"><span class="card-num">#173</span><span class="badge">Live</span></div>
         <h2>SilverCatch</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./174-rubyrun/" data-category="games" data-sort-id="174" data-popular="999" data-name="rubyrun rubyrun stack-tower">
-        <div class="card-top"><span class="card-num">#174</span></div>
+        <div class="card-top"><span class="card-num">#174</span><span class="badge">Live</span></div>
         <h2>RubyRun</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./175-jadebreak/" data-category="games" data-sort-id="175" data-popular="999" data-name="jadebreak jadebreak catch-fall">
-        <div class="card-top"><span class="card-num">#175</span></div>
+        <div class="card-top"><span class="card-num">#175</span><span class="badge">Live</span></div>
         <h2>JadeBreak</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./176-onyxflip/" data-category="games" data-sort-id="176" data-popular="999" data-name="onyxflip onyxflip snake-mini">
-        <div class="card-top"><span class="card-num">#176</span></div>
+        <div class="card-top"><span class="card-num">#176</span><span class="badge">Live</span></div>
         <h2>OnyxFlip</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./177-coralrush/" data-category="games" data-sort-id="177" data-popular="999" data-name="coralrush coralrush paddle-break">
-        <div class="card-top"><span class="card-num">#177</span></div>
+        <div class="card-top"><span class="card-num">#177</span><span class="badge">Live</span></div>
         <h2>CoralRush</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./178-amberpop/" data-category="games" data-sort-id="178" data-popular="999" data-name="amberpop amberpop memory-flip">
-        <div class="card-top"><span class="card-num">#178</span></div>
+        <div class="card-top"><span class="card-num">#178</span><span class="badge">Live</span></div>
         <h2>AmberPop</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./179-ivorymerge/" data-category="games" data-sort-id="179" data-popular="999" data-name="ivorymerge ivorymerge reaction-tap">
-        <div class="card-top"><span class="card-num">#179</span></div>
+        <div class="card-top"><span class="card-num">#179</span><span class="badge">Live</span></div>
         <h2>IvoryMerge</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./180-crimsonquest/" data-category="games" data-sort-id="180" data-popular="999" data-name="crimsonquest crimsonquest tap-fly">
-        <div class="card-top"><span class="card-num">#180</span></div>
+        <div class="card-top"><span class="card-num">#180</span><span class="badge">Live</span></div>
         <h2>CrimsonQuest</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./181-violetbalance/" data-category="games" data-sort-id="181" data-popular="999" data-name="violetbalance violetbalance whack-pop">
-        <div class="card-top"><span class="card-num">#181</span></div>
+        <div class="card-top"><span class="card-num">#181</span><span class="badge">Live</span></div>
         <h2>VioletBalance</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./182-wildstack/" data-category="games" data-sort-id="182" data-popular="999" data-name="wildstack wildstack merge-numbers">
-        <div class="card-top"><span class="card-num">#182</span></div>
+        <div class="card-top"><span class="card-num">#182</span><span class="badge">Live</span></div>
         <h2>WildStack</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./183-calmcatch/" data-category="games" data-sort-id="183" data-popular="999" data-name="calmcatch calmcatch stack-tower">
-        <div class="card-top"><span class="card-num">#183</span></div>
+        <div class="card-top"><span class="card-num">#183</span><span class="badge">Live</span></div>
         <h2>CalmCatch</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./184-boldrun/" data-category="games" data-sort-id="184" data-popular="999" data-name="boldrun boldrun catch-fall">
-        <div class="card-top"><span class="card-num">#184</span></div>
+        <div class="card-top"><span class="card-num">#184</span><span class="badge">Live</span></div>
         <h2>BoldRun</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./185-slybreak/" data-category="games" data-sort-id="185" data-popular="999" data-name="slybreak slybreak snake-mini">
-        <div class="card-top"><span class="card-num">#185</span></div>
+        <div class="card-top"><span class="card-num">#185</span><span class="badge">Live</span></div>
         <h2>SlyBreak</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./186-keenflip/" data-category="games" data-sort-id="186" data-popular="999" data-name="keenflip keenflip paddle-break">
-        <div class="card-top"><span class="card-num">#186</span></div>
+        <div class="card-top"><span class="card-num">#186</span><span class="badge">Live</span></div>
         <h2>KeenFlip</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./187-braverush/" data-category="games" data-sort-id="187" data-popular="999" data-name="braverush braverush memory-flip">
-        <div class="card-top"><span class="card-num">#187</span></div>
+        <div class="card-top"><span class="card-num">#187</span><span class="badge">Live</span></div>
         <h2>BraveRush</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./188-luckypop/" data-category="games" data-sort-id="188" data-popular="999" data-name="luckypop luckypop reaction-tap">
-        <div class="card-top"><span class="card-num">#188</span></div>
+        <div class="card-top"><span class="card-num">#188</span><span class="badge">Live</span></div>
         <h2>LuckyPop</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./189-mightymerge/" data-category="games" data-sort-id="189" data-popular="999" data-name="mightymerge mightymerge tap-fly">
-        <div class="card-top"><span class="card-num">#189</span></div>
+        <div class="card-top"><span class="card-num">#189</span><span class="badge">Live</span></div>
         <h2>MightyMerge</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./190-tinyquest/" data-category="games" data-sort-id="190" data-popular="999" data-name="tinyquest tinyquest whack-pop">
-        <div class="card-top"><span class="card-num">#190</span></div>
+        <div class="card-top"><span class="card-num">#190</span><span class="badge">Live</span></div>
         <h2>TinyQuest</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./191-giantbalance/" data-category="games" data-sort-id="191" data-popular="999" data-name="giantbalance giantbalance merge-numbers">
-        <div class="card-top"><span class="card-num">#191</span></div>
+        <div class="card-top"><span class="card-num">#191</span><span class="badge">Live</span></div>
         <h2>GiantBalance</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./192-daystack/" data-category="games" data-sort-id="192" data-popular="999" data-name="daystack daystack stack-tower">
-        <div class="card-top"><span class="card-num">#192</span></div>
+        <div class="card-top"><span class="card-num">#192</span><span class="badge">Live</span></div>
         <h2>DayStack</h2>
         <p>Stack blocks — keep the tower centered or it falls</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./193-nightcatch/" data-category="games" data-sort-id="193" data-popular="999" data-name="nightcatch nightcatch catch-fall">
-        <div class="card-top"><span class="card-num">#193</span></div>
+        <div class="card-top"><span class="card-num">#193</span><span class="badge">Live</span></div>
         <h2>NightCatch</h2>
         <p>Move the basket — catch what falls, dodge bombs</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./194-dawnrun/" data-category="games" data-sort-id="194" data-popular="999" data-name="dawnrun dawnrun snake-mini">
-        <div class="card-top"><span class="card-num">#194</span></div>
+        <div class="card-top"><span class="card-num">#194</span><span class="badge">Live</span></div>
         <h2>DawnRun</h2>
         <p>Classic snake — eat, grow, don't bite yourself</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./195-duskbreak/" data-category="games" data-sort-id="195" data-popular="999" data-name="duskbreak duskbreak paddle-break">
-        <div class="card-top"><span class="card-num">#195</span></div>
+        <div class="card-top"><span class="card-num">#195</span><span class="badge">Live</span></div>
         <h2>DuskBreak</h2>
         <p>Break every brick — don't lose the ball</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./196-stormflip/" data-category="games" data-sort-id="196" data-popular="999" data-name="stormflip stormflip memory-flip">
-        <div class="card-top"><span class="card-num">#196</span></div>
+        <div class="card-top"><span class="card-num">#196</span><span class="badge">Live</span></div>
         <h2>StormFlip</h2>
         <p>Flip cards — find matching pairs in fewest moves</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./197-breezerush/" data-category="games" data-sort-id="197" data-popular="999" data-name="breezerush breezerush reaction-tap">
-        <div class="card-top"><span class="card-num">#197</span></div>
+        <div class="card-top"><span class="card-num">#197</span><span class="badge">Live</span></div>
         <h2>BreezeRush</h2>
         <p>Tap when green — how fast are your reflexes?</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./198-frostpop/" data-category="games" data-sort-id="198" data-popular="999" data-name="frostpop frostpop tap-fly">
-        <div class="card-top"><span class="card-num">#198</span></div>
+        <div class="card-top"><span class="card-num">#198</span><span class="badge">Live</span></div>
         <h2>FrostPop</h2>
         <p>Tap to fly — dodge the gaps</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./199-embermerge/" data-category="games" data-sort-id="199" data-popular="999" data-name="embermerge embermerge whack-pop">
-        <div class="card-top"><span class="card-num">#199</span></div>
+        <div class="card-top"><span class="card-num">#199</span><span class="badge">Live</span></div>
         <h2>EmberMerge</h2>
         <p>Whack the targets before they hide</p>
         <span class="card-foot">Open site →</span>
       </a>
 
       <a class="card" href="./200-mistquest/" data-category="games" data-sort-id="200" data-popular="999" data-name="mistquest mistquest merge-numbers">
-        <div class="card-top"><span class="card-num">#200</span></div>
+        <div class="card-top"><span class="card-num">#200</span><span class="badge">Live</span></div>
         <h2>MistQuest</h2>
         <p>Slide tiles — merge numbers to reach 256</p>
         <span class="card-foot">Open site →</span>

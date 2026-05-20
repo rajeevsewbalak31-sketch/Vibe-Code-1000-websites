@@ -16,6 +16,8 @@ jobs:
           node-version: "22"
       - name: Validate site registry and folders
         run: node scripts/validate.mjs
+      - name: Verify hub routes
+        run: node scripts/verify-routes.mjs
 
   next-build:
     runs-on: ubuntu-latest

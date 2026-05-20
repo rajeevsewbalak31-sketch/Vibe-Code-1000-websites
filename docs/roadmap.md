@@ -26,7 +26,7 @@ The goal is not to hand-build 1000 pages. The goal is to build a **machine** tha
 
 ### Phase 2 — Automate to 100 sites ✅
 
-### Phase 2b — Vibe-coded games (#101–200) ← **you are here**
+### Phase 2b — Vibe-coded games (#101–200) ✅
 
 - Catalog-driven registry (`scripts/sites.json`)
 - `node scripts/engine.mjs all --from=23 --to=100`
@@ -48,8 +48,10 @@ The goal is not to hand-build 1000 pages. The goal is to build a **machine** tha
 - [x] Per-site SEO: `Name | Vibe Code 1000`, Open Graph, canonical
 - [x] `sitemap.xml` + `robots.txt`
 - [x] README + launch post template ([docs/announce.md](./announce.md))
+- [x] Games launch banner + hero stats synced from engine
+- [x] `og.svg` social preview card
 - [ ] Custom domain for the hub
-- [ ] `og:image` asset for social cards
+- [ ] Plausible analytics ([docs/analytics.md](./analytics.md))
 
 ### Phase 4 — Monetize ✅
 
@@ -58,13 +60,14 @@ The goal is not to hand-build 1000 pages. The goal is to build a **machine** tha
 - [x] Micro-site pricing (`#get-a-site`)
 - [x] Per-site tip chips + “Get your own micro-site” footer link
 - [x] [docs/monetization.md](./monetization.md)
-- [ ] Analytics (Plausible) · Stripe deposits · affiliate tools
+- [ ] Stripe deposits · affiliate tools
 
-### Phase 5 — Scale to 1000 (optional)
+### Phase 5 — Scale to 1000 (optional) ← **next**
 
-- Only when Phases 2–4 work
-- Press the button: expand catalog → generate → deploy
-- Quality bar: retire weak templates, add new logic types as needed
+- Only when Phases 2–4 earn revenue
+- Batch **#201–300**: interactive apps (calculators, visualizers, sandboxes)
+- Batch **#301–500**: engine expansion with quality review
+- Retire weak templates; add more flagship games like EggBalance
 
 ---
 

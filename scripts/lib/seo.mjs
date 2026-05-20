@@ -46,14 +46,15 @@ export function siteHeadMeta(site) {
   <meta name="twitter:description" content="${escapeAttr(desc)}" />`;
 }
 
-export function hubJsonLd(siteCount) {
+export function hubJsonLd(siteCount, gameCount = 0) {
+  const gamesNote = gameCount ? `, including ${gameCount} vibe-coded games` : "";
   return JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: BRAND,
     alternateName: "1000 Websites Challenge",
     url: HUB_URL,
-    description: `${siteCount} free mini web tools — built by a site generation engine.`,
+    description: `${siteCount} free mini web apps${gamesNote} — built by a site generation engine.`,
     author: { "@type": "Person", name: "Rajeev Sewbalak" },
   });
 }

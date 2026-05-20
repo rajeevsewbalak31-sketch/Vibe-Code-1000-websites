@@ -58,22 +58,30 @@ switch (cmd) {
     spawnSync("node", [join(__dirname, "sync-hub.mjs")], { cwd: ROOT, stdio: "inherit" });
     spawnSync("node", [join(__dirname, "generate-sitemap.mjs")], { cwd: ROOT, stdio: "inherit" });
     break;
+  case "games": {
+    spawnSync("node", [join(__dirname, "expand-games-catalog.mjs")], { cwd: ROOT, stdio: "inherit" });
+    spawnSync("node", [join(__dirname, "generate-games.mjs"), "--force"], { cwd: ROOT, stdio: "inherit" });
+    break;
+  }
   case "status": {
     const sites = JSON.parse(readFileSync(join(__dirname, "sites.json"), "utf8"));
     const manifest = JSON.parse(readFileSync(join(__dirname, "manifest.json"), "utf8"));
     const { folders } = countSites();
+    const games = sites.filter((s) => parseInt(s.id, 10) >= 101).length;
     console.log("── Site engine status ──");
     console.log(`Goal:        ${manifest.goal}`);
     console.log(`Phase 2:     ${manifest.phase2Target} sites`);
-    console.log(`In sites.json: ${sites.length} (auto-gen registry)`);
+    console.log(`In sites.json: ${sites.length} registry entries`);
     console.log(`On disk:     ${folders} numbered folders`);
-    console.log(`Featured:    ${manifest.featured?.length ?? 0} (001, 002 — custom deploys)`);
+    console.log(`Games batch: ${games} (#101+)`);
+    console.log(`Featured:    ${manifest.featured?.length ?? 0} in manifest`);
     console.log("");
-    console.log("Next: node scripts/engine.mjs all --from=23 --to=100");
+    console.log("Tools:  npm run engine:all");
+    console.log("Games:  npm run engine:games:all");
     break;
   }
   default:
     console.error(`Unknown command: ${cmd}`);
-    console.error("Use: expand | build | hub | all | status");
+    console.error("Use: expand | build | hub | all | games | status");
     process.exit(1);
 }

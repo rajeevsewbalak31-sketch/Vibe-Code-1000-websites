@@ -3,7 +3,7 @@
 **I stopped trying to hand-build 1000 websites. I built a machine that generates them.**
 
 [![Live hub](https://img.shields.io/badge/Live-hub-5eead4?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
-[![Progress](https://img.shields.io/badge/Progress-100%2F1000-e8a87c?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
+[![Progress](https://img.shields.io/badge/Progress-200%2F1000-e8a87c?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
 [![PayPal](https://img.shields.io/badge/PayPal-Tip-0070ba?style=for-the-badge)](https://paypal.me/RajeevSewbalak)
 [![GitHub](https://img.shields.io/badge/GitHub-repo-181717?style=for-the-badge&logo=github)](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
 
@@ -15,7 +15,7 @@
 |---|---|
 | **Live gallery** | [websites-eosin-delta.vercel.app](https://websites-eosin-delta.vercel.app) |
 | **Repo** | [Vibe-Code-1000-websites](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites) |
-| **Progress** | **100 / 1000** sites |
+| **Progress** | **200 / 1000** sites (100 games) |
 | **Stack** | HTML/CSS/JS generator · Next.js flagships · Vercel |
 
 ## Gallery preview
@@ -30,17 +30,19 @@ Open the **[live hub](https://websites-eosin-delta.vercel.app)** to search, filt
 |------|-----|
 | Buy a Square | [001-buy-a-square.vercel.app](https://001-buy-a-square.vercel.app) |
 | Quotely | [quotely.vercel.app](https://quotely.vercel.app) |
-| KeyForge, FocusTomato, RPS Arena | [Browse featured on hub](https://websites-eosin-delta.vercel.app) |
+| **EggBalance** (physics egg carton game) | [/101-egg-balance/](https://websites-eosin-delta.vercel.app/101-egg-balance/) |
+| KeyForge, RPS Arena | [Browse featured on hub](https://websites-eosin-delta.vercel.app) |
 
 ## Roadmap
 
 | Phase | Status | Goal |
 |-------|--------|------|
 | 1 | ✅ | Prove concept (~22 hand-built tools) |
-| 2 | ✅ | Engine → **100 sites** |
-| 3 | ✅ | Hub UX, SEO, GitHub polish |
+| 2 | ✅ | Engine → **100 tools** |
+| 2b | ✅ | **100 vibe-coded games** (#101–200), EggBalance |
+| 3 | ✅ | Hub UX, SEO, social card, games banner |
 | 4 | ✅ | Monetize (tips, sponsors, micro-site packages) |
-| 5 | Optional | Scale to 1000 when the machine earns it |
+| 5 | Next | Scale **#201–1000** when revenue proves it |
 
 Details: **[docs/roadmap.md](./docs/roadmap.md)**
 
@@ -48,15 +50,17 @@ Details: **[docs/roadmap.md](./docs/roadmap.md)**
 
 ```bash
 npm run engine:status
-npm run engine:phase3   # SEO + hub sync + sitemap
+npm run engine:games:all   # Games #101–200 + hub + sitemap
+npm run engine:launch      # Full games deploy check (validate + routes)
 npm run validate
 ```
 
 | Command | Action |
 |---------|--------|
-| `engine:all` | Expand catalog → generate folders → sync hub |
-| `engine:hub` | Rebuild gallery cards + filters |
-| `engine:seo` | Regenerate all sites with OG/canonical + sitemap |
+| `engine:all` | Tools #023–100: expand → generate → hub |
+| `engine:games:all` | Games #101–200: expand → generate → hub |
+| `engine:hub` | Rebuild gallery cards + hero + games banner |
+| `engine:seo` | Regenerate tool sites with OG/canonical + sitemap |
 
 Registry: [`scripts/sites.json`](./scripts/sites.json) · Spotlight: [`scripts/manifest.json`](./scripts/manifest.json)
 

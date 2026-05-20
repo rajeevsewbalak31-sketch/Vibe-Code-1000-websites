@@ -13,6 +13,7 @@
     "engine:games:expand": "node scripts/expand-games-catalog.mjs --from=101 --to=200",
     "engine:games:build": "node scripts/expand-games-catalog.mjs --from=101 --to=200 && node scripts/generate-games.mjs --force",
     "engine:games:all": "node scripts/expand-games-catalog.mjs --from=101 --to=200 && node scripts/generate-games.mjs --force && node scripts/sync-hub.mjs && node scripts/generate-sitemap.mjs",
+    "engine:launch": "npm run engine:games:all && npm run validate && npm run verify:routes",
     "engine:seo": "node scripts/generate-sites.mjs --force && node scripts/sync-hub.mjs && node scripts/generate-sitemap.mjs",
     "engine:phase3": "npm run engine:seo",
     "engine:monetize": "node scripts/sync-hub.mjs && node scripts/generate-sites.mjs --force",

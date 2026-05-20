@@ -15,6 +15,105 @@
   line-height: 1.5;
 }
 
+.egg-intro strong {
+  color: var(--text);
+}
+
+.game-hud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.hud-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.hud-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.score-value {
+  font-size: 1.35rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-2);
+}
+
+.score-bump {
+  animation: score-bump 0.35s ease;
+}
+
+@keyframes score-bump {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.streak-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.streak-value {
+  font-size: 1.1rem;
+  color: #7dffb2;
+}
+
+.streak-pop {
+  animation: streak-pop 0.4s ease;
+}
+
+@keyframes streak-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.move-feedback {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  min-height: 1.5rem;
+  margin: 0 0 0.75rem;
+  opacity: 0;
+  transform: translateY(6px) scale(0.95);
+  transition: opacity 0.2s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.move-feedback.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.move-feedback--perfect {
+  color: #7dffb2;
+  text-shadow: 0 0 20px rgba(125, 255, 178, 0.45);
+}
+
+.move-feedback--good {
+  color: var(--accent);
+}
+
+.move-feedback--warn {
+  color: #ffd166;
+}
+
+.move-feedback--bad {
+  color: #ff6b6b;
+}
+
 .egg-layout {
   display: grid;
   gap: 1.25rem;
@@ -22,9 +121,13 @@
 
 @media (min-width: 520px) {
   .egg-layout {
-    grid-template-columns: 1fr 7.5rem;
+    grid-template-columns: 1fr 6.5rem;
     align-items: start;
   }
+}
+
+.carton-wrap {
+  width: 100%;
 }
 
 .carton-scene {
@@ -34,16 +137,20 @@
   align-items: flex-end;
   justify-content: center;
   padding: 1rem 0 0.5rem;
+  touch-action: manipulation;
 }
 
 .carton {
   transform-style: preserve-3d;
-  transition: transform 0.12s ease-out;
   will-change: transform;
 }
 
-.carton.is-tipped {
-  transition: transform 0.65s cubic-bezier(0.4, 0, 0.8, 0.2);
+.carton.is-collapsing {
+  transition: transform 0.85s cubic-bezier(0.55, 0.06, 0.68, 0.99);
+}
+
+.carton.is-tipped .carton-body {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .carton-lid {
@@ -62,6 +169,7 @@
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.45),
     inset 0 2px 0 rgba(255, 255, 255, 0.15);
+  transition: box-shadow 0.4s ease;
 }
 
 .carton-grid {
@@ -79,12 +187,56 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
   cursor: pointer;
   position: relative;
-  transition: transform 0.15s ease, box-shadow 0.15s;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.cup:hover:not(.cup--filled) {
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 50%, transparent);
-  transform: scale(1.04);
+.cup:hover:not(.cup--filled):not(:disabled) {
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--accent) 55%, transparent),
+    0 0 16px color-mix(in srgb, var(--accent-2) 35%, transparent);
+  transform: scale(1.05);
+}
+
+.cup.cup--hover:not(.cup--filled) {
+  box-shadow:
+    0 0 0 3px var(--accent-2),
+    0 0 20px color-mix(in srgb, var(--accent-2) 50%, transparent);
+  transform: scale(1.07);
+}
+
+.btn-interactive.is-pressed,
+.cup.is-pressed {
+  transform: scale(0.94);
+  filter: brightness(1.08);
+}
+
+.size-pick.is-pressed,
+#btn-pause.is-pressed,
+#btn-sound.is-pressed,
+#btn-clear.is-pressed,
+#btn-restart.is-pressed {
+  transform: scale(0.96);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.size-pick {
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.size-pick:hover {
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent-2) 40%, transparent);
+}
+
+.size-pick.is-active {
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent-2) 55%, transparent);
 }
 
 .cup--filled {
@@ -108,17 +260,50 @@
     inset -2px -4px 8px rgba(0, 0, 0, 0.08),
     2px 4px 8px rgba(0, 0, 0, 0.2);
   pointer-events: none;
-  transition: transform 0.2s ease;
 }
 
-.egg.is-wobble {
-  animation: egg-wobble 0.35s ease;
+.egg.is-placing {
+  animation: egg-drop 0.38s cubic-bezier(0.34, 1.4, 0.64, 1) forwards;
 }
 
-@keyframes egg-wobble {
-  0%, 100% { transform: translateX(-50%) rotate(0deg); }
-  25% { transform: translateX(-50%) rotate(-4deg); }
-  75% { transform: translateX(-50%) rotate(4deg); }
+.egg.is-settled {
+  transform: translateX(-50%);
+}
+
+.egg.is-falling {
+  animation: egg-fall 0.7s ease-in forwards;
+  animation-delay: var(--fall-delay, 0s);
+}
+
+.egg--ghost {
+  opacity: 0.92;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+}
+
+@keyframes egg-drop {
+  0% {
+    transform: translateX(-50%) translateY(-120%) scale(0.6);
+    opacity: 0.5;
+  }
+  70% {
+    transform: translateX(-50%) translateY(4%) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes egg-fall {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--fall-x, 0px)), 140%) rotate(var(--fall-rot, 40deg));
+    opacity: 0;
+  }
 }
 
 .egg-tray {
@@ -140,31 +325,27 @@
   color: var(--muted);
 }
 
+.tray-hint {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
 .tray-eggs {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
   justify-content: center;
-  max-width: 6rem;
+  max-width: 5rem;
 }
 
 .tray-egg {
-  width: 1.65rem;
-  height: 2rem;
+  width: 1.4rem;
+  height: 1.75rem;
   border-radius: 50% 50% 48% 48%;
   background: radial-gradient(ellipse 40% 35% at 35% 28%, #fff, var(--egg) 50%, var(--egg-shade));
-  border: none;
-  cursor: grab;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.25);
-  transition: transform 0.15s;
-}
-
-.tray-egg:hover {
-  transform: translateY(-2px) scale(1.05);
-}
-
-.tray-egg:active {
-  cursor: grabbing;
+  opacity: 0.85;
 }
 
 .tilt-meter {
@@ -184,12 +365,55 @@
   width: 4px;
   background: var(--accent-2);
   transform: translateX(-50%);
-  transition: left 0.12s ease-out, background 0.2s;
+  transition: left 0.2s ease-out, background 0.25s ease;
   border-radius: 2px;
 }
 
 .tilt-meter-fill.is-danger {
   background: #ff6b6b;
+}
+
+.game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.game-controls .btn {
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.15s ease,
+    filter 0.12s ease;
+}
+
+.game-controls .btn:hover:not(:disabled) {
+  box-shadow: 0 0 14px color-mix(in srgb, var(--accent-2) 35%, transparent);
+}
+
+.game-panel--paused {
+  opacity: 0.72;
+}
+
+.game-panel--paused .carton-scene::after {
+  content: "Paused";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
+
+.carton-scene {
+  position: relative;
 }
 
 .overlay-tip {
@@ -202,7 +426,7 @@
   padding: 1.5rem;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s;
+  transition: opacity 0.35s ease;
 }
 
 .overlay-tip.is-visible {
@@ -218,6 +442,12 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   backdrop-filter: blur(16px);
+  transform: scale(0.92);
+  transition: transform 0.35s ease;
+}
+
+.overlay-tip.is-visible .overlay-card {
+  transform: scale(1);
 }
 
 .overlay-card h2 {
@@ -229,5 +459,21 @@
 .overlay-card p {
   color: var(--muted);
   font-size: 0.9rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.overlay-score {
+  font-weight: 600;
+  color: var(--accent-2) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .egg.is-placing,
+  .egg.is-falling,
+  .score-bump,
+  .streak-pop,
+  .carton.is-collapsing {
+    animation: none;
+    transition: none;
+  }
 }

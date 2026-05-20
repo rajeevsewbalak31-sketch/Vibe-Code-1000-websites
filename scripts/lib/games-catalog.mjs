@@ -44,7 +44,7 @@ export const GAME_SUFFIXES = [
 ];
 
 export const GAME_TAGLINES = {
-  "egg-balance": "Balance eggs in the carton — physics decides if it tips",
+  "egg-balance": "Tap cups to place eggs — physics tilt, streaks, and score",
   "stack-tower": "Stack blocks — keep the tower centered or it falls",
   "catch-fall": "Move the basket — catch what falls, dodge bombs",
   "snake-mini": "Classic snake — eat, grow, don't bite yourself",

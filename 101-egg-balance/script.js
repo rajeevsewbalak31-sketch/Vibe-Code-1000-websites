@@ -5,29 +5,40 @@
 const cartonEl = document.getElementById("carton");
 const gridEl = document.getElementById("carton-grid");
 const trayEl = document.getElementById("tray");
+const gamePanel = document.getElementById("game-panel");
 const statusPill = document.getElementById("status-pill");
 const eggCountEl = document.getElementById("egg-count");
+const scoreEl = document.getElementById("score");
+const streakEl = document.getElementById("streak");
+const streakWrap = document.getElementById("streak-wrap");
 const tiltFill = document.getElementById("tilt-fill");
+const tiltMeter = document.querySelector(".tilt-meter");
+const moveFeedback = document.getElementById("move-feedback");
 const overlay = document.getElementById("overlay");
+const overlayScore = document.getElementById("overlay-score");
+const btnPause = document.getElementById("btn-pause");
+const btnSound = document.getElementById("btn-sound");
 
 let rows = 2;
 let cols = 2;
 let cells = [];
 let tipped = false;
+let collapsing = false;
+let paused = false;
 let dragEgg = null;
+let pointerDownCup = null;
 let wobbleRaf = 0;
 let displayTiltX = 0;
 let displayTiltY = 0;
 let targetTiltX = 0;
 let targetTiltY = 0;
+let score = 0;
+let streak = 0;
+let soundOn = false;
+let audioCtx = null;
+let feedbackTimer = 0;
 
-const SIZES = [
-  [2, 2],
-  [3, 2],
-  [4, 3],
-  [6, 4],
-  [8, 8],
-];
+const SOUND_KEY = "eggbalance-sound";
 
 function showToast(msg) {
   const t = document.getElementById("toast");
@@ -35,6 +46,55 @@ function showToast(msg) {
   t.textContent = msg;
   t.classList.add("is-visible");
   setTimeout(() => t.classList.remove("is-visible"), 2200);
+}
+
+function vibrate(ms) {
+  if (navigator.vibrate) navigator.vibrate(ms);
+}
+
+function initAudio() {
+  if (!audioCtx) {
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if (Ctx) audioCtx = new Ctx();
+  }
+  if (audioCtx?.state === "suspended") audioCtx.resume();
+}
+
+function playTone(freq, duration, type = "sine", gain = 0.08) {
+  if (!soundOn || !audioCtx) return;
+  const osc = audioCtx.createOscillator();
+  const g = audioCtx.createGain();
+  osc.type = type;
+  osc.frequency.value = freq;
+  g.gain.value = gain;
+  g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+  osc.connect(g);
+  g.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + duration);
+}
+
+function playSound(kind) {
+  if (!soundOn) return;
+  initAudio();
+  if (kind === "place") playTone(520, 0.08, "sine", 0.06);
+  else if (kind === "perfect") {
+    playTone(660, 0.06, "sine", 0.07);
+    setTimeout(() => playTone(880, 0.1, "sine", 0.06), 60);
+  } else if (kind === "warn") playTone(280, 0.12, "triangle", 0.05);
+  else if (kind === "tip") playTone(120, 0.35, "sawtooth", 0.07);
+  else if (kind === "click") playTone(400, 0.04, "sine", 0.04);
+}
+
+function bindInteractiveButtons(root = document) {
+  root.querySelectorAll(".btn-interactive").forEach((btn) => {
+    const press = () => btn.classList.add("is-pressed");
+    const release = () => btn.classList.remove("is-pressed");
+    btn.addEventListener("pointerdown", press);
+    btn.addEventListener("pointerup", release);
+    btn.addEventListener("pointerleave", release);
+    btn.addEventListener("pointercancel", release);
+  });
 }
 
 function maxTiltForGrid() {
@@ -58,7 +118,7 @@ function computePhysics() {
     sy += r;
   });
   if (w === 0) {
-    return { tiltX: 0, tiltY: 0, stable: true, tipped: false, w: 0 };
+    return { tiltX: 0, tiltY: 0, stable: true, tipped: false, w: 0, mag: 0, limit: 0, normX: 0, normY: 0 };
   }
   const comX = sx / w;
   const comY = sy / w;
@@ -73,18 +133,75 @@ function computePhysics() {
   const limit = max * (w >= 2 ? 1 : 0);
   const stable = mag <= limit;
   const tippedNow = w >= 2 && mag > limit * 1.05;
-  return { tiltX, tiltY, stable, tipped: tippedNow, w, mag, limit };
+  return { tiltX, tiltY, stable, tipped: tippedNow, w, mag, limit, normX, normY };
+}
+
+function cupOffsetFromCenter(index) {
+  const r = Math.floor(index / cols);
+  const c = index % cols;
+  const centerX = (cols - 1) / 2;
+  const centerY = (rows - 1) / 2;
+  const nx = cols > 1 ? (c - centerX) / centerX : 0;
+  const ny = rows > 1 ? (r - centerY) / centerY : 0;
+  return Math.hypot(nx, ny);
+}
+
+function ratePlacement(index, physBefore, physAfter) {
+  const offset = cupOffsetFromCenter(index);
+  const tiltGain = physAfter.mag - physBefore.mag;
+
+  if (physAfter.tipped) return { text: "Too far!", cls: "move-feedback--bad", points: 0 };
+  if (offset < 0.25 && physAfter.stable) {
+    return { text: "Perfect!", cls: "move-feedback--perfect", points: 25 };
+  }
+  if (offset >= 0.65 || tiltGain > 2.5) {
+    return { text: "Too far!", cls: "move-feedback--bad", points: 5 };
+  }
+  if (!physAfter.stable) {
+    return { text: "Risky…", cls: "move-feedback--warn", points: 10 };
+  }
+  return { text: "Nice!", cls: "move-feedback--good", points: 15 };
+}
+
+function showMoveFeedback(text, cls) {
+  clearTimeout(feedbackTimer);
+  moveFeedback.textContent = text;
+  moveFeedback.className = `move-feedback ${cls} is-visible`;
+  feedbackTimer = setTimeout(() => {
+    moveFeedback.classList.remove("is-visible");
+  }, 900);
+}
+
+function setScore(next) {
+  score = next;
+  scoreEl.textContent = String(score);
+  scoreEl.classList.remove("score-bump");
+  void scoreEl.offsetWidth;
+  scoreEl.classList.add("score-bump");
+}
+
+function updateStreak(rating) {
+  if (rating.cls === "move-feedback--perfect" || rating.cls === "move-feedback--good") {
+    streak += 1;
+    streakWrap.hidden = false;
+    streakEl.textContent = String(streak);
+    streakEl.classList.remove("streak-pop");
+    void streakEl.offsetWidth;
+    streakEl.classList.add("streak-pop");
+  } else {
+    streak = 0;
+    streakWrap.hidden = true;
+    streakEl.textContent = "0";
+  }
 }
 
 function fillTray() {
   trayEl.innerHTML = "";
-  const n = Math.max(12, rows * cols);
+  const n = Math.min(8, rows * cols);
   for (let i = 0; i < n; i++) {
-    const egg = document.createElement("button");
-    egg.type = "button";
+    const egg = document.createElement("span");
     egg.className = "tray-egg";
-    egg.setAttribute("aria-label", "Egg from tray");
-    egg.addEventListener("pointerdown", (e) => startDrag(e, egg, null));
+    egg.setAttribute("aria-hidden", "true");
     trayEl.appendChild(egg);
   }
 }
@@ -97,6 +214,13 @@ function cupSize() {
   return "1.35rem";
 }
 
+function createEggElement() {
+  const egg = document.createElement("span");
+  egg.className = "egg is-placing";
+  egg.setAttribute("aria-hidden", "true");
+  return egg;
+}
+
 function buildGrid() {
   cells = Array(rows * cols).fill(false);
   gridEl.style.setProperty("--cup-size", cupSize());
@@ -105,35 +229,78 @@ function buildGrid() {
   for (let i = 0; i < rows * cols; i++) {
     const cup = document.createElement("button");
     cup.type = "button";
-    cup.className = "cup";
+    cup.className = "cup btn-interactive";
     cup.dataset.index = String(i);
-    cup.setAttribute("aria-label", `Cup ${Math.floor(i / cols) + 1},${(i % cols) + 1}`);
-    cup.addEventListener("click", () => placeEgg(i, cup));
+    const r = Math.floor(i / cols) + 1;
+    const c = (i % cols) + 1;
+    cup.setAttribute("aria-label", `Cup row ${r} column ${c}, empty`);
+    cup.setAttribute("role", "gridcell");
+
     cup.addEventListener("pointerdown", (e) => {
-      if (!cells[i]) return;
-      const egg = cup.querySelector(".egg");
-      if (egg) startDrag(e, egg, i);
+      if (paused || tipped || collapsing) return;
+      pointerDownCup = cup;
+      cup.classList.add("is-pressed");
+      if (cells[i]) {
+        const egg = cup.querySelector(".egg");
+        if (egg) startDrag(e, egg, i, cup);
+      }
     });
+
+    cup.addEventListener("pointerup", (e) => {
+      cup.classList.remove("is-pressed");
+      if (paused || tipped || collapsing) return;
+      if (dragEgg) return;
+      if (pointerDownCup === cup && !cells[i]) {
+        e.preventDefault();
+        placeEgg(i, cup);
+      }
+      pointerDownCup = null;
+    });
+
+    cup.addEventListener("pointercancel", () => {
+      cup.classList.remove("is-pressed");
+      pointerDownCup = null;
+    });
+
     gridEl.appendChild(cup);
   }
   tipped = false;
-  cartonEl.classList.remove("is-tipped");
+  collapsing = false;
+  streak = 0;
+  streakWrap.hidden = true;
+  cartonEl.classList.remove("is-tipped", "is-collapsing");
   fillTray();
   updatePhysics();
 }
 
-function placeEgg(index, cup, fromDrag = false) {
-  if (tipped || cells[index]) return;
+function placeEgg(index, cup) {
+  if (paused || tipped || collapsing || cells[index]) return;
+
+  const physBefore = computePhysics();
   cells[index] = true;
   cup.classList.add("cup--filled");
-  const egg = document.createElement("span");
-  egg.className = "egg";
-  egg.setAttribute("aria-hidden", "true");
+  cup.setAttribute("aria-label", cup.getAttribute("aria-label").replace("empty", "has egg"));
+
+  const egg = createEggElement();
   cup.appendChild(egg);
-  egg.classList.add("is-wobble");
-  setTimeout(() => egg.classList.remove("is-wobble"), 400);
-  if (!fromDrag) updatePhysics();
-  else updatePhysics();
+  requestAnimationFrame(() => {
+    egg.classList.remove("is-placing");
+    egg.classList.add("is-settled");
+  });
+
+  const physAfter = computePhysics();
+  const rating = ratePlacement(index, physBefore, physAfter);
+  const streakBonus = streak >= 2 ? Math.min(streak * 2, 20) : 0;
+  setScore(score + rating.points + streakBonus);
+  updateStreak(rating);
+  showMoveFeedback(rating.text, rating.cls);
+
+  playSound(rating.cls === "move-feedback--perfect" ? "perfect" : "place");
+  if (rating.cls === "move-feedback--perfect") vibrate(18);
+  else if (rating.cls === "move-feedback--bad") vibrate([8, 40, 8]);
+  else vibrate(10);
+
+  updatePhysics();
 }
 
 function removeEgg(index) {
@@ -142,12 +309,19 @@ function removeEgg(index) {
   cells[index] = false;
   cup.classList.remove("cup--filled");
   cup.innerHTML = "";
+  const r = Math.floor(index / cols) + 1;
+  const c = (index % cols) + 1;
+  cup.setAttribute("aria-label", `Cup row ${r} column ${c}, empty`);
 }
 
 function updateStatus(phys) {
   eggCountEl.textContent = phys.w;
-  const pct = 50 + (phys.tiltX / (maxTiltForGrid() * 1.1)) * 40;
-  tiltFill.style.left = `${Math.min(92, Math.max(8, pct))}%`;
+  const max = maxTiltForGrid() * 1.1;
+  const pct = 50 + (phys.tiltX / max) * 40;
+  const clamped = Math.min(92, Math.max(8, pct));
+  tiltFill.style.left = `${clamped}%`;
+  if (tiltMeter) tiltMeter.setAttribute("aria-valuenow", String(Math.round(clamped)));
+
   if (phys.tipped || tipped) {
     statusPill.textContent = "Tipped!";
     statusPill.className = "status-pill status-pill--fail";
@@ -164,17 +338,39 @@ function updateStatus(phys) {
 }
 
 function triggerTip() {
-  if (tipped) return;
+  if (tipped || collapsing) return;
   tipped = true;
-  cartonEl.classList.add("is-tipped");
-  targetTiltX = displayTiltX * 2.5 + (Math.random() > 0.5 ? 28 : -28);
-  targetTiltY = displayTiltY * 2 + 18;
-  overlay.hidden = false;
-  overlay.classList.add("is-visible");
-  showToast("The carton tipped over!");
+  collapsing = true;
+  playSound("tip");
+  vibrate([20, 60, 30, 80, 40]);
+
+  cartonEl.classList.add("is-collapsing");
+  targetTiltX = displayTiltX * 2.8 + (Math.random() > 0.5 ? 32 : -32);
+  targetTiltY = displayTiltY * 2.2 + 22;
+
+  const eggs = [...gridEl.querySelectorAll(".egg")];
+  eggs.forEach((egg, i) => {
+    egg.classList.remove("is-settled", "is-placing");
+    egg.classList.add("is-falling");
+    egg.style.setProperty("--fall-x", `${(Math.random() - 0.5) * 80}px`);
+    egg.style.setProperty("--fall-rot", `${(Math.random() - 0.5) * 120}deg`);
+    egg.style.animationDelay = `${i * 0.06}s`;
+  });
+
+  if (!wobbleRaf) animateTilt();
+
+  setTimeout(() => {
+    cartonEl.classList.add("is-tipped");
+    overlay.hidden = false;
+    overlay.classList.add("is-visible");
+    overlayScore.textContent = `Final score: ${score}${streak > 1 ? ` · Best streak ${streak}` : ""}`;
+    showToast("The carton tipped over!");
+    collapsing = false;
+  }, 950);
 }
 
 function updatePhysics() {
+  if (paused && !collapsing) return;
   const phys = computePhysics();
   targetTiltX = phys.tiltX;
   targetTiltY = phys.tiltY;
@@ -184,22 +380,29 @@ function updatePhysics() {
 }
 
 function animateTilt() {
-  displayTiltX += (targetTiltX - displayTiltX) * 0.18;
-  displayTiltY += (targetTiltY - displayTiltY) * 0.18;
-  const wobble = tipped ? 0 : Math.sin(Date.now() / 280) * (Math.hypot(displayTiltX, displayTiltY) * 0.04);
+  const easing = collapsing ? 0.12 : 0.18;
+  displayTiltX += (targetTiltX - displayTiltX) * easing;
+  displayTiltY += (targetTiltY - displayTiltY) * easing;
+  const wobble = tipped || collapsing ? 0 : Math.sin(Date.now() / 280) * (Math.hypot(displayTiltX, displayTiltY) * 0.04);
   cartonEl.style.transform = `rotateX(${displayTiltY + wobble}deg) rotateZ(${displayTiltX}deg)`;
-  if (Math.abs(targetTiltX - displayTiltX) > 0.05 || Math.abs(targetTiltY - displayTiltY) > 0.05 || !tipped) {
+
+  const done =
+    Math.abs(targetTiltX - displayTiltX) < 0.08 &&
+    Math.abs(targetTiltY - displayTiltY) < 0.08;
+
+  if (!done || collapsing || (!tipped && !paused)) {
     wobbleRaf = requestAnimationFrame(animateTilt);
   } else {
     wobbleRaf = 0;
   }
 }
 
-function startDrag(e, el, cellIndex) {
-  if (tipped) return;
+function startDrag(e, el, cellIndex, cup) {
+  if (paused || tipped || collapsing) return;
   e.preventDefault();
-  dragEgg = { el, cellIndex, ghost: el.cloneNode(true) };
+  dragEgg = { el, cellIndex, ghost: el.cloneNode(true), moved: false };
   const g = dragEgg.ghost;
+  g.classList.add("egg", "egg--ghost");
   g.style.position = "fixed";
   g.style.zIndex = "100";
   g.style.pointerEvents = "none";
@@ -208,65 +411,146 @@ function startDrag(e, el, cellIndex) {
   g.style.left = `${e.clientX - 16}px`;
   g.style.top = `${e.clientY - 20}px`;
   document.body.appendChild(g);
+  el.style.visibility = "hidden";
   if (cellIndex !== null) removeEgg(cellIndex);
 
   const move = (ev) => {
+    dragEgg.moved = true;
     g.style.left = `${ev.clientX - 16}px`;
     g.style.top = `${ev.clientY - 20}px`;
+    const target = document.elementFromPoint(ev.clientX, ev.clientY);
+    gridEl.querySelectorAll(".cup").forEach((c) => c.classList.remove("cup--hover"));
+    const hoverCup = target?.closest?.(".cup");
+    if (hoverCup && !cells[parseInt(hoverCup.dataset.index, 10)]) {
+      hoverCup.classList.add("cup--hover");
+    }
   };
+
   const up = (ev) => {
     document.removeEventListener("pointermove", move);
     document.removeEventListener("pointerup", up);
     g.remove();
+    if (cup) cup.classList.remove("is-pressed");
+    gridEl.querySelectorAll(".cup").forEach((c) => c.classList.remove("cup--hover"));
+
     const target = document.elementFromPoint(ev.clientX, ev.clientY);
-    const cup = target?.closest?.(".cup");
-    if (cup && cup.dataset.index !== undefined) {
-      const idx = parseInt(cup.dataset.index, 10);
-      if (!cells[idx]) placeEgg(idx, cup, true);
-      else fillTray();
-    } else if (dragEgg.cellIndex === null) {
-      /* returned to tray */
-    } else {
-      fillTray();
+    const dropCup = target?.closest?.(".cup");
+    if (dropCup && dropCup.dataset.index !== undefined) {
+      const idx = parseInt(dropCup.dataset.index, 10);
+      if (!cells[idx]) placeEgg(idx, dropCup);
+    } else if (dragEgg.cellIndex !== null) {
+      const orig = gridEl.children[dragEgg.cellIndex];
+      if (orig) {
+        cells[dragEgg.cellIndex] = true;
+        orig.classList.add("cup--filled");
+        const restored = createEggElement();
+        restored.classList.remove("is-placing");
+        restored.classList.add("is-settled");
+        orig.appendChild(restored);
+      }
     }
     dragEgg = null;
     updatePhysics();
   };
+
   document.addEventListener("pointermove", move);
   document.addEventListener("pointerup", up);
 }
 
+function resetGame(keepSize = true) {
+  overlay.hidden = true;
+  overlay.classList.remove("is-visible");
+  tipped = false;
+  collapsing = false;
+  paused = false;
+  score = 0;
+  setScore(0);
+  displayTiltX = displayTiltY = targetTiltX = targetTiltY = 0;
+  gamePanel.classList.remove("game-panel--paused");
+  btnPause.setAttribute("aria-pressed", "false");
+  btnPause.textContent = "Pause";
+  moveFeedback.textContent = "";
+  moveFeedback.className = "move-feedback";
+  if (!keepSize) return;
+  buildGrid();
+}
+
+function togglePause() {
+  if (tipped || collapsing) return;
+  paused = !paused;
+  btnPause.setAttribute("aria-pressed", String(paused));
+  btnPause.textContent = paused ? "Resume" : "Pause";
+  gamePanel.classList.toggle("game-panel--paused", paused);
+  playSound("click");
+  showToast(paused ? "Paused" : "Resumed");
+}
+
+function toggleSound() {
+  soundOn = !soundOn;
+  btnSound.setAttribute("aria-pressed", String(soundOn));
+  btnSound.textContent = soundOn ? "Sound on" : "Sound off";
+  btnSound.setAttribute("aria-label", soundOn ? "Sound effects on" : "Sound effects off");
+  try {
+    localStorage.setItem(SOUND_KEY, soundOn ? "1" : "0");
+  } catch {
+    /* ignore */
+  }
+  if (soundOn) {
+    initAudio();
+    playSound("click");
+  }
+}
+
 document.querySelectorAll(".size-pick").forEach((btn) => {
   btn.addEventListener("click", () => {
-    document.querySelectorAll(".size-pick").forEach((b) => b.classList.remove("is-active"));
+    document.querySelectorAll(".size-pick").forEach((b) => {
+      b.classList.remove("is-active");
+      b.setAttribute("aria-pressed", "false");
+    });
     btn.classList.add("is-active");
+    btn.setAttribute("aria-pressed", "true");
     rows = parseInt(btn.dataset.rows, 10);
     cols = parseInt(btn.dataset.cols, 10);
-    overlay.hidden = true;
-    overlay.classList.remove("is-visible");
-    buildGrid();
+    playSound("click");
+    resetGame(true);
   });
 });
 
-document.getElementById("btn-reset").addEventListener("click", () => {
-  overlay.hidden = true;
-  overlay.classList.remove("is-visible");
-  displayTiltX = displayTiltY = targetTiltX = targetTiltY = 0;
-  buildGrid();
+document.getElementById("btn-restart").addEventListener("click", () => {
+  playSound("click");
+  vibrate(8);
+  resetGame(true);
+  showToast("New game");
 });
 
 document.getElementById("btn-clear").addEventListener("click", () => {
-  if (tipped) return;
+  if (tipped || collapsing) return;
+  playSound("click");
+  score = 0;
+  setScore(0);
+  streak = 0;
+  streakWrap.hidden = true;
   buildGrid();
   showToast("Carton cleared");
 });
 
 document.getElementById("btn-retry").addEventListener("click", () => {
-  overlay.hidden = true;
-  overlay.classList.remove("is-visible");
-  tipped = false;
-  displayTiltX = displayTiltY = targetTiltX = targetTiltY = 0;
-  buildGrid();
+  playSound("click");
+  resetGame(true);
 });
+
+btnPause.addEventListener("click", togglePause);
+btnSound.addEventListener("click", toggleSound);
+
+bindInteractiveButtons();
+
+try {
+  soundOn = localStorage.getItem(SOUND_KEY) === "1";
+  btnSound.setAttribute("aria-pressed", String(soundOn));
+  btnSound.textContent = soundOn ? "Sound on" : "Sound off";
+  btnSound.setAttribute("aria-label", soundOn ? "Sound effects on" : "Sound effects off");
+} catch {
+  /* ignore */
+}
 
 buildGrid();

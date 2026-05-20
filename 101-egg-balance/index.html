@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EggBalance | Vibe Code 1000</title>
-  <meta name="description" content="EggBalance — drag eggs into the carton, feel realistic tilt physics, and avoid tipping. Free browser game with 2×2 to 8×8 grids. Rajeev's invention for Vibe Code 1000." />
+  <meta name="description" content="EggBalance — tap cups to place eggs, feel realistic tilt physics, and build streaks before the carton tips. Free browser game with 2×2 to 8×8 grids." />
   <meta name="keywords" content="EggBalance, egg balance game, physics, Vibe Code 1000" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://websites-eosin-delta.vercel.app/101-egg-balance/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="EggBalance | Vibe Code 1000" />
-  <meta property="og:description" content="Balance eggs in the carton — realistic tilt physics. Invented for the 1000 Websites Challenge." />
+  <meta property="og:description" content="Tap to place eggs in the carton — balance the weight or watch it tip with physics." />
   <meta property="og:url" content="https://websites-eosin-delta.vercel.app/101-egg-balance/" />
   <meta property="og:site_name" content="Vibe Code 1000" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="EggBalance | Vibe Code 1000" />
-  <meta name="twitter:description" content="Balance eggs in the carton — or it tips over." />
+  <meta name="twitter:description" content="Tap cups to balance eggs — or the carton tips over." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -49,45 +49,59 @@
     <header class="tool-header tool-header--compact">
       <p class="eyebrow">Game #101 · Rajeev's invention</p>
       <h1 class="logo">EggBalance</h1>
-      <p class="tagline">Balance eggs in the carton — physics decides if it tips</p>
+      <p class="tagline">Tap cups to place eggs — feel the tilt, beat your streak</p>
     </header>
     <section class="game-stage" aria-label="Egg balancing game">
-      <div class="game-panel">
-        <p class="egg-intro">Pick a carton size, place eggs in the cups. The box tilts toward the heavy side — overload one edge and it tips over.</p>
+      <div id="game-panel" class="game-panel">
+        <p class="egg-intro">Pick a carton size, then <strong>tap any empty cup</strong> to drop an egg. Keep the weight centered or the box tips.</p>
         <div class="size-picks" role="group" aria-label="Carton size">
-          <button type="button" class="size-pick is-active" data-rows="2" data-cols="2">2×2</button>
-          <button type="button" class="size-pick" data-rows="3" data-cols="2">3×2</button>
-          <button type="button" class="size-pick" data-rows="4" data-cols="3">4×3</button>
-          <button type="button" class="size-pick" data-rows="6" data-cols="4">6×4</button>
-          <button type="button" class="size-pick" data-rows="8" data-cols="8">8×8</button>
+          <button type="button" class="size-pick is-active btn-interactive" data-rows="2" data-cols="2" aria-pressed="true">2×2</button>
+          <button type="button" class="size-pick btn-interactive" data-rows="3" data-cols="2" aria-pressed="false">3×2</button>
+          <button type="button" class="size-pick btn-interactive" data-rows="4" data-cols="3" aria-pressed="false">4×3</button>
+          <button type="button" class="size-pick btn-interactive" data-rows="6" data-cols="4" aria-pressed="false">6×4</button>
+          <button type="button" class="size-pick btn-interactive" data-rows="8" data-cols="8" aria-pressed="false">8×8</button>
         </div>
-        <div class="game-hud">
-          <span>Eggs: <strong id="egg-count">0</strong></span>
+        <div class="game-hud" aria-live="polite" aria-atomic="true">
+          <div class="hud-stat">
+            <span class="hud-label">Score</span>
+            <strong id="score" class="score-value">0</strong>
+          </div>
+          <div class="hud-stat">
+            <span class="hud-label">Eggs</span>
+            <strong id="egg-count">0</strong>
+          </div>
+          <div id="streak-wrap" class="streak-wrap" hidden>
+            <span class="hud-label">Streak</span>
+            <strong id="streak" class="streak-value">0</strong>
+          </div>
           <span id="status-pill" class="status-pill status-pill--ok">Balanced</span>
         </div>
+        <p id="move-feedback" class="move-feedback" aria-live="assertive"></p>
         <div class="egg-layout">
-          <div>
+          <div class="carton-wrap">
             <div class="carton-scene">
               <div id="carton" class="carton" aria-live="polite">
-                <div class="carton-lid"></div>
+                <div class="carton-lid" aria-hidden="true"></div>
                 <div class="carton-body">
-                  <div id="carton-grid" class="carton-grid"></div>
+                  <div id="carton-grid" class="carton-grid" role="grid" aria-label="Egg carton cups"></div>
                 </div>
               </div>
             </div>
-            <div class="tilt-meter" aria-hidden="true">
+            <div class="tilt-meter" role="meter" aria-label="Balance meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
               <div id="tilt-fill" class="tilt-meter-fill"></div>
             </div>
           </div>
-          <aside class="egg-tray" aria-label="Egg supply">
-            <span class="egg-tray-label">Eggs</span>
-            <div id="tray" class="tray-eggs"></div>
-            <p class="hint" style="margin:0;font-size:.72rem">Drag onto cups</p>
+          <aside class="egg-tray" aria-label="Egg supply — tap a cup to place">
+            <span class="egg-tray-label">Supply</span>
+            <div id="tray" class="tray-eggs" aria-hidden="true"></div>
+            <p class="tray-hint">Tap a cup ↖</p>
           </aside>
         </div>
         <div class="game-controls">
-          <button type="button" id="btn-reset" class="btn btn--ghost">New carton</button>
-          <button type="button" id="btn-clear" class="btn btn--ghost">Clear eggs</button>
+          <button type="button" id="btn-restart" class="btn btn--primary btn-interactive" aria-label="Restart game">Restart</button>
+          <button type="button" id="btn-pause" class="btn btn--ghost btn-interactive" aria-pressed="false" aria-label="Pause game">Pause</button>
+          <button type="button" id="btn-clear" class="btn btn--ghost btn-interactive" aria-label="Clear all eggs from carton">Clear eggs</button>
+          <button type="button" id="btn-sound" class="btn btn--ghost btn-interactive" aria-pressed="false" aria-label="Sound effects off">Sound off</button>
         </div>
       </div>
     </section>
@@ -105,7 +119,8 @@
     <div class="overlay-card">
       <h2 id="overlay-title">Carton tipped!</h2>
       <p id="overlay-msg">The center of mass left the base — eggs everywhere.</p>
-      <button type="button" id="btn-retry" class="btn btn--primary">Try again</button>
+      <p id="overlay-score" class="overlay-score"></p>
+      <button type="button" id="btn-retry" class="btn btn--primary btn-interactive">Try again</button>
     </div>
   </div>
   <p id="toast" class="toast" role="status"></p>

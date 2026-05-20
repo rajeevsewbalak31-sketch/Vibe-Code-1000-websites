@@ -882,6 +882,15 @@
     "logic": "mood-picker"
   },
   {
+    "id": "1000",
+    "slug": "channelport-1000",
+    "name": "ChannelPort",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
     "id": "101",
     "slug": "egg-balance",
     "name": "EggBalance",
@@ -4480,5 +4489,4496 @@
     "accent": "#dfe6e9",
     "accent2": "#b2bec3",
     "logic": "coin-stats"
+  },
+  {
+    "id": "501",
+    "slug": "alphamint-501",
+    "name": "AlphaMint",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "502",
+    "slug": "betaworks-502",
+    "name": "BetaWorks",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "503",
+    "slug": "gammaforge-503",
+    "name": "GammaForge",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "504",
+    "slug": "deltastudio-504",
+    "name": "DeltaStudio",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "505",
+    "slug": "sigmacore-505",
+    "name": "SigmaCore",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "506",
+    "slug": "omeganode-506",
+    "name": "OmegaNode",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "507",
+    "slug": "novabase-507",
+    "name": "NovaBase",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "508",
+    "slug": "astrazone-508",
+    "name": "AstraZone",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "509",
+    "slug": "heliospot-509",
+    "name": "HelioSpot",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "510",
+    "slug": "lunabay-510",
+    "name": "LunaBay",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "511",
+    "slug": "terraden-511",
+    "name": "TerraDen",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "512",
+    "slug": "vaporrun-512",
+    "name": "VaporRun",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "513",
+    "slug": "nimbusflow-513",
+    "name": "NimbusFlow",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "514",
+    "slug": "cinderlab-514",
+    "name": "CinderLab",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "515",
+    "slug": "frostkit-515",
+    "name": "FrostKit",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "516",
+    "slug": "blazehub-516",
+    "name": "BlazeHub",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "517",
+    "slug": "surgebox-517",
+    "name": "SurgeBox",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "518",
+    "slug": "quietpad-518",
+    "name": "QuietPad",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "519",
+    "slug": "rapiddesk-519",
+    "name": "RapidDesk",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "520",
+    "slug": "solidport-520",
+    "name": "SolidPort",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "521",
+    "slug": "primemint-521",
+    "name": "PrimeMint",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "522",
+    "slug": "vectorworks-522",
+    "name": "VectorWorks",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "523",
+    "slug": "scalarforge-523",
+    "name": "ScalarForge",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "524",
+    "slug": "matrixstudio-524",
+    "name": "MatrixStudio",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "525",
+    "slug": "tensorcore-525",
+    "name": "TensorCore",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "526",
+    "slug": "photonnode-526",
+    "name": "PhotonNode",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "527",
+    "slug": "neuronbase-527",
+    "name": "NeuronBase",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "528",
+    "slug": "cipherzone-528",
+    "name": "CipherZone",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "529",
+    "slug": "signalspot-529",
+    "name": "SignalSpot",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "530",
+    "slug": "pulsebay-530",
+    "name": "PulseBay",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "531",
+    "slug": "orbitden-531",
+    "name": "OrbitDen",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "532",
+    "slug": "cometrun-532",
+    "name": "CometRun",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "533",
+    "slug": "meteorflow-533",
+    "name": "MeteorFlow",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "534",
+    "slug": "rocketlab-534",
+    "name": "RocketLab",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "535",
+    "slug": "satellitekit-535",
+    "name": "SatelliteKit",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "536",
+    "slug": "stationhub-536",
+    "name": "StationHub",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "537",
+    "slug": "modulebox-537",
+    "name": "ModuleBox",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "538",
+    "slug": "circuitpad-538",
+    "name": "CircuitPad",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "539",
+    "slug": "binarydesk-539",
+    "name": "BinaryDesk",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "540",
+    "slug": "logicport-540",
+    "name": "LogicPort",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "541",
+    "slug": "cloudmint-541",
+    "name": "CloudMint",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "542",
+    "slug": "streamworks-542",
+    "name": "StreamWorks",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "543",
+    "slug": "packetforge-543",
+    "name": "PacketForge",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "544",
+    "slug": "socketstudio-544",
+    "name": "SocketStudio",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "545",
+    "slug": "servercore-545",
+    "name": "ServerCore",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "546",
+    "slug": "clientnode-546",
+    "name": "ClientNode",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "547",
+    "slug": "portalbase-547",
+    "name": "PortalBase",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "548",
+    "slug": "gatewayzone-548",
+    "name": "GatewayZone",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "549",
+    "slug": "bridgespot-549",
+    "name": "BridgeSpot",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "550",
+    "slug": "channelbay-550",
+    "name": "ChannelBay",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "551",
+    "slug": "alphaden-551",
+    "name": "AlphaDen",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "552",
+    "slug": "betarun-552",
+    "name": "BetaRun",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "553",
+    "slug": "gammaflow-553",
+    "name": "GammaFlow",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "554",
+    "slug": "deltalab-554",
+    "name": "DeltaLab",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "555",
+    "slug": "sigmakit-555",
+    "name": "SigmaKit",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "556",
+    "slug": "omegahub-556",
+    "name": "OmegaHub",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "557",
+    "slug": "novabox-557",
+    "name": "NovaBox",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "558",
+    "slug": "astrapad-558",
+    "name": "AstraPad",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "559",
+    "slug": "heliodesk-559",
+    "name": "HelioDesk",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "560",
+    "slug": "lunaport-560",
+    "name": "LunaPort",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "561",
+    "slug": "terramint-561",
+    "name": "TerraMint",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "562",
+    "slug": "vaporworks-562",
+    "name": "VaporWorks",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "563",
+    "slug": "nimbusforge-563",
+    "name": "NimbusForge",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "564",
+    "slug": "cinderstudio-564",
+    "name": "CinderStudio",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "565",
+    "slug": "frostcore-565",
+    "name": "FrostCore",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "566",
+    "slug": "blazenode-566",
+    "name": "BlazeNode",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "567",
+    "slug": "surgebase-567",
+    "name": "SurgeBase",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "568",
+    "slug": "quietzone-568",
+    "name": "QuietZone",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "569",
+    "slug": "rapidspot-569",
+    "name": "RapidSpot",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "570",
+    "slug": "solidbay-570",
+    "name": "SolidBay",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "571",
+    "slug": "primeden-571",
+    "name": "PrimeDen",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "572",
+    "slug": "vectorrun-572",
+    "name": "VectorRun",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "573",
+    "slug": "scalarflow-573",
+    "name": "ScalarFlow",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "574",
+    "slug": "matrixlab-574",
+    "name": "MatrixLab",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "575",
+    "slug": "tensorkit-575",
+    "name": "TensorKit",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "576",
+    "slug": "photonhub-576",
+    "name": "PhotonHub",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "577",
+    "slug": "neuronbox-577",
+    "name": "NeuronBox",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "578",
+    "slug": "cipherpad-578",
+    "name": "CipherPad",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "579",
+    "slug": "signaldesk-579",
+    "name": "SignalDesk",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "580",
+    "slug": "pulseport-580",
+    "name": "PulsePort",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "581",
+    "slug": "orbitmint-581",
+    "name": "OrbitMint",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "582",
+    "slug": "cometworks-582",
+    "name": "CometWorks",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "583",
+    "slug": "meteorforge-583",
+    "name": "MeteorForge",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "584",
+    "slug": "rocketstudio-584",
+    "name": "RocketStudio",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "585",
+    "slug": "satellitecore-585",
+    "name": "SatelliteCore",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "586",
+    "slug": "stationnode-586",
+    "name": "StationNode",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "587",
+    "slug": "modulebase-587",
+    "name": "ModuleBase",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "588",
+    "slug": "circuitzone-588",
+    "name": "CircuitZone",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "589",
+    "slug": "binaryspot-589",
+    "name": "BinarySpot",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "590",
+    "slug": "logicbay-590",
+    "name": "LogicBay",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "591",
+    "slug": "cloudden-591",
+    "name": "CloudDen",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "592",
+    "slug": "streamrun-592",
+    "name": "StreamRun",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "593",
+    "slug": "packetflow-593",
+    "name": "PacketFlow",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "594",
+    "slug": "socketlab-594",
+    "name": "SocketLab",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "595",
+    "slug": "serverkit-595",
+    "name": "ServerKit",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "596",
+    "slug": "clienthub-596",
+    "name": "ClientHub",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "597",
+    "slug": "portalbox-597",
+    "name": "PortalBox",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "598",
+    "slug": "gatewaypad-598",
+    "name": "GatewayPad",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "599",
+    "slug": "bridgedesk-599",
+    "name": "BridgeDesk",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "600",
+    "slug": "channelport-600",
+    "name": "ChannelPort",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "601",
+    "slug": "alphamint-601",
+    "name": "AlphaMint",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "602",
+    "slug": "betaworks-602",
+    "name": "BetaWorks",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "603",
+    "slug": "gammaforge-603",
+    "name": "GammaForge",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "604",
+    "slug": "deltastudio-604",
+    "name": "DeltaStudio",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "605",
+    "slug": "sigmacore-605",
+    "name": "SigmaCore",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "606",
+    "slug": "omeganode-606",
+    "name": "OmegaNode",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "607",
+    "slug": "novabase-607",
+    "name": "NovaBase",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "608",
+    "slug": "astrazone-608",
+    "name": "AstraZone",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "609",
+    "slug": "heliospot-609",
+    "name": "HelioSpot",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "610",
+    "slug": "lunabay-610",
+    "name": "LunaBay",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "611",
+    "slug": "terraden-611",
+    "name": "TerraDen",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "612",
+    "slug": "vaporrun-612",
+    "name": "VaporRun",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "613",
+    "slug": "nimbusflow-613",
+    "name": "NimbusFlow",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "614",
+    "slug": "cinderlab-614",
+    "name": "CinderLab",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "615",
+    "slug": "frostkit-615",
+    "name": "FrostKit",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "616",
+    "slug": "blazehub-616",
+    "name": "BlazeHub",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "617",
+    "slug": "surgebox-617",
+    "name": "SurgeBox",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "618",
+    "slug": "quietpad-618",
+    "name": "QuietPad",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "619",
+    "slug": "rapiddesk-619",
+    "name": "RapidDesk",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "620",
+    "slug": "solidport-620",
+    "name": "SolidPort",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "621",
+    "slug": "primemint-621",
+    "name": "PrimeMint",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "622",
+    "slug": "vectorworks-622",
+    "name": "VectorWorks",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "623",
+    "slug": "scalarforge-623",
+    "name": "ScalarForge",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "624",
+    "slug": "matrixstudio-624",
+    "name": "MatrixStudio",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "625",
+    "slug": "tensorcore-625",
+    "name": "TensorCore",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "626",
+    "slug": "photonnode-626",
+    "name": "PhotonNode",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "627",
+    "slug": "neuronbase-627",
+    "name": "NeuronBase",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "628",
+    "slug": "cipherzone-628",
+    "name": "CipherZone",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "629",
+    "slug": "signalspot-629",
+    "name": "SignalSpot",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "630",
+    "slug": "pulsebay-630",
+    "name": "PulseBay",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "631",
+    "slug": "orbitden-631",
+    "name": "OrbitDen",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "632",
+    "slug": "cometrun-632",
+    "name": "CometRun",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "633",
+    "slug": "meteorflow-633",
+    "name": "MeteorFlow",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "634",
+    "slug": "rocketlab-634",
+    "name": "RocketLab",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "635",
+    "slug": "satellitekit-635",
+    "name": "SatelliteKit",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "636",
+    "slug": "stationhub-636",
+    "name": "StationHub",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "637",
+    "slug": "modulebox-637",
+    "name": "ModuleBox",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "638",
+    "slug": "circuitpad-638",
+    "name": "CircuitPad",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "639",
+    "slug": "binarydesk-639",
+    "name": "BinaryDesk",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "640",
+    "slug": "logicport-640",
+    "name": "LogicPort",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "641",
+    "slug": "cloudmint-641",
+    "name": "CloudMint",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "642",
+    "slug": "streamworks-642",
+    "name": "StreamWorks",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "643",
+    "slug": "packetforge-643",
+    "name": "PacketForge",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "644",
+    "slug": "socketstudio-644",
+    "name": "SocketStudio",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "645",
+    "slug": "servercore-645",
+    "name": "ServerCore",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "646",
+    "slug": "clientnode-646",
+    "name": "ClientNode",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "647",
+    "slug": "portalbase-647",
+    "name": "PortalBase",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "648",
+    "slug": "gatewayzone-648",
+    "name": "GatewayZone",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "649",
+    "slug": "bridgespot-649",
+    "name": "BridgeSpot",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "650",
+    "slug": "channelbay-650",
+    "name": "ChannelBay",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "651",
+    "slug": "alphaden-651",
+    "name": "AlphaDen",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "652",
+    "slug": "betarun-652",
+    "name": "BetaRun",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "653",
+    "slug": "gammaflow-653",
+    "name": "GammaFlow",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "654",
+    "slug": "deltalab-654",
+    "name": "DeltaLab",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "655",
+    "slug": "sigmakit-655",
+    "name": "SigmaKit",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "656",
+    "slug": "omegahub-656",
+    "name": "OmegaHub",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "657",
+    "slug": "novabox-657",
+    "name": "NovaBox",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "658",
+    "slug": "astrapad-658",
+    "name": "AstraPad",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "659",
+    "slug": "heliodesk-659",
+    "name": "HelioDesk",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "660",
+    "slug": "lunaport-660",
+    "name": "LunaPort",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "661",
+    "slug": "terramint-661",
+    "name": "TerraMint",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "662",
+    "slug": "vaporworks-662",
+    "name": "VaporWorks",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "663",
+    "slug": "nimbusforge-663",
+    "name": "NimbusForge",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "664",
+    "slug": "cinderstudio-664",
+    "name": "CinderStudio",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "665",
+    "slug": "frostcore-665",
+    "name": "FrostCore",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "666",
+    "slug": "blazenode-666",
+    "name": "BlazeNode",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "667",
+    "slug": "surgebase-667",
+    "name": "SurgeBase",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "668",
+    "slug": "quietzone-668",
+    "name": "QuietZone",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "669",
+    "slug": "rapidspot-669",
+    "name": "RapidSpot",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "670",
+    "slug": "solidbay-670",
+    "name": "SolidBay",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "671",
+    "slug": "primeden-671",
+    "name": "PrimeDen",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "672",
+    "slug": "vectorrun-672",
+    "name": "VectorRun",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "673",
+    "slug": "scalarflow-673",
+    "name": "ScalarFlow",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "674",
+    "slug": "matrixlab-674",
+    "name": "MatrixLab",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "675",
+    "slug": "tensorkit-675",
+    "name": "TensorKit",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "676",
+    "slug": "photonhub-676",
+    "name": "PhotonHub",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "677",
+    "slug": "neuronbox-677",
+    "name": "NeuronBox",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "678",
+    "slug": "cipherpad-678",
+    "name": "CipherPad",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "679",
+    "slug": "signaldesk-679",
+    "name": "SignalDesk",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "680",
+    "slug": "pulseport-680",
+    "name": "PulsePort",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "681",
+    "slug": "orbitmint-681",
+    "name": "OrbitMint",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "682",
+    "slug": "cometworks-682",
+    "name": "CometWorks",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "683",
+    "slug": "meteorforge-683",
+    "name": "MeteorForge",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "684",
+    "slug": "rocketstudio-684",
+    "name": "RocketStudio",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "685",
+    "slug": "satellitecore-685",
+    "name": "SatelliteCore",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "686",
+    "slug": "stationnode-686",
+    "name": "StationNode",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "687",
+    "slug": "modulebase-687",
+    "name": "ModuleBase",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "688",
+    "slug": "circuitzone-688",
+    "name": "CircuitZone",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "689",
+    "slug": "binaryspot-689",
+    "name": "BinarySpot",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "690",
+    "slug": "logicbay-690",
+    "name": "LogicBay",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "691",
+    "slug": "cloudden-691",
+    "name": "CloudDen",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "692",
+    "slug": "streamrun-692",
+    "name": "StreamRun",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "693",
+    "slug": "packetflow-693",
+    "name": "PacketFlow",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "694",
+    "slug": "socketlab-694",
+    "name": "SocketLab",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "695",
+    "slug": "serverkit-695",
+    "name": "ServerKit",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "696",
+    "slug": "clienthub-696",
+    "name": "ClientHub",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "697",
+    "slug": "portalbox-697",
+    "name": "PortalBox",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "698",
+    "slug": "gatewaypad-698",
+    "name": "GatewayPad",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "699",
+    "slug": "bridgedesk-699",
+    "name": "BridgeDesk",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "700",
+    "slug": "channelport-700",
+    "name": "ChannelPort",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "701",
+    "slug": "alphamint-701",
+    "name": "AlphaMint",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "702",
+    "slug": "betaworks-702",
+    "name": "BetaWorks",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "703",
+    "slug": "gammaforge-703",
+    "name": "GammaForge",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "704",
+    "slug": "deltastudio-704",
+    "name": "DeltaStudio",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "705",
+    "slug": "sigmacore-705",
+    "name": "SigmaCore",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "706",
+    "slug": "omeganode-706",
+    "name": "OmegaNode",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "707",
+    "slug": "novabase-707",
+    "name": "NovaBase",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "708",
+    "slug": "astrazone-708",
+    "name": "AstraZone",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "709",
+    "slug": "heliospot-709",
+    "name": "HelioSpot",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "710",
+    "slug": "lunabay-710",
+    "name": "LunaBay",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "711",
+    "slug": "terraden-711",
+    "name": "TerraDen",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "712",
+    "slug": "vaporrun-712",
+    "name": "VaporRun",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "713",
+    "slug": "nimbusflow-713",
+    "name": "NimbusFlow",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "714",
+    "slug": "cinderlab-714",
+    "name": "CinderLab",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "715",
+    "slug": "frostkit-715",
+    "name": "FrostKit",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "716",
+    "slug": "blazehub-716",
+    "name": "BlazeHub",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "717",
+    "slug": "surgebox-717",
+    "name": "SurgeBox",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "718",
+    "slug": "quietpad-718",
+    "name": "QuietPad",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "719",
+    "slug": "rapiddesk-719",
+    "name": "RapidDesk",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "720",
+    "slug": "solidport-720",
+    "name": "SolidPort",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "721",
+    "slug": "primemint-721",
+    "name": "PrimeMint",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "722",
+    "slug": "vectorworks-722",
+    "name": "VectorWorks",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "723",
+    "slug": "scalarforge-723",
+    "name": "ScalarForge",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "724",
+    "slug": "matrixstudio-724",
+    "name": "MatrixStudio",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "725",
+    "slug": "tensorcore-725",
+    "name": "TensorCore",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "726",
+    "slug": "photonnode-726",
+    "name": "PhotonNode",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "727",
+    "slug": "neuronbase-727",
+    "name": "NeuronBase",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "728",
+    "slug": "cipherzone-728",
+    "name": "CipherZone",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "729",
+    "slug": "signalspot-729",
+    "name": "SignalSpot",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "730",
+    "slug": "pulsebay-730",
+    "name": "PulseBay",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "731",
+    "slug": "orbitden-731",
+    "name": "OrbitDen",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "732",
+    "slug": "cometrun-732",
+    "name": "CometRun",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "733",
+    "slug": "meteorflow-733",
+    "name": "MeteorFlow",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "734",
+    "slug": "rocketlab-734",
+    "name": "RocketLab",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "735",
+    "slug": "satellitekit-735",
+    "name": "SatelliteKit",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "736",
+    "slug": "stationhub-736",
+    "name": "StationHub",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "737",
+    "slug": "modulebox-737",
+    "name": "ModuleBox",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "738",
+    "slug": "circuitpad-738",
+    "name": "CircuitPad",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "739",
+    "slug": "binarydesk-739",
+    "name": "BinaryDesk",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "740",
+    "slug": "logicport-740",
+    "name": "LogicPort",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "741",
+    "slug": "cloudmint-741",
+    "name": "CloudMint",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "742",
+    "slug": "streamworks-742",
+    "name": "StreamWorks",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "743",
+    "slug": "packetforge-743",
+    "name": "PacketForge",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "744",
+    "slug": "socketstudio-744",
+    "name": "SocketStudio",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "745",
+    "slug": "servercore-745",
+    "name": "ServerCore",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "746",
+    "slug": "clientnode-746",
+    "name": "ClientNode",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "747",
+    "slug": "portalbase-747",
+    "name": "PortalBase",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "748",
+    "slug": "gatewayzone-748",
+    "name": "GatewayZone",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "749",
+    "slug": "bridgespot-749",
+    "name": "BridgeSpot",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "750",
+    "slug": "channelbay-750",
+    "name": "ChannelBay",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "751",
+    "slug": "alphaden-751",
+    "name": "AlphaDen",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "752",
+    "slug": "betarun-752",
+    "name": "BetaRun",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "753",
+    "slug": "gammaflow-753",
+    "name": "GammaFlow",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "754",
+    "slug": "deltalab-754",
+    "name": "DeltaLab",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "755",
+    "slug": "sigmakit-755",
+    "name": "SigmaKit",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "756",
+    "slug": "omegahub-756",
+    "name": "OmegaHub",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "757",
+    "slug": "novabox-757",
+    "name": "NovaBox",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "758",
+    "slug": "astrapad-758",
+    "name": "AstraPad",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "759",
+    "slug": "heliodesk-759",
+    "name": "HelioDesk",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "760",
+    "slug": "lunaport-760",
+    "name": "LunaPort",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "761",
+    "slug": "terramint-761",
+    "name": "TerraMint",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "762",
+    "slug": "vaporworks-762",
+    "name": "VaporWorks",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "763",
+    "slug": "nimbusforge-763",
+    "name": "NimbusForge",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "764",
+    "slug": "cinderstudio-764",
+    "name": "CinderStudio",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "765",
+    "slug": "frostcore-765",
+    "name": "FrostCore",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "766",
+    "slug": "blazenode-766",
+    "name": "BlazeNode",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "767",
+    "slug": "surgebase-767",
+    "name": "SurgeBase",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "768",
+    "slug": "quietzone-768",
+    "name": "QuietZone",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "769",
+    "slug": "rapidspot-769",
+    "name": "RapidSpot",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "770",
+    "slug": "solidbay-770",
+    "name": "SolidBay",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "771",
+    "slug": "primeden-771",
+    "name": "PrimeDen",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "772",
+    "slug": "vectorrun-772",
+    "name": "VectorRun",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "773",
+    "slug": "scalarflow-773",
+    "name": "ScalarFlow",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "774",
+    "slug": "matrixlab-774",
+    "name": "MatrixLab",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "775",
+    "slug": "tensorkit-775",
+    "name": "TensorKit",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "776",
+    "slug": "photonhub-776",
+    "name": "PhotonHub",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "777",
+    "slug": "neuronbox-777",
+    "name": "NeuronBox",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "778",
+    "slug": "cipherpad-778",
+    "name": "CipherPad",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "779",
+    "slug": "signaldesk-779",
+    "name": "SignalDesk",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "780",
+    "slug": "pulseport-780",
+    "name": "PulsePort",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "781",
+    "slug": "orbitmint-781",
+    "name": "OrbitMint",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "782",
+    "slug": "cometworks-782",
+    "name": "CometWorks",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "783",
+    "slug": "meteorforge-783",
+    "name": "MeteorForge",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "784",
+    "slug": "rocketstudio-784",
+    "name": "RocketStudio",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "785",
+    "slug": "satellitecore-785",
+    "name": "SatelliteCore",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "786",
+    "slug": "stationnode-786",
+    "name": "StationNode",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "787",
+    "slug": "modulebase-787",
+    "name": "ModuleBase",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "788",
+    "slug": "circuitzone-788",
+    "name": "CircuitZone",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "789",
+    "slug": "binaryspot-789",
+    "name": "BinarySpot",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "790",
+    "slug": "logicbay-790",
+    "name": "LogicBay",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "791",
+    "slug": "cloudden-791",
+    "name": "CloudDen",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "792",
+    "slug": "streamrun-792",
+    "name": "StreamRun",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "793",
+    "slug": "packetflow-793",
+    "name": "PacketFlow",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "794",
+    "slug": "socketlab-794",
+    "name": "SocketLab",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "795",
+    "slug": "serverkit-795",
+    "name": "ServerKit",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "796",
+    "slug": "clienthub-796",
+    "name": "ClientHub",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "797",
+    "slug": "portalbox-797",
+    "name": "PortalBox",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "798",
+    "slug": "gatewaypad-798",
+    "name": "GatewayPad",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "799",
+    "slug": "bridgedesk-799",
+    "name": "BridgeDesk",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "800",
+    "slug": "channelport-800",
+    "name": "ChannelPort",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "801",
+    "slug": "alphamint-801",
+    "name": "AlphaMint",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "802",
+    "slug": "betaworks-802",
+    "name": "BetaWorks",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "803",
+    "slug": "gammaforge-803",
+    "name": "GammaForge",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "804",
+    "slug": "deltastudio-804",
+    "name": "DeltaStudio",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "805",
+    "slug": "sigmacore-805",
+    "name": "SigmaCore",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "806",
+    "slug": "omeganode-806",
+    "name": "OmegaNode",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "807",
+    "slug": "novabase-807",
+    "name": "NovaBase",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "808",
+    "slug": "astrazone-808",
+    "name": "AstraZone",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "809",
+    "slug": "heliospot-809",
+    "name": "HelioSpot",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "810",
+    "slug": "lunabay-810",
+    "name": "LunaBay",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "811",
+    "slug": "terraden-811",
+    "name": "TerraDen",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "812",
+    "slug": "vaporrun-812",
+    "name": "VaporRun",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "813",
+    "slug": "nimbusflow-813",
+    "name": "NimbusFlow",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "814",
+    "slug": "cinderlab-814",
+    "name": "CinderLab",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "815",
+    "slug": "frostkit-815",
+    "name": "FrostKit",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "816",
+    "slug": "blazehub-816",
+    "name": "BlazeHub",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "817",
+    "slug": "surgebox-817",
+    "name": "SurgeBox",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "818",
+    "slug": "quietpad-818",
+    "name": "QuietPad",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "819",
+    "slug": "rapiddesk-819",
+    "name": "RapidDesk",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "820",
+    "slug": "solidport-820",
+    "name": "SolidPort",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "821",
+    "slug": "primemint-821",
+    "name": "PrimeMint",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "822",
+    "slug": "vectorworks-822",
+    "name": "VectorWorks",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "823",
+    "slug": "scalarforge-823",
+    "name": "ScalarForge",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "824",
+    "slug": "matrixstudio-824",
+    "name": "MatrixStudio",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "825",
+    "slug": "tensorcore-825",
+    "name": "TensorCore",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "826",
+    "slug": "photonnode-826",
+    "name": "PhotonNode",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "827",
+    "slug": "neuronbase-827",
+    "name": "NeuronBase",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "828",
+    "slug": "cipherzone-828",
+    "name": "CipherZone",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "829",
+    "slug": "signalspot-829",
+    "name": "SignalSpot",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "830",
+    "slug": "pulsebay-830",
+    "name": "PulseBay",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "831",
+    "slug": "orbitden-831",
+    "name": "OrbitDen",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "832",
+    "slug": "cometrun-832",
+    "name": "CometRun",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "833",
+    "slug": "meteorflow-833",
+    "name": "MeteorFlow",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "834",
+    "slug": "rocketlab-834",
+    "name": "RocketLab",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "835",
+    "slug": "satellitekit-835",
+    "name": "SatelliteKit",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "836",
+    "slug": "stationhub-836",
+    "name": "StationHub",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "837",
+    "slug": "modulebox-837",
+    "name": "ModuleBox",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "838",
+    "slug": "circuitpad-838",
+    "name": "CircuitPad",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "839",
+    "slug": "binarydesk-839",
+    "name": "BinaryDesk",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "840",
+    "slug": "logicport-840",
+    "name": "LogicPort",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "841",
+    "slug": "cloudmint-841",
+    "name": "CloudMint",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "842",
+    "slug": "streamworks-842",
+    "name": "StreamWorks",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "843",
+    "slug": "packetforge-843",
+    "name": "PacketForge",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "844",
+    "slug": "socketstudio-844",
+    "name": "SocketStudio",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "845",
+    "slug": "servercore-845",
+    "name": "ServerCore",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "846",
+    "slug": "clientnode-846",
+    "name": "ClientNode",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "847",
+    "slug": "portalbase-847",
+    "name": "PortalBase",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "848",
+    "slug": "gatewayzone-848",
+    "name": "GatewayZone",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "849",
+    "slug": "bridgespot-849",
+    "name": "BridgeSpot",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "850",
+    "slug": "channelbay-850",
+    "name": "ChannelBay",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "851",
+    "slug": "alphaden-851",
+    "name": "AlphaDen",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "852",
+    "slug": "betarun-852",
+    "name": "BetaRun",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "853",
+    "slug": "gammaflow-853",
+    "name": "GammaFlow",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "854",
+    "slug": "deltalab-854",
+    "name": "DeltaLab",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "855",
+    "slug": "sigmakit-855",
+    "name": "SigmaKit",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "856",
+    "slug": "omegahub-856",
+    "name": "OmegaHub",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "857",
+    "slug": "novabox-857",
+    "name": "NovaBox",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "858",
+    "slug": "astrapad-858",
+    "name": "AstraPad",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "859",
+    "slug": "heliodesk-859",
+    "name": "HelioDesk",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "860",
+    "slug": "lunaport-860",
+    "name": "LunaPort",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "861",
+    "slug": "terramint-861",
+    "name": "TerraMint",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "862",
+    "slug": "vaporworks-862",
+    "name": "VaporWorks",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "863",
+    "slug": "nimbusforge-863",
+    "name": "NimbusForge",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "864",
+    "slug": "cinderstudio-864",
+    "name": "CinderStudio",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "865",
+    "slug": "frostcore-865",
+    "name": "FrostCore",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "866",
+    "slug": "blazenode-866",
+    "name": "BlazeNode",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "867",
+    "slug": "surgebase-867",
+    "name": "SurgeBase",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "868",
+    "slug": "quietzone-868",
+    "name": "QuietZone",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "869",
+    "slug": "rapidspot-869",
+    "name": "RapidSpot",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "870",
+    "slug": "solidbay-870",
+    "name": "SolidBay",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "871",
+    "slug": "primeden-871",
+    "name": "PrimeDen",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "872",
+    "slug": "vectorrun-872",
+    "name": "VectorRun",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "873",
+    "slug": "scalarflow-873",
+    "name": "ScalarFlow",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "874",
+    "slug": "matrixlab-874",
+    "name": "MatrixLab",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "875",
+    "slug": "tensorkit-875",
+    "name": "TensorKit",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "876",
+    "slug": "photonhub-876",
+    "name": "PhotonHub",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "877",
+    "slug": "neuronbox-877",
+    "name": "NeuronBox",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "878",
+    "slug": "cipherpad-878",
+    "name": "CipherPad",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "879",
+    "slug": "signaldesk-879",
+    "name": "SignalDesk",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "880",
+    "slug": "pulseport-880",
+    "name": "PulsePort",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "881",
+    "slug": "orbitmint-881",
+    "name": "OrbitMint",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "882",
+    "slug": "cometworks-882",
+    "name": "CometWorks",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "883",
+    "slug": "meteorforge-883",
+    "name": "MeteorForge",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "884",
+    "slug": "rocketstudio-884",
+    "name": "RocketStudio",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "885",
+    "slug": "satellitecore-885",
+    "name": "SatelliteCore",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "886",
+    "slug": "stationnode-886",
+    "name": "StationNode",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "887",
+    "slug": "modulebase-887",
+    "name": "ModuleBase",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "888",
+    "slug": "circuitzone-888",
+    "name": "CircuitZone",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "889",
+    "slug": "binaryspot-889",
+    "name": "BinarySpot",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "890",
+    "slug": "logicbay-890",
+    "name": "LogicBay",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "891",
+    "slug": "cloudden-891",
+    "name": "CloudDen",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "892",
+    "slug": "streamrun-892",
+    "name": "StreamRun",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "893",
+    "slug": "packetflow-893",
+    "name": "PacketFlow",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "894",
+    "slug": "socketlab-894",
+    "name": "SocketLab",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "895",
+    "slug": "serverkit-895",
+    "name": "ServerKit",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "896",
+    "slug": "clienthub-896",
+    "name": "ClientHub",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "897",
+    "slug": "portalbox-897",
+    "name": "PortalBox",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "898",
+    "slug": "gatewaypad-898",
+    "name": "GatewayPad",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "899",
+    "slug": "bridgedesk-899",
+    "name": "BridgeDesk",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "900",
+    "slug": "channelport-900",
+    "name": "ChannelPort",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "901",
+    "slug": "alphamint-901",
+    "name": "AlphaMint",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "902",
+    "slug": "betaworks-902",
+    "name": "BetaWorks",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "903",
+    "slug": "gammaforge-903",
+    "name": "GammaForge",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "904",
+    "slug": "deltastudio-904",
+    "name": "DeltaStudio",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "905",
+    "slug": "sigmacore-905",
+    "name": "SigmaCore",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "906",
+    "slug": "omeganode-906",
+    "name": "OmegaNode",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "907",
+    "slug": "novabase-907",
+    "name": "NovaBase",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "908",
+    "slug": "astrazone-908",
+    "name": "AstraZone",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "909",
+    "slug": "heliospot-909",
+    "name": "HelioSpot",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "910",
+    "slug": "lunabay-910",
+    "name": "LunaBay",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "911",
+    "slug": "terraden-911",
+    "name": "TerraDen",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "912",
+    "slug": "vaporrun-912",
+    "name": "VaporRun",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "913",
+    "slug": "nimbusflow-913",
+    "name": "NimbusFlow",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "914",
+    "slug": "cinderlab-914",
+    "name": "CinderLab",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "915",
+    "slug": "frostkit-915",
+    "name": "FrostKit",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "916",
+    "slug": "blazehub-916",
+    "name": "BlazeHub",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "917",
+    "slug": "surgebox-917",
+    "name": "SurgeBox",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "918",
+    "slug": "quietpad-918",
+    "name": "QuietPad",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "919",
+    "slug": "rapiddesk-919",
+    "name": "RapidDesk",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "920",
+    "slug": "solidport-920",
+    "name": "SolidPort",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "921",
+    "slug": "primemint-921",
+    "name": "PrimeMint",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "922",
+    "slug": "vectorworks-922",
+    "name": "VectorWorks",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "923",
+    "slug": "scalarforge-923",
+    "name": "ScalarForge",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "924",
+    "slug": "matrixstudio-924",
+    "name": "MatrixStudio",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "925",
+    "slug": "tensorcore-925",
+    "name": "TensorCore",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "926",
+    "slug": "photonnode-926",
+    "name": "PhotonNode",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "927",
+    "slug": "neuronbase-927",
+    "name": "NeuronBase",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "928",
+    "slug": "cipherzone-928",
+    "name": "CipherZone",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "929",
+    "slug": "signalspot-929",
+    "name": "SignalSpot",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "930",
+    "slug": "pulsebay-930",
+    "name": "PulseBay",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "931",
+    "slug": "orbitden-931",
+    "name": "OrbitDen",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "932",
+    "slug": "cometrun-932",
+    "name": "CometRun",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "933",
+    "slug": "meteorflow-933",
+    "name": "MeteorFlow",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "934",
+    "slug": "rocketlab-934",
+    "name": "RocketLab",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "935",
+    "slug": "satellitekit-935",
+    "name": "SatelliteKit",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "936",
+    "slug": "stationhub-936",
+    "name": "StationHub",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "937",
+    "slug": "modulebox-937",
+    "name": "ModuleBox",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "938",
+    "slug": "circuitpad-938",
+    "name": "CircuitPad",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "939",
+    "slug": "binarydesk-939",
+    "name": "BinaryDesk",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "940",
+    "slug": "logicport-940",
+    "name": "LogicPort",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "941",
+    "slug": "cloudmint-941",
+    "name": "CloudMint",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "942",
+    "slug": "streamworks-942",
+    "name": "StreamWorks",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "943",
+    "slug": "packetforge-943",
+    "name": "PacketForge",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "944",
+    "slug": "socketstudio-944",
+    "name": "SocketStudio",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "945",
+    "slug": "servercore-945",
+    "name": "ServerCore",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "946",
+    "slug": "clientnode-946",
+    "name": "ClientNode",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "947",
+    "slug": "portalbase-947",
+    "name": "PortalBase",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "948",
+    "slug": "gatewayzone-948",
+    "name": "GatewayZone",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "949",
+    "slug": "bridgespot-949",
+    "name": "BridgeSpot",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "950",
+    "slug": "channelbay-950",
+    "name": "ChannelBay",
+    "tagline": "Random harmonious color palette",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "951",
+    "slug": "alphaden-951",
+    "name": "AlphaDen",
+    "tagline": "Reverse any string instantly",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "952",
+    "slug": "betarun-952",
+    "name": "BetaRun",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "953",
+    "slug": "gammaflow-953",
+    "name": "GammaFlow",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "prime-check"
+  },
+  {
+    "id": "954",
+    "slug": "deltalab-954",
+    "name": "DeltaLab",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "955",
+    "slug": "sigmakit-955",
+    "name": "SigmaKit",
+    "tagline": "Sale price from percent off",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "956",
+    "slug": "omegahub-956",
+    "name": "OmegaHub",
+    "tagline": "Compound growth calculator",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "957",
+    "slug": "novabox-957",
+    "name": "NovaBox",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "958",
+    "slug": "astrapad-958",
+    "name": "AstraPad",
+    "tagline": "Daily water goal tracker",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "water-intake"
+  },
+  {
+    "id": "959",
+    "slug": "heliodesk-959",
+    "name": "HelioDesk",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "hash-display"
+  },
+  {
+    "id": "960",
+    "slug": "lunaport-960",
+    "name": "LunaPort",
+    "tagline": "Random character names for stories",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "random-name"
+  },
+  {
+    "id": "961",
+    "slug": "terramint-961",
+    "name": "TerraMint",
+    "tagline": "Split names into random teams",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "team-picker"
+  },
+  {
+    "id": "962",
+    "slug": "vaporworks-962",
+    "name": "VaporWorks",
+    "tagline": "Count down to your event",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "963",
+    "slug": "nimbusforge-963",
+    "name": "NimbusForge",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "metronome"
+  },
+  {
+    "id": "964",
+    "slug": "cinderstudio-964",
+    "name": "CinderStudio",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "965",
+    "slug": "frostcore-965",
+    "name": "FrostCore",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "966",
+    "slug": "blazenode-966",
+    "name": "BlazeNode",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "967",
+    "slug": "surgebase-967",
+    "name": "SurgeBase",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "968",
+    "slug": "quietzone-968",
+    "name": "QuietZone",
+    "tagline": "Draw a random playing card",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "card-draw"
+  },
+  {
+    "id": "969",
+    "slug": "rapidspot-969",
+    "name": "RapidSpot",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "meme-text"
+  },
+  {
+    "id": "970",
+    "slug": "solidbay-970",
+    "name": "SolidBay",
+    "tagline": "Add sales tax to any price",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "971",
+    "slug": "primeden-971",
+    "name": "PrimeDen",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "steps-km"
+  },
+  {
+    "id": "972",
+    "slug": "vectorrun-972",
+    "name": "VectorRun",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "973",
+    "slug": "scalarflow-973",
+    "name": "ScalarFlow",
+    "tagline": "Text to binary and back",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "binary-text"
+  },
+  {
+    "id": "974",
+    "slug": "matrixlab-974",
+    "name": "MatrixLab",
+    "tagline": "Generate product / startup names",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "lorem-title"
+  },
+  {
+    "id": "975",
+    "slug": "tensorkit-975",
+    "name": "TensorKit",
+    "tagline": "Random harmonious color palette",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "color-palette-gen"
+  },
+  {
+    "id": "976",
+    "slug": "photonhub-976",
+    "name": "PhotonHub",
+    "tagline": "Reverse any string instantly",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "text-reverse"
+  },
+  {
+    "id": "977",
+    "slug": "neuronbox-977",
+    "name": "NeuronBox",
+    "tagline": "Shift letters — classic Caesar cipher",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "caesar-cipher"
+  },
+  {
+    "id": "978",
+    "slug": "cipherpad-978",
+    "name": "CipherPad",
+    "tagline": "Is it prime? Fast number check",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "prime-check"
+  },
+  {
+    "id": "979",
+    "slug": "signaldesk-979",
+    "name": "SignalDesk",
+    "tagline": "Generate Fibonacci sequences",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "fibonacci"
+  },
+  {
+    "id": "980",
+    "slug": "pulseport-980",
+    "name": "PulsePort",
+    "tagline": "Sale price from percent off",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "discount-calc"
+  },
+  {
+    "id": "981",
+    "slug": "orbitmint-981",
+    "name": "OrbitMint",
+    "tagline": "Compound growth calculator",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "compound-interest"
+  },
+  {
+    "id": "982",
+    "slug": "cometworks-982",
+    "name": "CometWorks",
+    "tagline": "Best bedtime for wake-up time",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "sleep-calc"
+  },
+  {
+    "id": "983",
+    "slug": "meteorforge-983",
+    "name": "MeteorForge",
+    "tagline": "Daily water goal tracker",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "water-intake"
+  },
+  {
+    "id": "984",
+    "slug": "rocketstudio-984",
+    "name": "RocketStudio",
+    "tagline": "Simple text fingerprint hash",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "hash-display"
+  },
+  {
+    "id": "985",
+    "slug": "satellitecore-985",
+    "name": "SatelliteCore",
+    "tagline": "Random character names for stories",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "random-name"
+  },
+  {
+    "id": "986",
+    "slug": "stationnode-986",
+    "name": "StationNode",
+    "tagline": "Split names into random teams",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "team-picker"
+  },
+  {
+    "id": "987",
+    "slug": "modulebase-987",
+    "name": "ModuleBase",
+    "tagline": "Count down to your event",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "event-countdown"
+  },
+  {
+    "id": "988",
+    "slug": "circuitzone-988",
+    "name": "CircuitZone",
+    "tagline": "Tap tempo — audible metronome",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "metronome"
+  },
+  {
+    "id": "989",
+    "slug": "binaryspot-989",
+    "name": "BinarySpot",
+    "tagline": "Daily habit checkboxes — saved locally",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "habit-tracker"
+  },
+  {
+    "id": "990",
+    "slug": "logicbay-990",
+    "name": "LogicBay",
+    "tagline": "Quick notes — auto-saved in browser",
+    "accent": "#e8a87c",
+    "accent2": "#5eead4",
+    "logic": "notes-pad"
+  },
+  {
+    "id": "991",
+    "slug": "cloudden-991",
+    "name": "CloudDen",
+    "tagline": "Pick emojis — copy to clipboard",
+    "accent": "#6c5ce7",
+    "accent2": "#a29bfe",
+    "logic": "emoji-grid"
+  },
+  {
+    "id": "992",
+    "slug": "streamrun-992",
+    "name": "StreamRun",
+    "tagline": "Quick two-option poll — share results",
+    "accent": "#00b894",
+    "accent2": "#55efc4",
+    "logic": "poll-vote"
+  },
+  {
+    "id": "993",
+    "slug": "packetflow-993",
+    "name": "PacketFlow",
+    "tagline": "Draw a random playing card",
+    "accent": "#e17055",
+    "accent2": "#fab1a0",
+    "logic": "card-draw"
+  },
+  {
+    "id": "994",
+    "slug": "socketlab-994",
+    "name": "SocketLab",
+    "tagline": "Top & bottom meme text overlay",
+    "accent": "#0984e3",
+    "accent2": "#74b9ff",
+    "logic": "meme-text"
+  },
+  {
+    "id": "995",
+    "slug": "serverkit-995",
+    "name": "ServerKit",
+    "tagline": "Add sales tax to any price",
+    "accent": "#fdcb6e",
+    "accent2": "#ffeaa7",
+    "logic": "sales-tax"
+  },
+  {
+    "id": "996",
+    "slug": "clienthub-996",
+    "name": "ClientHub",
+    "tagline": "Convert steps to kilometers",
+    "accent": "#e84393",
+    "accent2": "#fd79a8",
+    "logic": "steps-km"
+  },
+  {
+    "id": "997",
+    "slug": "portalbox-997",
+    "name": "PortalBox",
+    "tagline": "Roll 1–6 with a 3D-style die",
+    "accent": "#00cec9",
+    "accent2": "#81ecec",
+    "logic": "dice-visual"
+  },
+  {
+    "id": "998",
+    "slug": "gatewaypad-998",
+    "name": "GatewayPad",
+    "tagline": "Text to binary and back",
+    "accent": "#d63031",
+    "accent2": "#ff7675",
+    "logic": "binary-text"
+  },
+  {
+    "id": "999",
+    "slug": "bridgedesk-999",
+    "name": "BridgeDesk",
+    "tagline": "Generate product / startup names",
+    "accent": "#2d3436",
+    "accent2": "#636e72",
+    "logic": "lorem-title"
   }
 ]

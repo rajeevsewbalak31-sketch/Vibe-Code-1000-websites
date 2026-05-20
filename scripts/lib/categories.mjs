@@ -9,6 +9,7 @@ export const CATEGORIES = [
   { id: "landing-pages", label: "Landing Pages" },
   { id: "experiments", label: "Experiments" },
   { id: "creative", label: "Creative" },
+  { id: "labs", label: "Labs" },
 ];
 
 const GAME_LOGICS = new Set([
@@ -57,6 +58,7 @@ export function getCategory(site) {
 
   if (id === "001") return "landing-pages";
   if (id === "002") return "tools";
+  if (parseInt(id, 10) >= 501) return "labs";
   if (parseInt(id, 10) >= 301) return "creative";
   if (parseInt(id, 10) >= 201) return "experiments";
   if (parseInt(id, 10) >= 101 && parseInt(id, 10) <= 200) return "games";

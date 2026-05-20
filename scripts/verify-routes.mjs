@@ -12,7 +12,7 @@ const INDEX = join(ROOT, "index.html");
 const manifest = JSON.parse(readFileSync(join(__dirname, "manifest.json"), "utf8"));
 
 const folders = readdirSync(ROOT, { withFileTypes: true })
-  .filter((d) => d.isDirectory() && /^\d{3}-/.test(d.name))
+  .filter((d) => d.isDirectory() && /^\d{3,4}-/.test(d.name))
   .map((d) => d.name)
   .sort();
 
@@ -38,7 +38,7 @@ for (const folder of folders) {
 }
 
 const html = readFileSync(INDEX, "utf8");
-const hrefRe = /href="\.\/(\d{3}-[^/]+)\/?"/g;
+const hrefRe = /href="\.\/(\d{3,4}-[^/]+)\/?"/g;
 const hubPaths = new Set();
 let m;
 while ((m = hrefRe.exec(html)) !== null) hubPaths.add(m[1]);

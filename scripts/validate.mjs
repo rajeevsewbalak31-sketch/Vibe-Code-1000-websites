@@ -40,9 +40,9 @@ for (const s of sites) {
   }
 }
 
-const folders = readdirSync(ROOT).filter((n) => /^\d{3}-/.test(n));
+const folders = readdirSync(ROOT).filter((n) => /^\d{3,4}-/.test(n));
 for (const folder of folders) {
-  const id = folder.slice(0, 3);
+  const id = folder.match(/^(\d{3,4})-/)[1];
   if (!seen.has(id) && !featuredIds.has(id)) {
     console.error(`Folder not in sites.json: ${folder}`);
     errors++;

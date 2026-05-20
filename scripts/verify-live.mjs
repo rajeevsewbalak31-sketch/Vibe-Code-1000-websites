@@ -11,7 +11,7 @@ const HUB = "https://websites-eosin-delta.vercel.app";
 const manifest = JSON.parse(readFileSync(join(__dirname, "manifest.json"), "utf8"));
 
 const folders = readdirSync(ROOT, { withFileTypes: true })
-  .filter((d) => d.isDirectory() && /^\d{3}-/.test(d.name))
+  .filter((d) => d.isDirectory() && /^\d{3,4}-/.test(d.name))
   .map((d) => d.name)
   .sort();
 

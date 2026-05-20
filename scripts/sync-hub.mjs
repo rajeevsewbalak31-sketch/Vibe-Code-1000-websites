@@ -92,7 +92,11 @@ const appCount = allEntries.filter((e) => {
   const n = parseInt(e.id, 10);
   return n >= 201 && n <= 300;
 }).length;
-const creativeCount = allEntries.filter((e) => parseInt(e.id, 10) >= 301).length;
+const creativeCount = allEntries.filter((e) => {
+  const n = parseInt(e.id, 10);
+  return n >= 301 && n <= 500;
+}).length;
+const labsCount = allEntries.filter((e) => parseInt(e.id, 10) >= 501).length;
 const ogUrl = `${HUB_URL}${OG_IMAGE.startsWith("/") ? OG_IMAGE : `/${OG_IMAGE}`}`;
 const plausibleDomain = manifest.hub?.plausibleDomain || "";
 
@@ -118,6 +122,7 @@ const filterButtons = [
   { id: "landing-pages", label: "Landing Pages" },
   { id: "experiments", label: "Experiments" },
   { id: "creative", label: "Creative" },
+  { id: "labs", label: "Labs" },
 ]
   .map(
     (c) =>
@@ -127,16 +132,15 @@ const filterButtons = [
 
 function heroHtml() {
   return `    <section class="hero">
-      <p class="hero-eyebrow">${count} sites live · ${gameCount} games · ${appCount} apps · ${creativeCount} creative · From €49</p>
+      <p class="hero-eyebrow">${count >= GOAL ? "🎉 " : ""}${count} sites live · Milestone ${GOAL} reached · From €49</p>
       <h1>1000 Websites Challenge</h1>
       <p class="hero-lead">
-        Browse <strong>${count} free mini-apps</strong> — tools, games, calculators, and experiments — or <strong>get your own site built in 24h</strong>.
+        <strong>${count} free mini-apps</strong> shipped — tools, games, apps, creative labs — built by a generation engine. <strong>Get your own in 24h.</strong>
       </p>
       <ul class="trust-bar trust-bar--hero" aria-label="Trust signals">
         <li><span class="trust-num">${count}</span> sites</li>
         <li><span class="trust-num">${gameCount}</span> games</li>
-        <li><span class="trust-num">${appCount}</span> apps</li>
-        <li><span class="trust-num">${creativeCount}</span> creative</li>
+        <li><span class="trust-num">${labsCount}</span> labs</li>
       </ul>
       <div class="progress-wrap">
         <div class="progress-label">
@@ -211,6 +215,34 @@ function creativeBannerHtml() {
     </section>`;
 }
 
+function labsBannerHtml() {
+  if (labsCount === 0) return "";
+  return `    <section class="games-banner games-banner--apps" id="labs-launch" aria-labelledby="labs-banner-heading">
+      <div class="games-banner-inner">
+        <span class="games-banner-badge">Final batch</span>
+        <div class="games-banner-copy">
+          <h2 id="labs-banner-heading">${labsCount} micro-labs (#501–1000)</h2>
+          <p>Habits, notes, metronome, polls, compound interest, Caesar cipher, meme text, and more — the home stretch to 1000.</p>
+        </div>
+        <div class="games-banner-actions">
+          <a class="btn btn--primary" href="#site-grid" data-filter-labs>Browse labs</a>
+        </div>
+      </div>
+    </section>`;
+}
+
+function milestoneBannerHtml() {
+  if (count < GOAL) return "";
+  return `    <section class="games-banner" style="border-color:color-mix(in srgb,var(--accent-2) 50%,var(--border));background:linear-gradient(135deg,color-mix(in srgb,var(--accent-2) 18%,transparent),color-mix(in srgb,var(--accent) 12%,transparent))" aria-label="Milestone reached">
+      <div class="games-banner-inner" style="justify-content:center;text-align:center">
+        <div>
+          <h2 style="font-family:var(--font-display);font-size:1.75rem;margin-bottom:.35rem">🎉 ${GOAL} websites milestone</h2>
+          <p style="color:var(--muted);max-width:32rem;margin:0 auto">The 1000 Websites Challenge engine delivered ${count} live mini-apps. Play EggBalance, explore the gallery, or order your own from €49.</p>
+        </div>
+      </div>
+    </section>`;
+}
+
 let index = readFileSync(INDEX_PATH, "utf8");
 
 function replaceBlock(start, end, content) {
@@ -224,6 +256,8 @@ replaceBlock("<!-- HERO_START -->", "<!-- HERO_END -->", heroHtml());
 replaceBlock("<!-- GAMES_BANNER_START -->", "<!-- GAMES_BANNER_END -->", gamesBannerHtml());
 replaceBlock("<!-- APPS_BANNER_START -->", "<!-- APPS_BANNER_END -->", appsBannerHtml());
 replaceBlock("<!-- CREATIVE_BANNER_START -->", "<!-- CREATIVE_BANNER_END -->", creativeBannerHtml());
+replaceBlock("<!-- LABS_BANNER_START -->", "<!-- LABS_BANNER_END -->", labsBannerHtml());
+replaceBlock("<!-- MILESTONE_BANNER_START -->", "<!-- MILESTONE_BANNER_END -->", milestoneBannerHtml());
 replaceBlock("<!-- FEATURED_STRIP_START -->", "<!-- FEATURED_STRIP_END -->", featuredCards);
 replaceBlock("<!-- SITE_GRID_START -->", "<!-- SITE_GRID_END -->", gridCards);
 replaceBlock("<!-- CATEGORY_FILTERS_START -->", "<!-- CATEGORY_FILTERS_END -->", filterButtons);
@@ -231,7 +265,7 @@ replaceBlock("<!-- MONETIZE_START -->", "<!-- MONETIZE_END -->", hubMonetization
 
 replaceBlock("<!-- PLAUSIBLE_START -->", "<!-- PLAUSIBLE_END -->", plausibleHead());
 
-const desc = `${count} free mini-apps — ${gameCount} games, ${appCount} apps, ${creativeCount} creative tools. Built with ${BRAND}. Tip via PayPal.`;
+const desc = `${count} free mini-apps — ${gameCount} games, ${labsCount} labs, tools & utilities. ${BRAND} milestone reached. Tip via PayPal.`;
 index = index.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${escapeAttr(desc)}"`);
 index = index.replace(
   /<meta property="og:description" content="[^"]*"/,
@@ -270,5 +304,5 @@ hubJs = hubJs.replace(/const POPULAR_IDS = \[.*?\];/, `const POPULAR_IDS = ${JSO
 writeFileSync(HUB_JS_PATH, hubJs, "utf8");
 
 console.log(
-  `Hub synced: ${count} sites (${gameCount} games, ${appCount} apps, ${creativeCount} creative), ${spotlightEntries.length} featured (${HUB_URL})`
+  `Hub synced: ${count} sites (${gameCount} games, ${labsCount} labs), ${spotlightEntries.length} featured (${HUB_URL})`
 );

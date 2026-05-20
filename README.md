@@ -3,7 +3,7 @@
 **I stopped trying to hand-build 1000 websites. I built a machine that generates them.**
 
 [![Live hub](https://img.shields.io/badge/Live-hub-5eead4?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
-[![Progress](https://img.shields.io/badge/Progress-500%2F1000-e8a87c?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
+[![Progress](https://img.shields.io/badge/Progress-1000%2F1000-e8a87c?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
 [![PayPal](https://img.shields.io/badge/PayPal-Tip-0070ba?style=for-the-badge)](https://paypal.me/RajeevSewbalak)
 [![GitHub](https://img.shields.io/badge/GitHub-repo-181717?style=for-the-badge&logo=github)](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
 
@@ -15,7 +15,7 @@
 |---|---|
 | **Live gallery** | [websites-eosin-delta.vercel.app](https://websites-eosin-delta.vercel.app) |
 | **Repo** | [Vibe-Code-1000-websites](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites) |
-| **Progress** | **500 / 1000** sites |
+| **Progress** | **1000 / 1000** milestone reached |
 | **Stack** | HTML/CSS/JS generator · Next.js flagships · Vercel |
 
 ## Gallery preview
@@ -51,7 +51,8 @@ Details: **[docs/roadmap.md](./docs/roadmap.md)**
 
 ```bash
 npm run engine:status
-npm run engine:scale:500     # Batch #301–500 + hub sync
+npm run engine:scale:1000    # Complete #501–1000 + hub
+npm run engine:scale:500     # Batch #301–500
 npm run engine:scale:300     # Games + apps (101–300)
 npm run engine:apps:all      # Apps #201–300 only
 npm run validate

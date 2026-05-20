@@ -31,7 +31,7 @@ function run(script, extra = []) {
 
 function countSites() {
   const dirs = readdirSync(ROOT, { withFileTypes: true })
-    .filter((d) => d.isDirectory() && /^\d{3}-/.test(d.name))
+    .filter((d) => d.isDirectory() && /^\d{3,4}-/.test(d.name))
     .map((d) => d.name);
   const manifest = JSON.parse(readFileSync(join(__dirname, "manifest.json"), "utf8"));
   const featured = manifest.featured?.length ?? 0;
@@ -88,7 +88,9 @@ switch (cmd) {
     console.log("Tools:  npm run engine:all");
     console.log("Games:  npm run engine:games:all");
     console.log("Apps:   npm run engine:apps:all");
-    console.log("All:    npm run engine:scale:500");
+    const labs = sites.filter((s) => parseInt(s.id, 10) >= 501).length;
+    console.log(`Labs batch:  ${labs} (#501–1000)`);
+    console.log("Finish: npm run engine:scale:1000");
     break;
   }
   default:

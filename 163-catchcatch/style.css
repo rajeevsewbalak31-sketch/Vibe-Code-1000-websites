@@ -1,0 +1,4 @@
+:root{--accent:#ff6b6b;--accent-2:#feca57}
+.whack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;max-width:16rem;margin:0 auto}
+.whack-hole{aspect-ratio:1;border-radius:50%;border:2px solid var(--border);background:rgba(0,0,0,.4);cursor:pointer;position:relative}
+.whack-hole.is-up{background:color-mix(in srgb,var(--accent) 40%,transparent)}

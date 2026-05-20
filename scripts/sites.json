@@ -880,5 +880,905 @@
     "accent": "#2ecc71",
     "accent2": "#82e0aa",
     "logic": "mood-picker"
+  },
+  {
+    "id": "101",
+    "slug": "egg-balance",
+    "name": "EggBalance",
+    "tagline": "Balance eggs in the carton — physics decides if it tips",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "egg-balance"
+  },
+  {
+    "id": "102",
+    "slug": "eggstack",
+    "name": "EggStack",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "103",
+    "slug": "yolkcatch",
+    "name": "YolkCatch",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "104",
+    "slug": "nestrun",
+    "name": "NestRun",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "105",
+    "slug": "hatchbreak",
+    "name": "HatchBreak",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "106",
+    "slug": "shellflip",
+    "name": "ShellFlip",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "107",
+    "slug": "cluckrush",
+    "name": "CluckRush",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "108",
+    "slug": "farmpop",
+    "name": "FarmPop",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "109",
+    "slug": "coopmerge",
+    "name": "CoopMerge",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "110",
+    "slug": "broodquest",
+    "name": "BroodQuest",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "111",
+    "slug": "peckbalance",
+    "name": "PeckBalance",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "112",
+    "slug": "arcadestack",
+    "name": "ArcadeStack",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "113",
+    "slug": "pixelcatch",
+    "name": "PixelCatch",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "114",
+    "slug": "neonrun",
+    "name": "NeonRun",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "115",
+    "slug": "retrobreak",
+    "name": "RetroBreak",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "116",
+    "slug": "turboflip",
+    "name": "TurboFlip",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "117",
+    "slug": "blitzrush",
+    "name": "BlitzRush",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "118",
+    "slug": "rushpop",
+    "name": "RushPop",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "119",
+    "slug": "dashmerge",
+    "name": "DashMerge",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "120",
+    "slug": "boltquest",
+    "name": "BoltQuest",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "121",
+    "slug": "zapbalance",
+    "name": "ZapBalance",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "122",
+    "slug": "orbitstack",
+    "name": "OrbitStack",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "123",
+    "slug": "novacatch",
+    "name": "NovaCatch",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "124",
+    "slug": "cometrun",
+    "name": "CometRun",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "125",
+    "slug": "lunarbreak",
+    "name": "LunarBreak",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "126",
+    "slug": "solarflip",
+    "name": "SolarFlip",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "127",
+    "slug": "starrush",
+    "name": "StarRush",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "128",
+    "slug": "cosmopop",
+    "name": "CosmoPop",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "129",
+    "slug": "astromerge",
+    "name": "AstroMerge",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "130",
+    "slug": "pulsequest",
+    "name": "PulseQuest",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "131",
+    "slug": "driftbalance",
+    "name": "DriftBalance",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "132",
+    "slug": "prismstack",
+    "name": "PrismStack",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "133",
+    "slug": "fluxcatch",
+    "name": "FluxCatch",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "134",
+    "slug": "sparkrun",
+    "name": "SparkRun",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "135",
+    "slug": "glidebreak",
+    "name": "GlideBreak",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "136",
+    "slug": "crestflip",
+    "name": "CrestFlip",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "137",
+    "slug": "runerush",
+    "name": "RuneRush",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "138",
+    "slug": "cipherpop",
+    "name": "CipherPop",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "139",
+    "slug": "lumenmerge",
+    "name": "LumenMerge",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "140",
+    "slug": "vividquest",
+    "name": "VividQuest",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "141",
+    "slug": "apexbalance",
+    "name": "ApexBalance",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "142",
+    "slug": "zenstack",
+    "name": "ZenStack",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "143",
+    "slug": "echocatch",
+    "name": "EchoCatch",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "144",
+    "slug": "swiftrun",
+    "name": "SwiftRun",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "145",
+    "slug": "flashbreak",
+    "name": "FlashBreak",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "146",
+    "slug": "mythflip",
+    "name": "MythFlip",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "147",
+    "slug": "questrush",
+    "name": "QuestRush",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "148",
+    "slug": "lootpop",
+    "name": "LootPop",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "149",
+    "slug": "bossmerge",
+    "name": "BossMerge",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "150",
+    "slug": "levelquest",
+    "name": "LevelQuest",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "151",
+    "slug": "coinbalance",
+    "name": "CoinBalance",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "152",
+    "slug": "dodgestack",
+    "name": "DodgeStack",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "153",
+    "slug": "jumpcatch",
+    "name": "JumpCatch",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "154",
+    "slug": "spinrun",
+    "name": "SpinRun",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "155",
+    "slug": "rollbreak",
+    "name": "RollBreak",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "156",
+    "slug": "flipflip",
+    "name": "FlipFlip",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "157",
+    "slug": "poprush",
+    "name": "PopRush",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "158",
+    "slug": "tappop",
+    "name": "TapPop",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "159",
+    "slug": "snapmerge",
+    "name": "SnapMerge",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "160",
+    "slug": "bouncequest",
+    "name": "BounceQuest",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "161",
+    "slug": "swingbalance",
+    "name": "SwingBalance",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "162",
+    "slug": "stackstack",
+    "name": "StackStack",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "163",
+    "slug": "catchcatch",
+    "name": "CatchCatch",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "164",
+    "slug": "balancerun",
+    "name": "BalanceRun",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "165",
+    "slug": "mergebreak",
+    "name": "MergeBreak",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "166",
+    "slug": "matchflip",
+    "name": "MatchFlip",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "167",
+    "slug": "breakrush",
+    "name": "BreakRush",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "168",
+    "slug": "snakepop",
+    "name": "SnakePop",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "169",
+    "slug": "paddlemerge",
+    "name": "PaddleMerge",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "170",
+    "slug": "flyquest",
+    "name": "FlyQuest",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "171",
+    "slug": "whackbalance",
+    "name": "WhackBalance",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "172",
+    "slug": "goldenstack",
+    "name": "GoldenStack",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "173",
+    "slug": "silvercatch",
+    "name": "SilverCatch",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "174",
+    "slug": "rubyrun",
+    "name": "RubyRun",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "175",
+    "slug": "jadebreak",
+    "name": "JadeBreak",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "176",
+    "slug": "onyxflip",
+    "name": "OnyxFlip",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "177",
+    "slug": "coralrush",
+    "name": "CoralRush",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "178",
+    "slug": "amberpop",
+    "name": "AmberPop",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "179",
+    "slug": "ivorymerge",
+    "name": "IvoryMerge",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "180",
+    "slug": "crimsonquest",
+    "name": "CrimsonQuest",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "181",
+    "slug": "violetbalance",
+    "name": "VioletBalance",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "182",
+    "slug": "wildstack",
+    "name": "WildStack",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "183",
+    "slug": "calmcatch",
+    "name": "CalmCatch",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "184",
+    "slug": "boldrun",
+    "name": "BoldRun",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "185",
+    "slug": "slybreak",
+    "name": "SlyBreak",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "186",
+    "slug": "keenflip",
+    "name": "KeenFlip",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "187",
+    "slug": "braverush",
+    "name": "BraveRush",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "188",
+    "slug": "luckypop",
+    "name": "LuckyPop",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "189",
+    "slug": "mightymerge",
+    "name": "MightyMerge",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "190",
+    "slug": "tinyquest",
+    "name": "TinyQuest",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "191",
+    "slug": "giantbalance",
+    "name": "GiantBalance",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#74b9ff",
+    "accent2": "#0984e3",
+    "logic": "merge-numbers"
+  },
+  {
+    "id": "192",
+    "slug": "daystack",
+    "name": "DayStack",
+    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "accent": "#f5e6c8",
+    "accent2": "#e8a87c",
+    "logic": "stack-tower"
+  },
+  {
+    "id": "193",
+    "slug": "nightcatch",
+    "name": "NightCatch",
+    "tagline": "Move the basket — catch what falls, dodge bombs",
+    "accent": "#ff6b6b",
+    "accent2": "#feca57",
+    "logic": "catch-fall"
+  },
+  {
+    "id": "194",
+    "slug": "dawnrun",
+    "name": "DawnRun",
+    "tagline": "Classic snake — eat, grow, don't bite yourself",
+    "accent": "#48dbfb",
+    "accent2": "#0abde3",
+    "logic": "snake-mini"
+  },
+  {
+    "id": "195",
+    "slug": "duskbreak",
+    "name": "DuskBreak",
+    "tagline": "Break every brick — don't lose the ball",
+    "accent": "#55efc4",
+    "accent2": "#00b894",
+    "logic": "paddle-break"
+  },
+  {
+    "id": "196",
+    "slug": "stormflip",
+    "name": "StormFlip",
+    "tagline": "Flip cards — find matching pairs in fewest moves",
+    "accent": "#a29bfe",
+    "accent2": "#6c5ce7",
+    "logic": "memory-flip"
+  },
+  {
+    "id": "197",
+    "slug": "breezerush",
+    "name": "BreezeRush",
+    "tagline": "Tap when green — how fast are your reflexes?",
+    "accent": "#fd79a8",
+    "accent2": "#e84393",
+    "logic": "reaction-tap"
+  },
+  {
+    "id": "198",
+    "slug": "frostpop",
+    "name": "FrostPop",
+    "tagline": "Tap to fly — dodge the gaps",
+    "accent": "#ffeaa7",
+    "accent2": "#fdcb6e",
+    "logic": "tap-fly"
+  },
+  {
+    "id": "199",
+    "slug": "embermerge",
+    "name": "EmberMerge",
+    "tagline": "Whack the targets before they hide",
+    "accent": "#81ecec",
+    "accent2": "#00cec9",
+    "logic": "whack-pop"
+  },
+  {
+    "id": "200",
+    "slug": "mistquest",
+    "name": "MistQuest",
+    "tagline": "Slide tiles — merge numbers to reach 256",
+    "accent": "#fab1a0",
+    "accent2": "#e17055",
+    "logic": "merge-numbers"
   }
 ]

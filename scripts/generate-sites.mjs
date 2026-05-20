@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import { siteHeadMeta, siteTitle } from "./lib/seo.mjs";
 import { siteMonetizationFooter } from "./lib/monetization.mjs";
 import { hubLink } from "./lib/hub-links.mjs";
+import { GAME_LOGIC_SET } from "./lib/games-catalog.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -573,6 +574,7 @@ function cleanHtml(raw) {
 let created = 0;
 let updated = 0;
 for (const site of sites) {
+  if (GAME_LOGIC_SET.has(site.logic)) continue;
   const dir = join(ROOT, `${site.id}-${site.slug}`);
   const exists = existsSync(dir);
   if (exists && !FORCE) {

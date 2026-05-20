@@ -1,0 +1,233 @@
+:root {
+  --accent: #f5e6c8;
+  --accent-2: #e8a87c;
+  --carton: #c4a574;
+  --carton-dark: #8b6914;
+  --egg: #fff8e7;
+  --egg-shade: #e8dcc8;
+}
+
+.egg-intro {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.egg-layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 520px) {
+  .egg-layout {
+    grid-template-columns: 1fr 7.5rem;
+    align-items: start;
+  }
+}
+
+.carton-scene {
+  perspective: 900px;
+  min-height: 14rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem 0 0.5rem;
+}
+
+.carton {
+  transform-style: preserve-3d;
+  transition: transform 0.12s ease-out;
+  will-change: transform;
+}
+
+.carton.is-tipped {
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.8, 0.2);
+}
+
+.carton-lid {
+  height: 0.65rem;
+  background: linear-gradient(180deg, var(--carton) 0%, var(--carton-dark) 100%);
+  border-radius: 0.35rem 0.35rem 0 0;
+  margin: 0 0.25rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.carton-body {
+  background: linear-gradient(145deg, #d4bc8a 0%, var(--carton) 40%, var(--carton-dark) 100%);
+  border: 2px solid #6b5220;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding: 0.65rem;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.45),
+    inset 0 2px 0 rgba(255, 255, 255, 0.15);
+}
+
+.carton-grid {
+  display: grid;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.cup {
+  width: var(--cup-size, 2.75rem);
+  height: var(--cup-size, 2.75rem);
+  border-radius: 50% 50% 45% 45%;
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(0, 0, 0, 0.12), transparent 55%),
+    linear-gradient(180deg, #a08050 0%, #6b4e28 100%);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s;
+}
+
+.cup:hover:not(.cup--filled) {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 50%, transparent);
+  transform: scale(1.04);
+}
+
+.cup--filled {
+  cursor: grab;
+}
+
+.cup--filled:active {
+  cursor: grabbing;
+}
+
+.egg {
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  width: 72%;
+  height: 88%;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 48% 48%;
+  background: radial-gradient(ellipse 40% 35% at 35% 28%, #fff, var(--egg) 45%, var(--egg-shade) 100%);
+  box-shadow:
+    inset -2px -4px 8px rgba(0, 0, 0, 0.08),
+    2px 4px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.egg.is-wobble {
+  animation: egg-wobble 0.35s ease;
+}
+
+@keyframes egg-wobble {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  25% { transform: translateX(-50%) rotate(-4deg); }
+  75% { transform: translateX(-50%) rotate(4deg); }
+}
+
+.egg-tray {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+.egg-tray-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.tray-eggs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  max-width: 6rem;
+}
+
+.tray-egg {
+  width: 1.65rem;
+  height: 2rem;
+  border-radius: 50% 50% 48% 48%;
+  background: radial-gradient(ellipse 40% 35% at 35% 28%, #fff, var(--egg) 50%, var(--egg-shade));
+  border: none;
+  cursor: grab;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s;
+}
+
+.tray-egg:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.tray-egg:active {
+  cursor: grabbing;
+}
+
+.tilt-meter {
+  margin-top: 1rem;
+  height: 0.35rem;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tilt-meter-fill {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-2);
+  transform: translateX(-50%);
+  transition: left 0.12s ease-out, background 0.2s;
+  border-radius: 2px;
+}
+
+.tilt-meter-fill.is-danger {
+  background: #ff6b6b;
+}
+
+.overlay-tip {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.overlay-tip.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 20rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(16px);
+}
+
+.overlay-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}

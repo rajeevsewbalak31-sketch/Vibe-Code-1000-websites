@@ -24,12 +24,21 @@ The goal is not to hand-build 1000 pages. The goal is to build a **machine** tha
 - Hub gallery, PayPal on every site
 - Free deploy via Vercel
 
-### Phase 2 — Automate to 100 sites ← **you are here**
+### Phase 2 — Automate to 100 sites ✅
+
+### Phase 2b — Vibe-coded games (#101–200) ← **you are here**
 
 - Catalog-driven registry (`scripts/sites.json`)
 - `node scripts/engine.mjs all --from=23 --to=100`
 - Hub auto-syncs from disk + manifest
 - Reuse 20 logic templates with unique branding (name, colors, copy)
+
+### Phase 2b — Games batch (#101–200)
+
+- **#101 EggBalance** — Rajeev's egg carton physics game (hand-crafted)
+- 9 playable templates × 10 variants: stack, catch, snake, breakout, memory, reaction, flappy, whack, 2048-style merge
+- `npm run engine:games:all` — expand catalog, generate, sync hub, sitemap
+- Hub category **Games** for all `#101+`
 
 ### Phase 3 — Launch the gallery ✅
 

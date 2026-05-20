@@ -96,13 +96,15 @@ for (const url of [
 }
 
 {
-  const r = await check(`${HUB}/_shared/tool.css`);
-  if (r.ok) pass(`${r.status} /_shared/tool.css`);
-  else fail(`/_shared/tool.css → ${r.status}`);
+  for (const asset of ["/_shared/tool.css", "/_shared/game.css"]) {
+    const r = await check(`${HUB}${asset}`);
+    if (r.ok) pass(`${r.status} ${asset}`);
+    else fail(`${asset} → ${r.status}`);
+  }
 }
 
 // Sample site assets
-const sample = ["002-random-quote", "003-coin-flip", "050-pulsebox", "100-bolthub"];
+const sample = ["101-egg-balance", "102-eggstack", "150-levelquest", "200-mistquest"];
 for (const f of sample) {
   for (const file of ["style.css", "script.js"]) {
     const r = await check(`${HUB}/${f}/${file}`);

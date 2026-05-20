@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoinBalance | Vibe Code 1000</title>
+  <meta name="description" content="Free CoinBalance tool — Flip cards — find matching pairs in fewest moves Built with Vibe Code 1000." />
+  <meta name="keywords" content="CoinBalance, memory-flip, Vibe Code 1000, free web tool" />
+  <meta name="author" content="Rajeev Sewbalak" />
+  <link rel="canonical" href="https://websites-eosin-delta.vercel.app/151-coinbalance/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CoinBalance | Vibe Code 1000" />
+  <meta property="og:description" content="Free CoinBalance tool — Flip cards — find matching pairs in fewest moves Built with Vibe Code 1000." />
+  <meta property="og:url" content="https://websites-eosin-delta.vercel.app/151-coinbalance/" />
+  <meta property="og:site_name" content="Vibe Code 1000" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CoinBalance | Vibe Code 1000" />
+  <meta name="twitter:description" content="Free CoinBalance tool — Flip cards — find matching pairs in fewest moves Built with Vibe Code 1000." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/_shared/tool.css" />
+  <link rel="stylesheet" href="/_shared/game.css" />
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="grain"></span>
+  </div>
+  <main class="shell shell--game">
+    <nav class="site-bar" aria-label="Site navigation">
+      <a class="brand" href="https://websites-eosin-delta.vercel.app/">
+        <span class="brand-mark" aria-hidden="true">CO</span>
+        <span class="brand-text">CoinBalance</span>
+      </a>
+      <div class="site-bar-actions">
+        <a class="btn btn--ghost btn--sm" href="https://websites-eosin-delta.vercel.app/">← All games</a>
+      </div>
+    </nav>
+    <header class="tool-header tool-header--compact">
+      <p class="eyebrow">Game #151</p>
+      <h1 class="logo">CoinBalance</h1>
+      <p class="tagline">Flip cards — find matching pairs in fewest moves</p>
+    </header>
+    <section class="game-stage" aria-label="Game">
+<div class="game-panel">
+      <div class="game-hud"><span>Moves: <strong id="moves">0</strong></span><span>Pairs: <strong id="pairs">0</strong>/8</span></div>
+      <div id="grid" class="memory-grid"></div>
+      <div class="game-controls"><button type="button" id="btn-reset" class="btn btn--ghost">New game</button></div>
+    </div>
+    </section>
+    <footer class="tip-jar">
+      <p class="tip-upsell"><a class="tip-upsell-link" href="https://websites-eosin-delta.vercel.app/#get-a-site"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
+      <div class="tip-chips">
+        <a class="tip-chip tip-chip--buy" href="https://paypal.me/RajeevSewbalak/49" target="_blank" rel="noopener noreferrer">Order €49</a>
+        <a class="tip-chip" href="https://paypal.me/RajeevSewbalak/5" target="_blank" rel="noopener noreferrer">Tip €5</a>
+        <a class="tip-chip tip-chip--main" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>
+      </div>
+      <p class="hub-wrap"><a class="hub-link" href="https://websites-eosin-delta.vercel.app/#contact">Free quote</a> · <a class="hub-link" href="https://websites-eosin-delta.vercel.app/">All tools</a></p>
+    </footer>
+  </main>
+  <p id="toast" class="toast" role="status"></p>
+  <script src="script.js"></script>
+</body>
+</html>

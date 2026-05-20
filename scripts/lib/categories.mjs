@@ -18,6 +18,16 @@ const GAME_LOGICS = new Set([
   "rps",
   "lucky-number",
   "spin-wheel",
+  "egg-balance",
+  "stack-tower",
+  "catch-fall",
+  "snake-mini",
+  "paddle-break",
+  "memory-flip",
+  "reaction-tap",
+  "tap-fly",
+  "whack-pop",
+  "merge-numbers",
 ]);
 
 const UTILITY_LOGICS = new Set([
@@ -46,7 +56,8 @@ export function getCategory(site) {
 
   if (id === "001") return "landing-pages";
   if (id === "002") return "tools";
-  if (parseInt(id, 10) >= 23) return "experiments";
+  if (parseInt(id, 10) >= 101) return "games";
+  if (parseInt(id, 10) >= 23 && parseInt(id, 10) <= 100) return "experiments";
   if (GAME_LOGICS.has(logic)) return "games";
   if (UTILITY_LOGICS.has(logic)) return "utilities";
   if (TOOL_LOGICS.has(logic)) return "tools";

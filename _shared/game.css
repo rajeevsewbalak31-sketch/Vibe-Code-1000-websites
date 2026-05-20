@@ -1,0 +1,117 @@
+/* Shared game chrome */
+.shell--game {
+  max-width: 44rem;
+}
+
+.tool-header--compact {
+  margin-bottom: 1rem;
+}
+
+.tool-header--compact .logo {
+  font-size: clamp(1.65rem, 5vw, 2.25rem);
+}
+
+.game-stage {
+  width: 100%;
+}
+
+.game-panel {
+  padding: 1.25rem 1rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.game-hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.game-hud strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.game-canvas-wrap {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border);
+  touch-action: none;
+}
+
+.game-canvas-wrap canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.size-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.size-pick {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-ui);
+}
+
+.size-pick.is-active,
+.size-pick:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+}
+
+.status-pill--ok {
+  color: var(--accent-2);
+  border-color: color-mix(in srgb, var(--accent-2) 40%, var(--border));
+}
+
+.status-pill--warn {
+  color: #feca57;
+}
+
+.status-pill--fail {
+  color: #ff6b6b;
+  border-color: color-mix(in srgb, #ff6b6b 40%, var(--border));
+}

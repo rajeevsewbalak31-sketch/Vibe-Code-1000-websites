@@ -1,0 +1,4 @@
+:root{--accent:#a29bfe;--accent-2:#6c5ce7}
+.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;max-width:20rem;margin:0 auto}
+.mem-card{aspect-ratio:1;border-radius:.5rem;border:1px solid var(--border);background:rgba(0,0,0,.35);cursor:pointer;font-size:1.5rem;display:grid;place-items:center;transition:transform .2s}
+.mem-card.flipped,.mem-card.matched{background:color-mix(in srgb,var(--accent) 25%,transparent);transform:rotateY(0)}

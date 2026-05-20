@@ -1,9 +1,9 @@
 {
   "goal": 1000,
-  "phase2Target": 100,
+  "phase2Target": 200,
   "hubUrl": "https://websites-eosin-delta.vercel.app",
   "paypal": "https://paypal.me/RajeevSewbalak",
-  "spotlight": ["001", "002", "007", "009", "013"],
+  "spotlight": ["001", "002", "101", "007", "013"],
   "featured": [
     {
       "id": "001",

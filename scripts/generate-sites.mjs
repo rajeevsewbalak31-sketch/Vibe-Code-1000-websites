@@ -5,6 +5,7 @@ import { siteHeadMeta, siteTitle } from "./lib/seo.mjs";
 import { vercelAnalyticsHead } from "./lib/analytics.mjs";
 import { siteMonetizationFooter } from "./lib/monetization.mjs";
 import { hubLink } from "./lib/hub-links.mjs";
+import { siteScriptSrc, siteStyleHref } from "./lib/site-paths.mjs";
 import { GAME_LOGIC_SET } from "./lib/games-catalog.mjs";
 import { APP_LOGIC_SET } from "./lib/apps-catalog.mjs";
 import { BATCH2_LOGIC_SET } from "./lib/batch2-catalog.mjs";
@@ -490,7 +491,7 @@ function html(site) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/_shared/tool.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="${siteStyleHref(site.id, site.slug)}" />
 ${vercelAnalyticsHead()}
 </head>
 <body>
@@ -518,7 +519,7 @@ ${siteNav(site)}
 ${siteMonetizationFooter(PAYPAL)}
   </main>
   <p id="toast" class="toast" role="status"></p>
-  <script src="script.js"></script>
+  <script src="${siteScriptSrc(site.id, site.slug)}"></script>
 </body>
 </html>`;
 }

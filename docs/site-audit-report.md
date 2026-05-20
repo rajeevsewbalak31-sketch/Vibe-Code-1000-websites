@@ -1,7 +1,7 @@
 # Vibe Code 1000 — Site Audit Report
 
 Generated: 2026-05-20  
-Method: **static analysis** of all numbered site folders + live HTTP GET (local files + hub routes).  
+Method: **static analysis** of all numbered site folders (local files + hub routes).  
 Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 ## Executive summary
@@ -47,56 +47,56 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 | Rank | ID | Folder | Name | Score | Grade | Live | Flags | Top issues |
 |------|-----|--------|------|------:|-------|:----:|-------|------------|
-| 1 | 306 | `306-prismkit-306` | PrismKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 2 | 326 | `326-gridkit-326` | GridKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 3 | 346 | `346-apexkit-346` | ApexKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 4 | 366 | `366-synckit-366` | SyncKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 5 | 386 | `386-questkit-386` | QuestKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 6 | 406 | `406-prismkit-406` | PrismKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 7 | 426 | `426-gridkit-426` | GridKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 8 | 446 | `446-apexkit-446` | ApexKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 9 | 466 | `466-synckit-466` | SyncKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 10 | 486 | `486-questkit-486` | QuestKit | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 11 | 501 | `501-alphamint-501` | AlphaMint | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 12 | 518 | `518-quietpad-518` | QuietPad | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 13 | 521 | `521-primemint-521` | PrimeMint | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 14 | 526 | `526-photonnode-526` | PhotonNode | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 15 | 543 | `543-packetforge-543` | PacketForge | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 16 | 546 | `546-clientnode-546` | ClientNode | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 17 | 551 | `551-alphaden-551` | AlphaDen | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 18 | 568 | `568-quietzone-568` | QuietZone | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 19 | 571 | `571-primeden-571` | PrimeDen | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 20 | 576 | `576-photonhub-576` | PhotonHub | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 21 | 593 | `593-packetflow-593` | PacketFlow | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 22 | 596 | `596-clienthub-596` | ClientHub | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 23 | 601 | `601-alphamint-601` | AlphaMint | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 24 | 618 | `618-quietpad-618` | QuietPad | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 25 | 621 | `621-primemint-621` | PrimeMint | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 26 | 626 | `626-photonnode-626` | PhotonNode | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 27 | 643 | `643-packetforge-643` | PacketForge | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 28 | 646 | `646-clientnode-646` | ClientNode | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 29 | 651 | `651-alphaden-651` | AlphaDen | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 30 | 668 | `668-quietzone-668` | QuietZone | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 31 | 671 | `671-primeden-671` | PrimeDen | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 32 | 676 | `676-photonhub-676` | PhotonHub | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 33 | 693 | `693-packetflow-693` | PacketFlow | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 34 | 696 | `696-clienthub-696` | ClientHub | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 35 | 701 | `701-alphamint-701` | AlphaMint | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 36 | 718 | `718-quietpad-718` | QuietPad | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 37 | 721 | `721-primemint-721` | PrimeMint | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 38 | 726 | `726-photonnode-726` | PhotonNode | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 39 | 743 | `743-packetforge-743` | PacketForge | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 40 | 746 | `746-clientnode-746` | ClientNode | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 41 | 751 | `751-alphaden-751` | AlphaDen | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 42 | 768 | `768-quietzone-768` | QuietZone | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 43 | 771 | `771-primeden-771` | PrimeDen | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 44 | 776 | `776-photonhub-776` | PhotonHub | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 45 | 793 | `793-packetflow-793` | PacketFlow | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 46 | 796 | `796-clienthub-796` | ClientHub | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 47 | 801 | `801-alphamint-801` | AlphaMint | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 48 | 818 | `818-quietpad-818` | QuietPad | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 49 | 821 | `821-primemint-821` | PrimeMint | 94 | A | OK | thin-template | Single-control template (minimal UX) |
-| 50 | 826 | `826-photonnode-826` | PhotonNode | 94 | A | OK | thin-template | Single-control template (minimal UX) |
+| 1 | 306 | `306-prismkit-306` | PrismKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 2 | 326 | `326-gridkit-326` | GridKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 3 | 346 | `346-apexkit-346` | ApexKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 4 | 366 | `366-synckit-366` | SyncKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 5 | 386 | `386-questkit-386` | QuestKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 6 | 406 | `406-prismkit-406` | PrismKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 7 | 426 | `426-gridkit-426` | GridKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 8 | 446 | `446-apexkit-446` | ApexKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 9 | 466 | `466-synckit-466` | SyncKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 10 | 486 | `486-questkit-486` | QuestKit | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 11 | 501 | `501-alphamint-501` | AlphaMint | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 12 | 518 | `518-quietpad-518` | QuietPad | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 13 | 521 | `521-primemint-521` | PrimeMint | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 14 | 526 | `526-photonnode-526` | PhotonNode | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 15 | 543 | `543-packetforge-543` | PacketForge | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 16 | 546 | `546-clientnode-546` | ClientNode | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 17 | 551 | `551-alphaden-551` | AlphaDen | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 18 | 568 | `568-quietzone-568` | QuietZone | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 19 | 571 | `571-primeden-571` | PrimeDen | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 20 | 576 | `576-photonhub-576` | PhotonHub | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 21 | 593 | `593-packetflow-593` | PacketFlow | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 22 | 596 | `596-clienthub-596` | ClientHub | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 23 | 601 | `601-alphamint-601` | AlphaMint | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 24 | 618 | `618-quietpad-618` | QuietPad | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 25 | 621 | `621-primemint-621` | PrimeMint | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 26 | 626 | `626-photonnode-626` | PhotonNode | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 27 | 643 | `643-packetforge-643` | PacketForge | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 28 | 646 | `646-clientnode-646` | ClientNode | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 29 | 651 | `651-alphaden-651` | AlphaDen | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 30 | 668 | `668-quietzone-668` | QuietZone | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 31 | 671 | `671-primeden-671` | PrimeDen | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 32 | 676 | `676-photonhub-676` | PhotonHub | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 33 | 693 | `693-packetflow-693` | PacketFlow | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 34 | 696 | `696-clienthub-696` | ClientHub | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 35 | 701 | `701-alphamint-701` | AlphaMint | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 36 | 718 | `718-quietpad-718` | QuietPad | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 37 | 721 | `721-primemint-721` | PrimeMint | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 38 | 726 | `726-photonnode-726` | PhotonNode | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 39 | 743 | `743-packetforge-743` | PacketForge | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 40 | 746 | `746-clientnode-746` | ClientNode | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 41 | 751 | `751-alphaden-751` | AlphaDen | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 42 | 768 | `768-quietzone-768` | QuietZone | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 43 | 771 | `771-primeden-771` | PrimeDen | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 44 | 776 | `776-photonhub-776` | PhotonHub | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 45 | 793 | `793-packetflow-793` | PacketFlow | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 46 | 796 | `796-clienthub-796` | ClientHub | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 47 | 801 | `801-alphamint-801` | AlphaMint | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 48 | 818 | `818-quietpad-818` | QuietPad | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 49 | 821 | `821-primemint-821` | PrimeMint | 94 | A | — | thin-template | Single-control template (minimal UX) |
+| 50 | 826 | `826-photonnode-826` | PhotonNode | 94 | A | — | thin-template | Single-control template (minimal UX) |
 
 ## Detail: bottom 10
 
@@ -104,7 +104,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3807 B / 453 B
+- **HTML / JS size:** 4111 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/306-prismkit-306/
@@ -113,7 +113,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3796 B / 453 B
+- **HTML / JS size:** 4100 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/326-gridkit-326/
@@ -122,7 +122,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3796 B / 453 B
+- **HTML / JS size:** 4100 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/346-apexkit-346/
@@ -131,7 +131,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3796 B / 453 B
+- **HTML / JS size:** 4100 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/366-synckit-366/
@@ -140,7 +140,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3807 B / 453 B
+- **HTML / JS size:** 4111 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/386-questkit-386/
@@ -149,7 +149,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3807 B / 453 B
+- **HTML / JS size:** 4111 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/406-prismkit-406/
@@ -158,7 +158,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3796 B / 453 B
+- **HTML / JS size:** 4100 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/426-gridkit-426/
@@ -167,7 +167,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3796 B / 453 B
+- **HTML / JS size:** 4100 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/446-apexkit-446/
@@ -176,7 +176,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3796 B / 453 B
+- **HTML / JS size:** 4100 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/466-synckit-466/
@@ -185,7 +185,7 @@ Audited folders: **999** (excludes `001-buy-a-square` Next.js project).
 
 - **Score:** 94/100 (A)
 - **Logic:** hsl-picker
-- **HTML / JS size:** 3807 B / 453 B
+- **HTML / JS size:** 4111 B / 453 B
 - **Responsive:** yes · **Interactive:** yes
 - **Issues:** Single-control template (minimal UX)
 - **URL:** https://websites-eosin-delta.vercel.app/486-questkit-486/

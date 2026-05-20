@@ -2,6 +2,7 @@ import { siteHeadMeta, siteTitle } from "./seo.mjs";
 import { vercelAnalyticsHead } from "./analytics.mjs";
 import { siteMonetizationFooter } from "./monetization.mjs";
 import { hubLink } from "./hub-links.mjs";
+import { siteScriptSrc, siteStyleHref } from "./site-paths.mjs";
 
 export function gameNav(site) {
   const hub = hubLink();
@@ -29,7 +30,7 @@ export function gameHtml(site, bodyHtml, extraHead = "") {
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/_shared/tool.css" />
   <link rel="stylesheet" href="/_shared/game.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="${siteStyleHref(site.id, site.slug)}" />
   ${extraHead}
 ${vercelAnalyticsHead()}
 </head>
@@ -52,7 +53,7 @@ ${bodyHtml}
 ${siteMonetizationFooter("https://paypal.me/RajeevSewbalak")}
   </main>
   <p id="toast" class="toast" role="status"></p>
-  <script src="script.js"></script>
+  <script src="${siteScriptSrc(site.id, site.slug)}"></script>
 </body>
 </html>`;
 }

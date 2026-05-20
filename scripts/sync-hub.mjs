@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { getCategory, isFeaturedId } from "./lib/categories.mjs";
-import { HUB_URL, BRAND, hubJsonLd, escapeAttr } from "./lib/seo.mjs";
+import { HUB_URL, BRAND, HUB_TITLE, HUB_DESCRIPTION, hubJsonLd, escapeAttr } from "./lib/seo.mjs";
 import { hubMonetizationHtml } from "./lib/monetization.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -265,11 +265,30 @@ replaceBlock("<!-- MONETIZE_START -->", "<!-- MONETIZE_END -->", hubMonetization
 
 replaceBlock("<!-- PLAUSIBLE_START -->", "<!-- PLAUSIBLE_END -->", plausibleHead());
 
-const desc = `${count} free mini-apps — ${gameCount} games, ${labsCount} labs, tools & utilities. ${BRAND} milestone reached. Tip via PayPal.`;
+const desc = HUB_DESCRIPTION;
+index = index.replace(/<title>[^<]*<\/title>/, `<title>${escapeAttr(HUB_TITLE)}</title>`);
 index = index.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${escapeAttr(desc)}"`);
+index = index.replace(
+  /<meta property="og:title" content="[^"]*"/,
+  `<meta property="og:title" content="${escapeAttr(HUB_TITLE)}"`
+);
 index = index.replace(
   /<meta property="og:description" content="[^"]*"/,
   `<meta property="og:description" content="${escapeAttr(desc)}"`
+);
+index = index.replace(
+  /<meta property="og:site_name" content="[^"]*"/,
+  `<meta property="og:site_name" content="${escapeAttr(BRAND)}"`
+);
+if (!index.includes('property="og:site_name"')) {
+  index = index.replace(
+    /<meta property="og:url"/,
+    `<meta property="og:site_name" content="${escapeAttr(BRAND)}" />\n  <meta property="og:url"`
+  );
+}
+index = index.replace(
+  /<meta name="twitter:title" content="[^"]*"/,
+  `<meta name="twitter:title" content="${escapeAttr(HUB_TITLE)}"`
 );
 index = index.replace(
   /<meta name="twitter:description" content="[^"]*"/,
@@ -292,7 +311,7 @@ index = index.replace(
 if (index.includes('id="json-ld"')) {
   index = index.replace(
     /<script type="application\/ld\+json" id="json-ld">[\s\S]*?<\/script>/,
-    `<script type="application/ld+json" id="json-ld">${hubJsonLd(count, gameCount)}</script>`
+    `<script type="application/ld+json" id="json-ld">${hubJsonLd(count, gameCount, labsCount)}</script>`
   );
 }
 

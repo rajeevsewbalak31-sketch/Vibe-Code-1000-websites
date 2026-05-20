@@ -12,25 +12,35 @@ const manifest = JSON.parse(readFileSync(join(__dirname, "manifest.json"), "utf8
 const sites = JSON.parse(readFileSync(join(__dirname, "sites.json"), "utf8"));
 const today = new Date().toISOString().slice(0, 10);
 
-const urls = [{ loc: `${HUB_URL}/`, priority: "1.0" }];
+function toAbsoluteLoc(href) {
+  if (!href) return null;
+  if (href.startsWith("http://") || href.startsWith("https://")) {
+    return href.endsWith("/") ? href : `${href}/`;
+  }
+  const path = href.replace(/^\.\//, "").replace(/^\//, "");
+  return `${HUB_URL}/${path}${path.endsWith("/") ? "" : "/"}`;
+}
+
+const seen = new Set();
+const urls = [];
+
+function addUrl(loc, priority) {
+  if (!loc || seen.has(loc)) return;
+  seen.add(loc);
+  urls.push({ loc, priority });
+}
+
+addUrl(`${HUB_URL}/`, "1.0");
 
 for (const f of manifest.featured || []) {
-  urls.push({ loc: f.href.endsWith("/") ? f.href : `${f.href}/`, priority: "0.9" });
+  const loc = toAbsoluteLoc(f.href);
+  if (loc) addUrl(loc, "0.9");
 }
 
 for (const s of sites) {
   const dir = join(ROOT, `${s.id}-${s.slug}`);
   if (!existsSync(dir)) continue;
-  urls.push({
-    loc: `${HUB_URL}/${s.id}-${s.slug}/`,
-    priority: parseInt(s.id, 10) <= 22 ? "0.8" : "0.6",
-  });
-}
-
-// Quotely external — already in featured
-if (!urls.some((u) => u.loc.includes("quotely"))) {
-  const q = manifest.featured?.find((f) => f.id === "002");
-  if (q) urls.push({ loc: q.href, priority: "0.9" });
+  addUrl(`${HUB_URL}/${s.id}-${s.slug}/`, parseInt(s.id, 10) <= 22 ? "0.8" : "0.6");
 }
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>

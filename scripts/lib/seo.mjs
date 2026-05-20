@@ -2,7 +2,9 @@
 
 export const BRAND = "Vibe Code 1000";
 export const HUB_URL = "https://websites-eosin-delta.vercel.app";
-export const HUB_TITLE = `${BRAND} — Hub`;
+export const HUB_TITLE = `${BRAND} — 1000 Free Mini Apps & Games`;
+export const HUB_DESCRIPTION =
+  "Browse 1000 free browser mini-apps: 100 games, 500 labs, tools, and utilities. Play EggBalance, spin up randomizers, and explore the Vibe Code 1000 gallery.";
 export const GITHUB_URL =
   "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites";
 
@@ -46,15 +48,52 @@ export function siteHeadMeta(site) {
   <meta name="twitter:description" content="${escapeAttr(desc)}" />`;
 }
 
-export function hubJsonLd(siteCount, gameCount = 0) {
-  const gamesNote = gameCount ? `, including ${gameCount} vibe-coded games` : "";
+export function hubJsonLd(siteCount, gameCount = 0, labsCount = 0) {
+  const desc = `${siteCount} free mini web apps in one gallery${gameCount ? `, including ${gameCount} games` : ""}${labsCount ? ` and ${labsCount} micro-labs` : ""}.`;
   return JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: BRAND,
-    alternateName: "1000 Websites Challenge",
-    url: HUB_URL,
-    description: `${siteCount} free mini web apps${gamesNote} — built by a site generation engine.`,
-    author: { "@type": "Person", name: "Rajeev Sewbalak" },
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${HUB_URL}/#website`,
+        name: BRAND,
+        alternateName: "1000 Websites Challenge",
+        url: HUB_URL,
+        description: desc,
+        inLanguage: "en",
+        publisher: { "@type": "Person", name: "Rajeev Sewbalak" },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${HUB_URL}/?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${HUB_URL}/#collection`,
+        name: BRAND,
+        url: HUB_URL,
+        description: desc,
+        isPartOf: { "@id": `${HUB_URL}/#website` },
+        about: {
+          "@type": "CreativeWorkSeries",
+          name: "Vibe Code 1000 mini-apps",
+          numberOfItems: siteCount,
+        },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${HUB_URL}/#sitelist`,
+        name: `${BRAND} directory`,
+        numberOfItems: siteCount,
+        itemListOrder: "https://schema.org/ItemListOrderAscending",
+        itemListElement: {
+          "@type": "ListItem",
+          position: 1,
+          name: "Site gallery",
+          url: `${HUB_URL}/#site-grid`,
+        },
+      },
+    ],
   });
 }

@@ -1,5 +1,14 @@
 [
   {
+    "id": "002",
+    "slug": "daily-ai-tools",
+    "name": "Daily AI Tools",
+    "tagline": "Ten curated AI apps for writing, code, images, and search.",
+    "accent": "#818cf8",
+    "accent2": "#22d3ee",
+    "logic": "ai-tools-landing"
+  },
+  {
     "id": "003",
     "slug": "coin-flip",
     "name": "FlipCoin",

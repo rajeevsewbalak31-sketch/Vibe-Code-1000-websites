@@ -21,13 +21,13 @@
     },
     {
       "id": "002",
-      "slug": "random-quote",
-      "name": "Quotely",
-      "tagline": "Random quotes — copy, share, get inspired.",
-      "href": "./002-random-quote/",
+      "slug": "daily-ai-tools",
+      "name": "Daily AI Tools",
+      "tagline": "Ten curated AI apps for writing, code, images, and search.",
+      "href": "./002-daily-ai-tools/",
       "live": true,
       "category": "tools",
-      "search": "quotely quotes random wisdom"
+      "search": "daily ai tools chatgpt claude copilot landing"
     },
     {
       "id": "101",

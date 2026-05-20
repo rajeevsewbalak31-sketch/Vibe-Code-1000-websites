@@ -29,7 +29,7 @@ Open the **[live hub](https://websites-eosin-delta.vercel.app)** to search, filt
 | Site | URL |
 |------|-----|
 | Buy a Square | [001-buy-a-square.vercel.app](https://001-buy-a-square.vercel.app) |
-| Quotely | [quotely.vercel.app](https://quotely.vercel.app) |
+| Daily AI Tools | [/002-daily-ai-tools/](https://websites-eosin-delta.vercel.app/002-daily-ai-tools/) |
 | **EggBalance** (physics egg carton game) | [/101-egg-balance/](https://websites-eosin-delta.vercel.app/101-egg-balance/) |
 | KeyForge, RPS Arena | [Browse featured on hub](https://websites-eosin-delta.vercel.app) |
 

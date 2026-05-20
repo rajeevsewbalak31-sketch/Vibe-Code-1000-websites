@@ -1,6 +1,6 @@
 const TOTAL = 1000;
 const COMPLETED = 1000;
-const POPULAR_IDS = ["001","002","101","007","013"];
+const POPULAR_IDS = ["001","002","003","101","007","013"];
 
 const fill = document.getElementById("progress-fill");
 if (fill) {

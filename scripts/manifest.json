@@ -7,7 +7,7 @@
   },
   "hubUrl": "https://websites-eosin-delta.vercel.app",
   "paypal": "https://paypal.me/RajeevSewbalak",
-  "spotlight": ["001", "002", "101", "007", "013"],
+  "spotlight": ["001", "002", "003", "101", "007", "013"],
   "featured": [
     {
       "id": "001",
@@ -28,6 +28,16 @@
       "live": true,
       "category": "tools",
       "search": "daily ai tools chatgpt claude copilot landing"
+    },
+    {
+      "id": "003",
+      "slug": "motivation-generator",
+      "name": "Motivation Generator",
+      "tagline": "One tap for a fresh motivational quote",
+      "href": "./003-motivation-generator/",
+      "live": true,
+      "category": "tools",
+      "search": "motivation generator quotes inspirational"
     },
     {
       "id": "101",

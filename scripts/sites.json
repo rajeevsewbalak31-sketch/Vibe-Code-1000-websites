@@ -10,12 +10,12 @@
   },
   {
     "id": "003",
-    "slug": "coin-flip",
-    "name": "FlipCoin",
-    "tagline": "Heads or tails — fate in one tap",
-    "accent": "#f4d03f",
-    "accent2": "#f9e79f",
-    "logic": "coin-flip"
+    "slug": "motivation-generator",
+    "name": "Motivation Generator",
+    "tagline": "One tap for a fresh motivational quote",
+    "accent": "#f59e0b",
+    "accent2": "#fb7185",
+    "logic": "motivation-generator"
   },
   {
     "id": "004",

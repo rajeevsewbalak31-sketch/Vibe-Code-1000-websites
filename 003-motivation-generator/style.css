@@ -1,0 +1,230 @@
+:root {
+  --accent: #f59e0b;
+  --accent-2: #fb7185;
+}
+
+.app {
+  max-width: 40rem;
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+
+.page-head {
+  text-align: center;
+  padding: 0.5rem 0 1.75rem;
+}
+
+.page-kicker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5vw, 2.35rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.page-lead {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 26rem;
+  margin: 0 auto;
+}
+
+.quote-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0 2rem;
+  min-height: 14rem;
+}
+
+.quote-card {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: clamp(2rem, 6vw, 3rem) clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center;
+  border-radius: calc(var(--radius) + 0.5rem);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--accent) 14%, var(--bg-card)),
+    color-mix(in srgb, var(--accent-2) 10%, var(--bg-card))
+  );
+  box-shadow:
+    0 24px 60px color-mix(in srgb, var(--accent) 12%, transparent),
+    inset 0 1px 0 color-mix(in srgb, #fff 8%, transparent);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.quote-card.is-changing {
+  opacity: 0;
+  transform: scale(0.98) translateY(6px);
+}
+
+.quote-mark {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.55;
+  margin-bottom: -0.5rem;
+}
+
+.quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 4.5vw, 1.65rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.quote-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent-2);
+  text-transform: uppercase;
+}
+
+.quote-author::before {
+  content: "— ";
+  opacity: 0.7;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-generate {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min(100%, 16rem);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0a0d12;
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent-2) 60%, var(--accent)));
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 45%, transparent);
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.4, 0.64, 1),
+    box-shadow 0.25s ease;
+}
+
+.btn-generate:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.btn-generate:active,
+.btn-generate.is-pressed {
+  transform: translateY(1px) scale(0.96);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.btn-generate:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 4px;
+}
+
+.btn-generate__shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.btn-generate:hover .btn-generate__shine,
+.btn-generate.is-pressed .btn-generate__shine {
+  transform: translateX(120%);
+}
+
+.btn-generate__label {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-copy {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.btn-copy:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+.hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 1.25rem;
+}
+
+.site-foot {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.site-foot a {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+.site-foot a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 380px) {
+  .quote-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .btn-generate {
+    width: 100%;
+  }
+}

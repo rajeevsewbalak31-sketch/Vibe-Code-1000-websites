@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily AI Tools | Vibe Code 1000</title>
-  <meta name="description" content="Daily AI Tools — ten curated AI apps for writing, coding, images, search, and voice. Explore the list and level up your workflow." />
+  <meta name="description" content="Daily AI Tools curates 10 essential AI apps for chat, code, images, search, and voice — filter by category and launch your daily stack in one click." />
   <meta name="keywords" content="Daily AI Tools, AI tools, ChatGPT, Claude, Vibe Code 1000" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://websites-eosin-delta.vercel.app/002-daily-ai-tools/" />
@@ -62,8 +62,13 @@
       <div class="tools-head">
         <h2 id="tools-heading">Today’s toolkit</h2>
         <p>Tap a card to open the tool in a new tab. Bookmark this page as your daily launcher.</p>
+        <label class="search-wrap">Search tools
+          <input type="search" id="tool-search" class="search-input" placeholder="e.g. code, image, chat…" autocomplete="off" />
+        </label>
+        <div class="filter-row" id="filters" role="group" aria-label="Filter by category"></div>
       </div>
       <ul class="tool-grid" id="tool-grid"></ul>
+      <p class="no-results" id="no-results" hidden>No tools match — try another filter.</p>
     </section>
 
     <section class="cta-band" aria-labelledby="cta-band-heading">

@@ -111,10 +111,27 @@
 
 .actions {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
+
+.fav-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; text-align: center; }
+.fav-list { list-style: none; max-width: 24rem; margin: 0 auto; }
+.fav-item {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.35rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--muted);
+  cursor: pointer;
+}
+.fav-item:hover { color: var(--text); border-color: var(--accent); }
 
 .btn-generate {
   position: relative;

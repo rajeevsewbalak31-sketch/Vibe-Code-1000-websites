@@ -15,14 +15,14 @@ const QUOTES = [
   { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
   { text: "You don't have to be great to start, but you have to start to be great.", author: "Zig Ziglar" },
   { text: "Opportunities don't happen. You create them.", author: "Chris Grosser" },
-  { text: "Limit your always and your nevers.", author: "Amy Poehler" },
   { text: "If you want to lift yourself up, lift up someone else.", author: "Booker T. Washington" },
   { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
   { text: "Do one thing every day that scares you.", author: "Eleanor Roosevelt" },
-  { text: "Your limitation—it's only your imagination.", author: "Unknown" },
   { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
   { text: "Great things never come from comfort zones.", author: "Unknown" },
   { text: "Wake up with determination. Go to bed with satisfaction.", author: "Unknown" },
+  { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
+  { text: "Small steps every day become big journeys.", author: "Unknown" },
 ];
 
 const card = document.getElementById("quote-card");
@@ -30,9 +30,50 @@ const quoteText = document.getElementById("quote-text");
 const quoteAuthor = document.getElementById("quote-author");
 const btn = document.getElementById("btn-generate");
 const btnCopy = document.getElementById("btn-copy");
+const btnFav = document.getElementById("btn-fav");
+const btnShare = document.getElementById("btn-share");
 const hint = document.getElementById("hint");
+const favSection = document.getElementById("favorites");
+const favList = document.getElementById("fav-list");
 
 let lastIndex = -1;
+let current = null;
+const FAV_KEY = "motivation-favs";
+
+function getFavs() {
+  try {
+    return JSON.parse(localStorage.getItem(FAV_KEY) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function saveFavs(favs) {
+  localStorage.setItem(FAV_KEY, JSON.stringify(favs));
+  renderFavs();
+}
+
+function renderFavs() {
+  const favs = getFavs();
+  if (!favs.length) {
+    favSection.hidden = true;
+    return;
+  }
+  favSection.hidden = false;
+  favList.innerHTML = favs
+    .map(
+      (f, i) =>
+        `<li><button type="button" data-i="${i}" class="fav-item">"${f.text}" — ${f.author}</button></li>`
+    )
+    .join("");
+  favList.querySelectorAll(".fav-item").forEach((b) => {
+    b.addEventListener("click", () => {
+      const f = favs[parseInt(b.dataset.i, 10)];
+      setQuote(f, true);
+      current = f;
+    });
+  });
+}
 
 function pickQuote() {
   let idx;
@@ -43,21 +84,24 @@ function pickQuote() {
   return QUOTES[idx];
 }
 
-function setQuote({ text, author }, animate = true) {
+function setQuote(q, animate = true) {
+  current = q;
+  const showExtras = () => {
+    btnCopy.hidden = btnFav.hidden = btnShare.hidden = false;
+    hint.textContent = `${QUOTES.length} quotes · ${getFavs().length} saved`;
+  };
   if (!animate) {
-    quoteText.textContent = text;
-    quoteAuthor.textContent = author;
-    btnCopy.hidden = false;
+    quoteText.textContent = q.text;
+    quoteAuthor.textContent = q.author;
+    showExtras();
     return;
   }
-
   card.classList.add("is-changing");
   setTimeout(() => {
-    quoteText.textContent = text;
-    quoteAuthor.textContent = author;
+    quoteText.textContent = q.text;
+    quoteAuthor.textContent = q.author;
     card.classList.remove("is-changing");
-    btnCopy.hidden = false;
-    hint.textContent = `${QUOTES.length} unique quotes · tap again anytime`;
+    showExtras();
   }, 280);
 }
 
@@ -70,14 +114,47 @@ function generate() {
 btn.addEventListener("click", generate);
 
 btnCopy.addEventListener("click", async () => {
-  const line = `"${quoteText.textContent}" — ${quoteAuthor.textContent}`;
+  if (!current) return;
+  const line = `"${current.text}" — ${current.author}`;
   try {
     await navigator.clipboard.writeText(line);
     btnCopy.textContent = "Copied!";
-    setTimeout(() => {
-      btnCopy.textContent = "Copy quote";
-    }, 1600);
+    setTimeout(() => (btnCopy.textContent = "Copy"), 1500);
   } catch {
-    btnCopy.textContent = "Copy failed";
+    btnCopy.textContent = "Failed";
   }
 });
+
+btnFav.addEventListener("click", () => {
+  if (!current) return;
+  const favs = getFavs();
+  const key = current.text + current.author;
+  if (favs.some((f) => f.text + f.author === key)) {
+    showToast("Already saved");
+    return;
+  }
+  favs.unshift(current);
+  saveFavs(favs.slice(0, 8));
+  btnFav.textContent = "★ Saved";
+});
+
+btnShare.addEventListener("click", async () => {
+  if (!current) return;
+  const payload = { title: "Motivation", text: `"${current.text}" — ${current.author}` };
+  try {
+    if (navigator.share) await navigator.share(payload);
+    else await navigator.clipboard.writeText(payload.text);
+  } catch {
+    /* cancelled */
+  }
+});
+
+function showToast(msg) {
+  const t = document.createElement("p");
+  t.className = "toast is-visible";
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2000);
+}
+
+renderFavs();

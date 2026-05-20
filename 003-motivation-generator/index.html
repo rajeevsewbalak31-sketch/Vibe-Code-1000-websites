@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Motivation Generator | Vibe Code 1000</title>
-  <meta name="description" content="Motivation Generator — one tap for a fresh motivational quote. Free, instant, mobile-friendly." />
+  <meta name="description" content="Motivation Generator delivers curated inspirational quotes on demand — copy, favorite, and share. Free instant boost for work, study, and life." />
   <meta name="keywords" content="Motivation Generator, inspirational quotes, Vibe Code 1000" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://websites-eosin-delta.vercel.app/003-motivation-generator/" />
@@ -59,10 +59,16 @@
         <span class="btn-generate__shine" aria-hidden="true"></span>
         <span class="btn-generate__label">Generate Motivation</span>
       </button>
-      <button type="button" class="btn-copy" id="btn-copy" hidden>Copy quote</button>
+      <button type="button" class="btn-copy" id="btn-copy" hidden>Copy</button>
+      <button type="button" class="btn-copy" id="btn-fav" hidden>★ Save</button>
+      <button type="button" class="btn-copy" id="btn-share" hidden>Share</button>
     </div>
 
-    <p class="hint" id="hint">20+ unique quotes · new one every tap</p>
+    <p class="hint" id="hint">24 quotes · tap for a new one</p>
+    <section class="favorites" id="favorites" hidden>
+      <h2 class="fav-title">Saved quotes</h2>
+      <ul id="fav-list" class="fav-list"></ul>
+    </section>
 
     <footer class="site-foot">
       <p>Part of <a href="https://websites-eosin-delta.vercel.app/">Vibe Code 1000</a></p>

@@ -3,7 +3,7 @@
     "id": "002",
     "slug": "daily-ai-tools",
     "name": "Daily AI Tools",
-    "tagline": "Ten curated AI apps for writing, code, images, and search.",
+    "tagline": "Curated AI stack with search and category filters",
     "accent": "#818cf8",
     "accent2": "#22d3ee",
     "logic": "ai-tools-landing"
@@ -12,7 +12,7 @@
     "id": "003",
     "slug": "motivation-generator",
     "name": "Motivation Generator",
-    "tagline": "One tap for a fresh motivational quote",
+    "tagline": "Inspirational quotes — save, copy, and share",
     "accent": "#f59e0b",
     "accent2": "#fb7185",
     "logic": "motivation-generator"
@@ -48,7 +48,7 @@
     "id": "007",
     "slug": "password-gen",
     "name": "KeyForge",
-    "tagline": "Strong passwords in one click",
+    "tagline": "Secure passwords with strength meter and passphrase mode",
     "accent": "#3498db",
     "accent2": "#85c1e9",
     "logic": "password-gen"
@@ -66,7 +66,7 @@
     "id": "009",
     "slug": "pomodoro",
     "name": "FocusTomato",
-    "tagline": "25 minutes of deep focus",
+    "tagline": "Pomodoro timer with breaks and session tracking",
     "accent": "#c0392b",
     "accent2": "#f1948a",
     "logic": "pomodoro"
@@ -102,7 +102,7 @@
     "id": "013",
     "slug": "rps",
     "name": "RPS Arena",
-    "tagline": "Rock, paper, scissors — you vs CPU",
+    "tagline": "RPS vs CPU with scoreboard and win streaks",
     "accent": "#16a085",
     "accent2": "#73c6b6",
     "logic": "rps"
@@ -912,7 +912,7 @@
     "id": "102",
     "slug": "eggstack",
     "name": "EggStack",
-    "tagline": "Stack blocks — keep the tower centered or it falls",
+    "tagline": "Stack blocks — beat your best height",
     "accent": "#f5e6c8",
     "accent2": "#e8a87c",
     "logic": "stack-tower"
@@ -2829,7 +2829,7 @@
     "id": "315",
     "slug": "plotview-315",
     "name": "PlotView",
-    "tagline": "Text to QR code — download PNG",
+    "tagline": "QR codes from any text — preview and download PNG",
     "accent": "#ffeaa7",
     "accent2": "#fdcb6e",
     "logic": "qr-maker"
@@ -4620,7 +4620,7 @@
     "id": "514",
     "slug": "cinderlab-514",
     "name": "CinderLab",
-    "tagline": "Daily habit checkboxes — saved locally",
+    "tagline": "Daily habits with streaks — saved locally",
     "accent": "#0984e3",
     "accent2": "#74b9ff",
     "logic": "habit-tracker"

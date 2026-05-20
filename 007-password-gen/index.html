@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KeyForge | Vibe Code 1000</title>
-  <meta name="description" content="Free KeyForge tool — Strong passwords in one click Built with Vibe Code 1000." />
-  <meta name="keywords" content="KeyForge, password-gen, Vibe Code 1000, free web tool" />
+  <title>KeyForge — Secure Password Generator | Vibe Code 1000</title>
+  <meta name="description" content="KeyForge generates cryptographically strong passwords with a live strength meter, custom length, and one-click copy. Free, private, runs in your browser." />
+  <meta name="keywords" content="password generator, strong password, KeyForge, secure passwords, Vibe Code 1000" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://websites-eosin-delta.vercel.app/007-password-gen/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="KeyForge | Vibe Code 1000" />
-  <meta property="og:description" content="Free KeyForge tool — Strong passwords in one click Built with Vibe Code 1000." />
+  <meta property="og:title" content="KeyForge — Secure Password Generator" />
+  <meta property="og:description" content="Strong random passwords with strength meter and copy — nothing leaves your browser." />
   <meta property="og:url" content="https://websites-eosin-delta.vercel.app/007-password-gen/" />
   <meta property="og:site_name" content="Vibe Code 1000" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="KeyForge | Vibe Code 1000" />
-  <meta name="twitter:description" content="Free KeyForge tool — Strong passwords in one click Built with Vibe Code 1000." />
+  <meta name="twitter:title" content="KeyForge Password Generator" />
+  <meta name="twitter:description" content="Generate secure passwords instantly with a live strength meter." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/_shared/tool.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -28,38 +28,47 @@
     <span class="orb orb--2"></span>
     <span class="grain"></span>
   </div>
-  <main class="shell">
+  <main class="shell upgrade">
     <nav class="site-bar" aria-label="Site navigation">
       <a class="brand" href="https://websites-eosin-delta.vercel.app/">
-        <span class="brand-mark" aria-hidden="true">KE</span>
+        <span class="brand-mark" aria-hidden="true">KF</span>
         <span class="brand-text">KeyForge</span>
       </a>
       <div class="site-bar-actions">
-        <a class="btn btn--ghost btn--sm" href="https://websites-eosin-delta.vercel.app/">← All tools</a>
+        <a class="btn btn--ghost btn--sm" href="https://websites-eosin-delta.vercel.app/">← Hub</a>
       </div>
     </nav>
     <header class="tool-header">
-      <p class="eyebrow">Website #007</p>
+      <p class="eyebrow">Website #007 · Privacy-first</p>
       <h1 class="logo">KeyForge</h1>
-      <p class="tagline">Strong passwords in one click</p>
+      <p class="tagline">Cryptographically strong passwords — generated locally in your browser, never uploaded.</p>
     </header>
-    <article class="card">
-      
-      <label class="field-label">Length <input id="pwd-len" type="number" min="8" max="64" value="16" class="input" /></label>
-      <p id="display" class="display">—</p>
+    <article class="card forge-card">
+      <div class="pwd-display-wrap">
+        <output id="display" class="pwd-display" for="pwd-len">Tap generate</output>
+        <button type="button" id="btn-copy" class="btn-icon" title="Copy password" aria-label="Copy password">⎘</button>
+      </div>
+      <div class="strength" aria-label="Password strength">
+        <div class="strength-bar"><span id="strength-fill"></span></div>
+        <span id="strength-label" class="strength-label">—</span>
+      </div>
+      <label class="field-label">Length <span id="len-val">16</span>
+        <input id="pwd-len" type="range" min="8" max="64" value="16" class="range" />
+      </label>
+      <div class="toggle-grid" role="group" aria-label="Character sets">
+        <label class="toggle"><input type="checkbox" id="opt-lower" checked /> lowercase</label>
+        <label class="toggle"><input type="checkbox" id="opt-upper" checked /> uppercase</label>
+        <label class="toggle"><input type="checkbox" id="opt-num" checked /> numbers</label>
+        <label class="toggle"><input type="checkbox" id="opt-sym" checked /> symbols</label>
+      </div>
       <div class="actions">
-        <button type="button" id="btn-action" class="btn btn--primary">Generate</button>
-        <button type="button" id="btn-copy" class="btn btn--ghost">Copy</button>
+        <button type="button" id="btn-action" class="btn btn--primary">Generate password</button>
+        <button type="button" id="btn-passphrase" class="btn btn--ghost">Passphrase mode</button>
       </div>
     </article>
     <footer class="tip-jar">
-      <p class="tip-upsell"><a class="tip-upsell-link" href="https://websites-eosin-delta.vercel.app/#get-a-site"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
-      <div class="tip-chips">
-        <a class="tip-chip tip-chip--buy" href="https://paypal.me/RajeevSewbalak/49" target="_blank" rel="noopener noreferrer">Order €49</a>
-        <a class="tip-chip" href="https://paypal.me/RajeevSewbalak/5" target="_blank" rel="noopener noreferrer">Tip €5</a>
-        <a class="tip-chip tip-chip--main" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>
-      </div>
-      <p class="hub-wrap"><a class="hub-link" href="https://websites-eosin-delta.vercel.app/#contact">Free quote</a> · <a class="hub-link" href="https://websites-eosin-delta.vercel.app/">All tools</a></p>
+      <p class="tip-upsell"><a class="tip-upsell-link" href="https://websites-eosin-delta.vercel.app/#get-a-site"><strong>Get your own website — from €49</strong></a></p>
+      <p class="hub-wrap"><a class="hub-link" href="https://websites-eosin-delta.vercel.app/">All 1000 tools</a></p>
     </footer>
   </main>
   <p id="toast" class="toast" role="status"></p>

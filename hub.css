@@ -277,8 +277,9 @@ body {
 .progress-fill {
   height: 100%;
   width: 2.2%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, #818cf8, var(--accent-2));
   border-radius: 999px;
+  transition: width 0.4s ease;
 }
 
 .hero-cta {
@@ -287,6 +288,166 @@ body {
   justify-content: center;
   gap: 0.75rem;
   margin-top: 0.5rem;
+}
+
+.progress-wrap--hero {
+  max-width: 28rem;
+}
+
+.progress-note {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.progress-bar[style*="--progress-pct"] .progress-fill,
+.progress-fill {
+  width: var(--progress-pct, 2.2%);
+}
+
+/* About */
+.about-panel {
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.35rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+}
+
+.about-text {
+  font-size: 1rem;
+  max-width: 40rem;
+  margin: 0 auto 0.65rem;
+  text-align: center;
+}
+
+.about-text--muted {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+/* Newsletter */
+.newsletter-panel {
+  margin-bottom: 2rem;
+}
+
+.newsletter-inner {
+  padding: 1.5rem 1.35rem;
+  border-radius: var(--radius);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 30%, var(--border));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, #6366f1 14%, transparent),
+    color-mix(in srgb, var(--accent-2) 10%, transparent)
+  );
+  text-align: center;
+}
+
+.newsletter-form {
+  max-width: 26rem;
+  margin: 1rem auto 0;
+  text-align: left;
+}
+
+.newsletter-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.newsletter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.newsletter-input {
+  flex: 1 1 12rem;
+  min-width: 0;
+  padding: 0.65rem 0.85rem;
+  font: inherit;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+.newsletter-input:focus {
+  outline: 2px solid color-mix(in srgb, var(--accent-2) 50%, transparent);
+  outline-offset: 2px;
+}
+
+.newsletter-fine {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  min-height: 1.25rem;
+}
+
+.newsletter-fine.is-success {
+  color: var(--accent-2);
+}
+
+/* Primary CTA */
+.btn--primary {
+  color: var(--bg);
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+  border-color: transparent;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+.btn--primary:hover {
+  opacity: 0.95;
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.45);
+}
+
+/* Site footer */
+.site-footer {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.footer-social-link:hover {
+  border-color: color-mix(in srgb, var(--accent-2) 45%, var(--border));
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
 }
 
 /* Featured strip */
@@ -960,6 +1121,9 @@ body {
   .lead-row { grid-template-columns: 1fr; }
   .top-actions { width: 100%; }
   .top-actions .btn--buy { flex: 1; justify-content: center; }
+  .newsletter-row { flex-direction: column; }
+  .newsletter-row .btn { width: 100%; justify-content: center; }
+  .hero-cta .btn { flex: 1 1 auto; min-width: 10rem; }
 }
 
 @media (max-width: 480px) {

@@ -1,10 +1,10 @@
 /** Shared SEO snippets for hub + generated sites. */
 
-export const BRAND = "Vibe Code 1000";
+export const BRAND = "VibeCode 1000";
 export const HUB_URL = "https://websites-eosin-delta.vercel.app";
-export const HUB_TITLE = `${BRAND} — 1000 Free Mini Apps & Games`;
+export const HUB_TITLE = `${BRAND} — 1000 AI-built websites`;
 export const HUB_DESCRIPTION =
-  "Browse 1000 free browser mini-apps: 100 games, 500 labs, tools, and utilities. Play EggBalance, spin up randomizers, and explore the Vibe Code 1000 gallery.";
+  "VibeCode 1000 — a public challenge to build 1000 AI-built websites. Follow the journey, explore the gallery, and see progress in real time.";
 export const GITHUB_URL =
   "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites";
 

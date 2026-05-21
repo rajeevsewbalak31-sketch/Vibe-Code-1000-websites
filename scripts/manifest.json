@@ -1,6 +1,22 @@
 {
   "goal": 1000,
   "phase2Target": 1000,
+  "branding": {
+    "heroTitle": "VibeCode 1000",
+    "heroSubtitle": "1000 AI-built websites. Built in public.",
+    "progressCurrent": 23,
+    "progressGoal": 1000,
+    "aboutBuiltBy": "Ui",
+    "aboutLocation": "the Netherlands",
+    "aboutChallenge": "Public challenge to build 1000 websites using AI.",
+    "newsletterHeading": "Follow the journey",
+    "newsletterLead": "Get occasional updates as new sites ship — no spam.",
+    "social": {
+      "x": "#",
+      "linkedin": "#",
+      "github": "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites"
+    }
+  },
   "hub": {
     "ogImage": "/og.svg",
     "plausibleDomain": "websites-eosin-delta.vercel.app",

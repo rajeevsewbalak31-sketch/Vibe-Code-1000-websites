@@ -1,10 +1,13 @@
 const TOTAL = 1000;
-const COMPLETED = 1000;
+const COMPLETED = 23;
 const POPULAR_IDS = ["001","002","003","101","007","013"];
 
 const fill = document.getElementById("progress-fill");
+const progressBar = document.querySelector(".progress-bar[role='progressbar']");
 if (fill) {
-  fill.style.width = `${(COMPLETED / TOTAL) * 100}%`;
+  const pct = TOTAL > 0 ? (COMPLETED / TOTAL) * 100 : 0;
+  fill.style.width = `${pct}%`;
+  if (progressBar) progressBar.style.setProperty("--progress-pct", `${pct}%`);
 }
 
 const search = document.getElementById("search");
@@ -137,6 +140,28 @@ if (location.hash === "#games") {
 
 const LEAD_ISSUE =
   "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=enhancement";
+
+document.getElementById("newsletter-form")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = e.target.querySelector("#newsletter-email")?.value?.trim();
+  const status = document.getElementById("newsletter-status");
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (status) status.textContent = "Please enter a valid email.";
+    return;
+  }
+  try {
+    const list = JSON.parse(localStorage.getItem("vc1000-newsletter") || "[]");
+    if (!list.includes(email)) list.push(email);
+    localStorage.setItem("vc1000-newsletter", JSON.stringify(list));
+  } catch {
+    /* ignore */
+  }
+  if (status) {
+    status.textContent = "You're on the list — thank you!";
+    status.classList.add("is-success");
+  }
+  e.target.reset();
+});
 
 document.getElementById("lead-form")?.addEventListener("submit", (e) => {
   e.preventDefault();

@@ -98,6 +98,11 @@ const creativeCount = allEntries.filter((e) => {
   return n >= 301 && n <= 500;
 }).length;
 const labsCount = allEntries.filter((e) => parseInt(e.id, 10) >= 501).length;
+const brand = manifest.branding || {};
+const PROGRESS_CURRENT = brand.progressCurrent ?? count;
+const PROGRESS_GOAL = brand.progressGoal ?? GOAL;
+const HERO_TITLE = brand.heroTitle || "VibeCode 1000";
+const HERO_SUBTITLE = brand.heroSubtitle || "1000 AI-built websites. Built in public.";
 const ogUrl = `${HUB_URL}${OG_IMAGE.startsWith("/") ? OG_IMAGE : `/${OG_IMAGE}`}`;
 const plausibleDomain = manifest.hub?.plausibleDomain || "";
 const vercelAnalyticsEnabled = manifest.hub?.vercelAnalytics !== false;
@@ -133,32 +138,90 @@ const filterButtons = [
   .join("\n");
 
 function heroHtml() {
-  return `    <section class="hero">
-      <p class="hero-eyebrow">${count >= GOAL ? "🎉 " : ""}${count} sites live · Milestone ${GOAL} reached · From €49</p>
-      <h1>1000 Websites Challenge</h1>
-      <p class="hero-lead">
-        <strong>${count} free mini-apps</strong> shipped — tools, games, apps, creative labs — built by a generation engine. <strong>Get your own in 24h.</strong>
-      </p>
-      <ul class="trust-bar trust-bar--hero" aria-label="Trust signals">
-        <li><span class="trust-num">${count}</span> sites</li>
-        <li><span class="trust-num">${gameCount}</span> games</li>
-        <li><span class="trust-num">${labsCount}</span> labs</li>
-      </ul>
-      <div class="progress-wrap">
+  const pct = Math.min(100, Math.round((PROGRESS_CURRENT / PROGRESS_GOAL) * 100));
+  return `    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero-eyebrow">Built in public · ${escapeAttr(brand.aboutLocation || "the Netherlands")}</p>
+      <h1 id="hero-title">${escapeAttr(HERO_TITLE)}</h1>
+      <p class="hero-lead">${escapeAttr(HERO_SUBTITLE)}</p>
+      <div class="progress-wrap progress-wrap--hero">
         <div class="progress-label">
-          <span>Progress</span>
-          <span><strong id="progress-count">${count}</strong> / ${GOAL}</span>
+          <span>Challenge progress</span>
+          <span>Current: <strong id="progress-count">${PROGRESS_CURRENT}</strong> / <span id="progress-goal">${PROGRESS_GOAL}</span></span>
         </div>
-        <div class="progress-bar" role="progressbar" aria-valuenow="${count}" aria-valuemin="0" aria-valuemax="${GOAL}" aria-label="Sites completed">
+        <div class="progress-bar" role="progressbar" aria-valuenow="${PROGRESS_CURRENT}" aria-valuemin="0" aria-valuemax="${PROGRESS_GOAL}" aria-label="Challenge progress" style="--progress-pct:${pct}%">
           <div class="progress-fill" id="progress-fill"></div>
         </div>
+        <p class="progress-note">${count} sites in the gallery · goal ${PROGRESS_GOAL}</p>
       </div>
       <div class="hero-cta">
-        <a class="btn btn--buy btn--lg" href="#get-a-site">Get your own website (€49)</a>
-        <a class="btn btn--ghost" href="./101-egg-balance/">Play EggBalance</a>
-        <a class="btn btn--ghost" href="#site-grid" data-filter-games>Browse games</a>
+        <a class="btn btn--primary btn--lg" href="#newsletter">Follow the journey</a>
+        <a class="btn btn--ghost" href="#site-grid">Browse the gallery</a>
+        <a class="btn btn--ghost" href="#about">About</a>
       </div>
     </section>`;
+}
+
+function aboutHtml() {
+  const who = brand.aboutBuiltBy || "Ui";
+  const loc = brand.aboutLocation || "the Netherlands";
+  const challenge = brand.aboutChallenge || "Public challenge to build 1000 websites using AI.";
+  return `    <section class="about-panel" id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="section-title">About</h2>
+      <p class="about-text">Built by <strong>${escapeAttr(who)}</strong> in ${escapeAttr(loc)}.</p>
+      <p class="about-text">${escapeAttr(challenge)}</p>
+      <p class="about-text about-text--muted">This hub tracks the challenge — each entry is a small site you can open, use, and share.</p>
+    </section>`;
+}
+
+function newsletterHtml() {
+  const heading = brand.newsletterHeading || "Follow the journey";
+  const lead = brand.newsletterLead || "Get updates as new sites ship.";
+  return `    <section class="newsletter-panel" id="newsletter" aria-labelledby="newsletter-heading">
+      <div class="newsletter-inner">
+        <h2 id="newsletter-heading" class="section-title">${escapeAttr(heading)}</h2>
+        <p class="section-lead">${escapeAttr(lead)}</p>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <label class="newsletter-label" for="newsletter-email">Email</label>
+          <div class="newsletter-row">
+            <input class="newsletter-input" id="newsletter-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
+            <button type="submit" class="btn btn--primary">Subscribe</button>
+          </div>
+          <p class="newsletter-fine" id="newsletter-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>`;
+}
+
+function footerHtml() {
+  const social = brand.social || {};
+  const x = social.x || "#";
+  const linkedin = social.linkedin || "#";
+  const github = social.github || "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites";
+  return `    <footer class="footer site-footer">
+      <nav class="footer-social" aria-label="Social links">
+        <a href="${escapeAttr(x)}" class="footer-social-link" aria-label="X (Twitter)">X</a>
+        <a href="${escapeAttr(linkedin)}" class="footer-social-link" aria-label="LinkedIn">LinkedIn</a>
+        <a href="${escapeAttr(github)}" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+      </nav>
+      <p class="footer-brand">${escapeAttr(HERO_TITLE)} · Built in public</p>
+      <p class="footer-meta">
+        <a href="#get-a-site">Get your own site</a>
+        · <a href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>
+      </p>
+    </footer>`;
+}
+
+function topBarHtml() {
+  return `    <header class="top-bar">
+      <a class="brand" href="./">
+        <span class="brand-mark">VC</span>
+        <span class="brand-text">${escapeAttr(HERO_TITLE)}</span>
+      </a>
+      <div class="top-actions">
+        <a class="btn btn--ghost btn--sm" href="#newsletter">Updates</a>
+        <a class="btn btn--buy" href="#get-a-site">Get your site (€49)</a>
+      </div>
+    </header>`;
 }
 
 function gamesBannerHtml() {
@@ -259,7 +322,10 @@ function replaceBlock(start, end, content) {
   index = index.replace(new RegExp(`${start}[\\s\\S]*?${end}`), `${start}\n${content}\n    ${end}`);
 }
 
+replaceBlock("<!-- TOP_BAR_START -->", "<!-- TOP_BAR_END -->", topBarHtml());
 replaceBlock("<!-- HERO_START -->", "<!-- HERO_END -->", heroHtml());
+replaceBlock("<!-- ABOUT_START -->", "<!-- ABOUT_END -->", aboutHtml());
+replaceBlock("<!-- NEWSLETTER_START -->", "<!-- NEWSLETTER_END -->", newsletterHtml());
 replaceBlock("<!-- GAMES_BANNER_START -->", "<!-- GAMES_BANNER_END -->", gamesBannerHtml());
 replaceBlock("<!-- APPS_BANNER_START -->", "<!-- APPS_BANNER_END -->", appsBannerHtml());
 replaceBlock("<!-- CREATIVE_BANNER_START -->", "<!-- CREATIVE_BANNER_END -->", creativeBannerHtml());
@@ -269,6 +335,7 @@ replaceBlock("<!-- FEATURED_STRIP_START -->", "<!-- FEATURED_STRIP_END -->", fea
 replaceBlock("<!-- SITE_GRID_START -->", "<!-- SITE_GRID_END -->", gridCards);
 replaceBlock("<!-- CATEGORY_FILTERS_START -->", "<!-- CATEGORY_FILTERS_END -->", filterButtons);
 replaceBlock("<!-- MONETIZE_START -->", "<!-- MONETIZE_END -->", hubMonetizationHtml(manifest));
+replaceBlock("<!-- FOOTER_START -->", "<!-- FOOTER_END -->", footerHtml());
 
 replaceBlock("<!-- PLAUSIBLE_START -->", "<!-- PLAUSIBLE_END -->", plausibleHead());
 replaceBlock("<!-- VERCEL_ANALYTICS_START -->", "<!-- VERCEL_ANALYTICS_END -->", vercelAnalyticsBlock());
@@ -326,7 +393,8 @@ if (index.includes('id="json-ld"')) {
 writeFileSync(INDEX_PATH, index, "utf8");
 
 let hubJs = readFileSync(HUB_JS_PATH, "utf8");
-hubJs = hubJs.replace(/const COMPLETED = \d+;/, `const COMPLETED = ${count};`);
+hubJs = hubJs.replace(/const COMPLETED = \d+;/, `const COMPLETED = ${PROGRESS_CURRENT};`);
+hubJs = hubJs.replace(/const TOTAL = \d+;/, `const TOTAL = ${PROGRESS_GOAL};`);
 hubJs = hubJs.replace(/const POPULAR_IDS = \[.*?\];/, `const POPULAR_IDS = ${JSON.stringify([...spotlightIds])};`);
 writeFileSync(HUB_JS_PATH, hubJs, "utf8");
 

@@ -2,8 +2,8 @@
 
 **I stopped trying to hand-build 1000 websites. I built a machine that generates them.**
 
-[![Live hub](https://img.shields.io/badge/Live-hub-5eead4?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
-[![Progress](https://img.shields.io/badge/Progress-1000%2F1000-e8a87c?style=for-the-badge)](https://websites-eosin-delta.vercel.app)
+[![Live hub](https://img.shields.io/badge/Live-hub-5eead4?style=for-the-badge)](https://vibecode1000.com)
+[![Progress](https://img.shields.io/badge/Progress-1000%2F1000-e8a87c?style=for-the-badge)](https://vibecode1000.com)
 [![PayPal](https://img.shields.io/badge/PayPal-Tip-0070ba?style=for-the-badge)](https://paypal.me/RajeevSewbalak)
 [![GitHub](https://img.shields.io/badge/GitHub-repo-181717?style=for-the-badge&logo=github)](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
 
@@ -13,7 +13,7 @@
 
 | | |
 |---|---|
-| **Live gallery** | [websites-eosin-delta.vercel.app](https://websites-eosin-delta.vercel.app) |
+| **Live gallery** | [vibecode1000.com](https://vibecode1000.com) |
 | **Repo** | [Vibe-Code-1000-websites](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites) |
 | **Progress** | **1000 / 1000** milestone reached |
 | **Stack** | HTML/CSS/JS generator · Next.js flagships · Vercel |
@@ -22,16 +22,16 @@
 
 ![Vibe Code 1000 hub — category filters, featured strip, 100 tools](docs/hub-preview.svg)
 
-Open the **[live hub](https://websites-eosin-delta.vercel.app)** to search, filter by category (Tools · Games · Utilities · Landing Pages · Experiments), and sort by newest or popular.
+Open the **[live hub](https://vibecode1000.com)** to search, filter by category (Tools · Games · Utilities · Landing Pages · Experiments), and sort by newest or popular.
 
 ### ⭐ Featured (start here)
 
 | Site | URL |
 |------|-----|
 | Buy a Square | [001-buy-a-square.vercel.app](https://001-buy-a-square.vercel.app) |
-| Daily AI Tools | [/002-daily-ai-tools/](https://websites-eosin-delta.vercel.app/002-daily-ai-tools/) |
-| **EggBalance** (physics egg carton game) | [/101-egg-balance/](https://websites-eosin-delta.vercel.app/101-egg-balance/) |
-| KeyForge, RPS Arena | [Browse featured on hub](https://websites-eosin-delta.vercel.app) |
+| Daily AI Tools | [/002-daily-ai-tools/](https://vibecode1000.com/002-daily-ai-tools/) |
+| **EggBalance** (physics egg carton game) | [/101-egg-balance/](https://vibecode1000.com/101-egg-balance/) |
+| KeyForge, RPS Arena | [Browse featured on hub](https://vibecode1000.com) |
 
 ## Roadmap
 

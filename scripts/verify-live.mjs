@@ -7,7 +7,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const HUB = "https://websites-eosin-delta.vercel.app";
+const HUB = "https://vibecode1000.com";
 const manifest = JSON.parse(readFileSync(join(__dirname, "manifest.json"), "utf8"));
 
 const folders = readdirSync(ROOT, { withFileTypes: true })

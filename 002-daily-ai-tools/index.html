@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily AI Tools | Vibe Code 1000</title>
-  <meta name="description" content="Daily AI Tools curates 10 essential AI apps for chat, code, images, search, and voice — filter by category and launch your daily stack in one click." />
-  <meta name="keywords" content="Daily AI Tools, AI tools, ChatGPT, Claude, Vibe Code 1000" />
+  <title>Daily AI Tools | VibeCode 1000</title>
+  <meta name="description" content="Free Daily AI Tools tool — Curated AI stack with search and category filters Built with VibeCode 1000." />
+  <meta name="keywords" content="Daily AI Tools, ai-tools-landing, VibeCode 1000, free web tool" />
   <meta name="author" content="Rajeev Sewbalak" />
-  <link rel="canonical" href="https://websites-eosin-delta.vercel.app/002-daily-ai-tools/" />
+  <link rel="canonical" href="https://vibecode1000.com/002-daily-ai-tools/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Daily AI Tools | Vibe Code 1000" />
-  <meta property="og:description" content="Ten curated AI tools for your daily workflow — writing, code, images, search, and more." />
-  <meta property="og:url" content="https://websites-eosin-delta.vercel.app/002-daily-ai-tools/" />
-  <meta property="og:site_name" content="Vibe Code 1000" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Daily AI Tools" />
-  <meta name="twitter:description" content="Ten curated AI tools for your daily workflow." />
+  <meta property="og:title" content="Daily AI Tools | VibeCode 1000" />
+  <meta property="og:description" content="Free Daily AI Tools tool — Curated AI stack with search and category filters Built with VibeCode 1000." />
+  <meta property="og:url" content="https://vibecode1000.com/002-daily-ai-tools/" />
+  <meta property="og:site_name" content="VibeCode 1000" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Daily AI Tools | VibeCode 1000" />
+  <meta name="twitter:description" content="Free Daily AI Tools tool — Curated AI stack with search and category filters Built with VibeCode 1000." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/_shared/tool.css" />
   <link rel="stylesheet" href="/002-daily-ai-tools/style.css" />
   <!-- VERCEL_ANALYTICS_START -->
@@ -35,61 +35,41 @@
     <span class="orb orb--2"></span>
     <span class="grain"></span>
   </div>
-
-  <main class="shell landing">
+  <main class="shell">
     <nav class="site-bar" aria-label="Site navigation">
-      <a class="brand" href="https://websites-eosin-delta.vercel.app/">
-        <span class="brand-mark" aria-hidden="true">AI</span>
+      <a class="brand" href="https://vibecode1000.com/">
+        <span class="brand-mark" aria-hidden="true">DA</span>
         <span class="brand-text">Daily AI Tools</span>
       </a>
       <div class="site-bar-actions">
-        <a class="btn btn--ghost btn--sm" href="https://websites-eosin-delta.vercel.app/">← All tools</a>
+        <a class="btn btn--ghost btn--sm" href="https://vibecode1000.com/">← All tools</a>
       </div>
     </nav>
-
-    <header class="hero" id="top">
-      <p class="hero-kicker">Website #002 · Vibe Code 1000</p>
-      <h1 class="hero-title">Daily AI Tools</h1>
-      <p class="hero-lead">
-        A hand-picked stack of <strong>10 AI apps</strong> for writing, research, design, code, and voice —
-        updated for how builders actually work in 2026.
-      </p>
-      <div class="hero-actions">
-        <button type="button" class="btn btn--primary btn--lg" id="cta-explore">Explore Tools</button>
-        <a class="btn btn--ghost btn--lg" href="https://websites-eosin-delta.vercel.app/">Browse 1000 sites</a>
-      </div>
-      <ul class="hero-stats" aria-label="Highlights">
-        <li><span class="stat-num">10</span><span class="stat-label">tools listed</span></li>
-        <li><span class="stat-num">5</span><span class="stat-label">categories</span></li>
-        <li><span class="stat-num">0</span><span class="stat-label">login required here</span></li>
-      </ul>
+    <header class="tool-header">
+      <p class="eyebrow">Website #002</p>
+      <h1 class="logo">Daily AI Tools</h1>
+      <p class="tagline">Curated AI stack with search and category filters</p>
     </header>
-
-    <section class="tools" id="tools" aria-labelledby="tools-heading">
-      <div class="tools-head">
-        <h2 id="tools-heading">Today’s toolkit</h2>
-        <p>Tap a card to open the tool in a new tab. Bookmark this page as your daily launcher.</p>
-        <label class="search-wrap">Search tools
-          <input type="search" id="tool-search" class="search-input" placeholder="e.g. code, image, chat…" autocomplete="off" />
-        </label>
-        <div class="filter-row" id="filters" role="group" aria-label="Filter by category"></div>
+    <article class="card">
+      
+      
+      <p id="display" class="display">—</p>
+      <div class="actions">
+        <button type="button" id="btn-action" class="btn btn--primary">Go</button>
+        
       </div>
-      <ul class="tool-grid" id="tool-grid"></ul>
-      <p class="no-results" id="no-results" hidden>No tools match — try another filter.</p>
-    </section>
-
-    <section class="cta-band" aria-labelledby="cta-band-heading">
-      <h2 id="cta-band-heading">Want your own mini-site?</h2>
-      <p>Same engine behind this gallery — live on Vercel in 24 hours from €49.</p>
-      <a class="btn btn--primary" href="https://websites-eosin-delta.vercel.app/#get-a-site">Get your website</a>
-    </section>
-
-    <footer class="site-foot">
-      <p>Part of <a href="https://websites-eosin-delta.vercel.app/">Vibe Code 1000</a> · Tips welcome on
-        <a href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a></p>
+    </article>
+    <footer class="tip-jar">
+      <p class="tip-upsell"><a class="tip-upsell-link" href="https://vibecode1000.com/#get-a-site"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
+      <div class="tip-chips">
+        <a class="tip-chip tip-chip--buy" href="https://paypal.me/RajeevSewbalak/49" target="_blank" rel="noopener noreferrer">Order €49</a>
+        <a class="tip-chip" href="https://paypal.me/RajeevSewbalak/5" target="_blank" rel="noopener noreferrer">Tip €5</a>
+        <a class="tip-chip tip-chip--main" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>
+      </div>
+      <p class="hub-wrap"><a class="hub-link" href="https://vibecode1000.com/#contact">Free quote</a> · <a class="hub-link" href="https://vibecode1000.com/">All tools</a></p>
     </footer>
   </main>
-
+  <p id="toast" class="toast" role="status"></p>
   <script src="/002-daily-ai-tools/script.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-# https://websites-eosin-delta.vercel.app
+# https://vibecode1000.com
 User-agent: *
 Allow: /
 
-Sitemap: https://websites-eosin-delta.vercel.app/sitemap.xml
+Sitemap: https://vibecode1000.com/sitemap.xml

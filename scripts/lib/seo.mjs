@@ -1,7 +1,14 @@
 /** Shared SEO snippets for hub + generated sites. */
 
+import { readFileSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const manifest = JSON.parse(readFileSync(join(__dirname, "..", "manifest.json"), "utf8"));
+
 export const BRAND = "VibeCode 1000";
-export const HUB_URL = "https://websites-eosin-delta.vercel.app";
+export const HUB_URL = String(manifest.hubUrl || "https://vibecode1000.com").replace(/\/$/, "");
 export const HUB_TITLE = `${BRAND} — 1000 AI-built websites`;
 export const HUB_DESCRIPTION =
   "VibeCode 1000 — a public challenge to build 1000 AI-built websites. Follow the journey, explore the gallery, and see progress in real time.";

@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const REPORT_PATH = join(ROOT, "docs", "site-audit-report.md");
-const HUB_URL = "https://websites-eosin-delta.vercel.app";
+const HUB_URL = "https://vibecode1000.com";
 const LIVE = process.argv.includes("--live");
 const SKIP_FOLDERS = new Set(["001-buy-a-square"]);
 
@@ -177,7 +177,7 @@ function auditFolder(folder) {
     flags.push("broken");
   }
 
-  if (!/websites-eosin-delta|vibe code 1000|\/_shared\//i.test(html)) {
+  if (!/vibecode1000\.com|websites-eosin-delta|vibe code 1000|\/_shared\//i.test(html)) {
     issues.push("No hub / shared chrome link");
     score -= 4;
   }

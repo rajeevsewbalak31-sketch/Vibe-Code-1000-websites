@@ -141,26 +141,44 @@ if (location.hash === "#games") {
 const LEAD_ISSUE =
   "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/issues/new?labels=enhancement";
 
-document.getElementById("newsletter-form")?.addEventListener("submit", (e) => {
+document.getElementById("newsletter-form")?.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const email = e.target.querySelector("#newsletter-email")?.value?.trim();
+  const form = e.target;
+  const email = form.querySelector("#newsletter-email")?.value?.trim();
   const status = document.getElementById("newsletter-status");
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     if (status) status.textContent = "Please enter a valid email.";
     return;
   }
-  try {
-    const list = JSON.parse(localStorage.getItem("vc1000-newsletter") || "[]");
-    if (!list.includes(email)) list.push(email);
-    localStorage.setItem("vc1000-newsletter", JSON.stringify(list));
-  } catch {
-    /* ignore */
+  const endpoint = form.dataset.endpoint?.trim();
+  if (endpoint) {
+    if (status) status.textContent = "Subscribing…";
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ email, _subject: "VibeCode 1000 newsletter" }),
+      });
+      if (!res.ok) throw new Error("subscribe failed");
+    } catch {
+      if (status) status.textContent = "Could not subscribe right now. Try again later.";
+      status?.classList.remove("is-success");
+      return;
+    }
+  } else {
+    try {
+      const list = JSON.parse(localStorage.getItem("vc1000-newsletter") || "[]");
+      if (!list.includes(email)) list.push(email);
+      localStorage.setItem("vc1000-newsletter", JSON.stringify(list));
+    } catch {
+      /* ignore */
+    }
   }
   if (status) {
     status.textContent = "You're on the list — thank you!";
     status.classList.add("is-success");
   }
-  e.target.reset();
+  form.reset();
 });
 
 document.getElementById("lead-form")?.addEventListener("submit", (e) => {

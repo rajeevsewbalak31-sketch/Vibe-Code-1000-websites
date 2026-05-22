@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "websites-eosin-delta.vercel.app" }],
+      "destination": "https://vibecode1000.com/:path*",
+      "permanent": true
+    }
+  ],
   "buildCommand": null,
   "installCommand": null,
   "framework": null,

@@ -50,7 +50,7 @@ The goal is not to hand-build 1000 pages. The goal is to build a **machine** tha
 - [x] README + launch post template ([docs/announce.md](./announce.md))
 - [x] Games launch banner + hero stats synced from engine
 - [x] `og.svg` social preview card
-- [ ] Custom domain for the hub
+- [x] Custom domain for the hub (`vibecode1000.com` — connect DNS in Vercel + Porkbun)
 - [ ] Plausible analytics ([docs/analytics.md](./analytics.md))
 
 ### Phase 4 — Monetize ✅

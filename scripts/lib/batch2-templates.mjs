@@ -130,7 +130,7 @@ document.getElementById("display").textContent=labels[s]||"Weak";};`,
 document.getElementById("dec").onclick=()=>{try{document.getElementById("out").textContent=decodeURIComponent(document.getElementById("in").value);}catch(e){showToast("Invalid");}};`,
   },
   "qr-maker": {
-    body: `<div class="app-panel"><textarea id="in" class="textarea">https://websites-eosin-delta.vercel.app</textarea>
+    body: `<div class="app-panel"><textarea id="in" class="textarea">https://vibecode1000.com</textarea>
       <canvas id="qr" style="margin:1rem auto;display:block;background:#fff;padding:8px;border-radius:.5rem;max-width:100%"></canvas>
       <button type="button" id="btn" class="btn btn--primary">Generate QR</button></div>`,
     script: () => `const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js";s.onload=()=>{};

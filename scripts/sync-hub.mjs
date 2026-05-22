@@ -176,11 +176,18 @@ function aboutHtml() {
 function newsletterHtml() {
   const heading = brand.newsletterHeading || "Follow the journey";
   const lead = brand.newsletterLead || "Get updates as new sites ship.";
+  const formspree = (brand.newsletterFormspree || "").trim();
+  const endpoint = formspree
+    ? formspree.startsWith("http")
+      ? formspree
+      : `https://formspree.io/f/${formspree}`
+    : "";
+  const dataEndpoint = endpoint ? ` data-endpoint="${escapeAttr(endpoint)}"` : "";
   return `    <section class="newsletter-panel" id="newsletter" aria-labelledby="newsletter-heading">
       <div class="newsletter-inner">
         <h2 id="newsletter-heading" class="section-title">${escapeAttr(heading)}</h2>
         <p class="section-lead">${escapeAttr(lead)}</p>
-        <form class="newsletter-form" id="newsletter-form" novalidate>
+        <form class="newsletter-form" id="newsletter-form" novalidate${dataEndpoint}>
           <label class="newsletter-label" for="newsletter-email">Email</label>
           <div class="newsletter-row">
             <input class="newsletter-input" id="newsletter-email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />

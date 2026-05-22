@@ -9,15 +9,15 @@ On GitHub → repo home → **⚙️ About** (top right):
 | Field | Value |
 |-------|--------|
 | **Description** | Site generation engine + 100 free mini-tools. Custom sites from €49. |
-| **Website** | `https://websites-eosin-delta.vercel.app` |
+| **Website** | `https://vibecode1000.com` |
 | **Topics** | `1000-websites`, `web-tools`, `side-project`, `vercel`, `portfolio`, `site-generator`, `paypal` |
 
 ## Live URLs
 
 | What | URL |
 |------|-----|
-| Hub (100 tools) | https://websites-eosin-delta.vercel.app |
-| Order / pricing | https://websites-eosin-delta.vercel.app/#get-a-site |
+| Hub (100 tools) | https://vibecode1000.com |
+| Order / pricing | https://vibecode1000.com/#get-a-site |
 | Pay €49 (PayPal) | https://paypal.me/RajeevSewbalak/49 |
 | Buy a Square (#001) | https://001-buy-a-square.vercel.app |
 | Quotely (#002) | https://quotely.vercel.app |
@@ -26,7 +26,7 @@ On GitHub → repo home → **⚙️ About** (top right):
 
 | Vercel project | Root | URL |
 |----------------|------|-----|
-| **websites** | `.` | websites-eosin-delta.vercel.app |
+| **websites** | `.` | vibecode1000.com (+ websites-eosin-delta.vercel.app redirect) |
 | **001-buy-a-square** | `001-buy-a-square` | 001-buy-a-square.vercel.app |
 
 Push to `main` → auto-deploy.

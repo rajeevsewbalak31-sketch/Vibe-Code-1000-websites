@@ -501,7 +501,7 @@ function buildGrid() {
 
     const hitPad = new THREE.Mesh(
       new THREE.CylinderGeometry(0.24, 0.24, 0.04, 12),
-      new THREE.MeshBasicMaterial({ visible: false })
+      new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false })
     );
     hitPad.position.set(pos.x, 0.28, pos.z);
     hitPad.userData = { index: i, type: "cup" };
@@ -536,6 +536,7 @@ function placeEgg(index) {
 
   const before = computePhysics();
   cells[index] = true;
+  updatePhysics();
 
   const pos = cellPosition(index);
   const egg = makeEggMesh();
@@ -834,6 +835,7 @@ function setPointerFromEvent(e) {
 }
 
 function pickCup() {
+  trayGroup.updateMatrixWorld(true);
   raycaster.setFromCamera(pointerNdc, camera);
   const hits = raycaster.intersectObjects(cupMeshes, false);
   if (!hits.length) return null;
@@ -892,7 +894,7 @@ function bindPointer() {
     pointerDown = false;
     clearCupHover();
     if (tipped || paused || collapsing) return;
-    if (dragMoved) return;
+    if (dragDistance > 14) return;
     setPointerFromEvent(e);
     const cup = pickCup();
     if (cup) {
@@ -908,7 +910,6 @@ function bindPointer() {
 
   canvas.addEventListener("click", (e) => {
     if (tipped || paused || collapsing) return;
-    if (dragDistance > 14) return;
     setPointerFromEvent(e);
     const cup = pickCup();
     if (cup) {

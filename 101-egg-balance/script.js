@@ -1,21 +1,24 @@
 /**
- * EggBalance — center-of-mass physics on a tilting egg carton.
- * Invented for Vibe Code 1000 (#101).
+ * EggBalance 3D — Three.js center-of-mass tray physics.
  */
-const cartonEl = document.getElementById("carton");
-const gridEl = document.getElementById("carton-grid");
-const trayEl = document.getElementById("tray");
+import * as THREE from "three";
+
+const DEG = Math.PI / 180;
+const SOUND_KEY = "eggbalance-sound";
+const HIGH_SCORE_KEY = "eggbalance-best";
+const CUP_GAP = 0.52;
+
+// --- DOM ---
+const canvas = document.getElementById("game-canvas");
+const viewport = document.getElementById("viewport");
 const gamePanel = document.getElementById("game-panel");
-const statusPill = document.getElementById("status-pill");
-const eggCountEl = document.getElementById("egg-count");
 const scoreEl = document.getElementById("score");
 const highScoreEl = document.getElementById("high-score");
-const streakEl = document.getElementById("streak");
-const streakWrap = document.getElementById("streak-wrap");
+const eggCountEl = document.getElementById("egg-count");
+const statusPill = document.getElementById("status-pill");
 const tiltFill = document.getElementById("tilt-fill");
 const tiltMeter = document.querySelector(".tilt-meter");
 const moveFeedback = document.getElementById("move-feedback");
-const cartonScene = document.getElementById("carton-scene");
 const overlay = document.getElementById("overlay");
 const overlayTitle = document.getElementById("overlay-title");
 const overlayRecord = document.getElementById("overlay-record");
@@ -25,23 +28,20 @@ const overlayBest = document.getElementById("overlay-best");
 const btnPause = document.getElementById("btn-pause");
 const btnSound = document.getElementById("btn-sound");
 
+// --- State ---
 let rows = 2;
 let cols = 2;
 let cells = [];
+let cupMeshes = [];
+let eggMeshes = [];
+
 let tipped = false;
 let collapsing = false;
 let paused = false;
-let dragEgg = null;
-let pointerDownCup = null;
-let wobbleRaf = 0;
-let displayTiltX = 0;
-let displayTiltY = 0;
-let targetTiltX = 0;
-let targetTiltY = 0;
-let streak = 0;
 let soundOn = false;
 let audioCtx = null;
 let feedbackTimer = 0;
+
 let survivalStart = 0;
 let survivalActive = false;
 let pauseAccumulated = 0;
@@ -51,9 +51,54 @@ let lastDifficultyAnnounced = -1;
 let highScore = 0;
 let scoreRaf = 0;
 
-const SOUND_KEY = "eggbalance-sound";
-const HIGH_SCORE_KEY = "eggbalance-best";
+let targetRotX = 0;
+let targetRotZ = 0;
+let displayRotX = 0;
+let displayRotZ = 0;
 
+let fallingEggs = [];
+let pointerDown = false;
+let dragMoved = false;
+let lastPointer = { x: 0, y: 0 };
+let camYaw = 0.55;
+let camPitch = 0.42;
+let camDist = 7.2;
+let dangerRatio = 0;
+let nearFailActive = false;
+let lastWarnAt = 0;
+let lastSqueakAt = 0;
+let collapseTime = 0;
+
+// --- Three.js ---
+let renderer;
+let scene;
+let camera;
+let trayGroup;
+let cupGroup;
+let eggGroup;
+let tableMesh;
+let raycaster;
+let pointerNdc = new THREE.Vector2();
+let animId = 0;
+let clock = new THREE.Clock();
+
+const matCarton = new THREE.MeshLambertMaterial({ color: 0xc4a574 });
+const matCartonDark = new THREE.MeshLambertMaterial({ color: 0x8b6914 });
+const matCup = new THREE.MeshLambertMaterial({ color: 0x6b4e28 });
+const matCupHover = new THREE.MeshLambertMaterial({ color: 0x9a7040 });
+const matEgg = new THREE.MeshLambertMaterial({ color: 0xfff8e7 });
+const matEggStress = new THREE.MeshLambertMaterial({ color: 0xffe0b0 });
+const matEggCrack = new THREE.MeshLambertMaterial({ color: 0xe8a060 });
+
+const FUNNY_LOSS = [
+  "The eggs have left the chat.",
+  "So close. So yolked.",
+  "Gravity wins again.",
+  "That carton had zero chill.",
+  "Egg-scuse me?!",
+];
+
+// --- Audio / UI helpers ---
 function showToast(msg) {
   const t = document.getElementById("toast");
   if (!t) return;
@@ -95,8 +140,19 @@ function playSound(kind) {
   else if (kind === "perfect") {
     playTone(660, 0.06, "sine", 0.07);
     setTimeout(() => playTone(880, 0.1, "sine", 0.06), 60);
-  } else if (kind === "warn") playTone(280, 0.12, "triangle", 0.05);
-  else if (kind === "tip") playTone(120, 0.35, "sawtooth", 0.07);
+  }   else if (kind === "warn") playTone(280, 0.12, "triangle", 0.05);
+  else if (kind === "squeak") {
+    playTone(920, 0.05, "sine", 0.05);
+    setTimeout(() => playTone(780, 0.07, "sine", 0.04), 40);
+  } else if (kind === "panic") {
+    playTone(340, 0.08, "square", 0.04);
+    setTimeout(() => playTone(420, 0.08, "square", 0.04), 70);
+    setTimeout(() => playTone(380, 0.1, "square", 0.03), 140);
+  } else if (kind === "boing") playTone(180, 0.14, "sine", 0.06);
+  else if (kind === "splat") {
+    playTone(140, 0.06, "sawtooth", 0.07);
+    setTimeout(() => playTone(80, 0.2, "triangle", 0.05), 50);
+  } else if (kind === "tip") playTone(120, 0.35, "sawtooth", 0.07);
   else if (kind === "click") playTone(400, 0.04, "sine", 0.04);
   else if (kind === "level") {
     playTone(440, 0.06, "sine", 0.05);
@@ -104,19 +160,24 @@ function playSound(kind) {
   } else if (kind === "gameover") {
     playTone(90, 0.2, "sawtooth", 0.08);
     setTimeout(() => playTone(55, 0.45, "triangle", 0.06), 100);
-    setTimeout(() => playTone(40, 0.3, "sine", 0.04), 220);
   } else if (kind === "record") {
     playTone(523, 0.1, "sine", 0.07);
-    setTimeout(() => playTone(659, 0.1, "sine", 0.07), 90);
-    setTimeout(() => playTone(784, 0.14, "sine", 0.08), 180);
-    setTimeout(() => playTone(988, 0.2, "sine", 0.06), 280);
+    setTimeout(() => playTone(784, 0.14, "sine", 0.08), 150);
   }
+}
+
+function formatTime(seconds) {
+  const s = Math.max(0, seconds);
+  if (s >= 60) {
+    const m = Math.floor(s / 60);
+    return `${m}:${(s % 60).toFixed(1).padStart(4, "0")}`;
+  }
+  return `${s.toFixed(1)}s`;
 }
 
 function loadHighScore() {
   try {
-    const v = parseFloat(localStorage.getItem(HIGH_SCORE_KEY) || "0");
-    highScore = Number.isFinite(v) ? v : 0;
+    highScore = parseFloat(localStorage.getItem(HIGH_SCORE_KEY) || "0") || 0;
   } catch {
     highScore = 0;
   }
@@ -140,16 +201,6 @@ function saveHighScore(seconds) {
   return true;
 }
 
-function formatTime(seconds) {
-  const s = Math.max(0, seconds);
-  if (s >= 60) {
-    const m = Math.floor(s / 60);
-    const r = (s % 60).toFixed(1);
-    return `${m}:${r.padStart(4, "0")}`;
-  }
-  return `${s.toFixed(1)}s`;
-}
-
 function getSurvivalSeconds() {
   if (!survivalActive || !survivalStart) return 0;
   let elapsed = performance.now() - survivalStart - pauseAccumulated;
@@ -169,10 +220,8 @@ function startSurvivalClock() {
 }
 
 function stopScoreLoop() {
-  if (scoreRaf) {
-    cancelAnimationFrame(scoreRaf);
-    scoreRaf = 0;
-  }
+  if (scoreRaf) cancelAnimationFrame(scoreRaf);
+  scoreRaf = 0;
 }
 
 function resetSurvivalClock() {
@@ -203,8 +252,13 @@ function getDifficultyLevel() {
 }
 
 function getWobbleScale() {
-  const level = getDifficultyLevel();
-  return 1 + level * 0.35;
+  return 1 + getDifficultyLevel() * 0.5;
+}
+
+function getWobbleIntensity() {
+  const diff = getDifficultyLevel();
+  const base = 1 + diff * 0.45;
+  return base * (1 + dangerRatio * 1.8);
 }
 
 function updateLiveScore() {
@@ -214,7 +268,7 @@ function updateLiveScore() {
     difficultyLevel = level;
     if (level > lastDifficultyAnnounced && level > 0) {
       lastDifficultyAnnounced = level;
-      showMoveFeedback(`Level ${level + 1} — wobble up!`, "move-feedback--warn");
+      showMoveFeedback(`Level ${level + 1} — extra wobble!`, "move-feedback--warn");
       playSound("level");
       vibrate(12);
     }
@@ -229,23 +283,19 @@ function setScoreDisplay(seconds) {
   if (scoreEl) scoreEl.textContent = formatTime(seconds);
 }
 
-function bindInteractiveButtons(root = document) {
-  root.querySelectorAll(".btn-interactive").forEach((btn) => {
-    const press = () => btn.classList.add("is-pressed");
-    const release = () => btn.classList.remove("is-pressed");
-    btn.addEventListener("pointerdown", press);
-    btn.addEventListener("pointerup", release);
-    btn.addEventListener("pointerleave", release);
-    btn.addEventListener("pointercancel", release);
-  });
+function showMoveFeedback(text, cls) {
+  clearTimeout(feedbackTimer);
+  moveFeedback.textContent = text;
+  moveFeedback.className = `move-feedback ${cls} is-visible`;
+  feedbackTimer = setTimeout(() => moveFeedback.classList.remove("is-visible"), 900);
 }
 
 function maxTiltForGrid() {
   const area = rows * cols;
-  if (area <= 4) return 14;
-  if (area <= 12) return 11;
-  if (area <= 24) return 9;
-  return 7;
+  if (area <= 4) return 22;
+  if (area <= 8) return 18;
+  if (area <= 12) return 15;
+  return 12;
 }
 
 function computePhysics() {
@@ -261,7 +311,7 @@ function computePhysics() {
     sy += r;
   });
   if (w === 0) {
-    return { tiltX: 0, tiltY: 0, stable: true, tipped: false, w: 0, mag: 0, limit: 0, normX: 0, normY: 0 };
+    return { tiltX: 0, tiltY: 0, stable: true, tipped: false, w: 0, mag: 0, limit: 0, danger: 0 };
   }
   const comX = sx / w;
   const comY = sy / w;
@@ -270,13 +320,14 @@ function computePhysics() {
   const normX = cols > 1 ? (comX - centerX) / centerX : 0;
   const normY = rows > 1 ? (comY - centerY) / centerY : 0;
   const max = maxTiltForGrid();
-  const tiltX = normX * max * 1.1;
-  const tiltY = -normY * max * 0.85;
+  const tiltX = normX * max * 1.12;
+  const tiltY = -normY * max * 0.95;
   const mag = Math.hypot(tiltX, tiltY);
-  const limit = max * (w >= 2 ? 1 : 0);
-  const stable = mag <= limit;
-  const tippedNow = w >= 2 && mag > limit * 1.05;
-  return { tiltX, tiltY, stable, tipped: tippedNow, w, mag, limit, normX, normY };
+  const limit = max * (w >= 2 ? 0.9 : 0);
+  const stable = mag <= limit * 0.88;
+  const tippedNow = w >= 2 && mag > limit * 1.0;
+  const danger = limit > 0 ? Math.min(1.4, mag / limit) : 0;
+  return { tiltX, tiltY, stable, tipped: tippedNow, w, mag, limit, danger };
 }
 
 function cupOffsetFromCenter(index) {
@@ -289,188 +340,249 @@ function cupOffsetFromCenter(index) {
   return Math.hypot(nx, ny);
 }
 
-function ratePlacement(index, physBefore, physAfter) {
+function ratePlacement(index, before, after) {
+  if (after.tipped) return { text: "Too far!", cls: "move-feedback--bad" };
   const offset = cupOffsetFromCenter(index);
-  const tiltGain = physAfter.mag - physBefore.mag;
-
-  if (physAfter.tipped) return { text: "Too far!", cls: "move-feedback--bad", points: 0 };
-  if (offset < 0.25 && physAfter.stable) {
-    return { text: "Perfect!", cls: "move-feedback--perfect", points: 25 };
-  }
-  if (offset >= 0.65 || tiltGain > 2.5) {
-    return { text: "Too far!", cls: "move-feedback--bad", points: 5 };
-  }
-  if (!physAfter.stable) {
-    return { text: "Risky…", cls: "move-feedback--warn", points: 10 };
-  }
-  return { text: "Nice!", cls: "move-feedback--good", points: 15 };
+  if (offset < 0.25 && after.stable) return { text: "Perfect!", cls: "move-feedback--perfect" };
+  if (offset >= 0.65) return { text: "Too far!", cls: "move-feedback--bad" };
+  if (!after.stable) return { text: "Risky…", cls: "move-feedback--warn" };
+  return { text: "Nice!", cls: "move-feedback--good" };
 }
 
-function showMoveFeedback(text, cls) {
-  clearTimeout(feedbackTimer);
-  moveFeedback.textContent = text;
-  moveFeedback.className = `move-feedback ${cls} is-visible`;
-  feedbackTimer = setTimeout(() => {
-    moveFeedback.classList.remove("is-visible");
-  }, 900);
+function gridCenter() {
+  const w = (cols - 1) * CUP_GAP;
+  const d = (rows - 1) * CUP_GAP;
+  return { x: -w / 2, z: -d / 2 };
 }
 
-function bumpTimeDisplay() {
-  if (!scoreEl) return;
-  scoreEl.classList.remove("score-bump");
-  void scoreEl.offsetWidth;
-  scoreEl.classList.add("score-bump");
+function cellPosition(index) {
+  const r = Math.floor(index / cols);
+  const c = index % cols;
+  const o = gridCenter();
+  return new THREE.Vector3(o.x + c * CUP_GAP, 0, o.z + r * CUP_GAP);
 }
 
-function updateStreak(rating) {
-  if (rating.cls === "move-feedback--perfect" || rating.cls === "move-feedback--good") {
-    streak += 1;
-    streakWrap.hidden = false;
-    streakEl.textContent = String(streak);
-    streakEl.classList.remove("streak-pop");
-    void streakEl.offsetWidth;
-    streakEl.classList.add("streak-pop");
-  } else {
-    streak = 0;
-    streakWrap.hidden = true;
-    streakEl.textContent = "0";
-  }
+// --- Three.js setup ---
+function initThree() {
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x121820);
+  scene.fog = new THREE.Fog(0x121820, 8, 22);
+
+  camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+  updateCamera();
+
+  renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+    alpha: false,
+    powerPreference: "high-performance",
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  resizeRenderer();
+
+  const hemi = new THREE.HemisphereLight(0xfff4e6, 0x2a3040, 0.85);
+  scene.add(hemi);
+  const dir = new THREE.DirectionalLight(0xffffff, 0.65);
+  dir.position.set(4, 8, 5);
+  scene.add(dir);
+  const fill = new THREE.DirectionalLight(0xa8c4ff, 0.25);
+  fill.position.set(-3, 4, -2);
+  scene.add(fill);
+
+  const tableGeo = new THREE.BoxGeometry(14, 0.2, 14);
+  const tableMat = new THREE.MeshLambertMaterial({ color: 0x1e2633 });
+  tableMesh = new THREE.Mesh(tableGeo, tableMat);
+  tableMesh.position.y = -0.35;
+  scene.add(tableMesh);
+
+  trayGroup = new THREE.Group();
+  trayGroup.position.y = 0.05;
+  scene.add(trayGroup);
+
+  cupGroup = new THREE.Group();
+  eggGroup = new THREE.Group();
+  trayGroup.add(cupGroup, eggGroup);
+
+  raycaster = new THREE.Raycaster();
+
+  window.addEventListener("resize", resizeRenderer);
+  bindPointer();
+  animate();
 }
 
-function fillTray() {
-  trayEl.innerHTML = "";
-  const n = Math.min(8, rows * cols);
-  for (let i = 0; i < n; i++) {
-    const egg = document.createElement("span");
-    egg.className = "tray-egg";
-    egg.setAttribute("aria-hidden", "true");
-    trayEl.appendChild(egg);
-  }
+function resizeRenderer() {
+  if (!renderer || !viewport) return;
+  const w = viewport.clientWidth;
+  const h = viewport.clientHeight;
+  if (w < 1 || h < 1) return;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
 }
 
-function cupSize() {
-  const maxDim = Math.max(rows, cols);
-  if (maxDim <= 3) return "2.85rem";
-  if (maxDim <= 4) return "2.35rem";
-  if (maxDim <= 6) return "1.85rem";
-  return "1.35rem";
+function updateCamera() {
+  const look = new THREE.Vector3(0, 0.15, 0);
+  const x = look.x + Math.sin(camYaw) * Math.cos(camPitch) * camDist;
+  const y = look.y + Math.sin(camPitch) * camDist + 1.2;
+  const z = look.z + Math.cos(camYaw) * Math.cos(camPitch) * camDist;
+  camera.position.set(x, y, z);
+  camera.lookAt(look);
 }
 
-function createEggElement() {
-  const egg = document.createElement("span");
-  egg.className = "egg is-placing";
-  egg.setAttribute("aria-hidden", "true");
-  return egg;
+function clearTrayMeshes() {
+  cupMeshes = [];
+  eggMeshes = [];
+  fallingEggs = [];
+  while (cupGroup.children.length) cupGroup.remove(cupGroup.children[0]);
+  while (eggGroup.children.length) eggGroup.remove(eggGroup.children[0]);
+  const keep = new Set([cupGroup, eggGroup]);
+  [...trayGroup.children].forEach((child) => {
+    if (!keep.has(child)) trayGroup.remove(child);
+  });
+}
+
+function buildTrayBase() {
+  const w = (cols - 1) * CUP_GAP + 0.9;
+  const d = (rows - 1) * CUP_GAP + 0.9;
+  const base = new THREE.Mesh(new THREE.BoxGeometry(w, 0.18, d), matCarton);
+  base.position.y = -0.08;
+  trayGroup.add(base);
+
+  const rim = new THREE.Mesh(new THREE.BoxGeometry(w + 0.08, 0.12, d + 0.08), matCartonDark);
+  rim.position.y = 0.02;
+  trayGroup.add(rim);
+
+  const wallT = 0.08;
+  const wallH = 0.35;
+  const walls = [
+    [w, wallH, wallT, 0, wallH / 2, -d / 2 - wallT / 2],
+    [w, wallH, wallT, 0, wallH / 2, d / 2 + wallT / 2],
+    [wallT, wallH, d, -w / 2 - wallT / 2, wallH / 2, 0],
+    [wallT, wallH, d, w / 2 + wallT / 2, wallH / 2, 0],
+  ];
+  walls.forEach(([gw, gh, gd, px, py, pz]) => {
+    const wall = new THREE.Mesh(new THREE.BoxGeometry(gw, gh, gd), matCartonDark);
+    wall.position.set(px, py, pz);
+    trayGroup.add(wall);
+  });
 }
 
 function buildGrid() {
+  clearTrayMeshes();
   cells = Array(rows * cols).fill(false);
-  gridEl.style.setProperty("--cup-size", cupSize());
-  gridEl.style.gridTemplateColumns = `repeat(${cols}, var(--cup-size))`;
-  gridEl.innerHTML = "";
-  for (let i = 0; i < rows * cols; i++) {
-    const cup = document.createElement("button");
-    cup.type = "button";
-    cup.className = "cup btn-interactive";
-    cup.dataset.index = String(i);
-    const r = Math.floor(i / cols) + 1;
-    const c = (i % cols) + 1;
-    cup.setAttribute("aria-label", `Cup row ${r} column ${c}, empty`);
-    cup.setAttribute("role", "gridcell");
-
-    cup.addEventListener("pointerdown", (e) => {
-      if (paused || tipped || collapsing) return;
-      pointerDownCup = cup;
-      cup.classList.add("is-pressed");
-      if (cells[i]) {
-        const egg = cup.querySelector(".egg");
-        if (egg) startDrag(e, egg, i, cup);
-      }
-    });
-
-    cup.addEventListener("pointerup", (e) => {
-      cup.classList.remove("is-pressed");
-      if (paused || tipped || collapsing) return;
-      if (dragEgg) return;
-      if (pointerDownCup === cup && !cells[i]) {
-        e.preventDefault();
-        placeEgg(i, cup);
-      }
-      pointerDownCup = null;
-    });
-
-    cup.addEventListener("pointercancel", () => {
-      cup.classList.remove("is-pressed");
-      pointerDownCup = null;
-    });
-
-    gridEl.appendChild(cup);
-  }
+  eggMeshes = Array(rows * cols).fill(null);
   tipped = false;
   collapsing = false;
-  streak = 0;
-  streakWrap.hidden = true;
-  cartonEl.classList.remove("is-tipped", "is-collapsing");
-  fillTray();
+  dangerRatio = 0;
+  nearFailActive = false;
+  lastWarnAt = 0;
+  lastSqueakAt = 0;
+  collapseTime = 0;
+  displayRotX = displayRotZ = targetRotX = targetRotZ = 0;
+  trayGroup.rotation.set(0, 0, 0);
+  viewport?.classList.remove("viewport--danger", "viewport--panic", "viewport--collapse");
+
+  buildTrayBase();
+
+  const cupGeo = new THREE.CylinderGeometry(0.2, 0.16, 0.14, 12);
+  const cupHole = new THREE.CylinderGeometry(0.17, 0.14, 0.15, 12);
+
+  for (let i = 0; i < rows * cols; i++) {
+    const pos = cellPosition(i);
+    const cup = new THREE.Mesh(cupGeo, matCup.clone());
+    cup.position.set(pos.x, 0.06, pos.z);
+    cup.userData = { index: i, type: "cup" };
+    cupGroup.add(cup);
+    cupMeshes.push(cup);
+
+    const ring = new THREE.Mesh(cupHole, new THREE.MeshLambertMaterial({
+      color: 0x3d2a18,
+      transparent: true,
+      opacity: 0.35,
+    }));
+    ring.position.copy(cup.position);
+    ring.position.y = 0.08;
+    cupGroup.add(ring);
+  }
+
+  const area = rows * cols;
+  camDist = area <= 4 ? 5.5 : area <= 8 ? 6.2 : area <= 12 ? 7 : 8.5;
+  updateCamera();
   updatePhysics();
 }
 
-function placeEgg(index, cup) {
+function makeEggMesh() {
+  const egg = new THREE.Mesh(new THREE.SphereGeometry(0.18, 12, 10), matEgg.clone());
+  egg.scale.set(1, 1.22, 1);
+  egg.userData.stress = 0;
+  return egg;
+}
+
+function placeEgg(index) {
   if (paused || tipped || collapsing || cells[index]) return;
 
-  const physBefore = computePhysics();
+  const before = computePhysics();
   cells[index] = true;
-  cup.classList.add("cup--filled");
-  cup.setAttribute("aria-label", cup.getAttribute("aria-label").replace("empty", "has egg"));
 
-  const egg = createEggElement();
-  cup.appendChild(egg);
-  requestAnimationFrame(() => {
-    egg.classList.remove("is-placing");
-    egg.classList.add("is-settled");
-  });
+  const pos = cellPosition(index);
+  const egg = makeEggMesh();
+  egg.position.set(pos.x, 1.2, pos.z);
+  egg.userData = { index, settled: false };
+  eggGroup.add(egg);
+  eggMeshes[index] = egg;
 
-  if (!survivalActive) startSurvivalClock();
-
-  const physAfter = computePhysics();
-  const rating = ratePlacement(index, physBefore, physAfter);
-  updateStreak(rating);
-  bumpTimeDisplay();
-  showMoveFeedback(rating.text, rating.cls);
-
-  playSound(rating.cls === "move-feedback--perfect" ? "perfect" : "place");
-  if (rating.cls === "move-feedback--perfect") vibrate(18);
-  else if (rating.cls === "move-feedback--bad") vibrate([8, 40, 8]);
-  else vibrate(10);
-
-  updatePhysics();
-}
-
-function removeEgg(index) {
-  const cup = gridEl.children[index];
-  if (!cup) return;
-  cells[index] = false;
-  cup.classList.remove("cup--filled");
-  cup.innerHTML = "";
-  const r = Math.floor(index / cols) + 1;
-  const c = (index % cols) + 1;
-  cup.setAttribute("aria-label", `Cup row ${r} column ${c}, empty`);
+  const drop = { egg, index, t: 0, duration: 0.32 };
+  const animateDrop = () => {
+    if (tipped) return;
+    drop.t += clock.getDelta();
+    const p = Math.min(1, drop.t / drop.duration);
+    const ease = 1 - (1 - p) ** 3;
+    egg.position.y = 1.2 + (0.2 - 1.2) * ease;
+    if (p < 1) requestAnimationFrame(animateDrop);
+    else {
+      egg.userData.settled = true;
+      egg.userData.basePos = pos.clone();
+      egg.userData.basePos.y = 0.2;
+      egg.position.copy(egg.userData.basePos);
+      const after = computePhysics();
+      const rating = ratePlacement(index, before, after);
+      if (!survivalActive) startSurvivalClock();
+      showMoveFeedback(rating.text, rating.cls);
+      playSound(rating.cls === "move-feedback--perfect" ? "perfect" : "place");
+      vibrate(rating.cls === "move-feedback--perfect" ? 18 : 10);
+      if (scoreEl) {
+        scoreEl.classList.remove("score-bump");
+        void scoreEl.offsetWidth;
+        scoreEl.classList.add("score-bump");
+      }
+      updatePhysics();
+    }
+  };
+  requestAnimationFrame(animateDrop);
 }
 
 function updateStatus(phys) {
   eggCountEl.textContent = phys.w;
-  const max = maxTiltForGrid() * 1.1;
+  dangerRatio = phys.danger || 0;
+  const max = maxTiltForGrid();
   const pct = 50 + (phys.tiltX / max) * 40;
   const clamped = Math.min(92, Math.max(8, pct));
   tiltFill.style.left = `${clamped}%`;
   if (tiltMeter) tiltMeter.setAttribute("aria-valuenow", String(Math.round(clamped)));
 
+  viewport?.classList.toggle("viewport--danger", dangerRatio > 0.72 && !tipped);
+  viewport?.classList.toggle("viewport--panic", dangerRatio > 0.88 && !tipped);
+
   if (phys.tipped || tipped) {
-    statusPill.textContent = "Tipped!";
+    statusPill.textContent = "NOOO!";
     statusPill.className = "status-pill status-pill--fail";
     tiltFill.classList.add("is-danger");
-  } else if (!phys.stable && phys.w >= 2) {
-    statusPill.textContent = "Unstable";
+  } else if (dangerRatio > 0.88) {
+    statusPill.textContent = "Cracking!";
+    statusPill.className = "status-pill status-pill--fail";
+    tiltFill.classList.add("is-danger");
+  } else if (dangerRatio > 0.72 || (!phys.stable && phys.w >= 2)) {
+    statusPill.textContent = "Wobbly!";
     statusPill.className = "status-pill status-pill--warn";
     tiltFill.classList.add("is-danger");
   } else {
@@ -480,178 +592,293 @@ function updateStatus(phys) {
   }
 }
 
-function triggerScreenShake() {
-  gamePanel?.classList.add("is-shake");
-  cartonScene?.classList.add("is-shake");
-  setTimeout(() => {
-    gamePanel?.classList.remove("is-shake");
-    cartonScene?.classList.remove("is-shake");
-  }, 520);
+function updateNearFail(phys, t) {
+  if (tipped || collapsing || paused || phys.w < 2) return;
+
+  const now = performance.now();
+  if (dangerRatio > 0.72 && now - lastWarnAt > 900) {
+    lastWarnAt = now;
+    playSound("boing");
+    vibrate(8);
+    if (dangerRatio > 0.88) showMoveFeedback("Uh oh…", "move-feedback--bad");
+    else if (dangerRatio > 0.8) showMoveFeedback("Wobble!", "move-feedback--warn");
+  }
+  if (dangerRatio > 0.85 && now - lastSqueakAt > 450) {
+    lastSqueakAt = now;
+    playSound("squeak");
+    vibrate([6, 20, 6]);
+  }
+  if (dangerRatio > 0.92 && !nearFailActive) {
+    nearFailActive = true;
+    playSound("panic");
+    showMoveFeedback("Don't move!", "move-feedback--bad");
+  } else if (dangerRatio < 0.78) {
+    nearFailActive = false;
+  }
+
+  eggMeshes.forEach((egg, i) => {
+    if (!egg || !cells[i] || !egg.userData.settled) return;
+    const stress = Math.max(0, (dangerRatio - 0.65) / 0.35);
+    egg.userData.stress = stress;
+    if (stress > 0.15) {
+      egg.material = stress > 0.55 ? matEggStress : matEgg;
+      egg.scale.set(
+        1 + stress * 0.08,
+        1.22 - stress * 0.25,
+        1 + stress * 0.06
+      );
+    }
+  });
 }
 
-function triggerTip() {
+function jiggleEggs(t, intensity) {
+  eggMeshes.forEach((egg, i) => {
+    if (!egg || !cells[i] || !egg.userData.settled || !egg.userData.basePos) return;
+    const base = egg.userData.basePos;
+    const edge = cupOffsetFromCenter(i);
+    const amp = (0.015 + intensity * 0.045) * (1 + edge * 0.6);
+    const stress = egg.userData.stress || 0;
+    egg.position.x = base.x + Math.sin(t * (14 + stress * 8) + i * 1.7) * amp;
+    egg.position.z = base.z + Math.cos(t * (12 + stress * 6) + i * 2.1) * amp;
+    egg.position.y = base.y + Math.abs(Math.sin(t * (18 + stress * 10) + i)) * amp * 0.5;
+    egg.rotation.x = Math.sin(t * 11 + i) * 0.12 * intensity;
+    egg.rotation.z = Math.cos(t * 9 + i * 1.3) * 0.18 * intensity * (1 + edge);
+  });
+}
+
+function launchEgg(i, power = 1) {
+  const egg = eggMeshes[i];
+  if (!egg || !cells[i]) return;
+  fallingEggs.push({
+    mesh: egg,
+    vx: (Math.random() - 0.5) * 5 * power + displayRotZ * 12,
+    vy: 0.6 + Math.random() * 1.2 * power,
+    vz: (Math.random() - 0.5) * 5 * power - displayRotX * 12,
+    rot: (Math.random() - 0.5) * 14,
+    cracked: false,
+    splatted: false,
+  });
+  egg.material = matEggCrack.clone();
+  egg.scale.set(1.15, 0.7, 1.1);
+  eggMeshes[i] = null;
+  cells[i] = false;
+}
+
+function triggerGameOver() {
   if (tipped || collapsing) return;
   tipped = true;
   collapsing = true;
+  collapseTime = 0;
+
   const finalTime = getSurvivalSeconds();
   stopScoreLoop();
   setScoreDisplay(finalTime);
 
+  playSound("panic");
   playSound("tip");
-  playSound("gameover");
-  vibrate([20, 60, 30, 80, 40]);
-  triggerScreenShake();
+  vibrate([15, 40, 20, 60, 30]);
+  gamePanel.classList.add("is-shake");
+  viewport?.classList.add("viewport--collapse");
 
-  const isRecord = finalTime > highScore;
   const previousBest = highScore;
+  const isRecord = finalTime > highScore;
   if (isRecord) saveHighScore(finalTime);
-  if (isRecord) {
-    playSound("record");
-    vibrate([30, 50, 30, 50, 80]);
-  }
 
-  cartonEl.classList.add("is-collapsing");
-  targetTiltX = displayTiltX * 2.8 + (Math.random() > 0.5 ? 32 : -32);
-  targetTiltY = displayTiltY * 2.2 + 22;
+  targetRotX *= 2.4;
+  targetRotZ *= 2.4;
 
-  const eggs = [...gridEl.querySelectorAll(".egg")];
-  eggs.forEach((egg, i) => {
-    egg.classList.remove("is-settled", "is-placing");
-    egg.classList.add("is-falling");
-    egg.style.setProperty("--fall-x", `${(Math.random() - 0.5) * 80}px`);
-    egg.style.setProperty("--fall-rot", `${(Math.random() - 0.5) * 120}deg`);
-    egg.style.animationDelay = `${i * 0.06}s`;
-  });
-
-  if (!wobbleRaf) animateTilt();
+  const funnyMsg = FUNNY_LOSS[Math.floor(Math.random() * FUNNY_LOSS.length)];
 
   setTimeout(() => {
-    cartonEl.classList.add("is-tipped");
+    playSound("gameover");
+    playSound("splat");
+    gamePanel.classList.add("is-shake");
+    setTimeout(() => gamePanel.classList.remove("is-shake"), 620);
+  }, 350);
+
+  setTimeout(() => {
+    eggMeshes.forEach((_, i) => {
+      if (cells[i]) setTimeout(() => launchEgg(i, 1.2 + Math.random() * 0.6), i * 70);
+    });
+  }, 200);
+
+  setTimeout(() => {
     overlay.hidden = false;
     overlay.classList.add("is-visible");
     overlay.classList.toggle("overlay-tip--record", isRecord);
+    viewport?.classList.remove("viewport--danger", "viewport--panic", "viewport--collapse");
+    gamePanel.classList.remove("is-shake");
 
-    if (overlayTitle) overlayTitle.textContent = isRecord ? "New record!" : "Carton tipped!";
+    if (overlayTitle) overlayTitle.textContent = isRecord ? "New record!" : "Total yolkage!";
     if (overlayRecord) overlayRecord.hidden = !isRecord;
     if (overlayMsg) {
       overlayMsg.textContent = isRecord
-        ? "You held on longer than ever — incredible balance."
-        : "The center of mass left the base — eggs everywhere.";
+        ? "You wobbled longer than ever. Legend."
+        : funnyMsg;
     }
-    overlayScore.textContent = `Survived ${formatTime(finalTime)}${streak > 1 ? ` · Streak ${streak}` : ""}`;
+    overlayScore.textContent = `Survived ${formatTime(finalTime)}`;
     if (overlayBest) {
       overlayBest.textContent = isRecord
         ? `Previous best: ${formatTime(previousBest)}`
         : `Personal best: ${formatTime(highScore)}`;
       overlayBest.hidden = false;
     }
-    showToast(isRecord ? "New high score!" : "The carton tipped over!");
+    if (isRecord) {
+      playSound("record");
+      vibrate([30, 50, 80]);
+    }
+    showToast(isRecord ? "New high score!" : funnyMsg);
     collapsing = false;
-  }, 950);
+  }, 1400);
 }
 
 function updatePhysics() {
   if (paused && !collapsing) return;
   const phys = computePhysics();
-  targetTiltX = phys.tiltX;
-  targetTiltY = phys.tiltY;
+  targetRotX = phys.tiltY * DEG;
+  targetRotZ = phys.tiltX * DEG;
   updateStatus(phys);
-  if (phys.tipped && !tipped) triggerTip();
-  if (!wobbleRaf) animateTilt();
+  if (phys.tipped && !tipped) triggerGameOver();
 }
 
-function animateTilt() {
-  const easing = collapsing ? 0.12 : 0.18;
-  displayTiltX += (targetTiltX - displayTiltX) * easing;
-  displayTiltY += (targetTiltY - displayTiltY) * easing;
-  const tiltMag = Math.hypot(displayTiltX, displayTiltY);
-  const diffScale = getWobbleScale();
-  const envWobble =
-    tipped || collapsing || paused
-      ? 0
-      : Math.sin(Date.now() / (280 - difficultyLevel * 12)) * (0.35 + difficultyLevel * 0.22) * diffScale;
-  const tiltWobble = tipped || collapsing ? 0 : Math.sin(Date.now() / 220) * tiltMag * 0.04 * diffScale;
-  const wobble = envWobble + tiltWobble;
-  cartonEl.style.transform = `rotateX(${displayTiltY + wobble}deg) rotateZ(${displayTiltX + wobble * 0.35}deg)`;
+function animate() {
+  animId = requestAnimationFrame(animate);
+  const dt = Math.min(clock.getDelta(), 0.05);
+  const t = clock.elapsedTime;
+  const wobbleIntensity = getWobbleIntensity();
 
-  const done =
-    Math.abs(targetTiltX - displayTiltX) < 0.08 &&
-    Math.abs(targetTiltY - displayTiltY) < 0.08;
+  if (!paused || collapsing) {
+    const diff = getDifficultyLevel();
+    const wobbleScale = getWobbleScale();
+    const freqBoost = 1 + diff * 0.22 + dangerRatio * 0.35;
 
-  if (!done || collapsing || (!tipped && !paused)) {
-    wobbleRaf = requestAnimationFrame(animateTilt);
-  } else {
-    wobbleRaf = 0;
+    let envX = 0;
+    let envZ = 0;
+    if (!paused) {
+      envX =
+        Math.sin(t * (2.2 * freqBoost)) * (0.022 + diff * 0.014) * wobbleScale +
+        Math.sin(t * (5.1 * freqBoost) + 1.2) * (0.008 + diff * 0.006) * wobbleScale;
+      envZ =
+        Math.cos(t * (2.6 * freqBoost)) * (0.018 + diff * 0.012) * wobbleScale +
+        Math.cos(t * (4.7 * freqBoost) + 0.8) * (0.007 + diff * 0.005) * wobbleScale;
+    }
+
+    if (collapsing) {
+      collapseTime += dt;
+      const flop = Math.min(1, collapseTime / 0.55);
+      envX += displayRotX * flop * 0.6 + Math.sin(t * 16) * 0.04 * flop;
+      envZ += displayRotZ * flop * 0.6 + Math.cos(t * 14) * 0.04 * flop;
+    }
+
+    const ease = collapsing ? 0.08 : 0.12;
+    displayRotX += (targetRotX - displayRotX) * ease;
+    displayRotZ += (targetRotZ - displayRotZ) * ease;
+
+  if (collapsing && collapseTime < 0.9) {
+      displayRotX += targetRotX * dt * 1.8;
+      displayRotZ += targetRotZ * dt * 1.8;
+    }
+
+    trayGroup.rotation.x = displayRotX + envX;
+    trayGroup.rotation.z = displayRotZ + envZ;
+
+    if (!tipped || collapsing) {
+      const phys = computePhysics();
+      if (!collapsing) updateNearFail(phys, t);
+    }
+
+    if (!collapsing && !tipped) jiggleEggs(t, wobbleIntensity);
   }
-}
 
-function startDrag(e, el, cellIndex, cup) {
-  if (paused || tipped || collapsing) return;
-  e.preventDefault();
-  dragEgg = { el, cellIndex, ghost: el.cloneNode(true), moved: false };
-  const g = dragEgg.ghost;
-  g.classList.add("egg", "egg--ghost");
-  g.style.position = "fixed";
-  g.style.zIndex = "100";
-  g.style.pointerEvents = "none";
-  g.style.width = "2rem";
-  g.style.height = "2.5rem";
-  g.style.left = `${e.clientX - 16}px`;
-  g.style.top = `${e.clientY - 20}px`;
-  document.body.appendChild(g);
-  el.style.visibility = "hidden";
-  if (cellIndex !== null) removeEgg(cellIndex);
-
-  const move = (ev) => {
-    dragEgg.moved = true;
-    g.style.left = `${ev.clientX - 16}px`;
-    g.style.top = `${ev.clientY - 20}px`;
-    const target = document.elementFromPoint(ev.clientX, ev.clientY);
-    gridEl.querySelectorAll(".cup").forEach((c) => c.classList.remove("cup--hover"));
-    const hoverCup = target?.closest?.(".cup");
-    if (hoverCup && !cells[parseInt(hoverCup.dataset.index, 10)]) {
-      hoverCup.classList.add("cup--hover");
+  fallingEggs.forEach((f) => {
+    f.vy -= 9.8 * dt;
+    f.mesh.position.x += f.vx * dt;
+    f.mesh.position.y += f.vy * dt;
+    f.mesh.position.z += f.vz * dt;
+    f.mesh.rotation.x += dt * (f.rot || 4);
+    f.mesh.rotation.z += dt * ((f.rot || 3) * 0.8);
+    if (f.mesh.position.y < -0.28 && !f.splatted) {
+      f.splatted = true;
+      f.mesh.position.y = -0.28;
+      f.vy = Math.abs(f.vy) * 0.35;
+      f.vx *= 0.6;
+      f.vz *= 0.6;
+      f.mesh.scale.y *= 0.55;
+      playSound("splat");
     }
-  };
-
-  const up = (ev) => {
-    document.removeEventListener("pointermove", move);
-    document.removeEventListener("pointerup", up);
-    g.remove();
-    if (cup) cup.classList.remove("is-pressed");
-    gridEl.querySelectorAll(".cup").forEach((c) => c.classList.remove("cup--hover"));
-
-    const target = document.elementFromPoint(ev.clientX, ev.clientY);
-    const dropCup = target?.closest?.(".cup");
-    if (dropCup && dropCup.dataset.index !== undefined) {
-      const idx = parseInt(dropCup.dataset.index, 10);
-      if (!cells[idx]) placeEgg(idx, dropCup);
-    } else if (dragEgg.cellIndex !== null) {
-      const orig = gridEl.children[dragEgg.cellIndex];
-      if (orig) {
-        cells[dragEgg.cellIndex] = true;
-        orig.classList.add("cup--filled");
-        const restored = createEggElement();
-        restored.classList.remove("is-placing");
-        restored.classList.add("is-settled");
-        orig.appendChild(restored);
-      }
+    if (f.mesh.position.y < -0.5 && !f.cracked) {
+      f.cracked = true;
     }
-    dragEgg = null;
-    updatePhysics();
-  };
+  });
 
-  document.addEventListener("pointermove", move);
-  document.addEventListener("pointerup", up);
+  renderer.render(scene, camera);
 }
 
-function resetSurvivalState() {
-  resetSurvivalClock();
-  setScoreDisplay(0);
-  scoreEl?.classList.remove("score-value--hot");
+function setPointerFromEvent(e) {
+  const rect = canvas.getBoundingClientRect();
+  pointerNdc.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+  pointerNdc.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
 }
 
-function resetGame(keepSize = true) {
+function pickCup() {
+  raycaster.setFromCamera(pointerNdc, camera);
+  const hits = raycaster.intersectObjects(cupMeshes, false);
+  if (!hits.length) return null;
+  const cup = hits[0].object;
+  return cup.userData?.type === "cup" ? cup : null;
+}
+
+function bindPointer() {
+  canvas.addEventListener("pointerdown", (e) => {
+    if (tipped) return;
+    pointerDown = true;
+    dragMoved = false;
+    lastPointer.x = e.clientX;
+    lastPointer.y = e.clientY;
+    setPointerFromEvent(e);
+    cupMeshes.forEach((c) => (c.material = matCup));
+    const cup = pickCup();
+    if (cup) cup.material = matCupHover;
+  });
+
+  canvas.addEventListener("pointermove", (e) => {
+    if (!pointerDown || tipped) return;
+    const dx = e.clientX - lastPointer.x;
+    const dy = e.clientY - lastPointer.y;
+    if (Math.hypot(dx, dy) > 6) {
+      dragMoved = true;
+      camYaw -= dx * 0.008;
+      camPitch = Math.max(0.2, Math.min(0.75, camPitch + dy * 0.006));
+      updateCamera();
+      return;
+    }
+    setPointerFromEvent(e);
+    cupMeshes.forEach((c) => (c.material = matCup));
+    const cup = pickCup();
+    if (cup && !cells[cup.userData.index]) cup.material = matCupHover;
+  });
+
+  canvas.addEventListener("pointerup", (e) => {
+    if (!pointerDown) return;
+    pointerDown = false;
+    cupMeshes.forEach((c) => (c.material = matCup));
+    if (tipped || paused || collapsing) return;
+    if (dragMoved) return;
+    setPointerFromEvent(e);
+    const cup = pickCup();
+    if (cup) {
+      const idx = cup.userData.index;
+      if (!cells[idx]) placeEgg(idx);
+    }
+  });
+
+  canvas.addEventListener("pointercancel", () => {
+    pointerDown = false;
+    cupMeshes.forEach((c) => (c.material = matCup));
+  });
+}
+
+function resetGame() {
   overlay.hidden = true;
   overlay.classList.remove("is-visible", "overlay-tip--record");
   if (overlayRecord) overlayRecord.hidden = true;
@@ -659,22 +886,22 @@ function resetGame(keepSize = true) {
   tipped = false;
   collapsing = false;
   paused = false;
-  resetSurvivalState();
-  displayTiltX = displayTiltY = targetTiltX = targetTiltY = 0;
-  gamePanel.classList.remove("game-panel--paused");
+  resetSurvivalClock();
+  setScoreDisplay(0);
+  scoreEl?.classList.remove("score-value--hot");
+  displayRotX = displayRotZ = targetRotX = targetRotZ = 0;
+  gamePanel.classList.remove("game-panel--paused", "is-shake");
   btnPause.setAttribute("aria-pressed", "false");
   btnPause.textContent = "Pause";
   moveFeedback.textContent = "";
   moveFeedback.className = "move-feedback";
-  if (!keepSize) return;
   buildGrid();
 }
 
 function togglePause() {
   if (tipped || collapsing) return;
-  if (!paused && survivalActive) {
-    pauseStartedAt = performance.now();
-  } else if (paused && pauseStartedAt) {
+  if (!paused && survivalActive) pauseStartedAt = performance.now();
+  else if (paused && pauseStartedAt) {
     pauseAccumulated += performance.now() - pauseStartedAt;
     pauseStartedAt = 0;
     if (survivalActive) startScoreLoop();
@@ -686,14 +913,12 @@ function togglePause() {
   btnPause.textContent = paused ? "Resume" : "Pause";
   gamePanel.classList.toggle("game-panel--paused", paused);
   playSound("click");
-  showToast(paused ? "Paused" : "Resumed");
 }
 
 function toggleSound() {
   soundOn = !soundOn;
   btnSound.setAttribute("aria-pressed", String(soundOn));
   btnSound.textContent = soundOn ? "Sound on" : "Sound off";
-  btnSound.setAttribute("aria-label", soundOn ? "Sound effects on" : "Sound effects off");
   try {
     localStorage.setItem(SOUND_KEY, soundOn ? "1" : "0");
   } catch {
@@ -703,6 +928,17 @@ function toggleSound() {
     initAudio();
     playSound("click");
   }
+}
+
+function bindInteractiveButtons(root = document) {
+  root.querySelectorAll(".btn-interactive").forEach((btn) => {
+    const press = () => btn.classList.add("is-pressed");
+    const release = () => btn.classList.remove("is-pressed");
+    btn.addEventListener("pointerdown", press);
+    btn.addEventListener("pointerup", release);
+    btn.addEventListener("pointerleave", release);
+    btn.addEventListener("pointercancel", release);
+  });
 }
 
 document.querySelectorAll(".size-pick").forEach((btn) => {
@@ -716,45 +952,44 @@ document.querySelectorAll(".size-pick").forEach((btn) => {
     rows = parseInt(btn.dataset.rows, 10);
     cols = parseInt(btn.dataset.cols, 10);
     playSound("click");
-    resetGame(true);
+    resetSurvivalClock();
+    resetGame();
   });
 });
 
 document.getElementById("btn-restart").addEventListener("click", () => {
   playSound("click");
-  vibrate(8);
-  resetGame(true);
+  resetSurvivalClock();
+  resetGame();
   showToast("New game");
 });
 
 document.getElementById("btn-clear").addEventListener("click", () => {
   if (tipped || collapsing) return;
   playSound("click");
-  resetSurvivalState();
-  streak = 0;
-  streakWrap.hidden = true;
-  buildGrid();
-  showToast("Carton cleared");
+  resetSurvivalClock();
+  resetGame();
+  showToast("Tray cleared");
 });
 
 document.getElementById("btn-retry").addEventListener("click", () => {
   playSound("click");
-  resetGame(true);
+  resetSurvivalClock();
+  resetGame();
 });
 
 btnPause.addEventListener("click", togglePause);
 btnSound.addEventListener("click", toggleSound);
-
 bindInteractiveButtons();
 
 try {
   soundOn = localStorage.getItem(SOUND_KEY) === "1";
   btnSound.setAttribute("aria-pressed", String(soundOn));
   btnSound.textContent = soundOn ? "Sound on" : "Sound off";
-  btnSound.setAttribute("aria-label", soundOn ? "Sound effects on" : "Sound effects off");
 } catch {
   /* ignore */
 }
 
 loadHighScore();
+initThree();
 buildGrid();

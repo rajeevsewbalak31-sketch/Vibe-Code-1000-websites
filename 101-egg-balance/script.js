@@ -33,6 +33,7 @@ let rows = 2;
 let cols = 2;
 let cells = [];
 let cupMeshes = [];
+let visualCups = [];
 let eggMeshes = [];
 
 let tipped = false;
@@ -59,6 +60,7 @@ let displayRotZ = 0;
 let fallingEggs = [];
 let pointerDown = false;
 let dragMoved = false;
+let dragDistance = 0;
 let lastPointer = { x: 0, y: 0 };
 let camYaw = 0.55;
 let camPitch = 0.42;
@@ -431,6 +433,7 @@ function updateCamera() {
 
 function clearTrayMeshes() {
   cupMeshes = [];
+  visualCups = [];
   eggMeshes = [];
   fallingEggs = [];
   while (cupGroup.children.length) cupGroup.remove(cupGroup.children[0]);
@@ -471,6 +474,7 @@ function buildGrid() {
   clearTrayMeshes();
   cells = Array(rows * cols).fill(false);
   eggMeshes = Array(rows * cols).fill(null);
+  visualCups = Array(rows * cols).fill(null);
   tipped = false;
   collapsing = false;
   dangerRatio = 0;
@@ -493,7 +497,16 @@ function buildGrid() {
     cup.position.set(pos.x, 0.06, pos.z);
     cup.userData = { index: i, type: "cup" };
     cupGroup.add(cup);
-    cupMeshes.push(cup);
+    visualCups[i] = cup;
+
+    const hitPad = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.24, 0.24, 0.04, 12),
+      new THREE.MeshBasicMaterial({ visible: false })
+    );
+    hitPad.position.set(pos.x, 0.28, pos.z);
+    hitPad.userData = { index: i, type: "cup" };
+    cupGroup.add(hitPad);
+    cupMeshes.push(hitPad);
 
     const ring = new THREE.Mesh(cupHole, new THREE.MeshLambertMaterial({
       color: 0x3d2a18,
@@ -828,24 +841,40 @@ function pickCup() {
   return cup.userData?.type === "cup" ? cup : null;
 }
 
+function setCupHover(index) {
+  visualCups.forEach((cup, i) => {
+    if (cup) cup.material = i === index ? matCupHover : matCup;
+  });
+}
+
+function clearCupHover() {
+  visualCups.forEach((cup) => {
+    if (cup) cup.material = matCup;
+  });
+}
+
 function bindPointer() {
   canvas.addEventListener("pointerdown", (e) => {
     if (tipped) return;
     pointerDown = true;
     dragMoved = false;
+    dragDistance = 0;
     lastPointer.x = e.clientX;
     lastPointer.y = e.clientY;
     setPointerFromEvent(e);
-    cupMeshes.forEach((c) => (c.material = matCup));
+    clearCupHover();
     const cup = pickCup();
-    if (cup) cup.material = matCupHover;
+    if (cup) setCupHover(cup.userData.index);
   });
 
   canvas.addEventListener("pointermove", (e) => {
     if (!pointerDown || tipped) return;
     const dx = e.clientX - lastPointer.x;
     const dy = e.clientY - lastPointer.y;
-    if (Math.hypot(dx, dy) > 6) {
+    dragDistance += Math.hypot(dx, dy);
+    lastPointer.x = e.clientX;
+    lastPointer.y = e.clientY;
+    if (dragDistance > 14) {
       dragMoved = true;
       camYaw -= dx * 0.008;
       camPitch = Math.max(0.2, Math.min(0.75, camPitch + dy * 0.006));
@@ -853,15 +882,15 @@ function bindPointer() {
       return;
     }
     setPointerFromEvent(e);
-    cupMeshes.forEach((c) => (c.material = matCup));
+    clearCupHover();
     const cup = pickCup();
-    if (cup && !cells[cup.userData.index]) cup.material = matCupHover;
+    if (cup && !cells[cup.userData.index]) setCupHover(cup.userData.index);
   });
 
   canvas.addEventListener("pointerup", (e) => {
     if (!pointerDown) return;
     pointerDown = false;
-    cupMeshes.forEach((c) => (c.material = matCup));
+    clearCupHover();
     if (tipped || paused || collapsing) return;
     if (dragMoved) return;
     setPointerFromEvent(e);
@@ -874,7 +903,7 @@ function bindPointer() {
 
   canvas.addEventListener("pointercancel", () => {
     pointerDown = false;
-    cupMeshes.forEach((c) => (c.material = matCup));
+    clearCupHover();
   });
 }
 

@@ -9,13 +9,19 @@ const gamePanel = document.getElementById("game-panel");
 const statusPill = document.getElementById("status-pill");
 const eggCountEl = document.getElementById("egg-count");
 const scoreEl = document.getElementById("score");
+const highScoreEl = document.getElementById("high-score");
 const streakEl = document.getElementById("streak");
 const streakWrap = document.getElementById("streak-wrap");
 const tiltFill = document.getElementById("tilt-fill");
 const tiltMeter = document.querySelector(".tilt-meter");
 const moveFeedback = document.getElementById("move-feedback");
+const cartonScene = document.getElementById("carton-scene");
 const overlay = document.getElementById("overlay");
+const overlayTitle = document.getElementById("overlay-title");
+const overlayRecord = document.getElementById("overlay-record");
+const overlayMsg = document.getElementById("overlay-msg");
 const overlayScore = document.getElementById("overlay-score");
+const overlayBest = document.getElementById("overlay-best");
 const btnPause = document.getElementById("btn-pause");
 const btnSound = document.getElementById("btn-sound");
 
@@ -32,13 +38,21 @@ let displayTiltX = 0;
 let displayTiltY = 0;
 let targetTiltX = 0;
 let targetTiltY = 0;
-let score = 0;
 let streak = 0;
 let soundOn = false;
 let audioCtx = null;
 let feedbackTimer = 0;
+let survivalStart = 0;
+let survivalActive = false;
+let pauseAccumulated = 0;
+let pauseStartedAt = 0;
+let difficultyLevel = 0;
+let lastDifficultyAnnounced = -1;
+let highScore = 0;
+let scoreRaf = 0;
 
 const SOUND_KEY = "eggbalance-sound";
+const HIGH_SCORE_KEY = "eggbalance-best";
 
 function showToast(msg) {
   const t = document.getElementById("toast");
@@ -84,6 +98,135 @@ function playSound(kind) {
   } else if (kind === "warn") playTone(280, 0.12, "triangle", 0.05);
   else if (kind === "tip") playTone(120, 0.35, "sawtooth", 0.07);
   else if (kind === "click") playTone(400, 0.04, "sine", 0.04);
+  else if (kind === "level") {
+    playTone(440, 0.06, "sine", 0.05);
+    setTimeout(() => playTone(554, 0.08, "sine", 0.05), 70);
+  } else if (kind === "gameover") {
+    playTone(90, 0.2, "sawtooth", 0.08);
+    setTimeout(() => playTone(55, 0.45, "triangle", 0.06), 100);
+    setTimeout(() => playTone(40, 0.3, "sine", 0.04), 220);
+  } else if (kind === "record") {
+    playTone(523, 0.1, "sine", 0.07);
+    setTimeout(() => playTone(659, 0.1, "sine", 0.07), 90);
+    setTimeout(() => playTone(784, 0.14, "sine", 0.08), 180);
+    setTimeout(() => playTone(988, 0.2, "sine", 0.06), 280);
+  }
+}
+
+function loadHighScore() {
+  try {
+    const v = parseFloat(localStorage.getItem(HIGH_SCORE_KEY) || "0");
+    highScore = Number.isFinite(v) ? v : 0;
+  } catch {
+    highScore = 0;
+  }
+  if (highScoreEl) highScoreEl.textContent = formatTime(highScore);
+}
+
+function saveHighScore(seconds) {
+  if (seconds <= highScore) return false;
+  highScore = seconds;
+  try {
+    localStorage.setItem(HIGH_SCORE_KEY, String(seconds));
+  } catch {
+    /* ignore */
+  }
+  if (highScoreEl) {
+    highScoreEl.textContent = formatTime(highScore);
+    highScoreEl.classList.remove("high-score-pop");
+    void highScoreEl.offsetWidth;
+    highScoreEl.classList.add("high-score-pop");
+  }
+  return true;
+}
+
+function formatTime(seconds) {
+  const s = Math.max(0, seconds);
+  if (s >= 60) {
+    const m = Math.floor(s / 60);
+    const r = (s % 60).toFixed(1);
+    return `${m}:${r.padStart(4, "0")}`;
+  }
+  return `${s.toFixed(1)}s`;
+}
+
+function getSurvivalSeconds() {
+  if (!survivalActive || !survivalStart) return 0;
+  let elapsed = performance.now() - survivalStart - pauseAccumulated;
+  if (paused && pauseStartedAt) elapsed -= performance.now() - pauseStartedAt;
+  return Math.max(0, elapsed / 1000);
+}
+
+function startSurvivalClock() {
+  if (survivalActive) return;
+  survivalActive = true;
+  survivalStart = performance.now();
+  pauseAccumulated = 0;
+  pauseStartedAt = 0;
+  difficultyLevel = 0;
+  lastDifficultyAnnounced = -1;
+  startScoreLoop();
+}
+
+function stopScoreLoop() {
+  if (scoreRaf) {
+    cancelAnimationFrame(scoreRaf);
+    scoreRaf = 0;
+  }
+}
+
+function resetSurvivalClock() {
+  survivalActive = false;
+  survivalStart = 0;
+  pauseAccumulated = 0;
+  pauseStartedAt = 0;
+  difficultyLevel = 0;
+  lastDifficultyAnnounced = -1;
+  stopScoreLoop();
+}
+
+function startScoreLoop() {
+  if (scoreRaf) return;
+  const tick = () => {
+    if (!survivalActive || tipped) {
+      scoreRaf = 0;
+      return;
+    }
+    updateLiveScore();
+    scoreRaf = requestAnimationFrame(tick);
+  };
+  scoreRaf = requestAnimationFrame(tick);
+}
+
+function getDifficultyLevel() {
+  return Math.floor(getSurvivalSeconds() / 10);
+}
+
+function getWobbleScale() {
+  const level = getDifficultyLevel();
+  return 1 + level * 0.35;
+}
+
+function updateLiveScore() {
+  const sec = getSurvivalSeconds();
+  const level = getDifficultyLevel();
+  if (level !== difficultyLevel) {
+    difficultyLevel = level;
+    if (level > lastDifficultyAnnounced && level > 0) {
+      lastDifficultyAnnounced = level;
+      showMoveFeedback(`Level ${level + 1} — wobble up!`, "move-feedback--warn");
+      playSound("level");
+      vibrate(12);
+    }
+  }
+  if (scoreEl) {
+    scoreEl.textContent = formatTime(sec);
+    scoreEl.classList.toggle("score-value--hot", sec >= 30);
+  }
+}
+
+function setScoreDisplay(seconds) {
+  if (scoreEl) scoreEl.textContent = formatTime(seconds);
 }
 
 function bindInteractiveButtons(root = document) {
@@ -172,9 +315,8 @@ function showMoveFeedback(text, cls) {
   }, 900);
 }
 
-function setScore(next) {
-  score = next;
-  scoreEl.textContent = String(score);
+function bumpTimeDisplay() {
+  if (!scoreEl) return;
   scoreEl.classList.remove("score-bump");
   void scoreEl.offsetWidth;
   scoreEl.classList.add("score-bump");
@@ -288,11 +430,12 @@ function placeEgg(index, cup) {
     egg.classList.add("is-settled");
   });
 
+  if (!survivalActive) startSurvivalClock();
+
   const physAfter = computePhysics();
   const rating = ratePlacement(index, physBefore, physAfter);
-  const streakBonus = streak >= 2 ? Math.min(streak * 2, 20) : 0;
-  setScore(score + rating.points + streakBonus);
   updateStreak(rating);
+  bumpTimeDisplay();
   showMoveFeedback(rating.text, rating.cls);
 
   playSound(rating.cls === "move-feedback--perfect" ? "perfect" : "place");
@@ -337,12 +480,35 @@ function updateStatus(phys) {
   }
 }
 
+function triggerScreenShake() {
+  gamePanel?.classList.add("is-shake");
+  cartonScene?.classList.add("is-shake");
+  setTimeout(() => {
+    gamePanel?.classList.remove("is-shake");
+    cartonScene?.classList.remove("is-shake");
+  }, 520);
+}
+
 function triggerTip() {
   if (tipped || collapsing) return;
   tipped = true;
   collapsing = true;
+  const finalTime = getSurvivalSeconds();
+  stopScoreLoop();
+  setScoreDisplay(finalTime);
+
   playSound("tip");
+  playSound("gameover");
   vibrate([20, 60, 30, 80, 40]);
+  triggerScreenShake();
+
+  const isRecord = finalTime > highScore;
+  const previousBest = highScore;
+  if (isRecord) saveHighScore(finalTime);
+  if (isRecord) {
+    playSound("record");
+    vibrate([30, 50, 30, 50, 80]);
+  }
 
   cartonEl.classList.add("is-collapsing");
   targetTiltX = displayTiltX * 2.8 + (Math.random() > 0.5 ? 32 : -32);
@@ -363,8 +529,23 @@ function triggerTip() {
     cartonEl.classList.add("is-tipped");
     overlay.hidden = false;
     overlay.classList.add("is-visible");
-    overlayScore.textContent = `Final score: ${score}${streak > 1 ? ` · Best streak ${streak}` : ""}`;
-    showToast("The carton tipped over!");
+    overlay.classList.toggle("overlay-tip--record", isRecord);
+
+    if (overlayTitle) overlayTitle.textContent = isRecord ? "New record!" : "Carton tipped!";
+    if (overlayRecord) overlayRecord.hidden = !isRecord;
+    if (overlayMsg) {
+      overlayMsg.textContent = isRecord
+        ? "You held on longer than ever — incredible balance."
+        : "The center of mass left the base — eggs everywhere.";
+    }
+    overlayScore.textContent = `Survived ${formatTime(finalTime)}${streak > 1 ? ` · Streak ${streak}` : ""}`;
+    if (overlayBest) {
+      overlayBest.textContent = isRecord
+        ? `Previous best: ${formatTime(previousBest)}`
+        : `Personal best: ${formatTime(highScore)}`;
+      overlayBest.hidden = false;
+    }
+    showToast(isRecord ? "New high score!" : "The carton tipped over!");
     collapsing = false;
   }, 950);
 }
@@ -383,8 +564,15 @@ function animateTilt() {
   const easing = collapsing ? 0.12 : 0.18;
   displayTiltX += (targetTiltX - displayTiltX) * easing;
   displayTiltY += (targetTiltY - displayTiltY) * easing;
-  const wobble = tipped || collapsing ? 0 : Math.sin(Date.now() / 280) * (Math.hypot(displayTiltX, displayTiltY) * 0.04);
-  cartonEl.style.transform = `rotateX(${displayTiltY + wobble}deg) rotateZ(${displayTiltX}deg)`;
+  const tiltMag = Math.hypot(displayTiltX, displayTiltY);
+  const diffScale = getWobbleScale();
+  const envWobble =
+    tipped || collapsing || paused
+      ? 0
+      : Math.sin(Date.now() / (280 - difficultyLevel * 12)) * (0.35 + difficultyLevel * 0.22) * diffScale;
+  const tiltWobble = tipped || collapsing ? 0 : Math.sin(Date.now() / 220) * tiltMag * 0.04 * diffScale;
+  const wobble = envWobble + tiltWobble;
+  cartonEl.style.transform = `rotateX(${displayTiltY + wobble}deg) rotateZ(${displayTiltX + wobble * 0.35}deg)`;
 
   const done =
     Math.abs(targetTiltX - displayTiltX) < 0.08 &&
@@ -457,14 +645,21 @@ function startDrag(e, el, cellIndex, cup) {
   document.addEventListener("pointerup", up);
 }
 
+function resetSurvivalState() {
+  resetSurvivalClock();
+  setScoreDisplay(0);
+  scoreEl?.classList.remove("score-value--hot");
+}
+
 function resetGame(keepSize = true) {
   overlay.hidden = true;
-  overlay.classList.remove("is-visible");
+  overlay.classList.remove("is-visible", "overlay-tip--record");
+  if (overlayRecord) overlayRecord.hidden = true;
+  if (overlayBest) overlayBest.hidden = true;
   tipped = false;
   collapsing = false;
   paused = false;
-  score = 0;
-  setScore(0);
+  resetSurvivalState();
   displayTiltX = displayTiltY = targetTiltX = targetTiltY = 0;
   gamePanel.classList.remove("game-panel--paused");
   btnPause.setAttribute("aria-pressed", "false");
@@ -477,7 +672,16 @@ function resetGame(keepSize = true) {
 
 function togglePause() {
   if (tipped || collapsing) return;
+  if (!paused && survivalActive) {
+    pauseStartedAt = performance.now();
+  } else if (paused && pauseStartedAt) {
+    pauseAccumulated += performance.now() - pauseStartedAt;
+    pauseStartedAt = 0;
+    if (survivalActive) startScoreLoop();
+  }
   paused = !paused;
+  if (paused) stopScoreLoop();
+  else if (survivalActive) startScoreLoop();
   btnPause.setAttribute("aria-pressed", String(paused));
   btnPause.textContent = paused ? "Resume" : "Pause";
   gamePanel.classList.toggle("game-panel--paused", paused);
@@ -526,8 +730,7 @@ document.getElementById("btn-restart").addEventListener("click", () => {
 document.getElementById("btn-clear").addEventListener("click", () => {
   if (tipped || collapsing) return;
   playSound("click");
-  score = 0;
-  setScore(0);
+  resetSurvivalState();
   streak = 0;
   streakWrap.hidden = true;
   buildGrid();
@@ -553,4 +756,5 @@ try {
   /* ignore */
 }
 
+loadHighScore();
 buildGrid();

@@ -49,7 +49,7 @@
     <header class="tool-header tool-header--compact">
       <p class="eyebrow">Game #101 · Rajeev's invention</p>
       <h1 class="logo">EggBalance</h1>
-      <p class="tagline">Tap cups to place eggs — feel the tilt, beat your streak</p>
+      <p class="tagline">Survive as long as you can — wobble gets harder every 10 seconds</p>
     </header>
     <section class="game-stage" aria-label="Egg balancing game">
       <div id="game-panel" class="game-panel">
@@ -62,9 +62,13 @@
           <button type="button" class="size-pick btn-interactive" data-rows="8" data-cols="8" aria-pressed="false">8×8</button>
         </div>
         <div class="game-hud" aria-live="polite" aria-atomic="true">
+          <div class="hud-stat hud-stat--time">
+            <span class="hud-label">Time</span>
+            <strong id="score" class="score-value">0.0s</strong>
+          </div>
           <div class="hud-stat">
-            <span class="hud-label">Score</span>
-            <strong id="score" class="score-value">0</strong>
+            <span class="hud-label">Best</span>
+            <strong id="high-score" class="high-score-value">0.0s</strong>
           </div>
           <div class="hud-stat">
             <span class="hud-label">Eggs</span>
@@ -79,7 +83,7 @@
         <p id="move-feedback" class="move-feedback" aria-live="assertive"></p>
         <div class="egg-layout">
           <div class="carton-wrap">
-            <div class="carton-scene">
+            <div id="carton-scene" class="carton-scene">
               <div id="carton" class="carton" aria-live="polite">
                 <div class="carton-lid" aria-hidden="true"></div>
                 <div class="carton-body">
@@ -118,8 +122,10 @@
   <div id="overlay" class="overlay-tip" role="dialog" aria-modal="true" aria-labelledby="overlay-title" hidden>
     <div class="overlay-card">
       <h2 id="overlay-title">Carton tipped!</h2>
+      <p id="overlay-record" class="overlay-record" hidden>🎉 New high score!</p>
       <p id="overlay-msg">The center of mass left the base — eggs everywhere.</p>
       <p id="overlay-score" class="overlay-score"></p>
+      <p id="overlay-best" class="overlay-best"></p>
       <button type="button" id="btn-retry" class="btn btn--primary btn-interactive">Try again</button>
     </div>
   </div>

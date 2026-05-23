@@ -32,7 +32,7 @@
       "slug": "buy-a-square",
       "name": "Buy a Square",
       "tagline": "10×10 grid — pick a square, pay €1 via PayPal.",
-      "href": "https://001-buy-a-square.vercel.app",
+      "href": "./001-buy-a-square/",
       "live": true,
       "category": "landing-pages",
       "search": "buy a square grid paypal euro landing"

@@ -12,11 +12,16 @@ const manifest = JSON.parse(readFileSync(join(__dirname, "manifest.json"), "utf8
 const sites = JSON.parse(readFileSync(join(__dirname, "sites.json"), "utf8"));
 const today = new Date().toISOString().slice(0, 10);
 
+function hubSiteLoc(id, slug) {
+  const dir = join(ROOT, `${id}-${slug}`);
+  if (!existsSync(dir)) return null;
+  return `${HUB_URL}/${id}-${slug}/`;
+}
+
+/** Only hub-relative paths — never external domains (GSC sitemap must match property). */
 function toAbsoluteLoc(href) {
   if (!href) return null;
-  if (href.startsWith("http://") || href.startsWith("https://")) {
-    return href.endsWith("/") ? href : `${href}/`;
-  }
+  if (/^https?:\/\//i.test(href)) return null;
   const path = href.replace(/^\.\//, "").replace(/^\//, "");
   return `${HUB_URL}/${path}${path.endsWith("/") ? "" : "/"}`;
 }
@@ -33,7 +38,7 @@ function addUrl(loc, priority) {
 addUrl(`${HUB_URL}/`, "1.0");
 
 for (const f of manifest.featured || []) {
-  const loc = toAbsoluteLoc(f.href);
+  const loc = hubSiteLoc(f.id, f.slug) || toAbsoluteLoc(f.href);
   if (loc) addUrl(loc, "0.9");
 }
 

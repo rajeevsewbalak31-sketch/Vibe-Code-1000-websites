@@ -905,6 +905,17 @@ function bindPointer() {
     pointerDown = false;
     clearCupHover();
   });
+
+  canvas.addEventListener("click", (e) => {
+    if (tipped || paused || collapsing) return;
+    if (dragDistance > 14) return;
+    setPointerFromEvent(e);
+    const cup = pickCup();
+    if (cup) {
+      const idx = cup.userData.index;
+      if (!cells[idx]) placeEgg(idx);
+    }
+  });
 }
 
 function resetGame() {

@@ -2,27 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>NestRun | Vibe Code 1000</title>
-  <meta name="description" content="Free NestRun tool — Classic snake — eat, grow, don't bite yourself Built with Vibe Code 1000." />
-  <meta name="keywords" content="NestRun, snake-mini, Vibe Code 1000, free web tool" />
+  <meta name="description" content="NestRun — classic snake. Eat, grow, beat your best score. Arrow keys or WASD." />
+  <meta name="keywords" content="NestRun, snake, Vibe Code 1000, free web game" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://vibecode1000.com/104-nestrun/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="NestRun | Vibe Code 1000" />
-  <meta property="og:description" content="Free NestRun tool — Classic snake — eat, grow, don't bite yourself Built with Vibe Code 1000." />
+  <meta property="og:description" content="Classic snake — eat, grow, don't bite yourself." />
   <meta property="og:url" content="https://vibecode1000.com/104-nestrun/" />
   <meta property="og:site_name" content="Vibe Code 1000" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="NestRun | Vibe Code 1000" />
-  <meta name="twitter:description" content="Free NestRun tool — Classic snake — eat, grow, don't bite yourself Built with Vibe Code 1000." />
+  <meta name="twitter:description" content="Classic snake — eat, grow, don't bite yourself." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/_shared/tool.css" />
   <link rel="stylesheet" href="/_shared/game.css" />
   <link rel="stylesheet" href="/104-nestrun/style.css" />
-  
   <!-- VERCEL_ANALYTICS_START -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -52,12 +51,17 @@
       <h1 class="logo">NestRun</h1>
       <p class="tagline">Classic snake — eat, grow, don't bite yourself</p>
     </header>
-    <section class="game-stage" aria-label="Game">
-<div class="game-panel">
-      <div class="game-hud"><span>Score: <strong id="score">0</strong></span></div>
-      <div class="game-canvas-wrap"><canvas id="c" width="320" height="320"></canvas></div>
-      <p class="hint" style="margin-top:.75rem;text-align:center">Arrow keys or swipe</p>
-    </div>
+    <section class="game-stage" aria-label="NestRun snake game">
+      <div id="game-panel" class="game-panel">
+        <div class="game-hud">
+          <span>Score: <strong id="score">0</strong></span>
+          <span>Best: <strong id="best-score">0</strong></span>
+        </div>
+        <div class="game-canvas-wrap">
+          <canvas id="c" width="320" height="320" tabindex="0" aria-label="Snake game board. Use arrow keys or WASD."></canvas>
+        </div>
+        <p class="hint">Arrow keys · WASD · or swipe on the board</p>
+      </div>
     </section>
     <footer class="tip-jar">
       <p class="tip-upsell"><a class="tip-upsell-link" href="https://vibecode1000.com/#get-a-site"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
@@ -69,6 +73,17 @@
       <p class="hub-wrap"><a class="hub-link" href="https://vibecode1000.com/#contact">Free quote</a> · <a class="hub-link" href="https://vibecode1000.com/">All tools</a></p>
     </footer>
   </main>
+
+  <div id="game-over" class="game-overlay" role="dialog" aria-modal="true" aria-labelledby="go-title" hidden>
+    <div class="game-overlay-card">
+      <h2 id="go-title">Game over</h2>
+      <p class="game-overlay-score">Score: <strong id="final-score">0</strong></p>
+      <p id="new-best" class="game-overlay-best" hidden>New best score!</p>
+      <p class="game-overlay-meta">Best: <strong id="overlay-best">0</strong></p>
+      <button type="button" id="btn-play-again" class="btn btn--primary">Play again</button>
+    </div>
+  </div>
+
   <p id="toast" class="toast" role="status"></p>
   <script src="/104-nestrun/script.js"></script>
 </body>

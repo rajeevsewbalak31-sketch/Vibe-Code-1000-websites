@@ -34,6 +34,7 @@ Example after fix:
 | Still using relative assets | 0 |
 | Missing script.js | 0 |
 | Bad script reference | 0 |
+| JS syntax errors | 0 |
 | No event listeners | 0 |
 | HTML/JS ID mismatches | 0 |
 | **Sites flagged (static)** | **0** |

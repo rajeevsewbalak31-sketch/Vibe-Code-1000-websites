@@ -196,17 +196,28 @@
   z-index: 2;
 }
 
+.viewport--near-fail {
+  animation: near-fail-shake 0.32s ease-in-out infinite;
+}
+
 .viewport--danger {
   box-shadow: 0 0 0 2px color-mix(in srgb, #ffd166 50%, transparent);
 }
 
 .viewport--panic {
   box-shadow: 0 0 0 2px color-mix(in srgb, #ff6b6b 65%, transparent);
-  animation: viewport-panic 0.35s ease-in-out infinite alternate;
+  animation: near-fail-shake 0.2s ease-in-out infinite, viewport-panic 0.35s ease-in-out infinite alternate;
 }
 
 .viewport--collapse {
-  animation: screen-shake 0.45s ease-in-out infinite;
+  animation: screen-shake 0.38s ease-in-out infinite;
+}
+
+@keyframes near-fail-shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 1px); }
+  50% { transform: translate(2px, -2px); }
+  80% { transform: translate(-1px, 1px); }
 }
 
 @keyframes viewport-panic {
@@ -301,6 +312,7 @@
   .score-bump,
   .high-score-pop,
   .game-panel.is-shake .viewport,
+  .viewport--near-fail,
   .viewport--panic,
   .viewport--collapse {
     animation: none;

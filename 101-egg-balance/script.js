@@ -69,6 +69,7 @@ let dangerRatio = 0;
 let nearFailActive = false;
 let lastWarnAt = 0;
 let lastSqueakAt = 0;
+let lastCriticalWarnAt = 0;
 let collapseTime = 0;
 
 // --- Three.js ---
@@ -142,7 +143,10 @@ function playSound(kind) {
   else if (kind === "perfect") {
     playTone(660, 0.06, "sine", 0.07);
     setTimeout(() => playTone(880, 0.1, "sine", 0.06), 60);
-  }   else if (kind === "warn") playTone(280, 0.12, "triangle", 0.05);
+  } else if (kind === "warn") {
+    playTone(300, 0.1, "triangle", 0.045);
+    setTimeout(() => playTone(240, 0.14, "triangle", 0.035), 90);
+  }
   else if (kind === "squeak") {
     playTone(920, 0.05, "sine", 0.05);
     setTimeout(() => playTone(780, 0.07, "sine", 0.04), 40);
@@ -254,7 +258,7 @@ function getDifficultyLevel() {
 }
 
 function getWobbleScale() {
-  return 1 + getDifficultyLevel() * 0.5;
+  return 1 + getDifficultyLevel() * 0.58;
 }
 
 function getWobbleIntensity() {
@@ -481,10 +485,16 @@ function buildGrid() {
   nearFailActive = false;
   lastWarnAt = 0;
   lastSqueakAt = 0;
+  lastCriticalWarnAt = 0;
   collapseTime = 0;
   displayRotX = displayRotZ = targetRotX = targetRotZ = 0;
   trayGroup.rotation.set(0, 0, 0);
-  viewport?.classList.remove("viewport--danger", "viewport--panic", "viewport--collapse");
+  viewport?.classList.remove(
+    "viewport--danger",
+    "viewport--near-fail",
+    "viewport--panic",
+    "viewport--collapse"
+  );
 
   buildTrayBase();
 
@@ -585,6 +595,7 @@ function updateStatus(phys) {
   if (tiltMeter) tiltMeter.setAttribute("aria-valuenow", String(Math.round(clamped)));
 
   viewport?.classList.toggle("viewport--danger", dangerRatio > 0.72 && !tipped);
+  viewport?.classList.toggle("viewport--near-fail", dangerRatio > 0.76 && !tipped);
   viewport?.classList.toggle("viewport--panic", dangerRatio > 0.88 && !tipped);
 
   if (phys.tipped || tipped) {
@@ -616,6 +627,12 @@ function updateNearFail(phys, t) {
     vibrate(8);
     if (dangerRatio > 0.88) showMoveFeedback("Uh oh…", "move-feedback--bad");
     else if (dangerRatio > 0.8) showMoveFeedback("Wobble!", "move-feedback--warn");
+  }
+  if (dangerRatio > 0.85 && now - lastCriticalWarnAt > 1050) {
+    lastCriticalWarnAt = now;
+    playSound("warn");
+    if (dangerRatio > 0.9) gamePanel.classList.add("is-shake");
+    setTimeout(() => gamePanel.classList.remove("is-shake"), 420);
   }
   if (dangerRatio > 0.85 && now - lastSqueakAt > 450) {
     lastSqueakAt = now;
@@ -650,7 +667,7 @@ function jiggleEggs(t, intensity) {
     if (!egg || !cells[i] || !egg.userData.settled || !egg.userData.basePos) return;
     const base = egg.userData.basePos;
     const edge = cupOffsetFromCenter(i);
-    const amp = (0.015 + intensity * 0.045) * (1 + edge * 0.6);
+    const amp = (0.018 + intensity * 0.055) * (1 + edge * 0.65);
     const stress = egg.userData.stress || 0;
     egg.position.x = base.x + Math.sin(t * (14 + stress * 8) + i * 1.7) * amp;
     egg.position.z = base.z + Math.cos(t * (12 + stress * 6) + i * 2.1) * amp;
@@ -698,8 +715,8 @@ function triggerGameOver() {
   const isRecord = finalTime > highScore;
   if (isRecord) saveHighScore(finalTime);
 
-  targetRotX *= 2.4;
-  targetRotZ *= 2.4;
+  targetRotX *= 2.8;
+  targetRotZ *= 2.8;
 
   const funnyMsg = FUNNY_LOSS[Math.floor(Math.random() * FUNNY_LOSS.length)];
 
@@ -712,15 +729,20 @@ function triggerGameOver() {
 
   setTimeout(() => {
     eggMeshes.forEach((_, i) => {
-      if (cells[i]) setTimeout(() => launchEgg(i, 1.2 + Math.random() * 0.6), i * 70);
+      if (cells[i]) setTimeout(() => launchEgg(i, 1.35 + Math.random() * 0.75), i * 85);
     });
-  }, 200);
+  }, 280);
 
   setTimeout(() => {
     overlay.hidden = false;
     overlay.classList.add("is-visible");
     overlay.classList.toggle("overlay-tip--record", isRecord);
-    viewport?.classList.remove("viewport--danger", "viewport--panic", "viewport--collapse");
+    viewport?.classList.remove(
+      "viewport--danger",
+      "viewport--near-fail",
+      "viewport--panic",
+      "viewport--collapse"
+    );
     gamePanel.classList.remove("is-shake");
 
     if (overlayTitle) overlayTitle.textContent = isRecord ? "New record!" : "Total yolkage!";
@@ -743,7 +765,7 @@ function triggerGameOver() {
     }
     showToast(isRecord ? "New high score!" : funnyMsg);
     collapsing = false;
-  }, 1400);
+  }, 1650);
 }
 
 function updatePhysics() {
@@ -770,27 +792,28 @@ function animate() {
     let envZ = 0;
     if (!paused) {
       envX =
-        Math.sin(t * (2.2 * freqBoost)) * (0.022 + diff * 0.014) * wobbleScale +
-        Math.sin(t * (5.1 * freqBoost) + 1.2) * (0.008 + diff * 0.006) * wobbleScale;
+        Math.sin(t * (2.2 * freqBoost)) * (0.026 + diff * 0.017) * wobbleScale +
+        Math.sin(t * (5.1 * freqBoost) + 1.2) * (0.01 + diff * 0.007) * wobbleScale;
       envZ =
-        Math.cos(t * (2.6 * freqBoost)) * (0.018 + diff * 0.012) * wobbleScale +
-        Math.cos(t * (4.7 * freqBoost) + 0.8) * (0.007 + diff * 0.005) * wobbleScale;
+        Math.cos(t * (2.6 * freqBoost)) * (0.022 + diff * 0.014) * wobbleScale +
+        Math.cos(t * (4.7 * freqBoost) + 0.8) * (0.009 + diff * 0.006) * wobbleScale;
     }
 
     if (collapsing) {
       collapseTime += dt;
-      const flop = Math.min(1, collapseTime / 0.55);
-      envX += displayRotX * flop * 0.6 + Math.sin(t * 16) * 0.04 * flop;
-      envZ += displayRotZ * flop * 0.6 + Math.cos(t * 14) * 0.04 * flop;
+      const flop = Math.min(1, collapseTime / 0.72);
+      const flopEase = 1 - (1 - flop) ** 2;
+      envX += displayRotX * flopEase * 0.85 + Math.sin(t * 18) * 0.055 * flopEase;
+      envZ += displayRotZ * flopEase * 0.85 + Math.cos(t * 15) * 0.055 * flopEase;
     }
 
-    const ease = collapsing ? 0.08 : 0.12;
+    const ease = collapsing ? 0.07 : 0.11;
     displayRotX += (targetRotX - displayRotX) * ease;
     displayRotZ += (targetRotZ - displayRotZ) * ease;
 
-  if (collapsing && collapseTime < 0.9) {
-      displayRotX += targetRotX * dt * 1.8;
-      displayRotZ += targetRotZ * dt * 1.8;
+    if (collapsing && collapseTime < 1.1) {
+      displayRotX += targetRotX * dt * 2.2;
+      displayRotZ += targetRotZ * dt * 2.2;
     }
 
     trayGroup.rotation.x = displayRotX + envX;

@@ -1,1 +1,139 @@
-:root{--accent:#e74c3c;--accent-2:#f5b7b1}
+:root {
+  --accent: #e74c3c;
+  --accent-2: #f5b7b1;
+  --dice-felt: #1a2230;
+}
+
+.dice-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dice-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-height: min(72vw, 22rem);
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(165deg, #1e2838 0%, var(--dice-felt) 45%, #121820 100%);
+  border: 1px solid var(--border);
+  touch-action: none;
+}
+
+#dice-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.dice-stage-hint {
+  position: absolute;
+  inset: auto 0 0.75rem;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.dice-stage.is-rolling .dice-stage-hint,
+.dice-stage.has-result .dice-stage-hint {
+  opacity: 0;
+}
+
+.result-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-align: center;
+  margin: 0;
+}
+
+.display {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 10vw, 3.25rem);
+  font-weight: 600;
+  color: var(--accent-2);
+  min-height: 3.5rem;
+  line-height: 1.15;
+  transition: opacity 0.2s ease, transform 0.35s ease;
+}
+
+.display.is-rolling {
+  opacity: 0.35;
+  transform: scale(0.96);
+}
+
+.display.is-reveal {
+  animation: result-pop 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+@keyframes result-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.display-total {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: -0.35rem 0 0;
+}
+
+.display-total:not([hidden]) {
+  display: block;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.actions .btn {
+  min-width: 7.5rem;
+}
+
+#btn-again:not([hidden]) {
+  display: inline-flex;
+}
+
+.field-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.field-label .input {
+  width: 4.5rem;
+  text-align: center;
+}
+
+@media (max-width: 380px) {
+  .dice-stage {
+    max-height: 68vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .display.is-reveal {
+    animation: none;
+  }
+}

@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RollDice | Vibe Code 1000</title>
-  <meta name="description" content="Free RollDice tool — Roll one or many dice instantly Built with Vibe Code 1000." />
-  <meta name="keywords" content="RollDice, dice-roll, Vibe Code 1000, free web tool" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Roll a Dice | Vibe Code 1000</title>
+  <meta name="description" content="Roll a Dice — realistic 3D dice with smooth physics-style rolls. Roll 1–6 dice instantly in your browser." />
+  <meta name="keywords" content="roll a dice, 3D dice roller, d6, Vibe Code 1000, free web tool" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://vibecode1000.com/004-dice-roll/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="RollDice | Vibe Code 1000" />
-  <meta property="og:description" content="Free RollDice tool — Roll one or many dice instantly Built with Vibe Code 1000." />
+  <meta property="og:title" content="Roll a Dice | Vibe Code 1000" />
+  <meta property="og:description" content="Realistic 3D dice — spin, land, and see your roll." />
   <meta property="og:url" content="https://vibecode1000.com/004-dice-roll/" />
   <meta property="og:site_name" content="Vibe Code 1000" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="RollDice | Vibe Code 1000" />
-  <meta name="twitter:description" content="Free RollDice tool — Roll one or many dice instantly Built with Vibe Code 1000." />
+  <meta name="twitter:title" content="Roll a Dice | Vibe Code 1000" />
+  <meta name="twitter:description" content="Realistic 3D dice roller in your browser." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;9..144,600;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/_shared/tool.css" />
   <link rel="stylesheet" href="/004-dice-roll/style.css" />
   <!-- VERCEL_ANALYTICS_START -->
@@ -38,27 +38,40 @@
   <main class="shell">
     <nav class="site-bar" aria-label="Site navigation">
       <a class="brand" href="https://vibecode1000.com/">
-        <span class="brand-mark" aria-hidden="true">RO</span>
-        <span class="brand-text">RollDice</span>
+        <span class="brand-mark" aria-hidden="true">DI</span>
+        <span class="brand-text">Roll a Dice</span>
       </a>
       <div class="site-bar-actions">
         <a class="btn btn--ghost btn--sm" href="https://vibecode1000.com/">← All tools</a>
       </div>
     </nav>
-    <header class="tool-header">
-      <p class="eyebrow">Website #004</p>
-      <h1 class="logo">RollDice</h1>
-      <p class="tagline">Roll one or many dice instantly</p>
+    <header class="tool-header tool-header--compact">
+      <p class="eyebrow">Website #004 · 3D</p>
+      <h1 class="logo">Roll a Dice</h1>
+      <p class="tagline">Tap roll — watch the dice spin and land</p>
     </header>
-    <article class="card">
-      
-      <label class="field-label">Dice count <input id="dice-count" type="number" min="1" max="6" value="2" class="input" /></label>
-      <p id="display" class="display">—</p>
+
+    <article class="card dice-card">
+      <div class="dice-stage" id="dice-stage">
+        <canvas id="dice-canvas" aria-hidden="true"></canvas>
+        <p class="dice-stage-hint" id="stage-hint">Press Roll to shake the dice</p>
+      </div>
+
+      <p class="result-label">Result</p>
+      <p id="display" class="display" aria-live="polite">—</p>
+      <p id="display-total" class="display-total" hidden></p>
+
+      <label class="field-label" for="dice-count">
+        Dice count
+        <input id="dice-count" type="number" min="1" max="6" value="1" class="input" inputmode="numeric" />
+      </label>
+
       <div class="actions">
-        <button type="button" id="btn-action" class="btn btn--primary">Roll</button>
-        
+        <button type="button" id="btn-roll" class="btn btn--primary">Roll</button>
+        <button type="button" id="btn-again" class="btn btn--ghost" hidden>Roll again</button>
       </div>
     </article>
+
     <footer class="tip-jar">
       <p class="tip-upsell"><a class="tip-upsell-link" href="https://vibecode1000.com/#get-a-site"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
       <div class="tip-chips">
@@ -70,6 +83,13 @@
     </footer>
   </main>
   <p id="toast" class="toast" role="status"></p>
-  <script src="/004-dice-roll/script.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script type="module" src="/004-dice-roll/script.js"></script>
 </body>
 </html>

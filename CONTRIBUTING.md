@@ -1,35 +1,38 @@
-# Contributing
+# Contributing to Vibecode1000
 
-Thanks for interest in the **1000 Websites Challenge**. This repo is a **site generation engine** + gallery — not 1000 hand-written pages.
+Thanks for helping improve the **product** — the hub and the tools people actually click.
 
-## Quick start
+## Before you open a PR
 
 ```bash
-npm run engine:status
+npm install
 npm run validate
 ```
 
-## Adding a site manually
+## Change the homepage
 
-1. Add an entry to [`scripts/sites.json`](scripts/sites.json) (or let `expand-catalog` generate ids 101+).
-2. If it is a **new logic type**, extend [`scripts/generate-sites.mjs`](scripts/generate-sites.mjs) and [`scripts/lib/catalog.mjs`](scripts/lib/catalog.mjs).
-3. Run `npm run generate` (or `npm run engine:seo` to refresh SEO on all sites).
-4. Run `npm run engine:hub`.
-5. Open a PR.
+Edit [`scripts/manifest.json`](scripts/manifest.json) (featured tools, copy, monetization), then:
 
-## Hub spotlight
+```bash
+npm run engine:hub
+```
 
-Edit `spotlight` ids in [`scripts/manifest.json`](scripts/manifest.json), then `npm run engine:hub`.
+## Add or update a tool
+
+1. Add metadata to [`scripts/sites.json`](scripts/sites.json) (or use the expand scripts for batches).
+2. Ensure the folder `NNN-slug/` exists with `index.html`, `script.js`, `style.css`.
+3. Run `npm run engine:hub` and `npm run engine:sitemap` if the hub should link it.
+4. Keep the shared footer/tip pattern consistent with other tools.
 
 ## Flagship apps (Next.js)
 
-Sites like `001-buy-a-square` live outside the HTML generator. Add them under `featured` in `manifest.json` with a live Vercel URL.
+Example: `001-buy-a-square/`. Add to `featured` in `manifest.json` with the live Vercel URL.
 
-## Code style
+## Naming
 
-- Match existing naming: `NNN-slug` folders, PayPal tip footer on generated sites.
-- Keep changes focused — one feature per PR when possible.
+- Use **tool**, **category**, and **hub** — avoid “experiment”, “map”, or “batch” in user-facing copy.
+- Folders stay `NNN-slug` for stable URLs.
 
 ## Questions
 
-Open a [GitHub Discussion](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/discussions) or an issue with the **Site idea** template.
+[GitHub Discussions](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites/discussions) or an issue.

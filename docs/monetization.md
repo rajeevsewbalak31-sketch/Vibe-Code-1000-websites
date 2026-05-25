@@ -1,6 +1,6 @@
-# Monetization — Phase 4
+# Monetization
 
-Revenue streams for **Vibe Code 1000**, configured in [`scripts/manifest.json`](../scripts/manifest.json) under `monetization`.
+Revenue options for **Vibecode1000**, configured in [`scripts/manifest.json`](../scripts/manifest.json) under `monetization`.
 
 ## Live today
 

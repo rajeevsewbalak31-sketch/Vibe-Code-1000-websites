@@ -1,7 +1,7 @@
 {
-  "name": "vibe-code-1000-websites",
+  "name": "vibecode1000",
   "private": true,
-  "description": "Site generation engine + gallery for the 1000 Websites Challenge",
+  "description": "Vibecode1000 — unified hub for 1000 browser tools at vibecode1000.com",
   "type": "module",
   "scripts": {
     "engine": "node scripts/engine.mjs",

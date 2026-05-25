@@ -1,116 +1,71 @@
-# Vibe Code 1000
+# Vibecode1000
 
-**I stopped trying to hand-build 1000 websites. I built a machine that generates them.**
+**1 website. 1000 tools. Everything you need in one place.**
 
-[![Live hub](https://img.shields.io/badge/Live-hub-5eead4?style=for-the-badge)](https://vibecode1000.com)
-[![Progress](https://img.shields.io/badge/Progress-1000%2F1000-e8a87c?style=for-the-badge)](https://vibecode1000.com)
-[![PayPal](https://img.shields.io/badge/PayPal-Tip-0070ba?style=for-the-badge)](https://paypal.me/RajeevSewbalak)
-[![GitHub](https://img.shields.io/badge/GitHub-repo-181717?style=for-the-badge&logo=github)](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
+[![Live](https://img.shields.io/badge/Live-vibecode1000.com-e8a87c?style=for-the-badge)](https://vibecode1000.com)
 
-## What it is
+Vibecode1000 is a single hub where everyday utilities, creative helpers, and lightweight apps live together — searchable, categorized, and free to use. No app store maze: open one site, pick a tool, get on with your day.
 
-**Vibe Code 1000** is an open-source **site generation engine** plus a public **gallery** of free mini web tools. Each site is generated from a catalog (name, colors, logic template), deployed on Vercel, and linked from one hub with search, categories, and PayPal tips.
+Built as a public build-in-progress project in the Netherlands. The “1000” is the north star behind the system, not clutter on the page.
+
+## Who it’s for
+
+- People who want **fast, simple tools** (dice, passwords, timers, generators, games)
+- Builders and employers reviewing a **real shipped product** — hub UX, SEO, payments, and scale
+- Anyone curious about **learning in public** while consolidating useful micro-apps
+
+## Features
+
+- **Unified tool hub** — one homepage, one search, one gallery
+- **Categories that make sense** — utilities, tools, games, and more (not a flat dump)
+- **Featured starting points** — dice roller, motivation quotes, password generator, and standout games
+- **Always expanding** — new tools plug into the same chrome and deploy pipeline
+
+## Start here
 
 | | |
 |---|---|
-| **Live gallery** | [vibecode1000.com](https://vibecode1000.com) |
-| **Repo** | [Vibe-Code-1000-websites](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites) |
-| **Progress** | **1000 / 1000** milestone reached |
-| **Stack** | HTML/CSS/JS generator · Next.js flagships · Vercel |
+| **Live site** | [vibecode1000.com](https://vibecode1000.com) |
+| **Try a tool** | [Roll a Dice](https://vibecode1000.com/004-dice-roll/) · [Motivation Generator](https://vibecode1000.com/003-motivation-generator/) · [KeyForge passwords](https://vibecode1000.com/007-password-gen/) |
+| **Custom site** | [Get yours from €49](https://vibecode1000.com/#get-a-site) |
 
-## Gallery preview
+## Tool categories (conceptual)
 
-![Vibe Code 1000 hub — category filters, featured strip, 100 tools](docs/hub-preview.svg)
+Individual tools are deployed as static mini-apps. In the repo they share one generator; on the site they’re grouped for humans:
 
-Open the **[live hub](https://vibecode1000.com)** to search, filter by category (Tools · Games · Utilities · Landing Pages · Experiments), and sort by newest or popular.
+| Category | Examples |
+|----------|----------|
+| **Utilities** | Passwords, timers, converters, counters |
+| **Productivity** | Pomodoro, tips, planners |
+| **Creativity** | Quotes, colors, generators |
+| **Developer tools** | Formatters, encoders, small dev helpers |
+| **Fun** | Dice, games, quick decisions |
 
-### ⭐ Featured (start here)
+You won’t find 1000 folders listed here — see [docs/structure.md](./docs/structure.md) for how the repo is organized.
 
-| Site | URL |
-|------|-----|
-| Buy a Square | [001-buy-a-square.vercel.app](https://001-buy-a-square.vercel.app) |
-| Daily AI Tools | [/002-daily-ai-tools/](https://vibecode1000.com/002-daily-ai-tools/) |
-| **EggBalance** (physics egg carton game) | [/101-egg-balance/](https://vibecode1000.com/101-egg-balance/) |
-| KeyForge, RPS Arena | [Browse featured on hub](https://vibecode1000.com) |
-
-## Roadmap
-
-| Phase | Status | Goal |
-|-------|--------|------|
-| 1 | ✅ | Prove concept (~22 hand-built tools) |
-| 2 | ✅ | Engine → **100 tools** |
-| 2b | ✅ | **100 vibe-coded games** (#101–200), EggBalance |
-| 3 | ✅ | **100 interactive apps** (#201–300) |
-| 3b | ✅ | Hub UX, SEO, Plausible, launch banners |
-| 4 | ✅ | Monetize (tips, sponsors, micro-site packages) |
-| 5 | Next | Scale **#201–1000** when revenue proves it |
-
-Details: **[docs/roadmap.md](./docs/roadmap.md)**
-
-## Site engine
+## For developers
 
 ```bash
-npm run engine:status
-npm run engine:scale:1000    # Complete #501–1000 + hub
-npm run engine:scale:500     # Batch #301–500
-npm run engine:scale:300     # Games + apps (101–300)
-npm run engine:apps:all      # Apps #201–300 only
-npm run validate
+npm install
+npm run engine:hub      # rebuild homepage from manifest
+npm run validate        # sanity-check routes
 ```
 
-| Command | Action |
-|---------|--------|
-| `engine:all` | Tools #023–100: expand → generate → hub |
-| `engine:games:all` | Games #101–200: expand → generate → hub |
-| `engine:hub` | Rebuild gallery cards + hero + games banner |
-| `engine:seo` | Regenerate tool sites with OG/canonical + sitemap |
+Push to `main` → Vercel deploys the hub and tools. Flagship Next.js app: `001-buy-a-square/`.
 
-Registry: [`scripts/sites.json`](./scripts/sites.json) · Spotlight: [`scripts/manifest.json`](./scripts/manifest.json)
+| Doc | Purpose |
+|-----|---------|
+| [Repo structure](./docs/structure.md) | What lives where (without noise) |
+| [Deploy](./docs/deployment.md) | Vercel + domain |
+| [Monetization](./docs/monetization.md) | Tips, sponsors, micro-sites |
+| [Contributing](./CONTRIBUTING.md) | PRs and hub config |
 
-## SEO
+## Built in public
 
-- Per-site: `Title | Vibe Code 1000`, Open Graph, canonical URLs, hub back-link
-- Hub: JSON-LD, meta tags
-- Root: [`sitemap.xml`](./sitemap.xml) · [`robots.txt`](./robots.txt)
-
-## Run locally
-
-```bash
-# Hub
-start index.html   # or open in browser
-
-# Flagship Next.js app
-cd 001-buy-a-square && npm install && npm run dev
-```
-
-## Deploy
-
-Push to `main` → Vercel auto-deploys the hub and projects. Manual:
-
-```bash
-npx vercel deploy --prod
-```
-
-## Docs
-
-- [Roadmap](./docs/roadmap.md) · [Contributing](./CONTRIBUTING.md) · [Workflow](./docs/workflow.md)
-- [Deployment](./docs/deployment-guide.md) · [GitHub setup](./GITHUB.md)
-
-## Monetization (Phase 4)
-
-| Offer | Link |
-|-------|------|
-| Tip the project | [PayPal](https://paypal.me/RajeevSewbalak) · hub [#support](https://websites-eosin-delta.vercel.app/#support) |
-| Sponsor the gallery | [#sponsors](https://websites-eosin-delta.vercel.app/#sponsors) |
-| Buy a custom micro-site | [#get-a-site](https://websites-eosin-delta.vercel.app/#get-a-site) (from €49) |
-| Pay-per-square grid | [Buy a Square](https://001-buy-a-square.vercel.app) |
-
-Playbook: **[docs/monetization.md](./docs/monetization.md)**
+Progress, experiments, and engine work are documented lightly in [`docs/`](./docs/). Legacy planning files live in [`_archive/`](./_archive/) so the main tree stays product-focused.
 
 ## Support
 
-**[paypal.me/RajeevSewbalak](https://paypal.me/RajeevSewbalak)** — tips fund hosting and more tools. See [SUPPORT.md](./SUPPORT.md).
+[PayPal tips](https://paypal.me/RajeevSewbalak) · [GitHub](https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites)
 
-MIT License — [LICENSE](./LICENSE)
-
-*Built in public by [@rajeevsewbalak31-sketch](https://github.com/rajeevsewbalak31-sketch)*
+MIT — see [LICENSE](./LICENSE).

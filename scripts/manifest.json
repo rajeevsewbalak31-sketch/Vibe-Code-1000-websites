@@ -25,14 +25,14 @@
   },
   "hubUrl": "https://vibecode1000.com",
   "paypal": "https://paypal.me/RajeevSewbalak",
-  "spotlight": ["001", "002", "003", "101", "007", "013"],
+  "spotlight": ["001", "002", "003", "101", "104", "007", "013"],
   "featured": [
     {
       "id": "001",
       "slug": "buy-a-square",
       "name": "Buy a Square",
       "tagline": "10×10 grid — pick a square, pay €1 via PayPal.",
-      "href": "./001-buy-a-square/",
+      "href": "https://001-buy-a-square.vercel.app/",
       "live": true,
       "category": "landing-pages",
       "search": "buy a square grid paypal euro landing"
@@ -61,11 +61,21 @@
       "id": "101",
       "slug": "egg-balance",
       "name": "EggBalance",
-      "tagline": "Tap cups to place eggs — beat your balance streak",
+      "tagline": "3D wobbly egg survival — how long can you balance?",
       "href": "./101-egg-balance/",
       "live": true,
       "category": "games",
-      "search": "egg balance physics carton game eggbalance"
+      "search": "egg balance physics carton game eggbalance wobble 3d"
+    },
+    {
+      "id": "104",
+      "slug": "nestrun",
+      "name": "NestRun",
+      "tagline": "Classic snake — eat, grow, beat your best score",
+      "href": "./104-nestrun/",
+      "live": true,
+      "category": "games",
+      "search": "nestrun snake game arcade"
     }
   ],
   "monetization": {

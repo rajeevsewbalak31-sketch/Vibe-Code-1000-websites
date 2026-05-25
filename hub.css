@@ -394,6 +394,14 @@ body {
   color: var(--accent-2);
 }
 
+.newsletter-fine--setup {
+  margin-top: 0.75rem;
+}
+
+.newsletter-fine--setup a {
+  color: var(--accent-2);
+}
+
 /* Primary CTA */
 .btn--primary {
   color: var(--bg);

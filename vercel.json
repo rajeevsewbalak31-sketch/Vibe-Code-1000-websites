@@ -7,6 +7,16 @@
       "has": [{ "type": "host", "value": "websites-eosin-delta.vercel.app" }],
       "destination": "https://vibecode1000.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/001-buy-a-square",
+      "destination": "https://001-buy-a-square.vercel.app/",
+      "permanent": false
+    },
+    {
+      "source": "/001-buy-a-square/:path*",
+      "destination": "https://001-buy-a-square.vercel.app/:path*",
+      "permanent": false
     }
   ],
   "buildCommand": null,

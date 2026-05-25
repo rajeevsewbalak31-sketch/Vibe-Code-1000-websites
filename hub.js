@@ -1,6 +1,6 @@
 const TOTAL = 1000;
 const COMPLETED = 23;
-const POPULAR_IDS = ["001","002","003","101","007","013"];
+const POPULAR_IDS = ["001","002","003","101","104","007","013"];
 
 const fill = document.getElementById("progress-fill");
 const progressBar = document.querySelector(".progress-bar[role='progressbar']");
@@ -172,6 +172,13 @@ document.getElementById("newsletter-form")?.addEventListener("submit", async (e)
       localStorage.setItem("vc1000-newsletter", JSON.stringify(list));
     } catch {
       /* ignore */
+    }
+    if (status) {
+      status.textContent =
+        "Saved on this device — we'll connect email delivery soon. Follow on X for updates meanwhile.";
+      status.classList.add("is-success");
+      form.reset();
+      return;
     }
   }
   if (status) {

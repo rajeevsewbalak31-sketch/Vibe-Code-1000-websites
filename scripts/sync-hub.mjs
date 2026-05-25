@@ -154,9 +154,10 @@ function heroHtml() {
         <p class="progress-note">${count} sites in the gallery · goal ${PROGRESS_GOAL}</p>
       </div>
       <div class="hero-cta">
-        <a class="btn btn--primary btn--lg" href="#newsletter">Follow the journey</a>
-        <a class="btn btn--ghost" href="#site-grid">Browse the gallery</a>
-        <a class="btn btn--ghost" href="#about">About</a>
+        <a class="btn btn--primary btn--lg" href="./101-egg-balance/">Play EggBalance</a>
+        <a class="btn btn--ghost" href="#newsletter">Follow updates</a>
+        <a class="btn btn--ghost" href="#site-grid">Browse gallery</a>
+        <a class="btn btn--buy btn--sm" href="#get-a-site">Get your site — €49</a>
       </div>
     </section>`;
 }
@@ -183,6 +184,12 @@ function newsletterHtml() {
       : `https://formspree.io/f/${formspree}`
     : "";
   const dataEndpoint = endpoint ? ` data-endpoint="${escapeAttr(endpoint)}"` : "";
+  const xUrl = (brand.social?.x || "").trim();
+  const fallbackNote = endpoint
+    ? ""
+    : xUrl
+      ? `        <p class="newsletter-fine newsletter-fine--setup">No mailing provider yet — sign-ups save on this device. <a href="${escapeAttr(xUrl)}" target="_blank" rel="noopener noreferrer">Follow on X</a> for live updates.</p>\n`
+      : `        <p class="newsletter-fine newsletter-fine--setup">No mailing provider yet — sign-ups save on this device until Formspree is connected.</p>\n`;
   return `    <section class="newsletter-panel" id="newsletter" aria-labelledby="newsletter-heading">
       <div class="newsletter-inner">
         <h2 id="newsletter-heading" class="section-title">${escapeAttr(heading)}</h2>
@@ -195,7 +202,7 @@ function newsletterHtml() {
           </div>
           <p class="newsletter-fine" id="newsletter-status" role="status" aria-live="polite"></p>
         </form>
-      </div>
+${fallbackNote}      </div>
     </section>`;
 }
 
@@ -240,11 +247,12 @@ function gamesBannerHtml() {
         <span class="games-banner-badge">New batch</span>
         <div class="games-banner-copy">
           <h2 id="games-banner-heading">${batchSize} vibe-coded games (#101–200)</h2>
-          <p>Start with <strong>EggBalance</strong> — place eggs in the carton, feel the tilt, don’t let it tip. Plus snake, stack, breakout, memory & more.</p>
+          <p><strong>EggBalance</strong> — chaotic 3D wobble survival. <strong>NestRun</strong> — polished snake with best score. Plus stack, breakout, memory & more.</p>
         </div>
         <div class="games-banner-actions">
           <a class="btn btn--primary" href="./101-egg-balance/">Play EggBalance</a>
-          <button type="button" class="btn btn--ghost" data-filter-games>Filter: Games</button>
+          <a class="btn btn--ghost" href="./104-nestrun/">Play NestRun</a>
+          <button type="button" class="btn btn--ghost" data-filter-games>All games</button>
         </div>
       </div>
     </section>`;

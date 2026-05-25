@@ -8,6 +8,17 @@ const ROLL_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 
 const MAX_DPR = 2;
 
 /** Euler (XYZ) so the given value faces +Y (top). Face map: +Y=1, -Y=6, +Z=2, -Z=5, +X=3, -X=4 */
+/** Face index order: +X, -X, +Y, -Y, +Z, -Z → pip values 3,4,1,6,2,5 */
+const FACE_NORMALS = [
+  new THREE.Vector3(1, 0, 0),
+  new THREE.Vector3(-1, 0, 0),
+  new THREE.Vector3(0, 1, 0),
+  new THREE.Vector3(0, -1, 0),
+  new THREE.Vector3(0, 0, 1),
+  new THREE.Vector3(0, 0, -1),
+];
+const FACE_VALUES = [3, 4, 1, 6, 2, 5];
+
 const TOP_ROTATION = {
   1: new THREE.Euler(0, 0, 0, "XYZ"),
   2: new THREE.Euler(-Math.PI / 2, 0, 0, "XYZ"),
@@ -16,6 +27,17 @@ const TOP_ROTATION = {
   5: new THREE.Euler(Math.PI / 2, 0, 0, "XYZ"),
   6: new THREE.Euler(Math.PI, 0, 0, "XYZ"),
 };
+
+const TOP_QUATERNION = Object.fromEntries(
+  [1, 2, 3, 4, 5, 6].map((v) => [
+    v,
+    new THREE.Quaternion().setFromEuler(TOP_ROTATION[v]),
+  ])
+);
+
+const _worldUp = new THREE.Vector3(0, 1, 0);
+const _worldQuat = new THREE.Quaternion();
+const _faceDir = new THREE.Vector3();
 
 const PIP_LAYOUT = {
   1: [[0.5, 0.5]],
@@ -79,7 +101,31 @@ function easeOutQuart(t) {
 }
 
 function clampCount() {
-  return Math.min(6, Math.max(1, parseInt(countEl.value, 10) || 1));
+  const raw = parseInt(countEl.value, 10);
+  const n = Number.isFinite(raw) ? raw : 1;
+  return Math.min(6, Math.max(1, n));
+}
+
+function syncCountInput() {
+  const n = clampCount();
+  countEl.value = String(n);
+  return n;
+}
+
+/** Read which pip value faces up in world space (matches what you see). */
+function readTopValue(die) {
+  die.getWorldQuaternion(_worldQuat);
+  let best = 1;
+  let bestDot = -Infinity;
+  for (let i = 0; i < 6; i++) {
+    _faceDir.copy(FACE_NORMALS[i]).applyQuaternion(_worldQuat);
+    const d = _faceDir.dot(_worldUp);
+    if (d > bestDot) {
+      bestDot = d;
+      best = FACE_VALUES[i];
+    }
+  }
+  return best;
 }
 
 function createPipTexture(value) {
@@ -254,6 +300,8 @@ function animate() {
     const t = Math.min(1, (now - state.start) / state.duration);
     const die = state.mesh;
 
+    const targetQ = TOP_QUATERNION[state.target];
+
     if (t < 0.72) {
       const spin = easeOutCubic(t / 0.72);
       const damp = 1 - spin;
@@ -263,30 +311,28 @@ function animate() {
       die.position.y = state.baseY + Math.sin(t * Math.PI * 3) * 0.22 * (1 - t);
     } else {
       const settle = easeOutQuart((t - 0.72) / 0.28);
-      const e = TOP_ROTATION[state.target];
-      die.rotation.x = THREE.MathUtils.lerp(die.rotation.x, e.x, settle * 0.22);
-      die.rotation.y = THREE.MathUtils.lerp(die.rotation.y, e.y, settle * 0.22);
-      die.rotation.z = THREE.MathUtils.lerp(die.rotation.z, e.z, settle * 0.22);
+      die.quaternion.slerp(targetQ, Math.min(1, settle * 0.28));
       die.position.y = THREE.MathUtils.lerp(die.position.y, state.baseY, settle * 0.18);
     }
 
     if (t >= 1) {
-      const e = TOP_ROTATION[state.target];
-      die.rotation.copy(e);
+      die.quaternion.copy(targetQ);
       die.position.y = state.baseY;
+      die.rotation.setFromQuaternion(die.quaternion);
       state.active = false;
     }
   });
 
   if (rolling && rollStates.length) {
-    const allDone = rollStates.every((s) => {
-      if (s.active) return false;
-      return true;
-    });
+    const allDone = rollStates.every((s) => !s.active);
     if (allDone) finishRoll();
   }
 
-  diceGroup.rotation.y += 0.0012;
+  if (!rolling && !stage.classList.contains("has-result")) {
+    diceGroup.rotation.y += 0.0012;
+  }
+
+  diceGroup.updateMatrixWorld(true);
   renderer.render(scene, camera);
 }
 
@@ -296,7 +342,7 @@ function rollValues(count) {
 
 function startRoll() {
   if (rolling) return;
-  const count = clampCount();
+  const count = syncCountInput();
   rebuildDice(count);
 
   const values = rollValues(count);
@@ -330,9 +376,11 @@ function startRoll() {
 }
 
 function finishRoll() {
+  if (!rolling) return;
   rolling = false;
+
   const count = diceMeshes.length;
-  const values = rollStates.map((s) => s.target);
+  const values = diceMeshes.map((die) => readTopValue(die));
   const sum = values.reduce((a, b) => a + b, 0);
 
   display.classList.remove("is-rolling");
@@ -356,7 +404,7 @@ function finishRoll() {
 
 function onCountChange() {
   if (rolling) return;
-  rebuildDice(clampCount());
+  rebuildDice(syncCountInput());
   display.textContent = "—";
   display.classList.remove("is-reveal");
   displayTotal.hidden = true;

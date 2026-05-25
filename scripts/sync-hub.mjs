@@ -107,17 +107,23 @@ const ogUrl = `${HUB_URL}${OG_IMAGE.startsWith("/") ? OG_IMAGE : `/${OG_IMAGE}`}
 const plausibleDomain = manifest.hub?.plausibleDomain || "";
 const vercelAnalyticsEnabled = manifest.hub?.vercelAnalytics !== false;
 
+function resolveEntry(id) {
+  const f = manifest.featured?.find((x) => x.id === id);
+  if (f) return buildEntryFromFeatured(f);
+  const s = sitesById[id];
+  if (s && folderExists(s.id, s.slug)) return buildEntryFromSite(s);
+  return allEntries.find((e) => e.id === id);
+}
+
 const spotlightEntries = (manifest.spotlight || [])
-  .map((id) => {
-    const f = manifest.featured?.find((x) => x.id === id);
-    if (f) return buildEntryFromFeatured(f);
-    const s = sitesById[id];
-    if (s && folderExists(s.id, s.slug)) return buildEntryFromSite(s);
-    return allEntries.find((e) => e.id === id);
-  })
+  .map((id) => resolveEntry(id))
   .filter(Boolean);
 
-const featuredCards = spotlightEntries.map((e) => cardHtml({ ...e, compact: true })).join("\n\n");
+const homeFeaturedIds = manifest.homeFeatured || ["004", "003", "007", "101", "104", "001"];
+const homeFeaturedEntries = homeFeaturedIds.map((id) => resolveEntry(id)).filter(Boolean);
+const latestId = manifest.latestProject || homeFeaturedIds[0] || "004";
+const latestEntry = resolveEntry(latestId);
+
 const gridCards = allEntries.map((e) => cardHtml(e)).join("\n\n");
 
 const filterButtons = [
@@ -138,27 +144,62 @@ const filterButtons = [
   .join("\n");
 
 function heroHtml() {
-  const pct = Math.min(100, Math.round((PROGRESS_CURRENT / PROGRESS_GOAL) * 100));
-  return `    <section class="hero" aria-labelledby="hero-title">
-      <p class="hero-eyebrow">Built in public · ${escapeAttr(brand.aboutLocation || "the Netherlands")}</p>
-      <h1 id="hero-title">${escapeAttr(HERO_TITLE)}</h1>
-      <p class="hero-lead">${escapeAttr(HERO_SUBTITLE)}</p>
-      <div class="progress-wrap progress-wrap--hero">
-        <div class="progress-label">
-          <span>Challenge progress</span>
-          <span>Current: <strong id="progress-count">${PROGRESS_CURRENT}</strong> / <span id="progress-goal">${PROGRESS_GOAL}</span></span>
-        </div>
-        <div class="progress-bar" role="progressbar" aria-valuenow="${PROGRESS_CURRENT}" aria-valuemin="0" aria-valuemax="${PROGRESS_GOAL}" aria-label="Challenge progress" style="--progress-pct:${pct}%">
+  const pct = Math.min(100, Math.round((PROGRESS_CURRENT / PROGRESS_GOAL) * 1000) / 10);
+  const pctDisplay = Number.isInteger(pct) ? `${pct}` : pct.toFixed(1);
+  const welcomeTitle = brand.heroWelcomeTitle || "Hi, I'm building 1000 things.";
+  const welcomeSub = brand.heroWelcomeSubtitle || "One project a day. Learning in public.";
+  const who = brand.aboutBuiltBy || "Ui";
+  const loc = brand.aboutLocation || "the Netherlands";
+  const latestHref = latestEntry?.href || "#home-featured";
+  const latestName = latestEntry?.name || "latest project";
+  return `    <section class="hero hero--welcome" id="home" aria-labelledby="hero-title">
+      <div class="hero-personal">
+        <span class="hero-avatar" aria-hidden="true">${escapeAttr(who.slice(0, 1).toUpperCase())}</span>
+        <p class="hero-eyebrow">Built in ${escapeAttr(loc)} 🇳🇱 · learning in public</p>
+      </div>
+      <h1 id="hero-title">${escapeAttr(welcomeTitle)}</h1>
+      <p class="hero-lead">${escapeAttr(welcomeSub)}</p>
+      <p class="hero-progress-text" id="progress">
+        Progress: <strong id="progress-count">${PROGRESS_CURRENT}</strong> / <span id="progress-goal">${PROGRESS_GOAL}</span> projects completed (<span id="progress-pct">${pctDisplay}</span>%)
+      </p>
+      <div class="progress-wrap progress-wrap--hero" aria-hidden="true">
+        <div class="progress-bar" role="progressbar" aria-valuenow="${PROGRESS_CURRENT}" aria-valuemin="0" aria-valuemax="${PROGRESS_GOAL}" aria-label="Challenge progress" style="--progress-pct:${Math.min(100, pct)}%">
           <div class="progress-fill" id="progress-fill"></div>
         </div>
-        <p class="progress-note">${count} sites in the gallery · goal ${PROGRESS_GOAL}</p>
       </div>
       <div class="hero-cta">
-        <a class="btn btn--primary btn--lg" href="./101-egg-balance/">Play EggBalance</a>
-        <a class="btn btn--ghost" href="#newsletter">Follow updates</a>
-        <a class="btn btn--ghost" href="#site-grid">Browse gallery</a>
-        <a class="btn btn--buy btn--sm" href="#get-a-site">Get your site — €49</a>
+        <a class="btn btn--primary btn--lg" href="#home-featured">Start here</a>
+        <a class="btn btn--ghost btn--lg" href="${escapeAttr(latestHref)}">View latest project</a>
       </div>
+      <p class="hero-latest-note">Latest: <a href="${escapeAttr(latestHref)}">${escapeAttr(latestName)}</a></p>
+    </section>`;
+}
+
+function whatIsHtml() {
+  return `    <section class="what-is" id="what-is" aria-labelledby="what-is-heading">
+      <h2 id="what-is-heading" class="section-title">What is this?</h2>
+      <p class="what-is-text">A public build log where I create 1000 small apps, tools, and experiments while learning in public.</p>
+    </section>`;
+}
+
+function homeCardHtml(e) {
+  const base = cardHtml({ ...e, compact: false });
+  return base.replace('class="card"', 'class="card card--home"');
+}
+
+function homeFeaturedHtml() {
+  const cards = homeFeaturedEntries.map((e) => homeCardHtml(e)).join("\n\n");
+  return `    <section class="home-featured" id="home-featured" aria-labelledby="home-featured-heading">
+      <div class="home-featured-head">
+        <h2 id="home-featured-heading" class="section-title">Featured projects</h2>
+        <p class="section-lead">Good places to start — try a tool, play a game, or see how payments work.</p>
+      </div>
+      <div class="home-featured-grid">
+${cards}
+      </div>
+      <p class="home-featured-more">
+        <a class="btn btn--ghost btn--lg" href="#projects">View all ${count} projects →</a>
+      </p>
     </section>`;
 }
 
@@ -211,13 +252,16 @@ function footerHtml() {
   const x = social.x || "#";
   const linkedin = social.linkedin || "#";
   const github = social.github || "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites";
+  const loc = brand.aboutLocation || "the Netherlands";
+  const who = brand.aboutBuiltBy || "Ui";
   return `    <footer class="footer site-footer">
       <nav class="footer-social" aria-label="Social links">
         <a href="${escapeAttr(x)}" class="footer-social-link" aria-label="X (Twitter)">X</a>
         <a href="${escapeAttr(linkedin)}" class="footer-social-link" aria-label="LinkedIn">LinkedIn</a>
         <a href="${escapeAttr(github)}" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
       </nav>
-      <p class="footer-brand">${escapeAttr(HERO_TITLE)} · Built in public</p>
+      <p class="footer-brand">${escapeAttr(HERO_TITLE)} · Built by ${escapeAttr(who)}</p>
+      <p class="footer-location">Built in ${escapeAttr(loc)} 🇳🇱</p>
       <p class="footer-meta">
         <a href="#get-a-site">Get your own site</a>
         · <a href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>
@@ -225,15 +269,36 @@ function footerHtml() {
     </footer>`;
 }
 
+function batchBannersHtml() {
+  const inner = [gamesBannerHtml(), appsBannerHtml(), creativeBannerHtml(), labsBannerHtml(), milestoneBannerHtml()]
+    .filter(Boolean)
+    .join("\n\n");
+  if (!inner) return "";
+  return `    <section class="hub-batches" aria-label="Browse by batch">
+      <details class="batches-details">
+        <summary class="batches-summary">Browse collections (games, apps, labs)</summary>
+        <div class="batches-inner">
+${inner}
+        </div>
+      </details>
+    </section>`;
+}
+
 function topBarHtml() {
   return `    <header class="top-bar">
-      <a class="brand" href="./">
+      <a class="brand" href="#home">
         <span class="brand-mark">VC</span>
         <span class="brand-text">${escapeAttr(HERO_TITLE)}</span>
       </a>
+      <nav class="top-nav" aria-label="Main">
+        <a class="top-nav-link" href="#home">Home</a>
+        <a class="top-nav-link" href="#projects">Projects</a>
+        <a class="top-nav-link" href="#progress">Progress</a>
+        <a class="top-nav-link" href="#about">About</a>
+      </nav>
       <div class="top-actions">
         <a class="btn btn--ghost btn--sm" href="#newsletter">Updates</a>
-        <a class="btn btn--buy" href="#get-a-site">Get your site (€49)</a>
+        <a class="btn btn--buy btn--sm" href="#get-a-site">Get your site (€49)</a>
       </div>
     </header>`;
 }
@@ -339,14 +404,11 @@ function replaceBlock(start, end, content) {
 
 replaceBlock("<!-- TOP_BAR_START -->", "<!-- TOP_BAR_END -->", topBarHtml());
 replaceBlock("<!-- HERO_START -->", "<!-- HERO_END -->", heroHtml());
-replaceBlock("<!-- ABOUT_START -->", "<!-- ABOUT_END -->", aboutHtml());
+replaceBlock("<!-- WHAT_IS_START -->", "<!-- WHAT_IS_END -->", whatIsHtml());
+replaceBlock("<!-- HOME_FEATURED_START -->", "<!-- HOME_FEATURED_END -->", homeFeaturedHtml());
 replaceBlock("<!-- NEWSLETTER_START -->", "<!-- NEWSLETTER_END -->", newsletterHtml());
-replaceBlock("<!-- GAMES_BANNER_START -->", "<!-- GAMES_BANNER_END -->", gamesBannerHtml());
-replaceBlock("<!-- APPS_BANNER_START -->", "<!-- APPS_BANNER_END -->", appsBannerHtml());
-replaceBlock("<!-- CREATIVE_BANNER_START -->", "<!-- CREATIVE_BANNER_END -->", creativeBannerHtml());
-replaceBlock("<!-- LABS_BANNER_START -->", "<!-- LABS_BANNER_END -->", labsBannerHtml());
-replaceBlock("<!-- MILESTONE_BANNER_START -->", "<!-- MILESTONE_BANNER_END -->", milestoneBannerHtml());
-replaceBlock("<!-- FEATURED_STRIP_START -->", "<!-- FEATURED_STRIP_END -->", featuredCards);
+replaceBlock("<!-- BATCH_BANNERS_START -->", "<!-- BATCH_BANNERS_END -->", batchBannersHtml());
+replaceBlock("<!-- ABOUT_START -->", "<!-- ABOUT_END -->", aboutHtml());
 replaceBlock("<!-- SITE_GRID_START -->", "<!-- SITE_GRID_END -->", gridCards);
 replaceBlock("<!-- CATEGORY_FILTERS_START -->", "<!-- CATEGORY_FILTERS_END -->", filterButtons);
 replaceBlock("<!-- MONETIZE_START -->", "<!-- MONETIZE_END -->", hubMonetizationHtml(manifest));
@@ -410,9 +472,10 @@ writeFileSync(INDEX_PATH, index, "utf8");
 let hubJs = readFileSync(HUB_JS_PATH, "utf8");
 hubJs = hubJs.replace(/const COMPLETED = \d+;/, `const COMPLETED = ${PROGRESS_CURRENT};`);
 hubJs = hubJs.replace(/const TOTAL = \d+;/, `const TOTAL = ${PROGRESS_GOAL};`);
-hubJs = hubJs.replace(/const POPULAR_IDS = \[.*?\];/, `const POPULAR_IDS = ${JSON.stringify([...spotlightIds])};`);
+const popularIds = [...new Set([...homeFeaturedIds, ...spotlightIds])];
+hubJs = hubJs.replace(/const POPULAR_IDS = \[.*?\];/, `const POPULAR_IDS = ${JSON.stringify(popularIds)};`);
 writeFileSync(HUB_JS_PATH, hubJs, "utf8");
 
 console.log(
-  `Hub synced: ${count} sites (${gameCount} games, ${labsCount} labs), ${spotlightEntries.length} featured (${HUB_URL})`
+  `Hub synced: ${count} sites (${gameCount} games, ${labsCount} labs), ${homeFeaturedEntries.length} home featured (${HUB_URL})`
 );

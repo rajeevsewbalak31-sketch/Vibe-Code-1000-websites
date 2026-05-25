@@ -1,13 +1,18 @@
 const TOTAL = 1000;
 const COMPLETED = 23;
-const POPULAR_IDS = ["001","002","003","101","104","007","013"];
+const POPULAR_IDS = ["004","003","007","101","104","001","002","013"];
 
 const fill = document.getElementById("progress-fill");
 const progressBar = document.querySelector(".progress-bar[role='progressbar']");
+const progressPctEl = document.getElementById("progress-pct");
 if (fill) {
   const pct = TOTAL > 0 ? (COMPLETED / TOTAL) * 100 : 0;
   fill.style.width = `${pct}%`;
   if (progressBar) progressBar.style.setProperty("--progress-pct", `${pct}%`);
+  if (progressPctEl) {
+    progressPctEl.textContent =
+      Number.isInteger(pct) || pct >= 10 ? `${Math.round(pct * 10) / 10}` : pct.toFixed(1);
+  }
 }
 
 const search = document.getElementById("search");

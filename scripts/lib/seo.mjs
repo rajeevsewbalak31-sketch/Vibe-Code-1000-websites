@@ -11,7 +11,7 @@ export const BRAND = "VibeCode 1000";
 export const HUB_URL = String(manifest.hubUrl || "https://vibecode1000.com").replace(/\/$/, "");
 export const HUB_TITLE = `${BRAND} — 1000 AI-built websites`;
 export const HUB_DESCRIPTION =
-  "VibeCode 1000 — a public challenge to build 1000 AI-built websites. Follow the journey, explore the gallery, and see progress in real time.";
+  "Join the build — 1000 small apps, tools, and games made in public. Start with featured projects, follow progress, and explore the full gallery.";
 export const GITHUB_URL =
   "https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites";
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="BuoWeXti84-Xg3U_w6QStJf-9ZRisw5CPNxGiatGnOk" />
-  <meta name="description" content="VibeCode 1000 — a public challenge to build 1000 AI-built websites. Follow the journey, explore the gallery, and see progress in real time." />
+  <meta name="description" content="Join the build — 1000 small apps, tools, and games made in public. Start with featured projects, follow progress, and explore the full gallery." />
   <meta name="keywords" content="free web tools, mini apps, randomizer, pomodoro, password generator, 1000 websites" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://vibecode1000.com/" />
@@ -12,14 +12,14 @@
   <meta property="og:site_name" content="VibeCode 1000" />
   <meta property="og:url" content="https://vibecode1000.com/" />
   <meta property="og:title" content="VibeCode 1000 — 1000 AI-built websites" />
-  <meta property="og:description" content="VibeCode 1000 — a public challenge to build 1000 AI-built websites. Follow the journey, explore the gallery, and see progress in real time." />
+  <meta property="og:description" content="Join the build — 1000 small apps, tools, and games made in public. Start with featured projects, follow progress, and explore the full gallery." />
   <meta property="og:image" content="https://vibecode1000.com/og.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://vibecode1000.com/og.svg" />
   <meta name="twitter:title" content="VibeCode 1000 — 1000 AI-built websites" />
-  <meta name="twitter:description" content="VibeCode 1000 — a public challenge to build 1000 AI-built websites. Follow the journey, explore the gallery, and see progress in real time." />
+  <meta name="twitter:description" content="Join the build — 1000 small apps, tools, and games made in public. Start with featured projects, follow progress, and explore the full gallery." />
   <title>VibeCode 1000 — 1000 AI-built websites</title>
   <script type="application/ld+json" id="json-ld">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://vibecode1000.com/#website","name":"VibeCode 1000","alternateName":"1000 Websites Challenge","url":"https://vibecode1000.com","description":"1000 free mini web apps in one gallery, including 100 games and 500 micro-labs.","inLanguage":"en","publisher":{"@type":"Person","name":"Rajeev Sewbalak"},"potentialAction":{"@type":"SearchAction","target":"https://vibecode1000.com/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"CollectionPage","@id":"https://vibecode1000.com/#collection","name":"VibeCode 1000","url":"https://vibecode1000.com","description":"1000 free mini web apps in one gallery, including 100 games and 500 micro-labs.","isPartOf":{"@id":"https://vibecode1000.com/#website"},"about":{"@type":"CreativeWorkSeries","name":"Vibe Code 1000 mini-apps","numberOfItems":1000}},{"@type":"ItemList","@id":"https://vibecode1000.com/#sitelist","name":"VibeCode 1000 directory","numberOfItems":1000,"itemListOrder":"https://schema.org/ItemListOrderAscending","itemListElement":{"@type":"ListItem","position":1,"name":"Site gallery","url":"https://vibecode1000.com/#site-grid"}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,49 +49,108 @@
   <div class="shell">
     <!-- TOP_BAR_START -->
     <header class="top-bar">
-      <a class="brand" href="./">
+      <a class="brand" href="#home">
         <span class="brand-mark">VC</span>
         <span class="brand-text">VibeCode 1000</span>
       </a>
+      <nav class="top-nav" aria-label="Main">
+        <a class="top-nav-link" href="#home">Home</a>
+        <a class="top-nav-link" href="#projects">Projects</a>
+        <a class="top-nav-link" href="#progress">Progress</a>
+        <a class="top-nav-link" href="#about">About</a>
+      </nav>
       <div class="top-actions">
         <a class="btn btn--ghost btn--sm" href="#newsletter">Updates</a>
-        <a class="btn btn--buy" href="#get-a-site">Get your site (€49)</a>
+        <a class="btn btn--buy btn--sm" href="#get-a-site">Get your site (€49)</a>
       </div>
     </header>
     <!-- TOP_BAR_END -->
 
     <!-- HERO_START -->
-    <section class="hero" aria-labelledby="hero-title">
-      <p class="hero-eyebrow">Built in public · the Netherlands</p>
-      <h1 id="hero-title">VibeCode 1000</h1>
-      <p class="hero-lead">1000 AI-built websites. Built in public.</p>
-      <div class="progress-wrap progress-wrap--hero">
-        <div class="progress-label">
-          <span>Challenge progress</span>
-          <span>Current: <strong id="progress-count">23</strong> / <span id="progress-goal">1000</span></span>
-        </div>
-        <div class="progress-bar" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="1000" aria-label="Challenge progress" style="--progress-pct:2%">
+    <section class="hero hero--welcome" id="home" aria-labelledby="hero-title">
+      <div class="hero-personal">
+        <span class="hero-avatar" aria-hidden="true">U</span>
+        <p class="hero-eyebrow">Built in the Netherlands 🇳🇱 · learning in public</p>
+      </div>
+      <h1 id="hero-title">Hi, I'm building 1000 things.</h1>
+      <p class="hero-lead">One project a day. Learning in public. Documenting the journey from 0 to 1000.</p>
+      <p class="hero-progress-text" id="progress">
+        Progress: <strong id="progress-count">23</strong> / <span id="progress-goal">1000</span> projects completed (<span id="progress-pct">2.3</span>%)
+      </p>
+      <div class="progress-wrap progress-wrap--hero" aria-hidden="true">
+        <div class="progress-bar" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="1000" aria-label="Challenge progress" style="--progress-pct:2.3%">
           <div class="progress-fill" id="progress-fill"></div>
         </div>
-        <p class="progress-note">1000 sites in the gallery · goal 1000</p>
       </div>
       <div class="hero-cta">
-        <a class="btn btn--primary btn--lg" href="./101-egg-balance/">Play EggBalance</a>
-        <a class="btn btn--ghost" href="#newsletter">Follow updates</a>
-        <a class="btn btn--ghost" href="#site-grid">Browse gallery</a>
-        <a class="btn btn--buy btn--sm" href="#get-a-site">Get your site — €49</a>
+        <a class="btn btn--primary btn--lg" href="#home-featured">Start here</a>
+        <a class="btn btn--ghost btn--lg" href="./004-dice-roll/">View latest project</a>
       </div>
+      <p class="hero-latest-note">Latest: <a href="./004-dice-roll/">Roll a Dice</a></p>
     </section>
     <!-- HERO_END -->
 
-    <!-- ABOUT_START -->
-    <section class="about-panel" id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading" class="section-title">About</h2>
-      <p class="about-text">Built by <strong>Ui</strong> in the Netherlands.</p>
-      <p class="about-text">Public challenge to build 1000 websites using AI.</p>
-      <p class="about-text about-text--muted">This hub tracks the challenge — each entry is a small site you can open, use, and share.</p>
+    <!-- WHAT_IS_START -->
+    <section class="what-is" id="what-is" aria-labelledby="what-is-heading">
+      <h2 id="what-is-heading" class="section-title">What is this?</h2>
+      <p class="what-is-text">A public build log where I create 1000 small apps, tools, and experiments while learning in public.</p>
     </section>
-    <!-- ABOUT_END -->
+    <!-- WHAT_IS_END -->
+
+    <!-- HOME_FEATURED_START -->
+    <section class="home-featured" id="home-featured" aria-labelledby="home-featured-heading">
+      <div class="home-featured-head">
+        <h2 id="home-featured-heading" class="section-title">Featured projects</h2>
+        <p class="section-lead">Good places to start — try a tool, play a game, or see how payments work.</p>
+      </div>
+      <div class="home-featured-grid">
+      <a class="card card--home" href="./004-dice-roll/" data-category="utilities" data-sort-id="004" data-popular="999" data-name="roll a dice 3d dice roller d6">
+        <div class="card-top"><span class="card-num">#004</span><span class="badge">Live</span></div>
+        <h2>Roll a Dice</h2>
+        <p>3D dice roller — spin and land on your number</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card card--home" href="./003-motivation-generator/" data-category="tools" data-sort-id="003" data-popular="2" data-featured="true" data-name="motivation generator quotes inspirational">
+        <div class="card-top"><span class="card-num">#003</span><span class="badge">Live</span></div>
+        <h2>Motivation Generator</h2>
+        <p>Inspirational quotes — save, copy, and share</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card card--home" href="./007-password-gen/" data-category="utilities" data-sort-id="007" data-popular="5" data-featured="true" data-name="password generator keyforge">
+        <div class="card-top"><span class="card-num">#007</span><span class="badge">Live</span></div>
+        <h2>KeyForge</h2>
+        <p>Secure passwords with strength meter and passphrase mode</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card card--home" href="./101-egg-balance/" data-category="games" data-sort-id="101" data-popular="3" data-featured="true" data-name="egg balance physics carton game eggbalance wobble 3d">
+        <div class="card-top"><span class="card-num">#101</span><span class="badge">Live</span></div>
+        <h2>EggBalance</h2>
+        <p>3D wobbly egg survival — how long can you balance?</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card card--home" href="./104-nestrun/" data-category="games" data-sort-id="104" data-popular="4" data-featured="true" data-name="nestrun snake game arcade">
+        <div class="card-top"><span class="card-num">#104</span><span class="badge">Live</span></div>
+        <h2>NestRun</h2>
+        <p>Classic snake — eat, grow, beat your best score</p>
+        <span class="card-foot">Open site →</span>
+      </a>
+
+      <a class="card card--home" href="https://001-buy-a-square.vercel.app/" target="_blank" rel="noopener" data-category="landing-pages" data-sort-id="001" data-popular="0" data-featured="true" data-name="buy a square grid paypal euro landing">
+        <div class="card-top"><span class="card-num">#001</span><span class="badge">Live</span></div>
+        <h2>Buy a Square</h2>
+        <p>10×10 grid — pick a square, pay €1 via PayPal.</p>
+        <span class="card-foot">001-buy-a-square.vercel.app →</span>
+      </a>
+      </div>
+      <p class="home-featured-more">
+        <a class="btn btn--ghost btn--lg" href="#projects">View all 1000 projects →</a>
+      </p>
+    </section>
+    <!-- HOME_FEATURED_END -->
 
     <!-- NEWSLETTER_START -->
     <section class="newsletter-panel" id="newsletter" aria-labelledby="newsletter-heading">
@@ -111,7 +170,17 @@
     </section>
     <!-- NEWSLETTER_END -->
 
-    <!-- GAMES_BANNER_START -->
+    <section class="projects-section" id="projects" aria-labelledby="projects-heading">
+      <div class="projects-section-head">
+        <h2 id="projects-heading" class="section-title">All projects</h2>
+        <p class="section-lead">Search and filter the full gallery — every experiment stays online.</p>
+      </div>
+
+    <!-- BATCH_BANNERS_START -->
+    <section class="hub-batches" aria-label="Browse by batch">
+      <details class="batches-details">
+        <summary class="batches-summary">Browse collections (games, apps, labs)</summary>
+        <div class="batches-inner">
     <section class="games-banner" id="games-launch" aria-labelledby="games-banner-heading">
       <div class="games-banner-inner">
         <span class="games-banner-badge">New batch</span>
@@ -126,9 +195,7 @@
         </div>
       </div>
     </section>
-    <!-- GAMES_BANNER_END -->
 
-    <!-- APPS_BANNER_START -->
     <section class="games-banner games-banner--apps" id="apps-launch" aria-labelledby="apps-banner-heading">
       <div class="games-banner-inner">
         <span class="games-banner-badge">Batch #3</span>
@@ -141,9 +208,7 @@
         </div>
       </div>
     </section>
-    <!-- APPS_BANNER_END -->
 
-    <!-- CREATIVE_BANNER_START -->
     <section class="games-banner games-banner--apps" id="creative-launch" aria-labelledby="creative-banner-heading">
       <div class="games-banner-inner">
         <span class="games-banner-badge">Batch #4</span>
@@ -156,9 +221,7 @@
         </div>
       </div>
     </section>
-    <!-- CREATIVE_BANNER_END -->
 
-    <!-- LABS_BANNER_START -->
     <section class="games-banner games-banner--apps" id="labs-launch" aria-labelledby="labs-banner-heading">
       <div class="games-banner-inner">
         <span class="games-banner-badge">Final batch</span>
@@ -171,9 +234,7 @@
         </div>
       </div>
     </section>
-    <!-- LABS_BANNER_END -->
 
-    <!-- MILESTONE_BANNER_START -->
     <section class="games-banner" style="border-color:color-mix(in srgb,var(--accent-2) 50%,var(--border));background:linear-gradient(135deg,color-mix(in srgb,var(--accent-2) 18%,transparent),color-mix(in srgb,var(--accent) 12%,transparent))" aria-label="Milestone reached">
       <div class="games-banner-inner" style="justify-content:center;text-align:center">
         <div>
@@ -182,66 +243,10 @@
         </div>
       </div>
     </section>
-    <!-- MILESTONE_BANNER_END -->
-
-    <section class="featured" aria-labelledby="featured-heading">
-      <div class="featured-head">
-        <h2 id="featured-heading" class="section-title">⭐ Featured — start here</h2>
-        <p class="section-lead">Hand-picked favorites — or <a href="#get-a-site" class="inline-cta">get your own from €49</a>.</p>
-      </div>
-      <div class="featured-scroll" id="featured-strip">
-    <!-- FEATURED_STRIP_START -->
-      <a class="card card--compact" href="https://001-buy-a-square.vercel.app/" target="_blank" rel="noopener" data-category="landing-pages" data-sort-id="001" data-popular="0" data-featured="true" data-name="buy a square grid paypal euro landing">
-        <div class="card-top"><span class="card-num">#001</span><span class="badge">Live</span></div>
-        <h2>Buy a Square</h2>
-        <p>10×10 grid — pick a square, pay €1 via PayPal.</p>
-        <span class="card-foot">001-buy-a-square.vercel.app →</span>
-      </a>
-
-      <a class="card card--compact" href="./002-daily-ai-tools/" data-category="tools" data-sort-id="002" data-popular="1" data-featured="true" data-name="daily ai tools chatgpt claude copilot landing">
-        <div class="card-top"><span class="card-num">#002</span><span class="badge">Live</span></div>
-        <h2>Daily AI Tools</h2>
-        <p>Curated AI stack with search and category filters</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card card--compact" href="./003-motivation-generator/" data-category="tools" data-sort-id="003" data-popular="2" data-featured="true" data-name="motivation generator quotes inspirational">
-        <div class="card-top"><span class="card-num">#003</span><span class="badge">Live</span></div>
-        <h2>Motivation Generator</h2>
-        <p>Inspirational quotes — save, copy, and share</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card card--compact" href="./101-egg-balance/" data-category="games" data-sort-id="101" data-popular="3" data-featured="true" data-name="egg balance physics carton game eggbalance wobble 3d">
-        <div class="card-top"><span class="card-num">#101</span><span class="badge">Live</span></div>
-        <h2>EggBalance</h2>
-        <p>3D wobbly egg survival — how long can you balance?</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card card--compact" href="./104-nestrun/" data-category="games" data-sort-id="104" data-popular="4" data-featured="true" data-name="nestrun snake game arcade">
-        <div class="card-top"><span class="card-num">#104</span><span class="badge">Live</span></div>
-        <h2>NestRun</h2>
-        <p>Classic snake — eat, grow, beat your best score</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card card--compact" href="./007-password-gen/" data-category="utilities" data-sort-id="007" data-popular="5" data-featured="true" data-name="password-gen keyforge password-gen">
-        <div class="card-top"><span class="card-num">#007</span><span class="badge">Live</span></div>
-        <h2>KeyForge</h2>
-        <p>Secure passwords with strength meter and passphrase mode</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-
-      <a class="card card--compact" href="./013-rps/" data-category="games" data-sort-id="013" data-popular="6" data-featured="true" data-name="rps rps arena rps">
-        <div class="card-top"><span class="card-num">#013</span><span class="badge">Live</span></div>
-        <h2>RPS Arena</h2>
-        <p>RPS vs CPU with scoreboard and win streaks</p>
-        <span class="card-foot">Open site →</span>
-      </a>
-    <!-- FEATURED_STRIP_END -->
-      </div>
+        </div>
+      </details>
     </section>
+    <!-- BATCH_BANNERS_END -->
 
     <div class="toolbar">
       <input type="search" class="search" id="search" placeholder="Search tools &amp; games… (egg, snake, password)" autocomplete="off" aria-label="Search tools and games" />
@@ -292,10 +297,10 @@
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./004-dice-roll/" data-category="games" data-sort-id="004" data-popular="999" data-name="dice-roll rolldice dice-roll">
+      <a class="card" href="./004-dice-roll/" data-category="utilities" data-sort-id="004" data-popular="999" data-name="roll a dice 3d dice roller d6">
         <div class="card-top"><span class="card-num">#004</span><span class="badge">Live</span></div>
-        <h2>RollDice</h2>
-        <p>Roll one or many dice instantly</p>
+        <h2>Roll a Dice</h2>
+        <p>3D dice roller — spin and land on your number</p>
         <span class="card-foot">Open site →</span>
       </a>
 
@@ -313,7 +318,7 @@
         <span class="card-foot">Open site →</span>
       </a>
 
-      <a class="card" href="./007-password-gen/" data-category="utilities" data-sort-id="007" data-popular="5" data-featured="true" data-name="password-gen keyforge password-gen">
+      <a class="card" href="./007-password-gen/" data-category="utilities" data-sort-id="007" data-popular="5" data-featured="true" data-name="password generator keyforge">
         <div class="card-top"><span class="card-num">#007</span><span class="badge">Live</span></div>
         <h2>KeyForge</h2>
         <p>Secure passwords with strength meter and passphrase mode</p>
@@ -7272,6 +7277,16 @@
       </a>
     <!-- SITE_GRID_END -->
     </div>
+    </section>
+
+    <!-- ABOUT_START -->
+    <section class="about-panel" id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="section-title">About</h2>
+      <p class="about-text">Built by <strong>Ui</strong> in the Netherlands.</p>
+      <p class="about-text">Public challenge to build 1000 websites using AI.</p>
+      <p class="about-text about-text--muted">This hub tracks the challenge — each entry is a small site you can open, use, and share.</p>
+    </section>
+    <!-- ABOUT_END -->
 
     <!-- MONETIZE_START -->
     <section class="pricing pricing--primary" id="get-a-site" aria-labelledby="pricing-heading">
@@ -7411,7 +7426,8 @@
         <a href="https://www.linkedin.com/in/rajeev-sewbalak-748738410/" class="footer-social-link" aria-label="LinkedIn">LinkedIn</a>
         <a href="https://github.com/rajeevsewbalak31-sketch/Vibe-Code-1000-websites" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
       </nav>
-      <p class="footer-brand">VibeCode 1000 · Built in public</p>
+      <p class="footer-brand">VibeCode 1000 · Built by Ui</p>
+      <p class="footer-location">Built in the Netherlands 🇳🇱</p>
       <p class="footer-meta">
         <a href="#get-a-site">Get your own site</a>
         · <a href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>

@@ -1,18 +1,19 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0a0d12;
-  --bg-card: rgba(255, 255, 255, 0.05);
-  --border: rgba(255, 255, 255, 0.09);
-  --text: #f2efe8;
-  --muted: rgba(242, 239, 232, 0.55);
+  --bg: #11141a;
+  --bg-card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #f6f2ea;
+  --muted: rgba(246, 242, 234, 0.58);
   --accent: #e8a87c;
   --accent-2: #5eead4;
   --github: #f0f6fc;
   --paypal: #0070ba;
   --font-display: "Fraunces", Georgia, serif;
   --font-ui: "Outfit", system-ui, sans-serif;
-  --radius: 1rem;
+  --radius: 1.125rem;
+  --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.22);
 }
 
 html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
@@ -30,7 +31,10 @@ body {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse 100% 60% at 50% -10%, #1e2a3d 0%, var(--bg) 50%);
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(232, 168, 124, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 40%, rgba(94, 234, 212, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #161b24 0%, var(--bg) 42%);
 }
 
 .orb {
@@ -65,7 +69,7 @@ body {
   z-index: 1;
   max-width: 72rem;
   margin: 0 auto;
-  padding: 2rem 1.25rem 4rem;
+  padding: 2.25rem 1.35rem 5rem;
 }
 
 /* Games launch banner */
@@ -137,8 +141,42 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  gap: 1rem 1.25rem;
+  margin-bottom: 2.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 1rem;
+  flex: 1 1 auto;
+  order: 3;
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  .top-nav {
+    order: 0;
+    width: auto;
+    justify-content: center;
+  }
+}
+
+.top-nav-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.35rem 0.15rem;
+  transition: color 0.15s ease;
+}
+
+.top-nav-link:hover {
+  color: var(--text);
 }
 
 .brand {
@@ -226,7 +264,171 @@ body {
 /* Hero */
 .hero {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.hero--welcome {
+  padding: 2.25rem 1.5rem 2.5rem;
+  border-radius: calc(var(--radius) + 0.25rem);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--accent) 14%, transparent),
+    color-mix(in srgb, var(--accent-2) 6%, transparent) 55%,
+    rgba(255, 255, 255, 0.02)
+  );
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-personal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.hero-avatar {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 8px 24px rgba(232, 168, 124, 0.35);
+}
+
+.hero-progress-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0 auto 1rem;
+  max-width: 28rem;
+}
+
+.hero-progress-text strong {
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+.hero-latest-note {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.hero-latest-note a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero-latest-note a:hover {
+  text-decoration: underline;
+}
+
+/* What is this */
+.what-is {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.what-is-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 32rem;
+  margin: 0.65rem auto 0;
+}
+
+/* Home featured */
+.home-featured {
+  margin-bottom: 3.5rem;
+}
+
+.home-featured-head {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.home-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));
+  gap: 1rem;
+}
+
+.home-featured-more {
+  text-align: center;
+  margin-top: 1.75rem;
+}
+
+.card--home {
+  min-height: 9.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.card--home:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+}
+
+.projects-section {
+  margin-bottom: 3rem;
+  padding-top: 0.5rem;
+}
+
+.projects-section-head {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.hub-batches {
+  margin-bottom: 2rem;
+}
+
+.batches-details {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+.batches-summary {
+  cursor: pointer;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--muted);
+  list-style: none;
+}
+
+.batches-summary::-webkit-details-marker {
+  display: none;
+}
+
+.batches-inner {
+  padding: 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.batches-inner .games-banner {
+  margin-bottom: 0;
+}
+
+.footer-location {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
 }
 
 .hero-eyebrow {
@@ -618,19 +820,21 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  padding: 1.1rem 1.15rem;
+  padding: 1.15rem 1.2rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  border-color: rgba(232, 168, 124, 0.45);
-  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(232, 168, 124, 0.4);
+  background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
 }
 
 .card.is-hidden { display: none; }

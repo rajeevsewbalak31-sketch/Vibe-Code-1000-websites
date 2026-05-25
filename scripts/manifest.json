@@ -1,7 +1,11 @@
 {
   "goal": 1000,
   "phase2Target": 1000,
+  "homeFeatured": ["004", "003", "007", "101", "104", "001"],
+  "latestProject": "004",
   "branding": {
+    "heroWelcomeTitle": "Hi, I'm building 1000 things.",
+    "heroWelcomeSubtitle": "One project a day. Learning in public. Documenting the journey from 0 to 1000.",
     "heroTitle": "VibeCode 1000",
     "heroSubtitle": "1000 AI-built websites. Built in public.",
     "progressCurrent": 23,
@@ -48,6 +52,16 @@
       "search": "daily ai tools chatgpt claude copilot landing"
     },
     {
+      "id": "004",
+      "slug": "dice-roll",
+      "name": "Roll a Dice",
+      "tagline": "3D dice roller — spin and land on your number",
+      "href": "./004-dice-roll/",
+      "live": true,
+      "category": "utilities",
+      "search": "roll a dice 3d dice roller d6"
+    },
+    {
       "id": "003",
       "slug": "motivation-generator",
       "name": "Motivation Generator",
@@ -76,6 +90,16 @@
       "live": true,
       "category": "games",
       "search": "nestrun snake game arcade"
+    },
+    {
+      "id": "007",
+      "slug": "password-gen",
+      "name": "KeyForge",
+      "tagline": "Secure passwords with strength meter and passphrase mode",
+      "href": "./007-password-gen/",
+      "live": true,
+      "category": "utilities",
+      "search": "password generator keyforge"
     }
   ],
   "monetization": {

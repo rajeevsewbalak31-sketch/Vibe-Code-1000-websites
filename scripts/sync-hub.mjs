@@ -99,7 +99,8 @@ const creativeCount = allEntries.filter((e) => {
 }).length;
 const labsCount = allEntries.filter((e) => parseInt(e.id, 10) >= 501).length;
 const brand = manifest.branding || {};
-const PROGRESS_CURRENT = brand.progressCurrent ?? count;
+/** Progress on the homepage matches live gallery size (stays aligned with “View all N projects”). */
+const PROGRESS_CURRENT = count;
 const PROGRESS_GOAL = brand.progressGoal ?? GOAL;
 const HERO_TITLE = brand.heroTitle || "VibeCode 1000";
 const HERO_SUBTITLE = brand.heroSubtitle || "1000 AI-built websites. Built in public.";

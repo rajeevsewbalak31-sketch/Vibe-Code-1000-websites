@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Roll a Dice | Vibe Code 1000</title>
+  <title>Roll a Dice | Vibecode1000</title>
   <meta name="description" content="Roll a Dice — realistic 3D dice with smooth physics-style rolls. Roll 1–6 dice instantly in your browser." />
-  <meta name="keywords" content="roll a dice, 3D dice roller, d6, Vibe Code 1000, free web tool" />
+  <meta name="keywords" content="roll a dice, 3D dice roller, d6, Vibecode1000, free web tool" />
   <meta name="author" content="Rajeev Sewbalak" />
   <link rel="canonical" href="https://vibecode1000.com/004-dice-roll/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Roll a Dice | Vibe Code 1000" />
+  <meta property="og:title" content="Roll a Dice | Vibecode1000" />
   <meta property="og:description" content="Realistic 3D dice — spin, land, and see your roll." />
   <meta property="og:url" content="https://vibecode1000.com/004-dice-roll/" />
-  <meta property="og:site_name" content="Vibe Code 1000" />
+  <meta property="og:site_name" content="Vibecode1000" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Roll a Dice | Vibe Code 1000" />
+  <meta name="twitter:title" content="Roll a Dice | Vibecode1000" />
   <meta name="twitter:description" content="Realistic 3D dice roller in your browser." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,43 +46,55 @@
       </div>
     </nav>
     <header class="tool-header tool-header--compact">
-      <p class="eyebrow">Website #004 · 3D</p>
+      <p class="eyebrow">Tool #004</p>
       <h1 class="logo">Roll a Dice</h1>
-      <p class="tagline">Tap roll — watch the dice spin and land</p>
+      <p class="tagline">3D roll with physics — tap to throw</p>
     </header>
 
     <article class="card dice-card">
       <div class="dice-stage" id="dice-stage">
         <canvas id="dice-canvas" aria-hidden="true"></canvas>
-        <p class="dice-stage-hint" id="stage-hint">Press Roll to shake the dice</p>
+        <p class="dice-stage-hint" id="stage-hint">Tap to roll</p>
       </div>
 
-      <p class="result-label">Result</p>
-      <p id="display" class="display" aria-live="polite">—</p>
-      <p id="display-total" class="display-total" hidden></p>
+      <div class="result-block">
+        <p class="result-label">Result</p>
+        <p id="display" class="display" aria-live="polite">—</p>
+        <p id="display-total" class="display-total" hidden></p>
+      </div>
 
-      <label class="field-label" for="dice-count">
-        Dice count
-        <input id="dice-count" type="number" min="1" max="6" step="1" value="1" class="input" inputmode="numeric" />
-      </label>
+      <div class="controls-row">
+        <label class="field-label" for="dice-count">
+          <span class="field-label-text">Dice</span>
+          <input id="dice-count" type="number" min="1" max="6" step="1" value="1" class="input" inputmode="numeric" />
+        </label>
+        <button type="button" id="btn-sound" class="btn btn--ghost btn--icon" aria-pressed="false" title="Sound off">
+          Sound off
+        </button>
+      </div>
 
       <div class="actions">
         <button type="button" id="btn-roll" class="btn btn--primary">Roll</button>
         <button type="button" id="btn-again" class="btn btn--ghost" hidden>Roll again</button>
       </div>
+
+      <section class="history" aria-labelledby="history-heading">
+        <h2 id="history-heading" class="history-heading">Last rolls</h2>
+        <ol id="history-list" class="history-list" reversed></ol>
+        <p id="history-empty" class="history-empty">No rolls yet</p>
+      </section>
     </article>
 
     <footer class="tip-jar">
-      <p class="tip-upsell"><a class="tip-upsell-link" href="https://vibecode1000.com/#get-a-site"><strong>Get your own website — from €49</strong></a> · 24h delivery</p>
+      <p class="tip-upsell"><a class="tip-upsell-link" href="https://vibecode1000.com/#get-a-site"><strong>Get your own website — from €49</strong></a></p>
       <div class="tip-chips">
         <a class="tip-chip tip-chip--buy" href="https://paypal.me/RajeevSewbalak/49" target="_blank" rel="noopener noreferrer">Order €49</a>
         <a class="tip-chip" href="https://paypal.me/RajeevSewbalak/5" target="_blank" rel="noopener noreferrer">Tip €5</a>
         <a class="tip-chip tip-chip--main" href="https://paypal.me/RajeevSewbalak" target="_blank" rel="noopener noreferrer">PayPal</a>
       </div>
-      <p class="hub-wrap"><a class="hub-link" href="https://vibecode1000.com/#contact">Free quote</a> · <a class="hub-link" href="https://vibecode1000.com/">All tools</a></p>
+      <p class="hub-wrap"><a class="hub-link" href="https://vibecode1000.com/">All tools</a></p>
     </footer>
   </main>
-  <p id="toast" class="toast" role="status"></p>
   <script type="importmap">
   {
     "imports": {

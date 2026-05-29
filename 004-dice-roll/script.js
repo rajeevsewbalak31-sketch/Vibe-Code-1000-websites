@@ -95,6 +95,8 @@ let sharedGeo;
 let sharedMaterials;
 let audioCtx = null;
 let soundOn = false;
+/** 0 when idle; avoids stacking rAF callbacks when restarting the loop */
+let rafId = 0;
 
 function easeOutCubic(t) {
   return 1 - (1 - t) ** 3;
@@ -316,7 +318,7 @@ function initThree() {
     canvas,
     antialias: true,
     alpha: false,
-    powerPreference: "high-performance",
+    powerPreference: "default",
   });
   renderer.setPixelRatio(Math.min(MAX_DPR, window.devicePixelRatio || 1));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -345,7 +347,21 @@ function initThree() {
 
   resize();
   window.addEventListener("resize", resize);
-  requestAnimationFrame(animate);
+  document.addEventListener("visibilitychange", onVisibilityChange);
+  startRenderLoop();
+}
+
+/** When the tab is hidden and nothing is rolling, stop scheduling frames to save GPU/CPU/battery. */
+function onVisibilityChange() {
+  if (!document.hidden) {
+    resize();
+    startRenderLoop();
+  }
+}
+
+function startRenderLoop() {
+  if (rafId || !renderer) return;
+  rafId = requestAnimationFrame(animate);
 }
 
 function resize() {
@@ -398,7 +414,7 @@ function tickRollState(state, now, dt) {
 }
 
 function animate(now) {
-  requestAnimationFrame(animate);
+  rafId = 0;
   const dt = Math.min(0.05, 1 / 60);
 
   rollStates.forEach((state) => tickRollState(state, now, dt));
@@ -407,12 +423,22 @@ function animate(now) {
     finishRoll();
   }
 
-  if (!rolling && !stage.classList.contains("has-result")) {
-    diceGroup.rotation.y += 0.0008;
+  const tabVisible = !document.hidden;
+
+  if (tabVisible) {
+    if (!rolling && !stage.classList.contains("has-result")) {
+      diceGroup.rotation.y += 0.0008;
+    }
+    diceGroup.updateMatrixWorld(true);
+    renderer.render(scene, camera);
+  } else if (rolling) {
+    /* Roll can finish in a background tab; skip draws to reduce GPU use. */
+    diceGroup.updateMatrixWorld(true);
   }
 
-  diceGroup.updateMatrixWorld(true);
-  renderer.render(scene, camera);
+  if (tabVisible || rolling) {
+    rafId = requestAnimationFrame(animate);
+  }
 }
 
 function startRoll() {

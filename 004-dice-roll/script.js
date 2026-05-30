@@ -8,6 +8,7 @@ const ROLL_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 
 const MAX_DPR = 2;
 const HISTORY_MAX = 5;
 const SOUND_KEY = "dice-roll-sound";
+const HISTORY_KEY = "dice-roll-history";
 
 const FACE_NORMALS = [
   new THREE.Vector3(1, 0, 0),
@@ -97,6 +98,8 @@ let audioCtx = null;
 let soundOn = false;
 /** 0 when idle; avoids stacking rAF callbacks when restarting the loop */
 let rafId = 0;
+/** false when the stage has scrolled out of view; pauses the render loop */
+let stageVisible = true;
 
 function easeOutCubic(t) {
   return 1 - (1 - t) ** 3;
@@ -119,6 +122,26 @@ function syncSoundButton() {
   if (!btnSound) return;
   btnSound.setAttribute("aria-pressed", String(soundOn));
   btnSound.textContent = soundOn ? "Sound on" : "Sound off";
+}
+
+function loadHistory() {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    if (Array.isArray(parsed)) {
+      rollHistory = parsed.slice(0, HISTORY_MAX).filter((e) => Array.isArray(e?.values));
+    }
+  } catch {
+    rollHistory = [];
+  }
+}
+
+function saveHistory() {
+  try {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(rollHistory));
+  } catch {
+    /* ignore quota/private-mode errors */
+  }
 }
 
 function initAudio() {
@@ -348,6 +371,7 @@ function initThree() {
   resize();
   window.addEventListener("resize", resize);
   document.addEventListener("visibilitychange", onVisibilityChange);
+  observeStage();
   startRenderLoop();
 }
 
@@ -357,6 +381,19 @@ function onVisibilityChange() {
     resize();
     startRenderLoop();
   }
+}
+
+/** Pause the loop when the dice stage scrolls off-screen; resume when it returns. */
+function observeStage() {
+  if (typeof IntersectionObserver !== "function") return;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      stageVisible = entries[0].isIntersecting;
+      if (stageVisible) startRenderLoop();
+    },
+    { threshold: 0.01 }
+  );
+  observer.observe(stage);
 }
 
 function startRenderLoop() {
@@ -423,20 +460,20 @@ function animate(now) {
     finishRoll();
   }
 
-  const tabVisible = !document.hidden;
+  const canDraw = !document.hidden && stageVisible;
 
-  if (tabVisible) {
+  if (canDraw) {
     if (!rolling && !stage.classList.contains("has-result")) {
       diceGroup.rotation.y += 0.0008;
     }
     diceGroup.updateMatrixWorld(true);
     renderer.render(scene, camera);
   } else if (rolling) {
-    /* Roll can finish in a background tab; skip draws to reduce GPU use. */
+    /* Roll can finish while hidden/off-screen; skip draws to reduce GPU use. */
     diceGroup.updateMatrixWorld(true);
   }
 
-  if (tabVisible || rolling) {
+  if (canDraw || rolling) {
     rafId = requestAnimationFrame(animate);
   }
 }
@@ -497,6 +534,7 @@ function pushHistory(values, sum, count) {
   };
   rollHistory.unshift(entry);
   if (rollHistory.length > HISTORY_MAX) rollHistory.length = HISTORY_MAX;
+  saveHistory();
   renderHistory();
 }
 
@@ -578,6 +616,15 @@ stage.addEventListener("click", () => {
   if (!rolling) startRoll();
 });
 
+document.addEventListener("keydown", (e) => {
+  if (e.key !== " " && e.key !== "Enter") return;
+  const tag = document.activeElement?.tagName;
+  if (tag === "INPUT" || tag === "TEXTAREA") return;
+  e.preventDefault();
+  if (!rolling) startRoll();
+});
+
 loadSoundPref();
+loadHistory();
 renderHistory();
 initThree();
